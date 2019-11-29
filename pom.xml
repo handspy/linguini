@@ -334,6 +334,15 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <ujspellPath>${env.UJSPELL_PATH}</ujspellPath>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
                 <!-- Site -->
                 <!-- Generates the Maven Site -->
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,5 +1,8 @@
 package pt.up.hs.linguini.jspell;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import pt.up.hs.linguini.utils.FileUtils;
 
 import java.io.*;
@@ -7,7 +10,6 @@ import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.util.Locale;
-import java.util.logging.Logger;
 
 /**
  * Wrapper for JSpell process
@@ -16,10 +18,13 @@ import java.util.logging.Logger;
  */
 public class JSpellWrapper {
     private static final Logger LOGGER =
-            Logger.getLogger(JSpellWrapper.class.getName());
+            LogManager.getLogger(JSpellWrapper.class.getName());
     private static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
 
-    private static final String JSPELL_CMD = "/usr/local/bin/ujspell";
+    private static final String UJSPELL_ENV_VALUE = System.getProperty("ujspellPath");
+    private static final String JSPELL_CMD = UJSPELL_ENV_VALUE != null && !UJSPELL_ENV_VALUE.isEmpty() ?
+            UJSPELL_ENV_VALUE : "/usr/local/bin/ujspell";
+
     private static final String DICTIONARY_PATH_FORMAT =
             "dictionaries/%s";
     private static final String DICTIONARY_NAME =
@@ -35,6 +40,7 @@ public class JSpellWrapper {
     private boolean stopped = false;
 
     public JSpellWrapper(Locale locale) throws IOException, URISyntaxException {
+        LOGGER.debug("Using ujspell from ... " + JSPELL_CMD);
         processBuilder = new ProcessBuilder(
                 JSPELL_CMD,
                 "-d",
