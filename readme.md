@@ -5,6 +5,7 @@ natural language used, but will firstly focus on the portuguese (Portugal) langu
 
 [![Maven Central](https://img.shields.io/maven-central/v/pt.up.hs/linguini.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/handspy/maven/linguini/images/download.svg)][bintray-repo]
+[![Travis CI](https://travis-ci.com/handspy/linguini.svg?branch=master)][travisci-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
@@ -91,6 +92,7 @@ The project has been released under the [MIT License][license].
 
 [bintray-repo]: https://bintray.com/handspy/maven/linguini/view
 [maven-repo]: http://mvnrepository.com/artifact/pt.up.hs/linguini
+[travisci-repo]: https://travis-ci.com/handspy/linguini
 [issues]: https://github.com/handspy/linguini/issues
 [javadoc-develop]: https://handspy.up.pt/linguini/apidocs
 [javadoc-release]: https://handspy.up.pt/linguini/apidocs
