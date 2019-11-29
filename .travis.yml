@@ -14,6 +14,7 @@ before_install:
   # install JSpell
   - sudo apt-get -y install build-essential gcc-multilib perl cpanminus
   - cpanm Lingua::Jspell::EAGLES
+  - which ujspell
   # Gets scripts
   - git clone -b v1.2.2 --single-branch https://github.com/josepaiva94/ci-shell-scripts.git ~/.scripts
   # Sets scripts as executable
