@@ -1,6 +1,7 @@
 package pt.up.hs.linguini.analysis;
 
 import pt.up.hs.linguini.exceptions.AnalyzerException;
+import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
 import pt.up.hs.linguini.jspell.JSpellInfo;
 import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.models.AnnotatedToken;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Analysis based on JSpell.

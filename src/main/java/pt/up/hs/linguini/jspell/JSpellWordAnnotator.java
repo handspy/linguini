@@ -3,6 +3,7 @@ package pt.up.hs.linguini.jspell;
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.models.*;
 import pt.up.hs.linguini.utils.InMemoryCache;
+import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -24,7 +25,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
     private static final Pattern ERROR_CORRECTIONS_PATTERN =
             Pattern.compile("([^=]+)=\\s+lex\\((.[^,\\s]+),\\s*\\[([^]]*)],\\s*\\[([^]]*)],\\s*\\[([^]]*)],\\s*\\[([^]]*)]\\)[,;]?\\s?");
 
-    protected static InMemoryCache<String, AnnotatedToken<JSpellInfo>> cache =
+    protected static InMemoryCache<String, JSpellInfo> cache =
             new InMemoryCache<>(3600, 600, 500);
 
     private static final String WORD_CATEGORY_PROP = "CAT";
@@ -32,7 +33,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
     private static final String WORD_INTERMEDIATE_EMOTION_PROP = "EmoIntermediate";
     private static final String WORD_SPECIFIC_EMOTION_PROP = "EmoSpecific";
 
-    private JSpellWrapper jSpell;
+    private final JSpellWrapper jSpell;
 
     public JSpellWordAnnotator(Locale locale) throws IOException, URISyntaxException {
         this.jSpell = new JSpellWrapper(locale);
@@ -40,13 +41,21 @@ public class JSpellWordAnnotator implements AutoCloseable {
     }
 
     public AnnotatedToken<JSpellInfo> annotate(Token token) throws IOException {
-        AnnotatedToken<JSpellInfo> annotatedToken = cache.get(token.getWord());
-        if (annotatedToken == null) {
-            String output = jSpell.process(token.getWord());
-            annotatedToken = processJSpellOutput(token, output);
-            cache.put(token.getWord(), annotatedToken);
+        if (jSpell.isStopped()) {
+            throw new IOException("Annotator's JSpell process already closed");
         }
-        return annotatedToken;
+        if (StringUtils.isBlankString(token.getWord())) {
+            return new AnnotatedToken<>(token, null);
+        }
+        JSpellInfo info = cache.get(token.getWord());
+        if (info == null) {
+            synchronized (jSpell) {
+                String output = jSpell.process(token.getWord());
+                info = processJSpellOutput(output);
+                cache.put(token.getWord(), info);
+            }
+        }
+        return new AnnotatedToken<>(token, info);
     }
 
     @Override
@@ -54,7 +63,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
         jSpell.close();
     }
 
-    private AnnotatedToken<JSpellInfo> processJSpellOutput(Token token, String output) {
+    private JSpellInfo processJSpellOutput(String output) {
 
         output = output.trim();
 
@@ -66,18 +75,16 @@ public class JSpellWordAnnotator implements AutoCloseable {
             String symbol = m.group(1);
 
             if (symbol.equals("*")) { // normal word
-                return new AnnotatedToken<>(
-                        token,
-                        new JSpellInfo(processLexes(output.substring(matching.length())))
-                );
+                return new JSpellInfo(processLexes(
+                        output.substring(matching.length())
+                ));
             } else { // spelling error
-                return new AnnotatedToken<>(
-                        token,
-                        new JSpellInfo(processSuggestedCorrections(output.substring(matching.length())))
-                );
+                return new JSpellInfo(processSuggestedCorrections(
+                        output.substring(matching.length())
+                ));
             }
         } else { // punctuation
-            return new AnnotatedToken<>(token, new JSpellInfo());
+            return new JSpellInfo();
         }
     }
 

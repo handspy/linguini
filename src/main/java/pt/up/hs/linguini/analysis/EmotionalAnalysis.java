@@ -43,7 +43,7 @@ public class EmotionalAnalysis extends JSpellPreprocessingAnalysis<List<Annotate
             Token token = jSpellAnnotatedToken.getToken();
             JSpellInfo info = jSpellAnnotatedToken.getInfo();
             try {
-                if (info.getRelated() != null &&
+                if (info != null && info.getRelated() != null &&
                         !info.getRelated().isEmpty()) {
                     JSpellLex selectedLex = lemmaStrategy.select(info.getRelated());
                     Emotion emotion = selectedLex.getEmotion();

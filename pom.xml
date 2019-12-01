@@ -53,7 +53,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://www.github.com/josepaiva94/handspy/issues</url>
+        <url>https://www.github.com/handspy/linguini/issues</url>
     </issueManagement>
 
     <ciManagement>
@@ -65,7 +65,7 @@
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
-            <id>releases</id>
+            <id>bintray-handspy-maven</id>
             <name>Releases Repository</name>
             <url>https://api.bintray.com/maven/handspy/maven/linguini</url>
         </repository>
@@ -85,7 +85,7 @@
         <profile>
             <!-- Profile for the Eclipse Maven plugin -->
             <!-- Sets the POM so this plugin does not give the usual unregistered goals
-               nrOfErrors -->
+               errors -->
             <!-- It will be activated automatically on Eclipse if this has the m2e plugin,
                by detecting the version property -->
             <id>eclipse-maven</id>
@@ -217,7 +217,7 @@
         <!-- ================= MAVEN SITE ================= -->
         <!-- ============================================== -->
         <site.skin.version>1.4.3</site.skin.version>
-        <bintrayURL>https://bintray.com/josepaiva94/maven/linguini/view</bintrayURL>
+        <bintrayURL>https://bintray.com/handspy/linguini</bintrayURL>
         <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
     </properties>
 

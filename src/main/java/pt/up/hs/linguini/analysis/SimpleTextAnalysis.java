@@ -84,7 +84,7 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         // count errors
         textSummary.setNrOfErrors(
                 (int) jSpellAnnotatedTokens.parallelStream()
-                        .filter(t -> t.getInfo().isError())
+                        .filter(t -> t.getInfo() != null && t.getInfo().isError())
                         .count());
 
         // count distinct lemmas
@@ -118,6 +118,7 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         SelectionStrategy<JSpellLex> categoryStrategy = new ChooseFirstStrategy<>();
         textSummary.setWordsByCategory(
                 jSpellAnnotatedTokens.parallelStream()
+                        .filter(at -> at.getInfo() != null)
                         .collect(
                                 Collectors
                                         .groupingByConcurrent(
@@ -159,8 +160,8 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
         PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
         wordsOnly = tokens.parallelStream()
-                .filter(punctuationFilter::accept)
                 .filter(whitespaceFilter::accept)
+                .filter(punctuationFilter::accept)
                 .collect(Collectors.toList());
 
         // build content word list
@@ -172,12 +173,12 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         // build lemmatized word list
         SelectionStrategy<JSpellLex> strategy = new ChooseFirstStrategy<>();
         lemmatizedWords = jSpellAnnotatedTokens.parallelStream()
-                .filter(at -> punctuationFilter.accept(at.getToken()))
                 .filter(at -> whitespaceFilter.accept(at.getToken()))
+                .filter(at -> punctuationFilter.accept(at.getToken()))
                 .map(at -> {
                     Token token = at.getToken();
                     JSpellInfo info = at.getInfo();
-                    if (info.getRelated() != null && !info.getRelated().isEmpty()) {
+                    if (info != null && info.getRelated() != null && !info.getRelated().isEmpty()) {
                         JSpellLex selectedLex;
                         try {
                             selectedLex = strategy.select(info.getRelated());

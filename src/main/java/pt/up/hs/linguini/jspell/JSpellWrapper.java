@@ -92,6 +92,10 @@ public class JSpellWrapper {
         return outBuilder.toString();
     }
 
+    public boolean isStopped() {
+        return stopped || !process.isAlive();
+    }
+
     public void stop() throws IOException {
 
         writer.close();
@@ -110,5 +114,7 @@ public class JSpellWrapper {
         }
 
         process.destroyForcibly();
+
+        stopped = true;
     }
 }

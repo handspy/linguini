@@ -31,15 +31,13 @@ public class InMemoryCache<K, T> {
 
         if (this.timeToLive > 0 && timerInterval > 0) {
 
-            Thread t = new Thread(new Runnable() {
-                public void run() {
-                    while (true) {
-                        try {
-                            Thread.sleep(timerInterval * 1000);
-                        } catch (InterruptedException ex) {
-                        }
-                        cleanup();
+            Thread t = new Thread(() -> {
+                while (true) {
+                    try {
+                        Thread.sleep(timerInterval * 1000);
+                    } catch (InterruptedException ex) {
                     }
+                    cleanup();
                 }
             });
 

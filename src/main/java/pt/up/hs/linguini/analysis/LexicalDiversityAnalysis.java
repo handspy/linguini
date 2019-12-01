@@ -3,6 +3,7 @@ package pt.up.hs.linguini.analysis;
 import pt.up.hs.linguini.exceptions.AnalyzerException;
 import pt.up.hs.linguini.filters.PunctuationTokenFilter;
 import pt.up.hs.linguini.filters.StopTokenFilter;
+import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
 import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
@@ -64,11 +65,14 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
     public Analysis<Void, Double> preprocess(
             List<Token> tokens) throws AnalyzerException {
 
-        // 1. remove punctuation
-        // 2. remove stop-words
+        // 1. remove whitespaces
+        // 2. remove punctuation
+        // 3. remove stop-words
+        WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
         PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
         StopTokenFilter stopFilter = new StopTokenFilter(locale);
         Stream<Token> tokenStream = tokens.parallelStream()
+                .filter(whitespaceFilter::accept)
                 .filter(punctuationFilter::accept)
                 .filter(stopFilter::accept);
 
@@ -147,7 +151,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
             double contribution = (
                     1.0 - MathUtils.hypergeometric(
                             tokens.size(), sampleSize, typeCounts.get(word), 0)
-            ) / sampleSize;
+            ) / (double) sampleSize;
             hdd += contribution;
         }
         return hdd;
@@ -163,14 +167,22 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
      * @return TTR
      */
     private double mtld(List<Token> tokens, double threshold) {
+        List<Token> reversed = new ArrayList<>(tokens);
+        Collections.reverse(reversed);
+        return (calculateMtld(tokens, threshold) + calculateMtld(reversed, threshold)) / 2;
+    }
+
+    private double calculateMtld(List<Token> tokens, double threshold) {
         double currentTtr = 1.0;
         Set<String> types = new HashSet<>();
         double factors = 0.0;
+        int tokenCount = 0;
         for (Token token : tokens) {
             types.add(token.getWord());
-            currentTtr = types.size() / tokens.size();
+            currentTtr = (double) types.size() / (++tokenCount);
             if (currentTtr <= threshold) {
                 factors += 1;
+                tokenCount = 0;
                 currentTtr = 1.0;
                 types.clear();
             }
@@ -179,7 +191,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
         double excessValue = 1.0 - threshold;
         factors += excess / excessValue;
         if (factors > 0)
-            return tokens.size() / factors;
+            return (double) tokens.size() / factors;
         return -1;
     }
 

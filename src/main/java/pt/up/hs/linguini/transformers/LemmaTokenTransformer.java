@@ -41,7 +41,7 @@ public class LemmaTokenTransformer implements TokenTransformer {
         try {
             AnnotatedToken<JSpellInfo> annotatedToken = wordAnnotator.annotate(token);
             JSpellInfo info = annotatedToken.getInfo();
-            if (info.getRelated() != null && !info.getRelated().isEmpty()) {
+            if (info != null && info.getRelated() != null && !info.getRelated().isEmpty()) {
                 JSpellLex selectedLex = strategy.select(info.getRelated());
                 token.setWord(selectedLex.getLemma());
             }
