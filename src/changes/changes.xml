@@ -20,7 +20,17 @@
         </release>
         <release version="1.0.2" date="2019-12-02" description="Text analyzer updates">
             <action dev="jcpaiva" type="update">
-                TextAnalyzer updates.
+                Update TextAnalyzer.
+            </action>
+        </release>
+        <release version="1.0.3" date="2019-12-02" description="Log4j not a provided dependency">
+            <action dev="jcpaiva" type="update">
+                Make Log4j not a provided dependency.
+            </action>
+        </release>
+        <release version="1.0.4" date="2019-12-02" description="JSpell dictionaries should be installed on filesystem">
+            <action dev="jcpaiva" type="update">
+                Use installed JSpell dictionaries should be installed on filesystem.
             </action>
         </release>
     </body>
