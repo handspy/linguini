@@ -6,7 +6,6 @@ import pt.up.hs.linguini.utils.InMemoryCache;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,7 +34,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
 
     private final JSpellWrapper jSpell;
 
-    public JSpellWordAnnotator(Locale locale) throws IOException, URISyntaxException {
+    public JSpellWordAnnotator(Locale locale) throws IOException {
         this.jSpell = new JSpellWrapper(locale);
         jSpell.start();
     }

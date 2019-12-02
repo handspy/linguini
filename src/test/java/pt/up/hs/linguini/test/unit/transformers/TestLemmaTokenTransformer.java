@@ -10,7 +10,6 @@ import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
 import pt.up.hs.linguini.transformers.TokenTransformer;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Locale;
 
 /**
@@ -33,7 +32,7 @@ public class TestLemmaTokenTransformer {
         try {
             wordAnnotator = new JSpellWordAnnotator(new Locale("pt", "PT"));
             transformer = new LemmaTokenTransformer(wordAnnotator);
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             Assertions.fail("Failed to initialize transformer", e);
         }
     }

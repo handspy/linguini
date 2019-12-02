@@ -7,7 +7,6 @@ import pt.up.hs.linguini.processing.exceptions.ProcessorException;
 import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -44,7 +43,7 @@ public class JSpellLemmatizer {
         JSpellWordAnnotator wordAnnotator;
         try {
             wordAnnotator = new JSpellWordAnnotator(locale);
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new ProcessorException("Could not create JSpell word annotator.", e);
         }
 

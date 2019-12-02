@@ -1,9 +1,9 @@
 package pt.up.hs.linguini.utils;
 
-import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,60 +14,20 @@ import java.util.List;
  */
 public class FileUtils {
 
-    /**
-     * Get file from classpath resources folder.
-     *
-     * @param path {@link String} path within resources folder.
-     * @return {@link File} file from classpath resources folder
-     * @throws IOException if the resource is not found
-     */
-    public static File getFileFromResources(String path) throws IOException {
-
-        ClassLoader classLoader = FileUtils.class.getClassLoader();
-
-        URL resource = classLoader.getResource(path);
-        if (resource == null) {
-            throw new IOException(path + " not found!");
-        } else {
-            return new File(resource.getFile());
-        }
-    }
-
-    /**
-     * Get absolute path to file in resources folder.
-     *
-     * @param path {@link String} path within resources folder.
-     * @return {@link String} absolute path to file in resources folder
-     * @throws IOException if the resource is not found
-     * @throws URISyntaxException if the resource URI is not correctly
-     * formatted
-     */
-    public static String getAbsPathToFileInResources(String path)
-            throws IOException, URISyntaxException {
-
-        ClassLoader classLoader = FileUtils.class.getClassLoader();
-
-        URL resource = classLoader.getResource(path);
-        if (resource == null) {
-            throw new IOException(path + " not found!");
-        } else {
-            return Paths.get(resource.toURI()).toFile().getAbsolutePath();
-        }
-    }
-
     public static List<String> readAllLines(String path) throws IOException {
-        return readAllLines(getFileFromResources(path));
+
+        ClassLoader classLoader = FileUtils.class.getClassLoader();
+
+        return readAllLines(classLoader.getResourceAsStream(path));
     }
 
-    public static List<String> readAllLines(File file) throws IOException {
+    public static List<String> readAllLines(InputStream is)
+            throws IOException {
 
         List<String> lines = new ArrayList<>();
 
-        if (file == null)
-            return lines;
-
-        try (FileReader reader = new FileReader(file);
-             BufferedReader br = new BufferedReader(reader)) {
+        try (InputStreamReader isr = new InputStreamReader(is);
+             BufferedReader br = new BufferedReader(isr)) {
 
             String line;
             while ((line = br.readLine()) != null) {

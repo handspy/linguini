@@ -3,12 +3,8 @@ package pt.up.hs.linguini.jspell;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import pt.up.hs.linguini.utils.FileUtils;
-
 import java.io.*;
-import java.net.URISyntaxException;
 import java.nio.charset.Charset;
-import java.nio.file.Paths;
 import java.util.Locale;
 
 /**
@@ -25,11 +21,6 @@ public class JSpellWrapper {
     private static final String JSPELL_CMD = UJSPELL_ENV_VALUE != null && !UJSPELL_ENV_VALUE.isEmpty() ?
             UJSPELL_ENV_VALUE : "/usr/local/bin/ujspell";
 
-    private static final String DICTIONARY_PATH_FORMAT =
-            "dictionaries/%s";
-    private static final String DICTIONARY_NAME =
-            "emospell";
-
     private ProcessBuilder processBuilder;
 
     private Process process;
@@ -39,27 +30,20 @@ public class JSpellWrapper {
 
     private boolean stopped = false;
 
-    public JSpellWrapper(Locale locale) throws IOException, URISyntaxException {
+    public JSpellWrapper(Locale locale) {
         LOGGER.debug("Using ujspell from ... " + JSPELL_CMD);
         processBuilder = new ProcessBuilder(
                 JSPELL_CMD,
                 "-d",
-                Paths.get(
-                        FileUtils.getAbsPathToFileInResources(
-                                String.format(
-                                        DICTIONARY_PATH_FORMAT,
-                                        locale.toString()
-                                )
-                        ),
-                        DICTIONARY_NAME
-                ).toString(),
+                "linguini." + locale.toString(),
                 "-a", "--flush");
         processBuilder.environment().put("LANG", locale.toString() + ".UTF-8");
     }
 
     public void start() throws IOException {
 
-        process = processBuilder.start();
+        process = processBuilder
+                .start();
 
         writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream(), DEFAULT_CHARSET));
         reader = new BufferedReader(new InputStreamReader(process.getInputStream(), DEFAULT_CHARSET));

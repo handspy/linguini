@@ -20,7 +20,7 @@
 
     <groupId>pt.up.hs</groupId>
     <artifactId>linguini</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Linguini</name>
@@ -255,24 +255,16 @@
         <!-- ================== LOGGERS =================== -->
         <!-- ============================================== -->
         <dependency>
-            <!-- SLF4J API -->
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <!-- Log4j SLF4J Bridge -->
+            <!-- Log4j api -->
             <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
+            <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <!-- Log4j core -->
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <!-- ============================================== -->

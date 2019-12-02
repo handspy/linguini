@@ -10,7 +10,6 @@ import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
 import pt.up.hs.linguini.utils.MathUtils;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -81,7 +80,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
             JSpellWordAnnotator wordAnnotator;
             try {
                 wordAnnotator = new JSpellWordAnnotator(locale);
-            } catch (IOException | URISyntaxException e) {
+            } catch (IOException e) {
                 throw new AnalyzerException("Could not lemmatize words", e);
             }
             LemmaTokenTransformer transformer = new LemmaTokenTransformer(wordAnnotator);
