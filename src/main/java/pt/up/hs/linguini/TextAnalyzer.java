@@ -68,11 +68,19 @@ public class TextAnalyzer {
         LexicalDiversityAnalysis analysis;
         switch (algorithm) {
             case MTLD:
-                analysis = new LexicalDiversityAnalysis(
-                        locale, algorithm, lemmatize, mtldThreshold);
+                if (mtldThreshold == null)
+                    analysis = new LexicalDiversityAnalysis(
+                            locale, algorithm, lemmatize);
+                else
+                    analysis = new LexicalDiversityAnalysis(
+                            locale, algorithm, lemmatize, mtldThreshold);
                 break;
             case HDD:
-                analysis = new LexicalDiversityAnalysis(
+                if (hddSampleSize == null)
+                    analysis = new LexicalDiversityAnalysis(
+                            locale, algorithm, lemmatize);
+                else
+                    analysis = new LexicalDiversityAnalysis(
                         locale, algorithm, lemmatize, hddSampleSize);
                 break;
             default:

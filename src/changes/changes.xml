@@ -1,13 +1,26 @@
-<document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+<document
+        xmlns="http://maven.apache.org/changes/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
     <properties>
         <title>Project Changes</title>
         <author email="hello@josecpaiva.me">José Carlos Paiva</author>
     </properties>
     <body>
-        <release version="1.0.0" date="2019-01-01" description="First release">
-            <action dev="bmg" type="update">
+        <release version="1.0.0" date="2019-11-29" description="First release">
+            <action dev="jcpaiva" type="update">
                 First release of the library.
+            </action>
+        </release>
+        <release version="1.0.1" date="2019-12-01" description="Lexical Diversity and JSpell fixes">
+            <action dev="jcpaiva" type="update">
+                Fix Lexical Diversity algorithms.
+                Fix concurrency issues with JSpell.
+            </action>
+        </release>
+        <release version="1.0.2" date="2019-12-02" description="Text analyzer updates">
+            <action dev="jcpaiva" type="update">
+                TextAnalyzer updates.
             </action>
         </release>
     </body>
