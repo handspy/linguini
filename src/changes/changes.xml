@@ -38,5 +38,15 @@
                 Fix and improve simple text analysis.
             </action>
         </release>
+        <release version="1.0.6" date="2019-12-03" description="Log4j to target folder">
+            <action dev="jcpaiva" type="update">
+                Log4j to target folder.
+            </action>
+        </release>
+        <release version="1.0.7" date="2019-12-03" description="Log4j to catalina home logs folder">
+            <action dev="jcpaiva" type="update">
+                Log4j to catalina home logs folder.
+            </action>
+        </release>
     </body>
 </document>

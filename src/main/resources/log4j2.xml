@@ -4,7 +4,7 @@
     <!-- Logging Properties -->
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
-        <Property name="LOG_ROOT">logs</Property>
+        <Property name="LOG_ROOT">${sys:catalina.home}/logs/linguini</Property>
     </Properties>
 
     <Appenders>
@@ -20,27 +20,25 @@
             <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="19500KB" />
+                <SizeBasedTriggeringPolicy size="19500KB"/>
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-
         <RollingFile name="infoLog" fileName="${LOG_ROOT}/info.log"
-                     filePattern="${LOG_ROOT}/info-%d{yyyy-MM-dd}-%i.log" >
+                     filePattern="${LOG_ROOT}/info-%d{yyyy-MM-dd}-%i.log">
             <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="19500KB" />
+                <SizeBasedTriggeringPolicy size="19500KB"/>
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-
         <RollingFile name="errorLog" fileName="${LOG_ROOT}/error.log"
-                     filePattern="${LOG_ROOT}/error-%d{yyyy-MM-dd}-%i.log" >
+                     filePattern="${LOG_ROOT}/error-%d{yyyy-MM-dd}-%i.log">
             <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="19500KB" />
+                <SizeBasedTriggeringPolicy size="19500KB"/>
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
@@ -48,16 +46,14 @@
 
     <Loggers>
         <Logger name="pt.up.hs.linguini" additivity="false" level="debug">
-            <AppenderRef ref="debugLog" />
-            <AppenderRef ref="infoLog"  />
-            <AppenderRef ref="errorLog" />
-            <AppenderRef ref="Console"  />
+            <AppenderRef ref="debugLog"/>
+            <AppenderRef ref="infoLog"/>
+            <AppenderRef ref="errorLog"/>
+            <AppenderRef ref="Console"/>
         </Logger>
 
         <Root level="warn">
             <AppenderRef ref="Console"/>
         </Root>
-
     </Loggers>
-
 </Configuration>
