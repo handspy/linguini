@@ -66,6 +66,9 @@ public class TestSimpleTextAnalysis {
             return;
         }
 
+        Assertions.assertEquals(133, textSummary.getNrOfCharacters());
+        Assertions.assertEquals(112, textSummary.getNrOfNonBlankCharacters());
+        Assertions.assertEquals(22, textSummary.getNrOfWords());
         Assertions.assertEquals(1, textSummary.getNrOfSentences());
         Assertions.assertEquals(0, textSummary.getNrOfErrors());
         Assertions.assertEquals(18, textSummary.getNrOfLemmas());

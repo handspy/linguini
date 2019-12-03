@@ -33,5 +33,10 @@
                 Use installed JSpell dictionaries should be installed on filesystem.
             </action>
         </release>
+        <release version="1.0.5" date="2019-12-03" description="Fixes and improvements simple text analysis">
+            <action dev="jcpaiva" type="update">
+                Fix and improve simple text analysis.
+            </action>
+        </release>
     </body>
 </document>

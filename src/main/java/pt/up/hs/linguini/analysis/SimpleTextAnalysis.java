@@ -72,6 +72,20 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
 
         textSummary = new TextSummary();
 
+        // count characters
+        textSummary.setNrOfCharacters(
+                tokens.parallelStream()
+                        .mapToInt(t -> t.getOriginal().length())
+                        .sum());
+
+        // count non-blank characters
+        WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
+        textSummary.setNrOfNonBlankCharacters(
+                tokens.parallelStream()
+                        .filter(whitespaceFilter::accept)
+                        .mapToInt(t -> t.getOriginal().length())
+                        .sum());
+
         // count sentences
         textSummary.setNrOfSentences(sentences.size());
 
@@ -102,9 +116,29 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
                         .orElse(-1)
         );
 
+        // calculate average content word length
+        textSummary.setAvgContentWordLength(
+                contentWordsOnly.parallelStream()
+                        .mapToInt(t -> t.getOriginal().length())
+                        .average()
+                        .orElse(-1)
+        );
+
         // calculate word frequency
         textSummary.setWordFrequency(
                 wordsOnly.parallelStream()
+                        .collect(
+                                Collectors
+                                        .toConcurrentMap(
+                                                Token::getOriginal,
+                                                t -> 1,
+                                                Integer::sum)
+                        )
+        );
+
+        // calculate content word frequency
+        textSummary.setContentWordFrequency(
+                contentWordsOnly.parallelStream()
                         .collect(
                                 Collectors
                                         .toConcurrentMap(
@@ -119,6 +153,8 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         textSummary.setWordsByCategory(
                 jSpellAnnotatedTokens.parallelStream()
                         .filter(at -> at.getInfo() != null)
+                        .filter(at -> !at.getInfo().isPunctuation())
+                        .filter(at -> !at.getInfo().isError())
                         .collect(
                                 Collectors
                                         .groupingByConcurrent(
