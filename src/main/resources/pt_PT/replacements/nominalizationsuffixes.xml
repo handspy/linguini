@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<nominalizationsuffixes>
+  <!-- general data -->
+  <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
+  <!-- infinitive verb terminations to noun form -->
+  <!-- deverbal nominalization -->
+  <replacement target="ar" tag="verb">a</replacement>
+  <replacement target="ar" tag="verb">ação</replacement>
+  <replacement target="ar" tag="verb">ada</replacement>
+  <replacement target="ar" tag="verb">adia</replacement>
+  <replacement target="ar" tag="verb">ador</replacement>
+  <replacement target="ar" tag="verb">adura</replacement>
+  <replacement target="ar" tag="verb">agem</replacement>
+  <replacement target="ar" tag="verb">ame</replacement>
+  <replacement target="ar" tag="verb">amento</replacement>
+  <replacement target="ar" tag="verb">ança</replacement>
+  <replacement target="ar" tag="verb">ância</replacement>
+  <replacement target="ar" tag="verb">ante</replacement>
+  <replacement target="ar" tag="verb">ário</replacement>
+  <replacement target="ar" tag="verb">ata</replacement>
+  <replacement target="ar" tag="verb">atura</replacement>
+  <replacement target="ar" tag="verb">eiro</replacement>
+  <replacement target="ar" tag="verb">ice</replacement>
+  <replacement target="ar" tag="verb">ismo</replacement>
+  <replacement target="ar" tag="verb">o</replacement>
+  <replacement target="ar" tag="verb">or</replacement>
+  <replacement target="ar" tag="verb">ura</replacement>
+  <replacement target="eder" tag="verb">essão</replacement>
+  <replacement target="edir" tag="verb">essão</replacement>
+  <replacement target="ender" tag="verb">ensão</replacement>
+  <replacement target="er" tag="verb">edor</replacement>
+  <replacement target="er" tag="verb">edura</replacement>
+  <replacement target="er" tag="verb">eitor</replacement>
+  <replacement target="er" tag="verb">ença</replacement>
+  <replacement target="er" tag="verb">ença</replacement>
+  <replacement target="er" tag="verb">ência</replacement>
+  <replacement target="er" tag="verb">ente</replacement>
+  <replacement target="er" tag="verb">ição</replacement>
+  <replacement target="er" tag="verb">ida</replacement>
+  <replacement target="er" tag="verb">imento</replacement>
+  <replacement target="eter" tag="verb">issão</replacement>
+  <replacement target="ever" tag="verb">itor</replacement>
+  <replacement target="dir" tag="verb">são</replacement>
+  <replacement target="igir" tag="verb">ector</replacement>
+  <replacement target="imir" tag="verb">essão</replacement>
+  <replacement target="ir" tag="verb">ente</replacement>
+  <replacement target="ir" tag="verb">ida</replacement>
+  <replacement target="ir" tag="verb">idor</replacement>
+  <replacement target="ir" tag="verb">idura</replacement>
+  <replacement target="ir" tag="verb">imento</replacement>
+  <replacement target="ir" tag="verb">inte</replacement>
+  <replacement target="itir" tag="verb">issão</replacement>
+  <replacement target="jar" tag="verb">gem</replacement>
+  <replacement target="rir" tag="verb">ertura</replacement>
+  <replacement target="ser" tag="verb">ente</replacement>
+  <!-- adjective terminations to noun form -->
+  <!-- deadjectival nominalization -->
+  <replacement target="az" tag="adj">ácia</replacement>
+  <replacement target="co" tag="adj">quedo</replacement>
+  <replacement target="co" tag="adj">queira</replacement>
+  <replacement target="co" tag="adj">quice</replacement>
+  <replacement target="e" tag="adj">ia</replacement>
+  <replacement target="emo" tag="adj">émia</replacement>
+  <replacement target="ês" tag="adj">esia</replacement>
+  <replacement target="esto" tag="adj">éstia</replacement>
+  <replacement target="ido" tag="adj">ídia</replacement>
+  <replacement target="o" tag="adj">eira</replacement>
+  <replacement target="o" tag="adj">ia</replacement>
+  <replacement target="o" tag="adj">idade</replacement>
+  <replacement target="uto" tag="adj">úcia</replacement>
+</nominalizationsuffixes>

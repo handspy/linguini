@@ -4,12 +4,13 @@ import pt.up.hs.linguini.exceptions.AnalyzerException;
 import pt.up.hs.linguini.filters.PunctuationTokenFilter;
 import pt.up.hs.linguini.filters.StopTokenFilter;
 import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
-import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
+import pt.up.hs.linguini.lemmatization.Lemmatizer;
+import pt.up.hs.linguini.lemmatization.exceptions.LemmatizationException;
+import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
+import pt.up.hs.linguini.pos.PoSTagger;
 import pt.up.hs.linguini.utils.MathUtils;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -65,29 +66,46 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
             List<Token> tokens) throws AnalyzerException {
 
         // 1. remove whitespaces
-        // 2. remove punctuation
-        // 3. remove stop-words
         WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
+        List<Token> nonWhitespaceTokens = tokens
+                .parallelStream()
+                .filter(whitespaceFilter::accept)
+                .collect(Collectors.toList());
+
+        // 2. annotate tokens with PoS tag (if required)
+        // 3. remove punctuation
+        // 4. remove stop-words
         PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
         StopTokenFilter stopFilter = new StopTokenFilter(locale);
-        Stream<Token> tokenStream = tokens.parallelStream()
-                .filter(whitespaceFilter::accept)
-                .filter(punctuationFilter::accept)
-                .filter(stopFilter::accept);
-
-        // 3. lemmatize (if required)
         if (lemmatize) {
-            JSpellWordAnnotator wordAnnotator;
-            try {
-                wordAnnotator = new JSpellWordAnnotator(locale);
-            } catch (IOException e) {
-                throw new AnalyzerException("Could not lemmatize words", e);
-            }
-            LemmaTokenTransformer transformer = new LemmaTokenTransformer(wordAnnotator);
-            tokenStream = tokenStream.map(transformer::transform);
-        }
+            PoSTagger poSTagger = new PoSTagger(locale);
+            List<AnnotatedToken<String>> taggedTokens = poSTagger.tag(tokens);
+            Stream<AnnotatedToken<String>> tokenStream = taggedTokens
+                    .parallelStream()
+                    .filter(t -> punctuationFilter.accept(t.getToken()))
+                    .filter(t -> stopFilter.accept(t.getToken()));
 
-        this.tokens = tokenStream.collect(Collectors.toList());
+            try {
+                final Lemmatizer lemmatizer = new Lemmatizer(locale);
+                tokenStream = tokenStream
+                        .peek(at -> lemmatizer.lemmatize(
+                                at.getToken(), at.getInfo()
+                        ));
+            } catch (LemmatizationException e) {
+                throw new AnalyzerException("Could not initialize lemmatizer", e);
+            }
+
+            this.tokens = tokenStream
+                    .map(AnnotatedToken::getToken)
+                    .collect(Collectors.toList());
+        } else {
+            Stream<Token> tokenStream = tokens
+                    .parallelStream()
+                    .filter(punctuationFilter::accept)
+                    .filter(stopFilter::accept);
+            this.tokens = tokenStream
+                    .collect(Collectors.toList());
+        }
 
         return this;
     }

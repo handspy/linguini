@@ -2,12 +2,13 @@ package pt.up.hs.linguini.filters;
 
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.utils.InMemoryCache;
-import pt.up.hs.linguini.utils.FileUtils;
+import pt.up.hs.linguini.caching.InMemoryCache;
+import pt.up.hs.linguini.utils.ResourceUtils;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 /**
  * Token filter that accepts only stop words.
@@ -15,7 +16,7 @@ import java.util.Locale;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class StopTokenFilter extends SimpleTokenFilter {
-    private static final String STOPWORDS_PATH = "stopwords/%s/stopwords.txt";
+    private static final String STOPWORDS_PATH = "/%s/stopwords/stopwords.txt";
 
     protected static InMemoryCache<String, Collection<String>> stopwordsCache =
             new InMemoryCache<>(86400, 3600, 20);
@@ -31,7 +32,7 @@ public class StopTokenFilter extends SimpleTokenFilter {
 
     @Override
     public boolean accept(Token token) {
-        return !stopwords.contains(token.getWord());
+        return !stopwords.contains(token.getWord().toLowerCase(locale));
     }
 
     private Collection<String> loadStopWords() throws AnalyzerException {
@@ -39,8 +40,12 @@ public class StopTokenFilter extends SimpleTokenFilter {
         Collection<String> stopwords = stopwordsCache.get(localeStr);
         if (stopwords == null) {
             try {
-                stopwords = FileUtils.readAllLines(
+                stopwords = ResourceUtils.readAllLines(
                         String.format(STOPWORDS_PATH, localeStr));
+                stopwords = stopwords
+                        .parallelStream()
+                        .map(s -> s.toLowerCase(locale))
+                        .collect(Collectors.toList());
                 stopwordsCache.put(localeStr, stopwords);
             } catch (IOException e) {
                 throw new AnalyzerException("Could not read stopwords.", e);

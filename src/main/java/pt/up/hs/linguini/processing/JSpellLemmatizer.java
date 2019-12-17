@@ -4,7 +4,7 @@ import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.processing.exceptions.ProcessorException;
-import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
+import pt.up.hs.linguini.normalizers.LemmaTokenNormalizer;
 
 import java.io.IOException;
 import java.util.List;
@@ -47,10 +47,10 @@ public class JSpellLemmatizer {
             throw new ProcessorException("Could not create JSpell word annotator.", e);
         }
 
-        LemmaTokenTransformer transformer = new LemmaTokenTransformer(wordAnnotator);
+        LemmaTokenNormalizer transformer = new LemmaTokenNormalizer(wordAnnotator);
 
         this.tokens = tokens.parallelStream()
-                .map(transformer::transform)
+                .map(transformer::normalize)
                 .collect(Collectors.toList());
     }
 

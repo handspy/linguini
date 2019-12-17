@@ -7,28 +7,23 @@ package pt.up.hs.linguini.models;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public enum Category {
-
-    VERB,
+    ADJECTIVE,
     PREPOSITION,
-    PERSONAL_PRONOUN,
-    DEMONSTRATIVE_PRONOUN,
-    POSSESSIVE_PRONOUN,
-    INDEFINITE_PRONOUN,
-    RELATIVE_PRONOUN,
-    INTERROGATIVE_PRONOUN,
-    CONJUNCTION,
+    ADVERB,
+    AUXILIAR_VERB,
+    DETERMINER,
+    COORDINATING_CONJUNCTION,
     INTERJECTION,
     NOUN,
-    COMMON_NOUN,
-    PROPER_NAME,
-    APASSIVATING_PARTICLE,
-    ARTICLE,
-    CONTRACTION,
-    CARDINAL,
-    ORDINAL,
-    ADJECTIVE,
-    ADVERB,
-    UNKNOWN;
+    NUMERAL,
+    PARTICLE,
+    PRONOUN,
+    PROPER_NOUN,
+    PUNCTUATION,
+    SUBORDINATING_CONJUNCTION,
+    SYMBOL,
+    VERB,
+    OTHER;
 
     @Override
     public String toString() {

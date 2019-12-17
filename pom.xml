@@ -25,9 +25,10 @@
 
     <name>Linguini</name>
     <description>
-        Small Java library for written text linguistics. Text linguistics is a branch of linguistics concerned with the
-        description and analysis of extended texts (either spoken or written) in communicative contexts. This library
-        aims to be independent of the natural language used.
+        Small Java library for written text linguistics. Text linguistics is a
+        branch of linguistics concerned with the description and analysis of
+        extended texts (either spoken or written) in communicative contexts.
+        This library aims to be independent of the natural language used.
     </description>
     <url>https://github.com/handspy/linguini</url>
     <inceptionYear>2019</inceptionYear>
@@ -213,6 +214,7 @@
         <log4j.version>2.12.1</log4j.version>
         <slf4j.version>1.7.28</slf4j.version>
         <commons-collections4.version>4.4</commons-collections4.version>
+        <stanford-nlp.version>3.9.2</stanford-nlp.version>
         <!-- ============================================== -->
         <!-- ================= MAVEN SITE ================= -->
         <!-- ============================================== -->
@@ -250,6 +252,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>${commons-collections4.version}</version>
+        </dependency>
+        <dependency>
+            <!-- Stanford NLP -->
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>${stanford-nlp.version}</version>
         </dependency>
         <!-- ============================================== -->
         <!-- ================== LOGGERS =================== -->

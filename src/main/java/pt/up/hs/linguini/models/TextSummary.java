@@ -14,7 +14,9 @@ public class TextSummary {
     private int nrOfNonBlankCharacters;
 
     private int nrOfWords;
-    private int nrOfNonStopWords;
+    private int nrOfStopWords;
+    private int nrOfFunctionalWords;
+    private int nrOfContentWords;
 
     private int nrOfErrors;
 
@@ -22,27 +24,67 @@ public class TextSummary {
     private int nrOfLemmas;
 
     private double avgWordLength;
+    private double avgStopWordLength;
+    private double avgFunctionalWordLength;
     private double avgContentWordLength;
 
+    private Map<String, Integer> tokenFrequency;
+
     private Map<String, Integer> wordFrequency;
-    private Map<String, Integer> contentWordFrequency;
+    private Set<String> stopWords;
+    private Set<String> functionalWords;
+    private Set<String> contentWords;
+
+    private Map<String, Integer> lemmaFrequency;
+    private Set<String> lemmas;
+
     private Map<Category, Set<String>> wordsByCategory;
 
     public TextSummary() {
     }
 
-    public TextSummary(int nrOfCharacters, int nrOfNonBlankCharacters, int nrOfWords, int nrOfNonStopWords, int nrOfErrors, int nrOfSentences, int nrOfLemmas, double avgWordLength, double avgContentWordLength, Map<String, Integer> wordFrequency, Map<String, Integer> contentWordFrequency, Map<Category, Set<String>> wordsByCategory) {
+    public TextSummary(
+            int nrOfCharacters,
+            int nrOfNonBlankCharacters,
+            int nrOfWords,
+            int nrOfStopWords,
+            int nrOfFunctionalWords,
+            int nrOfContentWords,
+            int nrOfErrors,
+            int nrOfSentences,
+            int nrOfLemmas,
+            double avgWordLength,
+            double avgStopWordLength,
+            double avgFunctionalWordLength,
+            double avgContentWordLength,
+            Map<String, Integer> tokenFrequency,
+            Map<String, Integer> wordFrequency,
+            Set<String> stopWords,
+            Set<String> functionalWords,
+            Set<String> contentWords,
+            Map<String, Integer> lemmaFrequency,
+            Set<String> lemmas, Map<Category,
+            Set<String>> wordsByCategory) {
         this.nrOfCharacters = nrOfCharacters;
         this.nrOfNonBlankCharacters = nrOfNonBlankCharacters;
         this.nrOfWords = nrOfWords;
-        this.nrOfNonStopWords = nrOfNonStopWords;
+        this.nrOfStopWords = nrOfStopWords;
+        this.nrOfFunctionalWords = nrOfFunctionalWords;
+        this.nrOfContentWords = nrOfContentWords;
         this.nrOfErrors = nrOfErrors;
         this.nrOfSentences = nrOfSentences;
         this.nrOfLemmas = nrOfLemmas;
         this.avgWordLength = avgWordLength;
+        this.avgStopWordLength = avgStopWordLength;
+        this.avgFunctionalWordLength = avgFunctionalWordLength;
         this.avgContentWordLength = avgContentWordLength;
+        this.tokenFrequency = tokenFrequency;
         this.wordFrequency = wordFrequency;
-        this.contentWordFrequency = contentWordFrequency;
+        this.stopWords = stopWords;
+        this.functionalWords = functionalWords;
+        this.contentWords = contentWords;
+        this.lemmaFrequency = lemmaFrequency;
+        this.lemmas = lemmas;
         this.wordsByCategory = wordsByCategory;
     }
 
@@ -70,12 +112,28 @@ public class TextSummary {
         this.nrOfWords = nrOfWords;
     }
 
-    public int getNrOfNonStopWords() {
-        return nrOfNonStopWords;
+    public int getNrOfStopWords() {
+        return nrOfStopWords;
     }
 
-    public void setNrOfNonStopWords(int nrOfNonStopWords) {
-        this.nrOfNonStopWords = nrOfNonStopWords;
+    public void setNrOfStopWords(int nrOfStopWords) {
+        this.nrOfStopWords = nrOfStopWords;
+    }
+
+    public int getNrOfFunctionalWords() {
+        return nrOfFunctionalWords;
+    }
+
+    public void setNrOfFunctionalWords(int nrOfFunctionalWords) {
+        this.nrOfFunctionalWords = nrOfFunctionalWords;
+    }
+
+    public int getNrOfContentWords() {
+        return nrOfContentWords;
+    }
+
+    public void setNrOfContentWords(int nrOfContentWords) {
+        this.nrOfContentWords = nrOfContentWords;
     }
 
     public int getNrOfErrors() {
@@ -110,12 +168,36 @@ public class TextSummary {
         this.avgWordLength = avgWordLength;
     }
 
+    public double getAvgStopWordLength() {
+        return avgStopWordLength;
+    }
+
+    public void setAvgStopWordLength(double avgStopWordLength) {
+        this.avgStopWordLength = avgStopWordLength;
+    }
+
+    public double getAvgFunctionalWordLength() {
+        return avgFunctionalWordLength;
+    }
+
+    public void setAvgFunctionalWordLength(double avgFunctionalWordLength) {
+        this.avgFunctionalWordLength = avgFunctionalWordLength;
+    }
+
     public double getAvgContentWordLength() {
         return avgContentWordLength;
     }
 
     public void setAvgContentWordLength(double avgContentWordLength) {
         this.avgContentWordLength = avgContentWordLength;
+    }
+
+    public Map<String, Integer> getTokenFrequency() {
+        return tokenFrequency;
+    }
+
+    public void setTokenFrequency(Map<String, Integer> tokenFrequency) {
+        this.tokenFrequency = tokenFrequency;
     }
 
     public Map<String, Integer> getWordFrequency() {
@@ -126,12 +208,44 @@ public class TextSummary {
         this.wordFrequency = wordFrequency;
     }
 
-    public Map<String, Integer> getContentWordFrequency() {
-        return contentWordFrequency;
+    public Set<String> getStopWords() {
+        return stopWords;
     }
 
-    public void setContentWordFrequency(Map<String, Integer> contentWordFrequency) {
-        this.contentWordFrequency = contentWordFrequency;
+    public void setStopWords(Set<String> stopWords) {
+        this.stopWords = stopWords;
+    }
+
+    public Set<String> getFunctionalWords() {
+        return functionalWords;
+    }
+
+    public void setFunctionalWords(Set<String> functionalWords) {
+        this.functionalWords = functionalWords;
+    }
+
+    public Set<String> getContentWords() {
+        return contentWords;
+    }
+
+    public void setContentWords(Set<String> contentWords) {
+        this.contentWords = contentWords;
+    }
+
+    public Map<String, Integer> getLemmaFrequency() {
+        return lemmaFrequency;
+    }
+
+    public void setLemmaFrequency(Map<String, Integer> lemmaFrequency) {
+        this.lemmaFrequency = lemmaFrequency;
+    }
+
+    public Set<String> getLemmas() {
+        return lemmas;
+    }
+
+    public void setLemmas(Set<String> lemmas) {
+        this.lemmas = lemmas;
     }
 
     public Map<Category, Set<String>> getWordsByCategory() {

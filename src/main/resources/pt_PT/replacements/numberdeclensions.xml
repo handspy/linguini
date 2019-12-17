@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<numberdeclensions>
+  <!-- general data -->
+  <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
+  <!-- noun|adj -->
+  <replacement target="ães" tag="noun|adj" exceptions="mães">ão</replacement>
+  <replacement target="ãezinhos" tag="noun|adj">ãozinho</replacement>
+  <replacement target="ãezitos" tag="noun|adj">ãozito</replacement>
+  <replacement target="ais" tag="noun|adj" exceptions="cais|mais|pais">al</replacement>
+  <replacement target="ases" tag="noun|adj" exceptions="bases|crases|ênfases|fases|frases">ás</replacement>
+  <replacement target="eis" tag="noun|adj" exceptions="leis">il</replacement>
+  <replacement target="eis" tag="noun|adj" exceptions="ágeis|débeis|difíceis|dúcteis|erécteis|estéreis|fáceis|férteis|físseis|flébeis|fósseis|frágeis|fúteis|gráceis|hábeis|húmeis|ignóbeis|inábeis|leis|mísseis|núbeis|pênseis|portáteis|projécteis|répteis|retrácteis|símeis|tácteis|úteis|verosímeis|versáteis|vibráteis|voláteis">el</replacement>
+  <replacement target="éis" tag="noun|adj">el</replacement>
+  <replacement target="és" tag="noun|adj" exceptions="convés">é</replacement>
+  <replacement target="eses" tag="noun|adj" exceptions="[\wàáãâéêíóõôúç]*teses|conveses">ês</replacement>
+  <replacement target="eses" tag="noun|adj" exceptions="[\wàáãâéêíóõôúç]*teses">és</replacement>
+  <replacement target="is" tag="noun|adj" exceptions="azuis|bílis|biquínis|bois|cais|chassis|crúcis|dois|génesis|lápis|leis|libris|mais|nazis|oásis|pais|pauis|p[éê]naltis|p[éê]nis|(extra-)?praxis|ralis|safaris|sífilis|t[éê]nis">il</replacement>
+  <replacement target="íses" tag="noun|adj">ís</replacement>
+  <replacement target="ízes" tag="noun|adj">iz</replacement>
+  <replacement target="ales" tag="noun|adj">al</replacement>
+  <replacement target="ns" tag="noun|adj">m</replacement>
+  <replacement target="ões" tag="noun|adj">ão</replacement>
+  <replacement target="õezinhos" tag="noun|adj">ãozinho</replacement>
+  <replacement target="õezitos" tag="noun|adj">ãozito</replacement>
+  <replacement target="óis" tag="noun|adj">ol</replacement>
+  <replacement target="res" tag="noun|adj" exceptions="abutres|arredores|árvores|balaústres|desastres|hectares|livres|mármores|massacres|mestres|padres|pedestres|pires|pobres|podres|poses|semilivres|terrestres|timbres">r</replacement>
+  <replacement target="s" tag="noun|adj" exceptions="adeus|alferes|ananás|arredores|atlas|bílis|b[óô]nus|quebra-cabeças|cais|caos|convés|crúcis|deus|férias|fezes|gás|génesis|lápis|libris|[óô]nus|ourives|mais|males|menos|mês|messias|oásis|[óô]nibus|opus|país|p[éê]nis|pêsames|pires|pós|praxis|pus|(\-redes)|reles|revés|s|simples|sífilis|t[éê]nis|trevas|vírus|s|[\wàáãâéêíóõôúç]+ês|((\d+h)?(\d+m))?\d+s"></replacement>
+  <replacement target="ses" tag="noun|adj" exceptions="análises|bases|crises|fases|frases|passes|[\wàáãâéêíóõôúç]+nses|[\wàáãâéêíóõôúç]+sses|[\wàáãâéêíóõôúç]*teses">s</replacement>
+  <replacement target="uis" tag="noun|adj">ul</replacement>
+  <replacement target="zes" tag="noun|adj" exceptions="fezes">z</replacement>
+  <!-- art|pron|pron-indp -->
+  <replacement target="ais" tag="art|pron|pron-indp" exceptions="demais|mais">al</replacement>
+  <replacement target="ns" tag="art|pron|pron-indp">m</replacement>
+  <replacement target="quaisquer" tag="art|pron|pron-indp">qualquer</replacement>
+  <replacement target="s" tag="art|pron|pron-indp" exceptions="ambas|ambos|demais|diversas|diversos|mais|menos|nós|s|várias|vários|vós"></replacement>
+</numberdeclensions>
+
+<!--
+TO ADDRESS AT A LATER STAGE:
+* https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/sobre-a-formacao-do-plural/13422
+-->

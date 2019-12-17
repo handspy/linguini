@@ -1,22 +1,23 @@
 package pt.up.hs.linguini.analysis;
 
+import pt.up.hs.linguini.Config;
 import pt.up.hs.linguini.exceptions.AnalyzerException;
+import pt.up.hs.linguini.exceptions.ConfigException;
 import pt.up.hs.linguini.filters.PunctuationTokenFilter;
 import pt.up.hs.linguini.filters.StopTokenFilter;
 import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
-import pt.up.hs.linguini.jspell.JSpellInfo;
-import pt.up.hs.linguini.jspell.JSpellLex;
+import pt.up.hs.linguini.lemmatization.Lemmatizer;
+import pt.up.hs.linguini.lemmatization.exceptions.LemmatizationException;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Category;
 import pt.up.hs.linguini.models.TextSummary;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.transformers.selection.ChooseFirstStrategy;
-import pt.up.hs.linguini.transformers.selection.SelectionStrategy;
-import pt.up.hs.linguini.transformers.selection.exceptions.SelectionException;
+import pt.up.hs.linguini.pos.PoSTagger;
 import pt.up.hs.linguini.utils.SentenceStream;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -26,49 +27,62 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary> {
+public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
+
+    // properties
+    private Locale locale;
+    private Config config;
+    private List<Token> tokens;
 
     // prepared info for analysis
     private List<String> sentences = null;
+    private List<Token> nonWhitespace = null;
     private List<Token> wordsOnly = null;
-    private List<Token> contentWordsOnly = null;
+    private List<Token> stopWords = null;
+    private List<Token> nonStopWords = null;
+    private List<Token> functionalWords = null;
+    private List<Token> contentWords = null;
+    private List<AnnotatedToken<String>> taggedTokens = null;
     private List<Token> lemmatizedWords = null;
 
     // result
     private TextSummary textSummary;
 
-    public SimpleTextAnalysis() {
+    public SimpleTextAnalysis() throws AnalyzerException {
         this(Locale.ENGLISH);
     }
 
-    public SimpleTextAnalysis(Locale locale) {
-        super(locale);
+    public SimpleTextAnalysis(Locale locale) throws AnalyzerException {
+        this.locale = locale;
+        try {
+            this.config = Config.getInstance(locale);
+        } catch (ConfigException e) {
+            throw new AnalyzerException("Could not load configuration properties.");
+        }
     }
 
     @Override
     public SimpleTextAnalysis preprocess(List<Token> tokens)
             throws AnalyzerException {
-        super.preprocess(tokens);
-
+        this.tokens = tokens;
         prepareHelperLists();
 
         return this;
     }
 
     @Override
-    public Analysis<List<AnnotatedToken<JSpellInfo>>, TextSummary> skipPreprocessing(
-            List<Token> tokens, List<AnnotatedToken<JSpellInfo>> annotatedTokens)
-            throws AnalyzerException {
-        super.skipPreprocessing(tokens, annotatedTokens);
-
+    public SimpleTextAnalysis skipPreprocessing(
+            List<Token> tokens,
+            Void v
+    ) throws AnalyzerException {
+        this.tokens = tokens;
         prepareHelperLists();
 
         return this;
     }
 
     @Override
-    public Analysis<List<AnnotatedToken<JSpellInfo>>, TextSummary> execute()
-            throws AnalyzerException {
+    public SimpleTextAnalysis execute() throws AnalyzerException {
 
         textSummary = new TextSummary();
 
@@ -93,13 +107,8 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
         textSummary.setNrOfWords(wordsOnly.size());
 
         // count stop words
+        textSummary.setNrOfStopWords();
         textSummary.setNrOfNonStopWords(wordsOnly.size() - contentWordsOnly.size());
-
-        // count errors
-        textSummary.setNrOfErrors(
-                (int) jSpellAnnotatedTokens.parallelStream()
-                        .filter(t -> t.getInfo() != null && t.getInfo().isError())
-                        .count());
 
         // count distinct lemmas
         textSummary.setNrOfLemmas(
@@ -148,33 +157,26 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
                         )
         );
 
-        // group words by category
-        SelectionStrategy<JSpellLex> categoryStrategy = new ChooseFirstStrategy<>();
-        textSummary.setWordsByCategory(
-                jSpellAnnotatedTokens.parallelStream()
-                        .filter(at -> at.getInfo() != null)
-                        .filter(at -> !at.getInfo().isPunctuation())
-                        .filter(at -> !at.getInfo().isError())
-                        .collect(
-                                Collectors
-                                        .groupingByConcurrent(
-                                                at -> {
-                                                    JSpellInfo info = at.getInfo();
-                                                    if (info.getRelated() != null && !info.getRelated().isEmpty()) {
-                                                        JSpellLex selectedLex;
-                                                        try {
-                                                            selectedLex = categoryStrategy.select(info.getRelated());
-                                                        } catch (SelectionException ignore) {
-                                                            return Category.UNKNOWN;
-                                                        }
+        // calculate functional words
+        textSummary.
 
-                                                        return selectedLex.getCategory();
-                                                    }
-                                                    return Category.UNKNOWN;
-                                                },
-                                                Collectors.mapping(at -> at.getToken().getOriginal(), Collectors.toSet())
-                                        )
-                        )
+        // group words by category
+        Map<String, String> grammaticalCategories = config.getGrammaticalConversions();
+        textSummary.setWordsByCategory(
+                taggedTokens.parallelStream()
+                    .collect(
+                            Collectors
+                                    .groupingByConcurrent(
+                                            at -> {
+                                                String tag = grammaticalCategories.get(at.getInfo());
+                                                if (tag != null) {
+                                                    return Category.valueOf(tag.toUpperCase());
+                                                }
+                                                return Category.OTHER;
+                                            },
+                                            Collectors.mapping(at -> at.getToken().getOriginal(), Collectors.toSet())
+                                    )
+                    )
         );
 
         return this;
@@ -192,39 +194,58 @@ public class SimpleTextAnalysis extends JSpellPreprocessingAnalysis<TextSummary>
                 .sentences(locale, tokens.stream().map(Token::getOriginal))
                 .collect(Collectors.toList());
 
-        // build words list
+        // build non-whitespace token list
         WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
-        PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
-        wordsOnly = tokens.parallelStream()
+        nonWhitespace = tokens.parallelStream()
                 .filter(whitespaceFilter::accept)
+                .collect(Collectors.toList());
+
+        // build words list
+        PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
+        wordsOnly = nonWhitespace.parallelStream()
                 .filter(punctuationFilter::accept)
+                .collect(Collectors.toList());
+
+        // build stop and word list
+        StopTokenFilter stopFilter = new StopTokenFilter(locale);
+        for (Token token: wordsOnly) {
+            if (stopFilter.accept(token)) {
+
+            } else {
+
+            }
+        }
+        contentWords = wordsOnly.parallelStream()
+                .filter(stopFilter::accept)
+                .collect(Collectors.toList());
+
+        // annotate tokens with PoS tags
+        PoSTagger tagger = new PoSTagger(locale);
+        taggedTokens = tagger.tag(wordsOnly);
+
+        // build functional word list
+        String functionalTags = config.getNonFunctionalTags();
+        functionalWords = taggedTokens
+                .parallelStream()
+                .filter(tt -> tt.getInfo().toUpperCase().matches(functionalTags.toUpperCase()))
+                .map(AnnotatedToken::getToken)
                 .collect(Collectors.toList());
 
         // build content word list
         StopTokenFilter stopFilter = new StopTokenFilter(locale);
-        contentWordsOnly = wordsOnly.parallelStream()
+        contentWords = wordsOnly.parallelStream()
                 .filter(stopFilter::accept)
                 .collect(Collectors.toList());
 
         // build lemmatized word list
-        SelectionStrategy<JSpellLex> strategy = new ChooseFirstStrategy<>();
-        lemmatizedWords = jSpellAnnotatedTokens.parallelStream()
-                .filter(at -> whitespaceFilter.accept(at.getToken()))
-                .filter(at -> punctuationFilter.accept(at.getToken()))
-                .map(at -> {
-                    Token token = at.getToken();
-                    JSpellInfo info = at.getInfo();
-                    if (info != null && info.getRelated() != null && !info.getRelated().isEmpty()) {
-                        JSpellLex selectedLex;
-                        try {
-                            selectedLex = strategy.select(info.getRelated());
-                        } catch (SelectionException ignore) {
-                            return token;
-                        }
-                        token.setWord(selectedLex.getLemma());
-                    }
-                    return token;
-                })
-                .collect(Collectors.toList());
+        try {
+            final Lemmatizer lemmatizer = new Lemmatizer(locale);
+            lemmatizedWords = taggedTokens.parallelStream()
+                    .peek(at -> lemmatizer.lemmatize(at.getToken(), at.getInfo()))
+                    .map(AnnotatedToken::getToken)
+                    .collect(Collectors.toList());
+        } catch (LemmatizationException e) {
+            throw new AnalyzerException("Could not build a lemmatized word list", e);
+        }
     }
 }

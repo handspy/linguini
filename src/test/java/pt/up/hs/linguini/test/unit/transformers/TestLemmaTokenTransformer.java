@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.exceptions.TransformerException;
-import pt.up.hs.linguini.transformers.LemmaTokenTransformer;
-import pt.up.hs.linguini.transformers.TokenTransformer;
+import pt.up.hs.linguini.normalizers.LemmaTokenNormalizer;
+import pt.up.hs.linguini.normalizers.TokenNormalizer;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -21,7 +21,7 @@ import java.util.Locale;
 public class TestLemmaTokenTransformer {
 
     private JSpellWordAnnotator wordAnnotator;
-    private TokenTransformer transformer;
+    private TokenNormalizer transformer;
 
     public TestLemmaTokenTransformer() {
         super();
@@ -31,7 +31,7 @@ public class TestLemmaTokenTransformer {
     public void setup() {
         try {
             wordAnnotator = new JSpellWordAnnotator(new Locale("pt", "PT"));
-            transformer = new LemmaTokenTransformer(wordAnnotator);
+            transformer = new LemmaTokenNormalizer(wordAnnotator);
         } catch (IOException e) {
             Assertions.fail("Failed to initialize transformer", e);
         }
@@ -46,21 +46,21 @@ public class TestLemmaTokenTransformer {
     public final void testTransform() {
         try {
             Assertions.assertEquals("rir",
-                    transformer.transform(new Token(0,"riu")).getWord());
+                    transformer.normalize(new Token(0,"riu")).getWord());
             Assertions.assertEquals("rir",
-                    transformer.transform(new Token(0,"rir")).getWord());
+                    transformer.normalize(new Token(0,"rir")).getWord());
             Assertions.assertEquals("corar",
-                    transformer.transform(new Token(0,"corou")).getWord());
+                    transformer.normalize(new Token(0,"corou")).getWord());
             Assertions.assertEquals("oceano",
-                    transformer.transform(new Token(0,"Oceano")).getWord());
+                    transformer.normalize(new Token(0,"Oceano")).getWord());
             Assertions.assertEquals("bonito",
-                    transformer.transform(new Token(0,"bonita")).getWord());
+                    transformer.normalize(new Token(0,"bonita")).getWord());
             Assertions.assertEquals("engraçar",
-                    transformer.transform(new Token(0,"engraçadíssimo")).getWord());
+                    transformer.normalize(new Token(0,"engraçadíssimo")).getWord());
             Assertions.assertEquals("error",
-                    transformer.transform(new Token(0,"error")).getWord());
+                    transformer.normalize(new Token(0,"error")).getWord());
         } catch (TransformerException e) {
-            Assertions.fail("Failed to transform token", e);
+            Assertions.fail("Failed to normalize token", e);
         }
     }
 }

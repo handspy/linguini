@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<superlativedeclensions>
+  <!-- general data -->
+  <prefix>[\wàáãâéêíóõôúç]*</prefix>
+  <!-- superlative conversion rules to normal -->
+  <replacement target="abilíssimo" tag="noun|adj">ável</replacement>
+  <replacement target="acílimo" tag="noun|adj">ácil</replacement>
+  <replacement target="alíssimo" tag="noun|adj">al</replacement>
+  <replacement target="aníssimo" tag="noun|adj">ão</replacement>
+  <replacement target="ápientíssimo" tag="noun|adj">ábio</replacement>
+  <replacement target="aspérrimo" tag="noun|adj">áspero</replacement>
+  <replacement target="bérrimo" tag="noun|adj">vre</replacement>
+  <replacement target="císsimo" tag="noun|adj" exceptions="amicíssimo">z</replacement>
+  <replacement target="císsimo" tag="noun|adj">go</replacement>
+  <replacement target="crudelíssimo" tag="noun|adj">cruel</replacement>
+  <replacement target="delíssimo" tag="noun|adj">el</replacement>
+  <replacement target="díssimo" tag="noun|adj">do</replacement>
+  <replacement target="ebilíssimo" tag="noun|adj">ével</replacement>
+  <replacement target="elebérrimo" tag="noun|adj">élebre</replacement>
+  <replacement target="entíssimo" tag="noun|adj">o</replacement>
+  <replacement target="érrimo" tag="noun|adj" exceptions="acérrimo">ro</replacement>
+  <replacement target="érrimo" tag="noun|adj">re</replacement>
+  <replacement target="facílimo" tag="noun|adj">fácil</replacement>
+  <replacement target="fidelíssimo" tag="noun|adj">fiel</replacement>
+  <replacement target="generalissímo" tag="noun|adj">geral</replacement>
+  <replacement target="gidíssimo" tag="noun|adj">io</replacement>
+  <replacement target="humílimo" tag="noun|adj">humilde</replacement>
+  <replacement target="ianíssimo" tag="noun|adj">ão</replacement>
+  <replacement target="ibilíssimo" tag="noun|adj">ível</replacement>
+  <replacement target="icílimo" tag="noun|adj">ícil</replacement>
+  <replacement target="icíssimo" tag="noun|adj">es</replacement>
+  <replacement target="ilíssimo" tag="noun|adj" exceptions="humilíssimo">re</replacement>
+  <replacement target="ilíssimo" tag="noun|adj">ilde</replacement>
+  <replacement target="inferior" tag="noun|adj">baixo</replacement>
+  <replacement target="ínfimo" tag="noun|adj">baixo</replacement>
+  <replacement target="íssimo" tag="noun|adj" exceptions="amaríssimo|docíssimo|fortíssimo|simplíssimo">o</replacement>
+  <replacement target="íssimo" tag="noun|adj" exceptions="amaríssimo|simplíssimo">e</replacement>
+  <replacement target="íssimo" tag="noun|adj" exceptions="simplíssimo">go</replacement>
+  <replacement target="íssimo" tag="noun|adj">es</replacement>
+  <replacement target="maior" tag="noun|adj">grande</replacement>
+  <replacement target="malíssimo" tag="noun|adj">mau</replacement>
+  <replacement target="máximo" tag="noun|adj">grande</replacement>
+  <replacement target="melhor" tag="noun|adj">bom</replacement>
+  <replacement target="menor" tag="noun|adj">pequeno</replacement>
+  <replacement target="mínimo" tag="noun|adj">pequeno</replacement>
+  <replacement target="níssimo" tag="noun|adj">m</replacement>
+  <replacement target="obilíssimo" tag="noun|adj" exceptions="nobilíssimo">óvel</replacement>
+  <replacement target="óptimo" tag="noun|adj">bom</replacement>
+  <replacement target="ótimo" tag="noun|adj">bom</replacement>
+  <replacement target="personalíssimo" tag="noun|adj">pessoal</replacement>
+  <replacement target="péssimo" tag="noun|adj">mau</replacement>
+  <replacement target="pior" tag="noun|adj">mau</replacement>
+  <replacement target="quíssimo" tag="noun|adj" exceptions="antiquíssimo">co</replacement>
+  <replacement target="quíssimo" tag="noun|adj">go</replacement>
+  <replacement target="sacratíssimo" tag="noun|adj">sagrado</replacement>
+  <replacement target="sapientíssimo" tag="noun|adj">sábio</replacement>
+  <replacement target="sumo" tag="noun|adj">alto</replacement>
+  <replacement target="superbíssimo" tag="noun|adj">soberbo</replacement>
+  <replacement target="superior" tag="noun|adj">alto</replacement>
+  <replacement target="supremo" tag="noun|adj">alto</replacement>
+  <replacement target="ubilíssimo" tag="noun|adj">úvel</replacement>
+  <replacement target="ulcíssimo" tag="noun|adj">oce</replacement>
+</superlativedeclensions>

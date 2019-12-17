@@ -2,7 +2,7 @@ package pt.up.hs.linguini.jspell;
 
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.models.*;
-import pt.up.hs.linguini.utils.InMemoryCache;
+import pt.up.hs.linguini.caching.InMemoryCache;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.IOException;

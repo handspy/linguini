@@ -6,9 +6,9 @@ import pt.up.hs.linguini.jspell.JSpellLex;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Emotion;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.transformers.selection.ChooseFirstStrategy;
-import pt.up.hs.linguini.transformers.selection.SelectionStrategy;
-import pt.up.hs.linguini.transformers.selection.exceptions.SelectionException;
+import pt.up.hs.linguini.normalizers.selection.ChooseFirstStrategy;
+import pt.up.hs.linguini.normalizers.selection.TokenSelectionStrategy;
+import pt.up.hs.linguini.normalizers.selection.exceptions.SelectionException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.Locale;
  */
 public class EmotionalAnalysis extends JSpellPreprocessingAnalysis<List<AnnotatedToken<Emotion>>> {
     
-    private SelectionStrategy<JSpellLex> lemmaStrategy;
+    private TokenSelectionStrategy<JSpellLex> lemmaStrategy;
 
     private List<AnnotatedToken<Emotion>> emotions;
 
@@ -29,7 +29,7 @@ public class EmotionalAnalysis extends JSpellPreprocessingAnalysis<List<Annotate
         this(locale, new ChooseFirstStrategy<>());
     }
 
-    public EmotionalAnalysis(Locale locale, SelectionStrategy<JSpellLex> lemmaStrategy) {
+    public EmotionalAnalysis(Locale locale, TokenSelectionStrategy<JSpellLex> lemmaStrategy) {
         super(locale);
         this.lemmaStrategy = lemmaStrategy;
     }

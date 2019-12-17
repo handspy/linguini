@@ -5,7 +5,7 @@ import pt.up.hs.linguini.jspell.JSpellInfo;
 import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.transformers.LowercaseTokenTransformer;
+import pt.up.hs.linguini.normalizers.LowercaseTokenNormalizer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,10 +38,11 @@ public abstract class JSpellPreprocessingAnalysis<V>
     public JSpellPreprocessingAnalysis<V> preprocess(
             List<Token> tokens) throws AnalyzerException {
 
-        // transform to lowercase
-        LowercaseTokenTransformer lcTransformer = new LowercaseTokenTransformer();
-        tokens = tokens.parallelStream()
-                .map(lcTransformer::transform)
+        // normalize to lowercase
+        LowercaseTokenNormalizer lcTransformer = new LowercaseTokenNormalizer();
+        tokens = tokens
+                .parallelStream()
+                .peek(lcTransformer::normalize)
                 .collect(Collectors.toList());
 
         // annotate words
