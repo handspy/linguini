@@ -1,14 +1,19 @@
 package pt.up.hs.linguini.analysis;
 
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.filters.PunctuationTokenFilter;
-import pt.up.hs.linguini.filters.StopTokenFilter;
-import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
+import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
+import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
+import pt.up.hs.linguini.filtering.StopTokenFilter;
+import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
+import pt.up.hs.linguini.filtering.exceptions.FilteringException;
 import pt.up.hs.linguini.lemmatization.Lemmatizer;
 import pt.up.hs.linguini.lemmatization.exceptions.LemmatizationException;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
+import pt.up.hs.linguini.pipeline.BatchStep;
+import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.pos.PoSTagger;
+import pt.up.hs.linguini.tokenization.Tokenizer;
+import pt.up.hs.linguini.tokenization.exceptions.TokenizationException;
 import pt.up.hs.linguini.utils.MathUtils;
 
 import java.util.*;
@@ -24,8 +29,8 @@ import java.util.stream.Stream;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
-    private static final int MINIMUM_TOKENS = 50;
+public class LexicalDiversityAnalysis/* implements Analysis<String, Double>*/ {
+    /*private static final int MINIMUM_TOKENS = 50;
     private static final double DEFAULT_MTLD_THRESHOLD = 0.72;
     private static final int DEFAULT_HDD_SAMPLE_SIZE = 42;
 
@@ -62,10 +67,44 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
     }
 
     @Override
-    public Analysis<Void, Double> preprocess(
-            List<Token> tokens) throws AnalyzerException {
+    public Double execute(String text) throws FilteringException, LemmatizationException, TokenizationException {
 
-        // 1. remove whitespaces
+        Step<String, List<Token>> preprocessPipeline =
+                // 1. tokenize text
+                new Tokenizer(locale)
+                        // 2. remove whitespaces
+                        .pipe(new WhitespaceTokenFilter<>());
+
+        if (lemmatize) {
+            preprocessPipeline
+                    .pipe(
+                            // 3. PoS Tagging
+                            new PoSTagger(locale)
+                                // 4. remove punctuation
+                                .pipe(new PunctuationTokenFilter<>())
+                                // 5. remove stopwords
+                                .pipe(new StopTokenFilter<>(locale))
+                                // 6. lemmatize text
+                                .pipe(new BatchStep<>(new Lemmatizer(locale)))
+                    );
+        } else {
+            preprocessPipeline
+                    // 3. remove punctuation
+                    .pipe(new PunctuationTokenFilter<>())
+                    // 4. remove stopwords
+                    .pipe(new StopTokenFilter<>(locale));
+        }
+
+        Step<String, Double> pipeline = preprocessPipeline.pipe()
+
+        return null;
+    }
+
+    @Override
+    public Analysis<Void, Double> preprocess(
+            List<Token> tokens) throws AnalysisException {
+
+        // 1.
         WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
         List<Token> nonWhitespaceTokens = tokens
                 .parallelStream()
@@ -79,7 +118,13 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
         StopTokenFilter stopFilter = new StopTokenFilter(locale);
         if (lemmatize) {
             PoSTagger poSTagger = new PoSTagger(locale);
-            List<AnnotatedToken<String>> taggedTokens = poSTagger.tag(tokens);
+            List<AnnotatedToken<String>> taggedTokens =
+                    poSTagger.tag(nonWhitespaceTokens);
+
+            System.out.println(taggedTokens.stream()
+                    .map(tt -> tt.getToken().getWord() + "_" + tt.getInfo())
+                    .collect(Collectors.joining(" ")));
+
             Stream<AnnotatedToken<String>> tokenStream = taggedTokens
                     .parallelStream()
                     .filter(t -> punctuationFilter.accept(t.getToken()))
@@ -92,14 +137,16 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
                                 at.getToken(), at.getInfo()
                         ));
             } catch (LemmatizationException e) {
-                throw new AnalyzerException("Could not initialize lemmatizer", e);
+                throw new AnalysisException("Could not initialize lemmatizer", e);
             }
 
             this.tokens = tokenStream
                     .map(AnnotatedToken::getToken)
                     .collect(Collectors.toList());
+
+            System.out.println(this.tokens.stream().map(Token::getWord).collect(Collectors.joining(" ")));
         } else {
-            Stream<Token> tokenStream = tokens
+            Stream<Token> tokenStream = nonWhitespaceTokens
                     .parallelStream()
                     .filter(punctuationFilter::accept)
                     .filter(stopFilter::accept);
@@ -117,10 +164,10 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
     }
 
     @Override
-    public LexicalDiversityAnalysis execute() throws AnalyzerException {
+    public LexicalDiversityAnalysis execute() throws AnalysisException {
 
         if (tokens.size() < MINIMUM_TOKENS) {
-            throw new AnalyzerException("Cannot calculate lexical" +
+            throw new AnalysisException("Cannot calculate lexical" +
                     " diversity in texts with less than " + MINIMUM_TOKENS +
                     " words.");
         }
@@ -133,7 +180,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
                 result = mtld(tokens, mtldThreshold);
                 break;
             default:
-                throw new AnalyzerException("Unknown algorithm to calculate lexical" +
+                throw new AnalysisException("Unknown algorithm to calculate lexical" +
                         " diversity '" + algorithm + "'.");
         }
 
@@ -143,7 +190,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
     @Override
     public Double getResult() {
         return result;
-    }
+    }*/
 
     /**
      * HD-D is an idealized version of voc-D. For more information see McCarthy, P.M.
@@ -154,7 +201,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
      * @param sampleSize {@code int} sample size
      * @return TTR
      */
-    private double hdd(List<Token> tokens, int sampleSize) throws AnalyzerException {
+    /*private double hdd(List<Token> tokens, int sampleSize) throws AnalysisException {
         Map<String, Integer> typeCounts = new HashMap<>();
         for (Token token : tokens) {
             if (typeCounts.containsKey(token.getWord())) {
@@ -172,7 +219,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
             hdd += contribution;
         }
         return hdd;
-    }
+    }*/
 
     /**
      * MTLD (Measure of Textual Lexical Diversity, or LDAT, Lexical Diversity
@@ -183,7 +230,7 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
      * @param threshold {@code double} threshold ratio to increment counter
      * @return TTR
      */
-    private double mtld(List<Token> tokens, double threshold) {
+    /*private double mtld(List<Token> tokens, double threshold) {
         List<Token> reversed = new ArrayList<>(tokens);
         Collections.reverse(reversed);
         return (calculateMtld(tokens, threshold) + calculateMtld(reversed, threshold)) / 2;
@@ -215,5 +262,5 @@ public class LexicalDiversityAnalysis implements Analysis<Void, Double> {
     public enum Algorithm {
         MTLD,
         HDD
-    }
+    }*/
 }

@@ -4,14 +4,17 @@ import pt.up.hs.linguini.Config;
 import pt.up.hs.linguini.caching.InMemoryCache;
 import pt.up.hs.linguini.dictionaries.Dictionary;
 import pt.up.hs.linguini.dictionaries.Lexicon;
-import pt.up.hs.linguini.dictionaries.exceptions.DictionaryReadException;
+import pt.up.hs.linguini.dictionaries.exceptions.DictionaryException;
 import pt.up.hs.linguini.exceptions.ConfigException;
-import pt.up.hs.linguini.exceptions.ReplacementException;
 import pt.up.hs.linguini.lemmatization.exceptions.LemmatizationException;
+import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.normalizers.*;
+import pt.up.hs.linguini.normalization.*;
+import pt.up.hs.linguini.normalization.exceptions.NormalizationException;
+import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.ranking.WordRanking;
-import pt.up.hs.linguini.ranking.exceptions.WordRankingReadException;
+import pt.up.hs.linguini.ranking.exceptions.WordRankingException;
+import pt.up.hs.linguini.transformation.LowercaseTokenTransformer;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -20,10 +23,9 @@ import java.util.Map;
 /**
  * Convert a word to its lemma form.
  *
- * @author Ricardo Rodrigues
- * @author (modified by) José Carlos Paiva <code>josepaiva94@gmail.com</code>
+ * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class Lemmatizer {
+public class Lemmatizer implements Step<AnnotatedToken<String>, AnnotatedToken<String>> {
     private static final int AUGMENTATIVE = 1;         // Binary 00000001
     private static final int SUPERLATIVE = 2;          // Binary 00000010
     private static final int DIMINUTIVE = 4;           // Binary 00000100
@@ -44,7 +46,7 @@ public class Lemmatizer {
     private boolean breakOnHyphen;
     private boolean breakOnUnderscore;
 
-    private LowercaseTokenNormalizer lowercaseTokenNormalizer;
+    private LowercaseTokenTransformer lowercaseTokenNormalizer;
     private AdverbTokenNormalizer adverbNormalizer;
     private AugmentativeTokenNormalizer augmentativeNormalizer;
     private DiminutiveTokenNormalizer diminutiveNormalizer;
@@ -97,20 +99,19 @@ public class Lemmatizer {
 
     private void initialize() throws LemmatizationException {
 
-        this.lowercaseTokenNormalizer = new LowercaseTokenNormalizer();
+        this.lowercaseTokenNormalizer = new LowercaseTokenTransformer();
 
         // read normalizers' replacements
         try {
-            this.adverbNormalizer = AdverbTokenNormalizer.getInstance(locale);
-            this.augmentativeNormalizer = AugmentativeTokenNormalizer
-                    .getInstance(locale);
-            this.diminutiveNormalizer = DiminutiveTokenNormalizer.getInstance(locale);
-            this.genderNormalizer = GenderTokenNormalizer.getInstance(locale);
-            this.genderNameNormalizer = GenderNameTokenNormalizer.getInstance(locale);
-            this.numberNormalizer = NumberTokenNormalizer.getInstance(locale);
-            this.superlativeNormalizer = SuperlativeTokenNormalizer.getInstance(locale);
-            this.verbNormalizer = VerbTokenNormalizer.getInstance(locale);
-        } catch (ReplacementException e) {
+            this.adverbNormalizer = new AdverbTokenNormalizer(locale);
+            this.augmentativeNormalizer = new AugmentativeTokenNormalizer(locale);
+            this.diminutiveNormalizer = new DiminutiveTokenNormalizer(locale);
+            this.genderNormalizer = new GenderTokenNormalizer(locale);
+            this.genderNameNormalizer = new GenderNameTokenNormalizer(locale);
+            this.numberNormalizer = new NumberTokenNormalizer(locale);
+            this.superlativeNormalizer = new  SuperlativeTokenNormalizer(locale);
+            this.verbNormalizer = new VerbTokenNormalizer(locale);
+        } catch (NormalizationException e) {
             throw new LemmatizationException(
                     "Could not read normalizers' replacements", e);
         }
@@ -130,8 +131,8 @@ public class Lemmatizer {
 
         // read dictionary
         try {
-            this.dictionary = Dictionary.getInstance(locale);
-        } catch (DictionaryReadException e) {
+            this.dictionary = new Dictionary(locale);
+        } catch (DictionaryException e) {
             throw new LemmatizationException(
                     "Could not read dictionary", e);
         }
@@ -141,8 +142,8 @@ public class Lemmatizer {
 
         // read word ranking
         try {
-            this.wordRanking = WordRanking.getInstance(locale);
-        } catch (WordRankingReadException e) {
+            this.wordRanking = new WordRanking(locale);
+        } catch (WordRankingException e) {
             throw new LemmatizationException(
                     "Could not read word ranking", e);
         }
@@ -158,33 +159,30 @@ public class Lemmatizer {
         }
     }
 
-    public void lemmatize(Token[] tokens, String[] tags) {
-
-        for (int i = 0; i < tokens.length; i++) {
-            lemmatize(tokens[i], tags[i]);
-        }
-    }
-
     /**
      * This method retrieves the lemma of a given token, when classified with
      * a given <em>PoS tag</em>.
      *
-     * @param  token the token whose lemma is wanted
-     * @param  tag the <em>PoS tag</em> of the token
-     * @return the lemma of the token (when classified with the given tag)
+     * @param  taggedToken the <em>PoS tag</em> of the token
+     * @return {@link AnnotatedToken} the lemma of the token (when classified
+     *                                with the given tag)
      */
-    public void lemmatize(Token token, String tag) {
+    @Override
+    public AnnotatedToken<String> execute(AnnotatedToken<String> taggedToken) {
+
+        Token token = taggedToken.getToken();
+        String tag = taggedToken.getInfo();
 
         // check for token|tag in cache
         LemmaCacheKey key = new LemmaCacheKey(
                 token.getWord().toLowerCase(), tag.toLowerCase());
         if (cache.get(key) != null) {
             token.setWord(cache.get(key));
-            return;
+            return taggedToken;
         }
 
         // normalize token/lemma
-        lowercaseTokenNormalizer.normalize(token);
+        lowercaseTokenNormalizer.execute(token);
 
         // simplify pos tag to address label-lex-sw
         String lexTag = tag.toUpperCase();
@@ -208,7 +206,7 @@ public class Lemmatizer {
                     token.getStart() + subwords[0].length() + 1,
                     subwords[1]);
             token.setWord(first.getWord() + "-" + last.getWord());
-            return;
+            return taggedToken;
         }
         if (breakOnUnderscore && token.getWord().contains("_")) {
             String[] subwords = token.getWord().split("_");
@@ -217,7 +215,7 @@ public class Lemmatizer {
                     token.getStart() + subwords[0].length() + 1,
                     subwords[1]);
             token.setWord(first.getWord() + "-" + last.getWord());
-            return;
+            return taggedToken;
         }
 
         // check flags for determining which normalizations to perform
@@ -229,14 +227,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            adverbNormalizer.normalize(token, tag);
+            adverbNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -249,14 +247,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            numberNormalizer.normalize(token, tag);
+            numberNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -269,14 +267,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            superlativeNormalizer.normalize(token, tag);
+            superlativeNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -289,14 +287,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            augmentativeNormalizer.normalize(token, tag);
+            augmentativeNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -309,14 +307,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            diminutiveNormalizer.normalize(token, tag);
+            diminutiveNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -329,14 +327,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            genderNormalizer.normalize(token, tag);
+            genderNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -349,14 +347,14 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            genderNameNormalizer.normalize(token, tag);
+            genderNameNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
         }
 
@@ -369,15 +367,17 @@ public class Lemmatizer {
                 String[] lemmas = dictionary.retrieveLemmas(token.getWord(), lexTag);
                 token.setWord(wordRanking.retrieveTopWord(lemmas));
                 cache.put(key, token.getWord());
-                return;
+                return taggedToken;
             }
 
             // and then check rules
-            verbNormalizer.normalize(token, tag);
+            verbNormalizer.execute(taggedToken);
             if (lexicon.contains(token.getWord(), lexTag)) {
                 cache.put(key, token.getWord());
             }
         }
+
+        return taggedToken;
     }
 
     /**

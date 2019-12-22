@@ -6,7 +6,7 @@ package pt.up.hs.linguini.models;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class AnnotatedToken<T> {
+public class AnnotatedToken<T> implements HasWord {
 
     private Token token;
     private T info;
@@ -33,5 +33,18 @@ public class AnnotatedToken<T> {
 
     public void setInfo(T info) {
         this.info = info;
+    }
+
+    @Override
+    public String word() {
+        if (token == null) {
+            return null;
+        }
+        return token.word();
+    }
+
+    @Override
+    public void word(String word) {
+        token.word(word);
     }
 }

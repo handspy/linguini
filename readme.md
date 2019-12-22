@@ -3,6 +3,9 @@
 Linguini is a small Java library to perform Linguistic Analysis in written texts. It aims to be independent of the
 natural language used, but will firstly focus on the portuguese (Portugal) language.
 
+The portuguese replacements and toponyms were mostly copied from [NLPPORT](https://github.com/rikarudo/NLPPORT), hence those 
+files are licensed under GNU GPLv3.
+
 [![Maven Central](https://img.shields.io/maven-central/v/pt.up.hs/linguini.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/handspy/maven/linguini/images/download.svg)][bintray-repo]
 [![Travis CI](https://travis-ci.com/handspy/linguini.svg?branch=master)][travisci-repo]

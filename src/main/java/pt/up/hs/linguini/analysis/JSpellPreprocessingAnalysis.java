@@ -1,27 +1,13 @@
 package pt.up.hs.linguini.analysis;
 
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.jspell.JSpellInfo;
-import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
-import pt.up.hs.linguini.models.AnnotatedToken;
-import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.normalizers.LowercaseTokenNormalizer;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
-
 /**
  * Analysis based on JSpell.
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public abstract class JSpellPreprocessingAnalysis<V>
-        implements Analysis<List<AnnotatedToken<JSpellInfo>>, V> {
+public abstract class JSpellPreprocessingAnalysis/*<T> implements Analysis<T>*/ {
 
-    protected Locale locale;
+    /*protected Locale locale;
 
     protected List<Token> tokens = null;
     protected List<AnnotatedToken<JSpellInfo>> jSpellAnnotatedTokens = null;
@@ -35,8 +21,7 @@ public abstract class JSpellPreprocessingAnalysis<V>
     }
 
     @Override
-    public JSpellPreprocessingAnalysis<V> preprocess(
-            List<Token> tokens) throws AnalyzerException {
+    public JSpellPreprocessingAnalysis<T> preprocess(String text) throws AnalysisException {
 
         // normalize to lowercase
         LowercaseTokenNormalizer lcTransformer = new LowercaseTokenNormalizer();
@@ -50,7 +35,7 @@ public abstract class JSpellPreprocessingAnalysis<V>
         try {
             wordAnnotator = new JSpellWordAnnotator(locale);
         } catch (IOException e) {
-            throw new AnalyzerException("Failed to build word annotator.", e);
+            throw new AnalysisException("Failed to build word annotator.", e);
         }
 
         jSpellAnnotatedTokens = new ArrayList<>();
@@ -60,7 +45,7 @@ public abstract class JSpellPreprocessingAnalysis<V>
                         wordAnnotator.annotate(token);
                 jSpellAnnotatedTokens.add(annotatedToken);
             } catch (IOException e) {
-                throw new AnalyzerException(
+                throw new AnalysisException(
                         String.format("Failed to analyze word '%s'.", token.getWord()), e);
             }
         }
@@ -68,7 +53,7 @@ public abstract class JSpellPreprocessingAnalysis<V>
         try {
             wordAnnotator.close();
         } catch (IOException e) {
-            throw new AnalyzerException("Failed to close word annotator.", e);
+            throw new AnalysisException("Failed to close word annotator.", e);
         }
 
         this.tokens = tokens;
@@ -80,9 +65,9 @@ public abstract class JSpellPreprocessingAnalysis<V>
     public Analysis<List<AnnotatedToken<JSpellInfo>>, V> skipPreprocessing(
             List<Token> tokens,
             List<AnnotatedToken<JSpellInfo>> jSpellAnnotatedTokens
-    ) throws AnalyzerException {
+    ) throws AnalysisException {
         this.tokens = tokens;
         this.jSpellAnnotatedTokens = jSpellAnnotatedTokens;
         return this;
-    }
+    }*/
 }

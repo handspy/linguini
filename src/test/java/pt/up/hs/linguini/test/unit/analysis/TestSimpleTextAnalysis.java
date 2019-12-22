@@ -4,16 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
-import pt.up.hs.linguini.analysis.SimpleTextAnalysis;
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.models.Category;
+import pt.up.hs.linguini.TextAnalyzer;
+import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.TextSummary;
-import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.processing.TextTokenizer;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -49,20 +45,12 @@ public class TestSimpleTextAnalysis {
     @Test
     public final void testSentence() {
 
-        List<Token> tokens = new TextTokenizer(SENTENCE)
-                .collectAll(true, true);
-
-        SimpleTextAnalysis analysis = new SimpleTextAnalysis(
-                new Locale("pt", "PT"));
-
         TextSummary textSummary;
         try {
-            textSummary = analysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
-            Assertions.fail("Failed to analyze text", e);
+            textSummary = TextAnalyzer.summarize(
+                    new Locale("pt", "PT"), SENTENCE);
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
             return;
         }
 
@@ -71,49 +59,44 @@ public class TestSimpleTextAnalysis {
         Assertions.assertEquals(22, textSummary.getNrOfWords());
         Assertions.assertEquals(1, textSummary.getNrOfSentences());
         Assertions.assertEquals(0, textSummary.getNrOfErrors());
-        Assertions.assertEquals(18, textSummary.getNrOfLemmas());
-        Assertions.assertEquals(9, textSummary.getNrOfNonStopWords());
-        Assertions.assertEquals("4.77",
+        Assertions.assertEquals(9, textSummary.getNrOfStopWords());
+        Assertions.assertEquals(13, textSummary.getNrOfDistinctLemmas());
+        Assertions.assertEquals("6.38",
                 String.format(Locale.US, "%.2f", textSummary.getAvgWordLength()));
 
-        Assertions.assertEquals(2, textSummary.getWordFrequency().get("partiu"));
+        Assertions.assertEquals(2, textSummary.getWordFrequency().get("partir"));
         Assertions.assertEquals(1, textSummary.getWordFrequency().get("conhecimento"));
-        Assertions.assertEquals(2, textSummary.getWordFrequency().get("o"));
 
         Assertions.assertIterableEquals(
-                Arrays.asList("rica"),
-                textSummary.getWordsByCategory().get(Category.ADJECTIVE)
+                Arrays.asList("rico"),
+                textSummary.getWordsByCategory().get("ADJECTIVE")
         );
         Assertions.assertEquals(
-                new HashSet<>(Arrays.asList("tomar", "partiu", "distrair", "correr", "vai")),
-                textSummary.getWordsByCategory().get(Category.VERB)
+                new HashSet<>(Arrays.asList("tomar", "partir", "distrair", "correr")),
+                textSummary.getWordsByCategory().get("VERB")
         );
         Assertions.assertEquals(
-                new HashSet<>(Arrays.asList("Maria", "Eduarda", "Carlos")),
-                textSummary.getWordsByCategory().get(Category.PROPER_NAME)
+                new HashSet<>(Arrays.asList("ir")),
+                textSummary.getWordsByCategory().get("AUXILIAR_VERB")
+        );
+        Assertions.assertEquals(
+                new HashSet<>(Arrays.asList("maria", "eduarda", "carlos")),
+                textSummary.getWordsByCategory().get("PROPER_NOUN")
         );
     }
 
-    @Test
+    /*@Test
     public final void testMultipleSentences() {
-
-        List<Token> tokens = new TextTokenizer(PARAGRAPH)
-                .collectAll(true, true);
-
-        SimpleTextAnalysis analysis = new SimpleTextAnalysis(
-                new Locale("pt", "PT"));
 
         TextSummary textSummary;
         try {
-            textSummary = analysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
-            Assertions.fail("Failed to analyze text", e);
+            textSummary = TextAnalyzer.summarize(
+                    new Locale("pt", "PT"), PARAGRAPH);
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
             return;
         }
 
         Assertions.assertEquals(7, textSummary.getNrOfSentences());
-    }
+    }*/
 }

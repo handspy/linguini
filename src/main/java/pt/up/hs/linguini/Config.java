@@ -21,7 +21,8 @@ public class Config {
     private static final String CUSTOM_DICTIONARIES_PROP = "customDictionaries";
     private static final String LEXICAL_CONVERSIONS_PROP = "lexicalConversions";
     private static final String GRAMMATICAL_CONVERSIONS_PROP = "grammaticalConversions";
-    private static final String NON_FUNCTIONAL_TAGS_PROP = "nonFunctionalTags";
+    private static final String FUNCTIONAL_WORD_TAGS_PROP = "functionalWordTags";
+    private static final String CONTENT_WORD_TAGS_PROP = "contentWordTags";
 
     private static Map<Locale, Config> configs = new HashMap<>();
 
@@ -66,8 +67,12 @@ public class Config {
         return get(DICTIONARY_EXCLUSIONS_PROP);
     }
 
-    public String getNonFunctionalTags() {
-        return get(NON_FUNCTIONAL_TAGS_PROP);
+    public String getContentWordTags() {
+        return get(CONTENT_WORD_TAGS_PROP);
+    }
+
+    public String getFunctionalWordTags() {
+        return get(FUNCTIONAL_WORD_TAGS_PROP);
     }
 
     public Map<String, String> getLexicalConversions() {

@@ -5,9 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.filters.TokenFilter;
-import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
+import pt.up.hs.linguini.filtering.TokenFilter;
+import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Unit tests for whitespace token filter.
@@ -17,7 +21,7 @@ import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
 @RunWith(JUnitPlatform.class)
 public class TestWhitespaceTokenFilter {
 
-    private TokenFilter filter;
+    private TokenFilter<Token> filter;
 
     public TestWhitespaceTokenFilter() {
         super();
@@ -25,18 +29,35 @@ public class TestWhitespaceTokenFilter {
 
     @BeforeEach
     public void setup() {
-       filter = new WhitespaceTokenFilter();
+       filter = new WhitespaceTokenFilter<>();
     }
 
     @Test
     public final void testAccept() {
-        Assertions.assertFalse(filter.accept(new Token(0, " ")));
-        Assertions.assertFalse(filter.accept(new Token(0, "")));
-        Assertions.assertTrue(filter.accept(new Token(0, "no")));
-        Assertions.assertFalse(filter.accept(new Token(0, "\n")));
-        Assertions.assertFalse(filter.accept(new Token(0, "\r")));
-        Assertions.assertFalse(filter.accept(new Token(0, "         \n")));
-        Assertions.assertFalse(filter.accept(new Token(0, "    ")));
-        Assertions.assertTrue(filter.accept(new Token(0, ".")));
+
+        try {
+            List<Token> tokens = filter.execute(
+                    Arrays.asList(
+                        new Token(0, " "),
+                        new Token(0, ""),
+                        new Token(0, "no"),
+                        new Token(0, "\n"),
+                        new Token(0, "\r"),
+                        new Token(0, "         \n"),
+                        new Token(0, "    "),
+                        new Token(0, ".")
+                    )
+            );
+
+            Assertions.assertIterableEquals(
+                    Arrays.asList(
+                            new Token(0, "no"),
+                            new Token(0, ".")
+                    ),
+                    tokens
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
+        }
     }
 }

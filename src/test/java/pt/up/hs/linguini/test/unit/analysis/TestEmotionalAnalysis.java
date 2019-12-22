@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.analysis.EmotionalAnalysis;
-import pt.up.hs.linguini.exceptions.AnalyzerException;
+import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
+import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Emotion;
 import pt.up.hs.linguini.models.Token;
@@ -44,25 +46,24 @@ public class TestEmotionalAnalysis {
     @Test
     public void testSentenceEmotions() {
 
-        List<Token> tokens = new TextTokenizer(SENTENCE)
-                .collectAll(true, true);
-
-        EmotionalAnalysis emotionalAnalysis = new EmotionalAnalysis(
-                new Locale("pt", "PT"));
-
-        List<AnnotatedToken<Emotion>> emotions = null;
+        List<AnnotatedToken<Emotion>> emotions;
         try {
-            emotions = emotionalAnalysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
-            Assertions.fail("Failed to execute emotional analysis.", e);
+            emotions = TextAnalyzer.analyzeEmotions(
+                    new Locale("pt", "PT"),
+                    SENTENCE,
+                    true
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
             return;
         }
 
         Assertions.assertEquals(
-                new Emotion(Emotion.Global.DISCOMFORT, Emotion.Intermediate.DISTURBANCE, Emotion.Specific.AGITATION),
+                new Emotion(
+                        Emotion.Global.DISCOMFORT,
+                        Emotion.Intermediate.DISTURBANCE,
+                        Emotion.Specific.AGITATION
+                ),
                 emotions.get(0).getInfo()
         );
         Assertions.assertEquals(1, emotions.size());
@@ -71,20 +72,15 @@ public class TestEmotionalAnalysis {
     @Test
     public void testParagraphEmotions() {
 
-        List<Token> tokens = new TextTokenizer(PARAGRAPH)
-                .collectAll(true, true);
-
-        EmotionalAnalysis emotionalAnalysis = new EmotionalAnalysis(
-                new Locale("pt", "PT"));
-
-        List<AnnotatedToken<Emotion>> emotions = null;
+        List<AnnotatedToken<Emotion>> emotions;
         try {
-            emotions = emotionalAnalysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
-            Assertions.fail("Failed to execute emotional analysis.", e);
+            emotions = TextAnalyzer.analyzeEmotions(
+                    new Locale("pt", "PT"),
+                    PARAGRAPH,
+                    true
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
             return;
         }
 
@@ -93,16 +89,32 @@ public class TestEmotionalAnalysis {
                 emotions.get(0).getInfo()
         );
         Assertions.assertEquals(
+                166,
+                emotions.get(0).getToken().getStart()
+        );
+        Assertions.assertEquals(
                 new Emotion(Emotion.Global.NON_SPECIFIC, null, null),
                 emotions.get(1).getInfo()
+        );
+        Assertions.assertEquals(
+                330,
+                emotions.get(1).getToken().getStart()
         );
         Assertions.assertEquals(
                 new Emotion(Emotion.Global.DISCOMFORT, Emotion.Intermediate.DEPRESSION, Emotion.Specific.SADNESS),
                 emotions.get(2).getInfo()
         );
         Assertions.assertEquals(
+                386,
+                emotions.get(2).getToken().getStart()
+        );
+        Assertions.assertEquals(
                 new Emotion(Emotion.Global.BENEVOLENCE, Emotion.Intermediate.AFFECTION, Emotion.Specific.LOVE),
                 emotions.get(6).getInfo()
+        );
+        Assertions.assertEquals(
+                793,
+                emotions.get(6).getToken().getStart()
         );
         Assertions.assertEquals(7, emotions.size());
     }

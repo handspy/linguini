@@ -3,6 +3,7 @@ package pt.up.hs.linguini.pos;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.SentenceUtils;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Token;
 
@@ -15,9 +16,9 @@ import java.util.Locale;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class PoSTagger {
+public class PoSTagger implements Step<List<Token>, List<AnnotatedToken<String>>> {
     private static final String FILE_PATH_FORMAT =
-            "%s/models/%s.tagger";
+            "/%s/models/%s.tagger";
 
     private Locale locale;
 
@@ -43,7 +44,8 @@ public class PoSTagger {
      * @param tokens {@link List} list of tokens
      * @return {@link List} list of annotated tokens with its PoS tag
      */
-    public List<AnnotatedToken<String>> tag(List<Token> tokens) {
+    @Override
+    public List<AnnotatedToken<String>> execute(List<Token> tokens) {
 
         String[] words = tokens
                 .parallelStream()

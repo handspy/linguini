@@ -14,7 +14,7 @@ import java.util.Map;
 public class JSpellLex {
     private String lemma;
 
-    private Category category;
+    private String category;
 
     private Map<String, String> classificationProps;
     private Map<String, String> prefixProps;
@@ -38,11 +38,11 @@ public class JSpellLex {
         this.lemma = lemma;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 

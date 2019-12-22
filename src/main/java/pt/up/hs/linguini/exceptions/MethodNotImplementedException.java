@@ -6,7 +6,7 @@ package pt.up.hs.linguini.exceptions;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class MethodNotImplementedException extends AnalyzerException {
+public class MethodNotImplementedException extends LinguiniException {
 
     public MethodNotImplementedException() {
         super("Method not yet implemented.");

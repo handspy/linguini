@@ -6,10 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import pt.up.hs.linguini.exceptions.LinguiniException;
+import pt.up.hs.linguini.filtering.TokenFilter;
+import pt.up.hs.linguini.filtering.exceptions.FilteringException;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.filters.StopTokenFilter;
+import pt.up.hs.linguini.filtering.StopTokenFilter;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -20,7 +24,7 @@ import java.util.Locale;
 @RunWith(JUnitPlatform.class)
 public class TestStopTokenFilter {
 
-    private StopTokenFilter filter;
+    private TokenFilter<Token> filter;
 
     public TestStopTokenFilter() {
         super();
@@ -29,23 +33,41 @@ public class TestStopTokenFilter {
     @BeforeEach
     public void setup() {
         try {
-            filter = new StopTokenFilter(new Locale("pt", "PT"));
-        } catch (AnalyzerException ae) {
-            Assertions.fail("Failed to initialize filter", ae);
+            filter = new StopTokenFilter<>(new Locale("pt", "PT"));
+        } catch (FilteringException fe) {
+            Assertions.fail("Failed to initialize filter", fe);
         }
     }
 
     @Test
     public final void testAccept() {
-        Assertions.assertFalse(filter.accept(new Token(0, "a")));
-        Assertions.assertFalse(filter.accept(new Token(0, "e")));
-        Assertions.assertTrue(filter.accept(new Token(0, "teste")));
-        Assertions.assertFalse(filter.accept(new Token(0, "ainda")));
-        Assertions.assertFalse(filter.accept(new Token(0, "nós")));
-        Assertions.assertFalse(filter.accept(new Token(0, "aquelas")));
-        Assertions.assertFalse(filter.accept(new Token(0, "portanto")));
-        Assertions.assertTrue(filter.accept(new Token(0, "anda")));
-        Assertions.assertFalse(filter.accept(new Token(0, "ora")));
-        Assertions.assertTrue(filter.accept(new Token(0, "")));
+
+        try {
+            List<Token> tokens = filter.execute(
+                    Arrays.asList(
+                            new Token(0, "a"),
+                            new Token(0, "e"),
+                            new Token(0, "teste"),
+                            new Token(0, "ainda"),
+                            new Token(0, "nós"),
+                            new Token(0, "aquelas"),
+                            new Token(0, "portanto"),
+                            new Token(0, "anda"),
+                            new Token(0, "ora"),
+                            new Token(0, "")
+                    )
+            );
+
+            Assertions.assertIterableEquals(
+                    Arrays.asList(
+                            new Token(0, "teste"),
+                            new Token(0, "anda"),
+                            new Token(0, "")
+                    ),
+                    tokens
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
+        }
     }
 }

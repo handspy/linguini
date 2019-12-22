@@ -4,64 +4,64 @@
     <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
 
     <!-- Rules for breaking apart verbs with clitics -->
-    <replacement target="-a">ela</replacement>
-    <replacement target="-as">elas</replacement>
+    <replacement target="-a"> ela</replacement>
+    <replacement target="-as"> elas</replacement>
     <replacement target="-lhe-á">á a ele</replacement>
     <replacement target="-lhe-ão">ão a ele</replacement>
     <replacement target="-lhe-ás">ás a ele</replacement>
     <replacement target="-lhe-ei">ei a ele</replacement>
     <replacement target="-lhe-emos">emos a ele</replacement>
     <replacement target="-lhe-ia">ia a ele</replacement>
-    <replacement target="-lhe">a ele</replacement>
+    <replacement target="-lhe"> a ele</replacement>
     <replacement target="-lhes-á">á a eles</replacement>
     <replacement target="-lhes-ão">ão a eles</replacement>
     <replacement target="-lhes-ás">ás a eles</replacement>
     <replacement target="-lhes-ei">ei a eles</replacement>
     <replacement target="-lhes-emos">emos a eles</replacement>
     <replacement target="-lhes-ia">ia a eles</replacement>
-    <replacement target="-lhes">a eles</replacement>
-    <replacement target="-ma">ela a mim</replacement>
-    <replacement target="-mas">elas a mim</replacement>
+    <replacement target="-lhes"> a eles</replacement>
+    <replacement target="-ma"> ela a mim</replacement>
+    <replacement target="-mas"> elas a mim</replacement>
     <replacement target="-me-á">á a mim</replacement>
     <replacement target="-me-ão">ão a mim</replacement>
     <replacement target="-me-ás">ás a mim</replacement>
     <replacement target="-me-ei">ei a mim</replacement>
     <replacement target="-me-emos">emos a mim</replacement>
     <replacement target="-me-ia">ia a mim</replacement>
-    <replacement target="-me">a mim</replacement>
-    <replacement target="-mo">ele a mim</replacement>
-    <replacement target="-mos">eles a mim</replacement>
-    <replacement target="-na">ela</replacement>
-    <replacement target="-nas">elas</replacement>
-    <replacement target="-no">ele</replacement>
+    <replacement target="-me"> a mim</replacement>
+    <replacement target="-mo"> ele a mim</replacement>
+    <replacement target="-mos"> eles a mim</replacement>
+    <replacement target="-na"> ela</replacement>
+    <replacement target="-nas"> elas</replacement>
+    <replacement target="-no"> ele</replacement>
     <replacement target="-nos-á">á a nós</replacement>
     <replacement target="-nos-ão">ão a nós</replacement>
     <replacement target="-nos-ás">ás a nós</replacement>
     <replacement target="-nos-ei">ei a nós</replacement>
     <replacement target="-nos-emos">emos a nós</replacement>
     <replacement target="-nos-ia">ia a nós</replacement>
-    <replacement target="-nos">a nós</replacement>
-    <replacement target="-nos">eles</replacement>
-    <replacement target="-o">ele</replacement>
-    <replacement target="-os">eles</replacement>
+    <replacement target="-nos"> a nós</replacement>
+    <replacement target="-nos"> eles</replacement>
+    <replacement target="-o"> ele</replacement>
+    <replacement target="-os"> eles</replacement>
     <replacement target="-se-á">á se</replacement>
     <replacement target="-se-ão">ão se</replacement>
     <replacement target="-se-ia">ia se</replacement>
-    <replacement target="-se">se</replacement>
+    <replacement target="-se"> se</replacement>
     <replacement target="-te-á">á a ti</replacement>
     <replacement target="-te-ão">ão a ti</replacement>
     <replacement target="-te-ás">ás a ti</replacement>
     <replacement target="-te-ei">ei a ti</replacement>
     <replacement target="-te-emos">emos a ti</replacement>
     <replacement target="-te-ia">ia a ti</replacement>
-    <replacement target="-te">a ti</replacement>
+    <replacement target="-te"> a ti</replacement>
     <replacement target="-vos-á">á a vós</replacement>
     <replacement target="-vos-ão">ão a vós</replacement>
     <replacement target="-vos-ás">ás a vós</replacement>
     <replacement target="-vos-ei">ei a vós</replacement>
     <replacement target="-vos-emos">emos a vós</replacement>
     <replacement target="-vos-ia">ia a vós</replacement>
-    <replacement target="-vos">a vós</replacement>
+    <replacement target="-vos"> a vós</replacement>
     <replacement target="á-la-á">ará ela</replacement>
     <replacement target="á-la-ão">arão ela</replacement>
     <replacement target="á-la-ás">arás ela</replacement>
@@ -234,8 +234,3 @@
     <replacement target="u-lo">uz ele</replacement>
     <replacement target="u-los">uz eles</replacement>
 </clitics>
-
-<!--
-  TO ADDRESS OR REVIEW AT A LATER STAGE:
-    * https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/pronomes-mesocliticos/7865
--->

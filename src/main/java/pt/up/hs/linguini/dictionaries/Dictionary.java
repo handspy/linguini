@@ -1,14 +1,11 @@
 package pt.up.hs.linguini.dictionaries;
 
 import pt.up.hs.linguini.Config;
-import pt.up.hs.linguini.dictionaries.exceptions.DictionaryFormatException;
-import pt.up.hs.linguini.dictionaries.exceptions.DictionaryReadException;
+import pt.up.hs.linguini.dictionaries.exceptions.DictionaryException;
 import pt.up.hs.linguini.exceptions.ConfigException;
+import pt.up.hs.linguini.resources.ResourceLoader;
+import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.*;
 
 /**
@@ -20,126 +17,36 @@ public class Dictionary {
     private static final String FILE_PATH_FORMAT =
             "/%s/dictionaries/dictionary.dic";
 
-    private static Map<Locale, Dictionary> dictionaries = new HashMap<>();
-
-    private HashMap<String, HashSet<DictionaryEntry>> dictionary =
-            new HashMap<>();
+    private Map<String, HashSet<DictionaryEntry>> dictionary;
 
     private Locale locale;
 
-    public Dictionary(Locale locale) {
+    public Dictionary(Locale locale) throws DictionaryException {
         this.locale = locale;
+        load();
     }
 
-    public static Dictionary getInstance() throws DictionaryReadException {
-        return getInstance(Locale.ENGLISH);
-    }
+    private void load() throws DictionaryException {
+        try {
+            dictionary = ResourceLoader
+                    .readDictionaryEntries(String.format(FILE_PATH_FORMAT, locale));
 
-    public static Dictionary getInstance(Locale locale)
-            throws DictionaryReadException {
-        if (!dictionaries.containsKey(locale)) {
-            String path = String.format(FILE_PATH_FORMAT, locale);
-            InputStream is = Dictionary.class.getResourceAsStream(path);
-            Dictionary dictionary = new Dictionary(locale);
-            dictionary.readDictionary(is);
-
-            try {
-                String[] customDicts = Config.getInstance(locale)
-                        .getCustomDictionaries();
-                for (String customDictPath: customDicts) {
-                    InputStream customDictIs = Dictionary.class
-                            .getResourceAsStream(customDictPath);
-                    dictionary.readDictionary(customDictIs);
-                }
-            } catch (ConfigException e) {
-                throw new DictionaryReadException("Reading custom dictionaries");
-            }
-
-            dictionaries.put(locale, dictionary);
-        }
-        return dictionaries.get(locale);
-    }
-
-    /**
-     * Read a dictionary from an input stream.
-     *
-     * @param is {@link InputStream} input stream to read from
-     */
-    public void readDictionary(InputStream is) throws DictionaryReadException {
-
-        try (
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(is))
-        ) {
-            String line;
-            int lineNumber = 0;
-            while ((line = reader.readLine()) != null) {
-                lineNumber++;
-
-                line = line.trim();
-
-                if (line.isEmpty() || line.startsWith("#"))
-                    continue;
-
-                if (line.contains(",") && line.contains(".")
-                        && (line.indexOf(".") > line.indexOf(",") + 1)
-                        && (line.indexOf(".") + 1 < line.length())
-                        && (((line.charAt(line.indexOf(".") + 1)) != ':')
-                        || (line.charAt(line.indexOf(".") + 1)) != '+')) {
-
-                    String inflectedForm = line.substring(0, line.indexOf(","));
-                    String lemma = line.substring(line.indexOf(",") + 1, line.indexOf("."));
-
-                    String partOfSpeech;
-                    if (line.contains("+")) {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1,
-                                line.indexOf("+"));
-                    } else if (line.contains(":")) {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1,
-                                line.indexOf(":"));
+            String[] customDicts = Config.getInstance(locale)
+                    .getCustomDictionaries();
+            for (String customDictPath: customDicts) {
+                Map<String, HashSet<DictionaryEntry>> customEntries = ResourceLoader
+                        .readDictionaryEntries(customDictPath);
+                for (String key: customEntries.keySet()) {
+                    if (dictionary.containsKey(key)) {
+                        dictionary.get(key).addAll(customEntries.get(key));
                     } else {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1);
+                        dictionary.put(key, customEntries.get(key));
                     }
-
-                    String subcategory = null;
-                    if (line.contains("+")) {
-                        if (line.contains(":")) {
-                            subcategory = line.substring(line.indexOf("+") + 1,
-                                    line.indexOf(":"));
-                        } else {
-                            subcategory = line.substring(line.indexOf("+"));
-                        }
-                    }
-
-                    String morphAttributes = null;
-                    if (line.contains(":")) {
-                        morphAttributes = line.substring(line.indexOf(":") + 1);
-                    }
-
-                    add(new DictionaryEntry(inflectedForm, lemma, partOfSpeech,
-                            subcategory, morphAttributes));
-                } else {
-                    throw new DictionaryFormatException(lineNumber);
                 }
             }
-        } catch (IOException e) {
-            throw new DictionaryReadException(e);
+        } catch (ConfigException | ResourceLoadingException e) {
+            throw new DictionaryException("Failed to load the dictionary", e);
         }
-    }
-
-    /**
-     * Add entry to the dictionary.
-     *
-     * @param entry {@link DictionaryEntry} entry in the dictionary.
-     */
-    public void add(DictionaryEntry entry) {
-        HashSet<DictionaryEntry> entrySet =
-                dictionary.get(entry.getInflectedForm());
-        if (entrySet == null) {
-            entrySet = new HashSet<>();
-        }
-        entrySet.add(entry);
-        dictionary.put(entry.getInflectedForm(), entrySet);
     }
 
     /**

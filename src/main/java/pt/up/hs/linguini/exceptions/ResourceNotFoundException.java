@@ -6,7 +6,7 @@ package pt.up.hs.linguini.exceptions;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class ResourceNotFoundException extends AnalyzerException {
+public class ResourceNotFoundException extends LinguiniException {
 
     public ResourceNotFoundException() {
         super("Resource not found.");

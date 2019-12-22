@@ -5,7 +5,7 @@ package pt.up.hs.linguini.exceptions;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class ConfigException extends Exception {
+public class ConfigException extends LinguiniException {
 
     public ConfigException() {
         this("Could not load configuration");

@@ -1,23 +1,23 @@
 package pt.up.hs.linguini.analysis;
 
-import pt.up.hs.linguini.Config;
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.exceptions.ConfigException;
-import pt.up.hs.linguini.filters.PunctuationTokenFilter;
-import pt.up.hs.linguini.filters.StopTokenFilter;
-import pt.up.hs.linguini.filters.WhitespaceTokenFilter;
+import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
+import pt.up.hs.linguini.analysis.summary.*;
+import pt.up.hs.linguini.exceptions.LinguiniException;
+import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
+import pt.up.hs.linguini.filtering.StopTokenFilter;
+import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
 import pt.up.hs.linguini.lemmatization.Lemmatizer;
-import pt.up.hs.linguini.lemmatization.exceptions.LemmatizationException;
 import pt.up.hs.linguini.models.AnnotatedToken;
-import pt.up.hs.linguini.models.Category;
+import pt.up.hs.linguini.models.HasWord;
 import pt.up.hs.linguini.models.TextSummary;
-import pt.up.hs.linguini.models.Token;
+import pt.up.hs.linguini.pipeline.BatchStep;
 import pt.up.hs.linguini.pos.PoSTagger;
-import pt.up.hs.linguini.utils.SentenceStream;
+import pt.up.hs.linguini.tokenization.SentenceSplitter;
+import pt.up.hs.linguini.tokenization.Tokenizer;
+import pt.up.hs.linguini.transformation.LowercaseTokenTransformer;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -27,43 +27,25 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
+public class SimpleTextAnalysis/* implements Analysis<String, TextSummary>*/ {
 
-    // properties
-    private Locale locale;
-    private Config config;
-    private List<Token> tokens;
+    /*private Locale locale;
 
-    // prepared info for analysis
-    private List<String> sentences = null;
-    private List<Token> nonWhitespace = null;
-    private List<Token> wordsOnly = null;
-    private List<Token> stopWords = null;
-    private List<Token> nonStopWords = null;
-    private List<Token> functionalWords = null;
-    private List<Token> contentWords = null;
-    private List<AnnotatedToken<String>> taggedTokens = null;
-    private List<Token> lemmatizedWords = null;
-
-    // result
-    private TextSummary textSummary;
-
-    public SimpleTextAnalysis() throws AnalyzerException {
+    public SimpleTextAnalysis() throws AnalysisException {
         this(Locale.ENGLISH);
     }
 
-    public SimpleTextAnalysis(Locale locale) throws AnalyzerException {
+    public SimpleTextAnalysis(Locale locale) throws AnalysisException {
         this.locale = locale;
-        try {
-            this.config = Config.getInstance(locale);
-        } catch (ConfigException e) {
-            throw new AnalyzerException("Could not load configuration properties.");
-        }
+    }
+
+    @Override
+    public TextSummary execute(String text) throws LinguiniException {
     }
 
     @Override
     public SimpleTextAnalysis preprocess(List<Token> tokens)
-            throws AnalyzerException {
+            throws AnalysisException {
         this.tokens = tokens;
         prepareHelperLists();
 
@@ -74,15 +56,36 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
     public SimpleTextAnalysis skipPreprocessing(
             List<Token> tokens,
             Void v
-    ) throws AnalyzerException {
+    ) throws AnalysisException {
         this.tokens = tokens;
         prepareHelperLists();
 
         return this;
     }
 
+    public void analyze() throws FilteringException, TokenizationException {
+
+        Tokenizer tokenizer = new Tokenizer(locale);
+
+        Step<List<Token>, List<Token>> whitespaceRemoval = new WhitespaceTokenFilter();
+
+        Step<List<Token>, List<AnnotatedToken<String>>> posTagging =
+                new PoSTagger(locale);
+
+        Step<List<Token>, List<Token>> punctuationRemoval =
+                new PunctuationTokenFilter();
+        Step<List<Token>, List<Token>> stopwordRemoval =
+                new StopTokenFilter(locale);
+
+        whitespaceRemoval.pipe(posTagging).execute();
+
+                .pipe(punctuationRemoval).pipe(stopwordRemoval)
+
+        whitespaceRemoval.pipe(new )
+    }
+
     @Override
-    public SimpleTextAnalysis execute() throws AnalyzerException {
+    public SimpleTextAnalysis execute() throws AnalysisException {
 
         textSummary = new TextSummary();
 
@@ -107,11 +110,16 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
         textSummary.setNrOfWords(wordsOnly.size());
 
         // count stop words
-        textSummary.setNrOfStopWords();
-        textSummary.setNrOfNonStopWords(wordsOnly.size() - contentWordsOnly.size());
+        textSummary.setNrOfStopWords(stopWords.size());
+
+        // count functional words
+        textSummary.setNrOfFunctionalWords(functionalWords.size());
+
+        // count content words
+        textSummary.setNrOfContentWords(contentWords.size());
 
         // count distinct lemmas
-        textSummary.setNrOfLemmas(
+        textSummary.setNrOfDistinctLemmas(
                 (int) lemmatizedWords.parallelStream()
                         .map(Token::getWord)
                         .distinct()
@@ -125,16 +133,60 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
                         .orElse(-1)
         );
 
-        // calculate average content word length
-        textSummary.setAvgContentWordLength(
-                contentWordsOnly.parallelStream()
+        // calculate average non stop word length
+        textSummary.setAvgNonStopWordLength(
+                nonStopWords.parallelStream()
                         .mapToInt(t -> t.getOriginal().length())
                         .average()
                         .orElse(-1)
         );
 
-        // calculate word frequency
-        textSummary.setWordFrequency(
+        // calculate functional word length
+        textSummary.setAvgFunctionalWordLength(
+                functionalWords.parallelStream()
+                        .mapToInt(t -> t.getOriginal().length())
+                        .average()
+                        .orElse(-1)
+        );
+
+        // calculate content word length
+        textSummary.setAvgContentWordLength(
+                contentWords.parallelStream()
+                        .mapToInt(t -> t.getOriginal().length())
+                        .average()
+                        .orElse(-1)
+        );
+
+        // set stop words
+        textSummary.setStopWords(
+                stopWords.parallelStream()
+                        .map(Token::getWord)
+                        .collect(Collectors.toSet())
+        );
+
+        // set functional words
+        textSummary.setFunctionalWords(
+                functionalWords.parallelStream()
+                        .map(Token::getWord)
+                        .collect(Collectors.toSet())
+        );
+
+        // set content words
+        textSummary.setContentWords(
+                contentWords.parallelStream()
+                        .map(Token::getWord)
+                        .collect(Collectors.toSet())
+        );
+
+        // set lemmas
+        textSummary.setLemmas(
+                lemmatizedWords.parallelStream()
+                        .map(Token::getWord)
+                        .collect(Collectors.toSet())
+        );
+
+        // calculate token frequency
+        textSummary.setTokenFrequency(
                 wordsOnly.parallelStream()
                         .collect(
                                 Collectors
@@ -145,20 +197,31 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
                         )
         );
 
-        // calculate content word frequency
-        textSummary.setContentWordFrequency(
-                contentWordsOnly.parallelStream()
+        // calculate word frequency
+        textSummary.setWordFrequency(
+                wordsOnly.parallelStream()
                         .collect(
                                 Collectors
                                         .toConcurrentMap(
-                                                Token::getOriginal,
+                                                t -> t.getWord().toLowerCase(),
                                                 t -> 1,
-                                                Integer::sum)
+                                                Integer::sum
+                                        )
                         )
         );
 
-        // calculate functional words
-        textSummary.
+        // calculate lemma frequency
+        textSummary.setLemmaFrequency(
+                lemmatizedWords.parallelStream()
+                        .collect(
+                                Collectors
+                                        .toConcurrentMap(
+                                                t -> t.getWord().toLowerCase(),
+                                                t -> 1,
+                                                Integer::sum
+                                        )
+                        )
+        );
 
         // group words by category
         Map<String, String> grammaticalCategories = config.getGrammaticalConversions();
@@ -187,7 +250,7 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
         return textSummary;
     }
 
-    private void prepareHelperLists() throws AnalyzerException {
+    private void prepareHelperLists() throws AnalysisException {
 
         // build sentences
         sentences = SentenceStream
@@ -196,9 +259,13 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
 
         // build non-whitespace token list
         WhitespaceTokenFilter whitespaceFilter = new WhitespaceTokenFilter();
-        nonWhitespace = tokens.parallelStream()
+        List<Token> nonWhitespace = tokens.parallelStream()
                 .filter(whitespaceFilter::accept)
                 .collect(Collectors.toList());
+
+        // annotate tokens with PoS tags
+        PoSTagger tagger = new PoSTagger(locale);
+        taggedTokens = tagger.tag(nonWhitespace);
 
         // build words list
         PunctuationTokenFilter punctuationFilter = new PunctuationTokenFilter();
@@ -206,36 +273,32 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
                 .filter(punctuationFilter::accept)
                 .collect(Collectors.toList());
 
-        // build stop and word list
+        // build stop, non-stop, functional, and content word lists
         StopTokenFilter stopFilter = new StopTokenFilter(locale);
-        for (Token token: wordsOnly) {
+        String nonFunctionalTags = config.getNonFunctionalTags().toUpperCase();
+
+        nonStopWords = new ArrayList<>();
+        stopWords = new ArrayList<>();
+        contentWords = new ArrayList<>();
+        functionalWords = new ArrayList<>();
+
+        for (AnnotatedToken<String> taggedToken: taggedTokens) {
+            Token token = taggedToken.getToken();
+            String tag = taggedToken.getInfo().toUpperCase();
+            if (tag.equals("PUNCT")) {
+                continue;
+            }
             if (stopFilter.accept(token)) {
-
+                nonStopWords.add(token);
+                if (tag.matches(nonFunctionalTags)) {
+                    contentWords.add(token);
+                } else {
+                    functionalWords.add(token);
+                }
             } else {
-
+                stopWords.add(token);
             }
         }
-        contentWords = wordsOnly.parallelStream()
-                .filter(stopFilter::accept)
-                .collect(Collectors.toList());
-
-        // annotate tokens with PoS tags
-        PoSTagger tagger = new PoSTagger(locale);
-        taggedTokens = tagger.tag(wordsOnly);
-
-        // build functional word list
-        String functionalTags = config.getNonFunctionalTags();
-        functionalWords = taggedTokens
-                .parallelStream()
-                .filter(tt -> tt.getInfo().toUpperCase().matches(functionalTags.toUpperCase()))
-                .map(AnnotatedToken::getToken)
-                .collect(Collectors.toList());
-
-        // build content word list
-        StopTokenFilter stopFilter = new StopTokenFilter(locale);
-        contentWords = wordsOnly.parallelStream()
-                .filter(stopFilter::accept)
-                .collect(Collectors.toList());
 
         // build lemmatized word list
         try {
@@ -245,7 +308,7 @@ public class SimpleTextAnalysis implements Analysis<Void, TextSummary> {
                     .map(AnnotatedToken::getToken)
                     .collect(Collectors.toList());
         } catch (LemmatizationException e) {
-            throw new AnalyzerException("Could not build a lemmatized word list", e);
+            throw new AnalysisException("Could not build a lemmatized word list", e);
         }
-    }
+    }*/
 }

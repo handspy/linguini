@@ -1,8 +1,10 @@
 package pt.up.hs.linguini.jspell;
 
+import pt.up.hs.linguini.jspell.exceptions.JSpellAnnotatorException;
 import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.models.*;
 import pt.up.hs.linguini.caching.InMemoryCache;
+import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.IOException;
@@ -15,7 +17,8 @@ import java.util.regex.Pattern;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class JSpellWordAnnotator implements AutoCloseable {
+public class JSpellWordAnnotator implements
+        Step<List<Token>, List<AnnotatedToken<JSpellInfo>>> {
 
     private static final Pattern HEADER_PATTERN =
             Pattern.compile("^([*&])\\s([^\\s]+)\\s([^\\s]+)\\s:");
@@ -24,7 +27,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
     private static final Pattern ERROR_CORRECTIONS_PATTERN =
             Pattern.compile("([^=]+)=\\s+lex\\((.[^,\\s]+),\\s*\\[([^]]*)],\\s*\\[([^]]*)],\\s*\\[([^]]*)],\\s*\\[([^]]*)]\\)[,;]?\\s?");
 
-    protected static InMemoryCache<String, JSpellInfo> cache =
+    private static InMemoryCache<String, JSpellInfo> cache =
             new InMemoryCache<>(3600, 600, 500);
 
     private static final String WORD_CATEGORY_PROP = "CAT";
@@ -34,32 +37,55 @@ public class JSpellWordAnnotator implements AutoCloseable {
 
     private final JSpellWrapper jSpell;
 
-    public JSpellWordAnnotator(Locale locale) throws IOException {
+    public JSpellWordAnnotator(Locale locale) {
         this.jSpell = new JSpellWrapper(locale);
-        jSpell.start();
-    }
-
-    public AnnotatedToken<JSpellInfo> annotate(Token token) throws IOException {
-        if (jSpell.isStopped()) {
-            throw new IOException("Annotator's JSpell process already closed");
-        }
-        if (StringUtils.isBlankString(token.getWord())) {
-            return new AnnotatedToken<>(token, null);
-        }
-        JSpellInfo info = cache.get(token.getWord());
-        if (info == null) {
-            synchronized (jSpell) {
-                String output = jSpell.process(token.getWord());
-                info = processJSpellOutput(output);
-                cache.put(token.getWord(), info);
-            }
-        }
-        return new AnnotatedToken<>(token, info);
     }
 
     @Override
-    public void close() throws IOException {
-        jSpell.close();
+    public List<AnnotatedToken<JSpellInfo>> execute(List<Token> tokens)
+            throws JSpellAnnotatorException {
+
+        try {
+            jSpell.start();
+        } catch (IOException e) {
+            throw new JSpellAnnotatorException(
+                    "JSpell annotator's process could not be started", e);
+        }
+
+        List<AnnotatedToken<JSpellInfo>> annotatedTokens = new ArrayList<>();
+
+        for (Token token: tokens) {
+
+            if (StringUtils.isBlankString(token.getWord())) {
+                annotatedTokens.add(new AnnotatedToken<>(token, null));
+            }
+
+            JSpellInfo info = cache.get(token.getWord());
+            if (info == null) {
+                synchronized (jSpell) {
+                    String output;
+                    try {
+                        output = jSpell.process(token.getWord());
+                    } catch (IOException e) {
+                        throw new JSpellAnnotatorException(
+                                "Failed to annotate token with JSpell", e);
+                    }
+                    info = processJSpellOutput(output);
+                    cache.put(token.getWord(), info);
+                }
+            }
+
+            annotatedTokens.add(new AnnotatedToken<>(token, info));
+        }
+
+        try {
+            jSpell.close();
+        } catch (IOException e) {
+            throw new JSpellAnnotatorException(
+                    "JSpell annotator's process could not be stopped", e);
+        }
+
+        return annotatedTokens;
     }
 
     private JSpellInfo processJSpellOutput(String output) {
@@ -123,10 +149,11 @@ public class JSpellWordAnnotator implements AutoCloseable {
         return corrections;
     }
 
-    private JSpellLex buildLex(String lemma,
-                                              String classification,
-                                              String prefix,
-                                              String suffixT1, String suffixT2) {
+    private JSpellLex buildLex(
+            String lemma,
+            String classification,
+            String prefix,
+            String suffixT1, String suffixT2) {
 
         JSpellLex lex = new JSpellLex();
         lex.setLemma(lemma.toLowerCase());
@@ -148,24 +175,12 @@ public class JSpellWordAnnotator implements AutoCloseable {
         Map<String, String> suffixT2Props = extractKeyValueData(suffixT2);
 
         if (prefixProps.containsKey(WORD_CATEGORY_PROP)) {
-            lex.setCategory(
-                    JSpellMapper.mapCategory(prefixProps.get(WORD_CATEGORY_PROP))
-            );
+            lex.setCategory(prefixProps.get(WORD_CATEGORY_PROP));
         } else if (suffixT1Props.containsKey(WORD_CATEGORY_PROP)) {
-            lex.setCategory(
-                    JSpellMapper.mapCategory(suffixT1Props.get(WORD_CATEGORY_PROP))
-            );
+            lex.setCategory(suffixT1Props.get(WORD_CATEGORY_PROP));
         } else if (suffixT2Props.containsKey(WORD_CATEGORY_PROP)) {
-            lex.setCategory(
-                    JSpellMapper.mapCategory(suffixT2Props.get(WORD_CATEGORY_PROP))
-            );
-        } else if (classificationProps.containsKey(WORD_CATEGORY_PROP)) {
-            lex.setCategory(
-                    JSpellMapper.mapCategory(classificationProps.get(WORD_CATEGORY_PROP))
-            );
-        } else {
-            lex.setCategory(Category.UNKNOWN);
-        }
+            lex.setCategory(suffixT2Props.get(WORD_CATEGORY_PROP));
+        } else lex.setCategory(classificationProps.getOrDefault(WORD_CATEGORY_PROP, "_"));
 
         lex.setPrefixProps(prefixProps);
         lex.setSuffixT1Props(suffixT1Props);
@@ -197,7 +212,7 @@ public class JSpellWordAnnotator implements AutoCloseable {
                         extractingEmotion = false;
                         continue;
                     }
-                } else if (data.containsKey("EmoGlobal"))
+                } else if (data.containsKey(WORD_GLOBAL_EMOTION_PROP))
                     continue;
 
                 extractingEmotion = true;

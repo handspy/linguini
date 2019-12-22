@@ -1,9 +1,7 @@
 package pt.up.hs.linguini.jspell;
 
 import pt.up.hs.linguini.models.Emotion;
-import pt.up.hs.linguini.models.Category;
 
-import static pt.up.hs.linguini.models.Category.*;
 import static pt.up.hs.linguini.models.Emotion.Global.*;
 import static pt.up.hs.linguini.models.Emotion.Intermediate.*;
 import static pt.up.hs.linguini.models.Emotion.Specific.*;
@@ -14,60 +12,6 @@ import static pt.up.hs.linguini.models.Emotion.Specific.*;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class JSpellMapper {
-
-    public static Category mapCategory(String abbrev) {
-
-        if (abbrev == null)
-            return null;
-
-        switch (abbrev) {
-            case "v":
-                return VERB;
-            case "prep":
-                return PREPOSITION;
-            case "ppes":
-                return PERSONAL_PRONOUN;
-            case "pdem":
-                return DEMONSTRATIVE_PRONOUN;
-            case "ppos":
-                return POSSESSIVE_PRONOUN;
-            case "pind":
-                return INDEFINITE_PRONOUN;
-            case "prel":
-                return RELATIVE_PRONOUN;
-            case "pint":
-                return INTERROGATIVE_PRONOUN;
-            case "con":
-            case "conj":
-                return CONJUNCTION;
-            case "cp":
-                return CONTRACTION;
-            case "in":
-                return INTERJECTION;
-            case "a_nc":
-                return NOUN;
-            case "nc":
-                return COMMON_NOUN;
-            case "np":
-            case "npm":
-                return PROPER_NAME;
-            case "adj":
-                return ADJECTIVE;
-            case "art":
-                return ARTICLE;
-            case "adv":
-                return ADVERB;
-            case "ncard":
-            case "card":
-                return CARDINAL;
-            case "nord":
-                return ORDINAL;
-            case "pass":
-                return APASSIVATING_PARTICLE;
-            default:
-                return null;
-        }
-    }
 
     public static Emotion mapEmotion(String global, String intermediate, String specific) {
         return new Emotion(

@@ -4,17 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
-import pt.up.hs.linguini.analysis.LexicalDiversityAnalysis;
-import pt.up.hs.linguini.analysis.SimpleTextAnalysis;
-import pt.up.hs.linguini.exceptions.AnalyzerException;
-import pt.up.hs.linguini.models.Category;
-import pt.up.hs.linguini.models.TextSummary;
-import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.processing.TextTokenizer;
+import pt.up.hs.linguini.TextAnalyzer;
+import pt.up.hs.linguini.analysis.lexicaldiversity.LDAlgorithm;
+import pt.up.hs.linguini.exceptions.LinguiniException;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -46,52 +39,84 @@ public class TestLexicalDiversity {
     @Test
     public final void testMtld() {
 
-        List<Token> tokens = new TextTokenizer(PARAGRAPH)
-                .collectAll(true, true);
-
-        LexicalDiversityAnalysis analysis = new LexicalDiversityAnalysis(
-                new Locale("pt", "PT"),
-                LexicalDiversityAnalysis.Algorithm.MTLD,
-                true);
-
         Double result;
         try {
-            result = analysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
+            result = TextAnalyzer.analyzeLexicalDiversity(
+                    new Locale("pt", "PT"),
+                    PARAGRAPH,
+                    LDAlgorithm.MTLD,
+                    false,
+                    null, null
+            );
+        } catch (LinguiniException e) {
             Assertions.fail("Failed to analyze text", e);
             return;
         }
 
-        Assertions.assertEquals("111.655",
+        Assertions.assertEquals("43.482",
+                String.format(Locale.US, "%.3f", result));
+    }
+
+    @Test
+    public final void testMtldLemmatized() {
+
+        Double result;
+        try {
+            result = TextAnalyzer.analyzeLexicalDiversity(
+                    new Locale("pt", "PT"),
+                    PARAGRAPH,
+                    LDAlgorithm.MTLD,
+                    true,
+                    null, null
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Failed to analyze text", e);
+            return;
+        }
+
+        Assertions.assertEquals("117.623",
                 String.format(Locale.US, "%.3f", result));
     }
 
     @Test
     public final void testHdd() {
 
-        List<Token> tokens = new TextTokenizer(PARAGRAPH)
-                .collectAll(true, true);
-
-        LexicalDiversityAnalysis analysis = new LexicalDiversityAnalysis(
-                new Locale("pt", "PT"),
-                LexicalDiversityAnalysis.Algorithm.HDD,
-                true);
-
         Double result;
         try {
-            result = analysis
-                    .preprocess(tokens)
-                    .execute()
-                    .getResult();
-        } catch (AnalyzerException e) {
+            result = TextAnalyzer.analyzeLexicalDiversity(
+                    new Locale("pt", "PT"),
+                    PARAGRAPH,
+                    LDAlgorithm.HDD,
+                    false,
+                    null, null
+            );
+        } catch (LinguiniException e) {
             Assertions.fail("Failed to analyze text", e);
             return;
         }
 
-        Assertions.assertEquals("0.875",
+        Assertions.assertEquals("0.757",
+                String.format(Locale.US, "%.3f", result));
+    }
+
+    @Test
+    public final void testHddLemmatized() {
+
+        Double result;
+        try {
+            result = TextAnalyzer.analyzeLexicalDiversity(
+                    new Locale("pt", "PT"),
+                    PARAGRAPH,
+                    LDAlgorithm.HDD,
+                    true,
+                    null, null
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Failed to analyze text", e);
+            return;
+        }
+
+        Assertions.assertEquals("0.880",
                 String.format(Locale.US, "%.3f", result));
     }
 }

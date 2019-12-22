@@ -1,12 +1,9 @@
 package pt.up.hs.linguini.ranking;
 
-import pt.up.hs.linguini.ranking.exceptions.WordRankingFormatException;
-import pt.up.hs.linguini.ranking.exceptions.WordRankingReadException;
+import pt.up.hs.linguini.ranking.exceptions.WordRankingException;
+import pt.up.hs.linguini.resources.ResourceLoader;
+import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.*;
 
 /**
@@ -15,92 +12,28 @@ import java.util.*;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class WordRanking {
-    private static final String FORMS_FILE_PATH_FORMAT =
-            "/%s/frequencies/forms.total.txt";
-    private static final String LEMMAS_FILE_PATH_FORMAT =
-            "/%s/frequencies/lemmas.total.txt";
-
-    private static Map<Locale, WordRanking> wordRanking =
-            new HashMap<>();
+    private static final String FILE_PATH_FORMAT =
+            "/%s/frequencies/total.txt";
 
     private Locale locale;
 
-    private Map<String, WordRankingEntry> formsEntries;
-    private Map<String, WordRankingEntry> lemmasEntries;
+    private Map<String, WordRankingEntry> entries;
 
-    private WordRanking(Locale locale) {
-        this(locale, new HashMap<>(), new HashMap<>());
+    private WordRanking() throws WordRankingException {
+        this(Locale.getDefault());
     }
 
-    public WordRanking(
-            Locale locale,
-            Map<String, WordRankingEntry> formsEntries,
-            Map<String, WordRankingEntry> lemmasEntries
-    ) {
+    public WordRanking(Locale locale) throws WordRankingException {
         this.locale = locale;
-        this.formsEntries = formsEntries;
-        this.lemmasEntries = lemmasEntries;
+        load();
     }
 
-    public static WordRanking getInstance() throws WordRankingReadException {
-        return getInstance(Locale.ENGLISH);
-    }
-
-    public static WordRanking getInstance(Locale locale)
-            throws WordRankingReadException {
-        if (!wordRanking.containsKey(locale)) {
-            String formsPath = String.format(FORMS_FILE_PATH_FORMAT,
-                    locale.toString());
-            InputStream formsIs = WordRanking.class.getResourceAsStream(formsPath);
-            Map<String, WordRankingEntry> formsEntries =
-                    readWordRankingFile(formsIs);
-
-            String lemmasPath = String.format(LEMMAS_FILE_PATH_FORMAT, locale);
-            InputStream lemmasIs = WordRanking.class
-                    .getResourceAsStream(lemmasPath);
-            Map<String, WordRankingEntry> lemmasEntries =
-                    readWordRankingFile(lemmasIs);
-
-            wordRanking.put(locale, new WordRanking(locale, formsEntries, lemmasEntries));
-        }
-        return wordRanking.get(locale);
-    }
-
-    private static Map<String, WordRankingEntry> readWordRankingFile(
-            InputStream is) throws WordRankingReadException {
-
-        try (
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(is))
-        ) {
-            Map<String, WordRankingEntry> entries = new HashMap<>();
-
-            String line;
-            int rank = 0;
-            int lineNumber = 0;
-            while ((line = reader.readLine()) != null) {
-                lineNumber++;
-                line = line.trim();
-
-                if (line.isEmpty() || line.startsWith("#"))
-                    continue;
-
-                if (line.contains("\t") && (line.indexOf("\t") + 1 < line.length())) {
-                    String word = line
-                            .substring(line.indexOf("\t") + 1)
-                            .replace("=", " ");
-                    int frequency = Integer.parseInt(
-                            line.substring(0, line.indexOf("\t")));
-                    entries.put(word,
-                            new WordRankingEntry(word, frequency, ++rank));
-                } else {
-                    throw new WordRankingFormatException(lineNumber);
-                }
-            }
-
-            return entries;
-        } catch (IOException e) {
-            throw new WordRankingReadException(e);
+    private void load() throws WordRankingException {
+        try {
+            this.entries = ResourceLoader.readWordRankingEntries(
+                    String.format(FILE_PATH_FORMAT, locale));
+        } catch (ResourceLoadingException e) {
+            throw new WordRankingException("Could not load word ranking entries", e);
         }
     }
 
@@ -111,8 +44,8 @@ public class WordRanking {
      * @return {@code int} the frequency of the word.
      */
     public int getFrequency(String word) {
-        if (lemmasEntries.get(word) != null) {
-            return lemmasEntries.get(word).getFrequency();
+        if (entries.get(word) != null) {
+            return entries.get(word).getFrequency();
         }
         return -1;
     }
@@ -124,8 +57,8 @@ public class WordRanking {
      * @return {@code int} the ranking of the word.
      */
     public int getRank(String word) {
-        if (lemmasEntries.get(word) != null) {
-            return lemmasEntries.get(word).getRank();
+        if (entries.get(word) != null) {
+            return entries.get(word).getRank();
         }
         return -1;
     }

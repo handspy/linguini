@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class TestTextTokenizer {
     private static final String SENTENCE = "Ao tomar conhecimento, Maria " +
             "Eduarda, agora rica, parte para o estrangeiro; e Carlos, para " +
-            "se distrair, vai correr o mundo.";
+            "se distrair, vai correr o mundo. Foi-se!";
 
     @Test
     public final void testSentenceWithBlanksAndPunctuation() {
@@ -37,7 +37,7 @@ public class TestTextTokenizer {
                         "Eduarda", ",", " ", "agora", " ", "rica", ",", " ", "parte", " ",
                         "para", " ", "o", " ", "estrangeiro", ";", " ", "e", " ", "Carlos", ",", " ",
                         "para", " ", "se", " ", "distrair", ",", " ", "vai", " ", "correr", " ", "o", " ",
-                        "mundo", "."),
+                        "mundo", ".", " ", "Foi-se", "!"),
                 tokens);
     }
 
@@ -56,7 +56,7 @@ public class TestTextTokenizer {
                         "Eduarda", ",", "agora", "rica", ",", "parte",
                         "para", "o", "estrangeiro", ";", "e", "Carlos", ",",
                         "para", "se", "distrair", ",", "vai", "correr", "o",
-                        "mundo", "."),
+                        "mundo", ".", "Foi-se", "!"),
                 tokens);
     }
 
@@ -75,7 +75,7 @@ public class TestTextTokenizer {
                         "Eduarda", "agora", "rica", "parte",
                         "para", "o", "estrangeiro", "e", "Carlos",
                         "para", "se", "distrair", "vai", "correr", "o",
-                        "mundo"),
+                        "mundo", "Foi-se"),
                 tokens);
     }
 

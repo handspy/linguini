@@ -5,8 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import pt.up.hs.linguini.exceptions.LinguiniException;
+import pt.up.hs.linguini.filtering.TokenFilter;
 import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.filters.PunctuationTokenFilter;
+import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Unit tests for punctuation token filter.
@@ -16,7 +21,7 @@ import pt.up.hs.linguini.filters.PunctuationTokenFilter;
 @RunWith(JUnitPlatform.class)
 public class TestPunctuationTokenFilter {
     
-    private PunctuationTokenFilter filter;
+    private TokenFilter<Token> filter;
 
     public TestPunctuationTokenFilter() {
         super();
@@ -24,19 +29,37 @@ public class TestPunctuationTokenFilter {
 
     @BeforeEach
     public void setup() {
-       filter = new PunctuationTokenFilter();
+       filter = new PunctuationTokenFilter<>();
     }
 
     @Test
     public final void testAccept() {
-        Assertions.assertFalse(filter.accept(new Token(0, ".")));
-        Assertions.assertFalse(filter.accept(new Token(0, ",")));
-        Assertions.assertTrue(filter.accept(new Token(0, "no")));
-        Assertions.assertFalse(filter.accept(new Token(0, "!")));
-        Assertions.assertFalse(filter.accept(new Token(0, "\\")));
-        Assertions.assertFalse(filter.accept(new Token(0, "?")));
-        Assertions.assertFalse(filter.accept(new Token(0, "|")));
-        Assertions.assertTrue(filter.accept(new Token(0, "")));
-        Assertions.assertFalse(filter.accept(new Token(0, "...")));
+
+        try {
+            List<Token> tokens = filter.execute(
+                    Arrays.asList(
+                            new Token(0, "."),
+                            new Token(0, ","),
+                            new Token(0, "no"),
+                            new Token(0, "!"),
+                            new Token(0, "\\"),
+                            new Token(0, "?"),
+                            new Token(0, "|"),
+                            new Token(0, ""),
+                            new Token(0, "...")
+                    )
+            );
+
+            Assertions.assertIterableEquals(
+                    Arrays.asList(
+                            new Token(0, "no"),
+                            new Token(0, "")
+                    ),
+                    tokens
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assertions.fail("Error thrown during test", e);
+        }
     }
 }
