@@ -13,7 +13,8 @@ import pt.up.hs.linguini.analysis.ideadensity.rulesets.atomicemitting.NegRuleset
 import pt.up.hs.linguini.analysis.ideadensity.rulesets.misc.*;
 import pt.up.hs.linguini.analysis.ideadensity.rulesets.noun.*;
 import pt.up.hs.linguini.analysis.ideadensity.rulesets.verb.*;
-import pt.up.hs.linguini.analysis.ideadensity.transformations.*;
+import pt.up.hs.linguini.analysis.ideadensity.transformations.RemovePunctuationTransformation;
+import pt.up.hs.linguini.analysis.ideadensity.transformations.Transformation;
 import pt.up.hs.linguini.analysis.ideadensity.utils.Tuple;
 import pt.up.hs.linguini.exceptions.ConfigException;
 import pt.up.hs.linguini.utils.Predicates;
@@ -141,6 +142,31 @@ public class Engine {
         }
     }
 
+    /**
+     * Mark a relation as processed.
+     *
+     * @param relations {@link List} list of relations
+     * @param index     {@code int} index of the relation
+     */
+    public static void markProcessed(List<Relation> relations, int index) {
+        relations.get(index).setProcessed(true);
+    }
+
+    /**
+     * Get only unprocessed relations from a list of relations.
+     *
+     * @param relations {@link List} list of relations
+     * @return {@link List} unprocessed relations from a list of
+     * relations
+     */
+    public static List<Relation> getUnprocessedRelations(
+            List<Relation> relations) {
+
+        return relations.parallelStream()
+                .filter(Predicates.not(Relation::isProcessed))
+                .collect(Collectors.toList());
+    }
+
     public String getConfigValue(String prop) {
         return config.get(prop);
     }
@@ -160,7 +186,7 @@ public class Engine {
      * Emit a new proposition, storing it in this instance's 'props' attribute.
      *
      * @param content {@link Tuple} the proposition content.
-     * @param kind {@link String} the kind of proposition.
+     * @param kind    {@link String} the kind of proposition.
      * @return {@code int} the number of propositions already stored.
      */
     public int emit(Tuple content, String kind) {
@@ -171,16 +197,15 @@ public class Engine {
     /**
      * Analyze a sentence, using this instance's ruleset set.
      *
-     * @param <T> type of object returned by analysis
-     *
+     * @param <T>       type of object returned by analysis
      * @param relations {@link List} the relations in a sentence
-     * @param index {@code int} the index of the relation to be analyzed
-     * @param context {@link int[]} the path from the TOP relation to the
-     *                             current one
-     * @param info {@link Map} a dictionary containing already parsed
-     *                         contextual information
+     * @param index     {@code int} the index of the relation to be analyzed
+     * @param context   {@link int[]} the path from the TOP relation to the
+     *                  current one
+     * @param info      {@link Map} a dictionary containing already parsed
+     *                  contextual information
      * @return {@link List} value of the corresponding ruleset's extract
-     *                      method
+     * method
      */
     public <T> T analyze(
             List<Relation> relations, int index, int[] context,
@@ -194,41 +219,20 @@ public class Engine {
             info = new HashMap<>();
         }
 
-        System.out.println("---------------------------------------------");
-
-        System.out.println(relations.get(index));
-
         // Clear results from previous executions, apply transformations,
         // and prepare for starting.
         if (relations.get(index).rel().equalsIgnoreCase("TOP")) {
 
-            System.out.println("---------------------------------------------");
-
-            for (Transformation transformation: transformations) {
+            for (Transformation transformation : transformations) {
                 transformation.transform(relations);
-                System.out.println(transformation.getClass().getCanonicalName());
             }
-
-            System.out.println("---------------------------------------------");
-
-            for (Relation relation: relations) {
-                System.out.println(relation.toString());
-            }
-
-            System.out.println("---------------------------------------------");
 
             props = new ArrayList<>();
-            for (Relation relation: relations) {
+            for (Relation relation : relations) {
                 relation.setProcessed(false);
             }
 
             buildRulesetsDict(relations);
-
-            for (String key: rulesetsDict.keySet()) {
-                System.out.println("- " + key);
-            }
-
-            System.out.println("---------------------------------------------");
         }
 
         Ruleset<T> ruleset = rulesetsDict.get(relations.get(index).rel());
@@ -244,31 +248,6 @@ public class Engine {
     }
 
     /**
-     * Mark a relation as processed.
-     *
-     * @param relations {@link List} list of relations
-     * @param index {@code int} index of the relation
-     */
-    public static void markProcessed(List<Relation> relations, int index) {
-        relations.get(index).setProcessed(true);
-    }
-
-    /**
-     * Get only unprocessed relations from a list of relations.
-     *
-     * @param relations {@link List} list of relations
-     * @return {@link List} unprocessed relations from a list of
-     *                            relations
-     */
-    public static List<Relation> getUnprocessedRelations(
-            List<Relation> relations) {
-
-        return relations.parallelStream()
-                .filter(Predicates.not(Relation::isProcessed))
-                .collect(Collectors.toList());
-    }
-
-    /**
      * Create a dictionary associating relation labels to their corresponding
      * ruleset instance.
      *
@@ -277,9 +256,9 @@ public class Engine {
     private void buildRulesetsDict(List<Relation> relations) {
 
         rulesetsDict = new HashMap<>();
-        for (Relation relation: relations) {
+        for (Relation relation : relations) {
 
-            for (Ruleset rs: rulesets) {
+            for (Ruleset rs : rulesets) {
                 if (rs.applies(relation.rel())) {
                     rulesetsDict.put(relation.rel(), rs);
                     break;

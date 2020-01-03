@@ -4,6 +4,8 @@ import pt.up.hs.linguini.exceptions.ConfigException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -44,9 +46,10 @@ public class Config {
             Properties properties = new Properties();
             String path = String.format(FILE_PATH_FORMAT, locale.toString());
             try (
-                    InputStream is = Config.class.getResourceAsStream(path)
+                    InputStream is = Config.class.getResourceAsStream(path);
+                    InputStreamReader isr = new InputStreamReader(is, Charset.forName("UTF-8"));
             ) {
-                properties.load(is);
+                properties.load(isr);
             } catch (IOException e) {
                 throw new ConfigException(e);
             }

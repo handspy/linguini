@@ -59,7 +59,6 @@ public class ArrayUtils {
         }
         int offset = arr.length;
         for (T a: as) {
-            System.out.println(a);
             result[offset++] = a;
         }
         return result;

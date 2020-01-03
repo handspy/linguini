@@ -126,7 +126,6 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
     private static String[] processConjs(
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
-        System.out.println("processConjs: started");
 
         int[] conjIndices = Relation
                 .getChildrenWithDep("conj", relations, index);
@@ -143,18 +142,12 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
                 engine.analyze(relations, i, newContext, new HashMap<>());
             }
 
-            System.out.println("processConjs: " +
-                    Arrays.toString(ccIndices));
-
             Map<String, Object> newInfo = new HashMap<>();
             newInfo.put("class", "NP");
 
-            System.out.println("processConjs: " +
-                    Arrays.toString(conjIndices));
-
             // Get the conjs
             List<String[]> conjsTmp = new ArrayList<>();
-            for (int i: conjIndices) {
+            for (int i : conjIndices) {
                 String[] res = engine.analyze(
                         relations, i, newContext, newInfo);
                 conjsTmp.add(res);
@@ -167,10 +160,6 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
         } else {
             conjs = new String[0];
         }
-
-        System.out.println("processConjs: " +
-                Arrays.toString(new String[]{relations.get(index).word()}) +
-                Arrays.toString(conjs));
 
         return ArrayUtils.concat(
                 new String[]{relations.get(index).word()},
@@ -619,11 +608,11 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
 
         Map<String, Object> pobjValue = engine.analyze(
                 relations, pobjIndex,
-                ArrayUtils.concat(context, new int[] { index, prepIndex }),
+                ArrayUtils.concat(context, new int[]{index, prepIndex}),
                 new HashMap<>()
         );
 
-        for (String noun: (String[]) pobjValue.get("return_list")) {
+        for (String noun : (String[]) pobjValue.get("return_list")) {
             engine.emit(new Tuple(
                     noun,
                     relations.get(index).word() + " " +
@@ -640,15 +629,11 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
-        System.out.println("NounPhraseRuleset.extract: started");
-
         if (info == null) {
             info = new HashMap<>();
         }
 
         String npWithOfPhrases = engine.getConfigValue("npWithOfPhrases");
-
-        System.out.println("NounPhraseRuleset.extract: " + npWithOfPhrases);
 
         if (relations.get(index).word().toLowerCase()
                 .matches(npWithOfPhrases)) {
@@ -669,47 +654,27 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
         String det = processDeterminers(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed determiners - " + det);
-
         String poss = processPossessives(
                 relations, index, context, engine, info);
-
-        System.out.println("NounPhraseRuleset.extract: processed possessives - " + poss);
 
         Object[] nns = processNounModifiers(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed noun modifiers - " + Arrays.toString(nns));
-
         String[] conjs = processConjs(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed conjs");
-
         processPreps(relations, index, context, engine, info);
-
-        System.out.println("NounPhraseRuleset.extract: processed preps");
 
         String[] mods = processModifiers(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed nmods");
-
         processVMod(relations, index, context, engine, info);
-
-        System.out.println("NounPhraseRuleset.extract: processed vmod");
 
         processNegs(relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed negs");
-
         processNmods(relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed nmods");
-
         processAdvMods(relations, index, context, engine, info);
-
-        System.out.println("NounPhraseRuleset.extract: processed adv mods");
 
         Tuple tuple = null;
         if (nns.length == 0) {
@@ -724,8 +689,6 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
             tuple = assembleReturnList(det, poss, (String[][]) nns, conjs);
         }
 
-        System.out.println("NounPhraseRuleset.extract: tuple " + tuple);
-
         String[] returnList;
         int[] idsForPreconj;
         if (tuple != null) {
@@ -739,27 +702,21 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
         Map<String, Object> newInfo = new HashMap<>();
         newInfo.put("subj", new Subject(returnList, null));
 
-        System.out.println("NounPhraseRuleset.extract: return list " + Arrays.toString(returnList));
-
         processAppos(relations, index, context, engine, newInfo);
-
-        System.out.println("NounPhraseRuleset.extract: processed appos");
 
         String[] predets = processPredets(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed predets");
-
         // emit propositions for modifiers
-        for (String amod: mods) {
-            for (String noun: returnList) {
+        for (String amod : mods) {
+            for (String noun : returnList) {
                 engine.emit(new Tuple(noun, amod), "M");
             }
         }
 
         // emit propositions for predeterminers
-        for (String predet: predets) {
-            for (String noun: returnList) {
+        for (String predet : predets) {
+            for (String noun : returnList) {
                 engine.emit(new Tuple(noun, predet), "M");
             }
         }
@@ -767,19 +724,13 @@ public class NounPhraseRuleset extends Ruleset<Map<String, Object>> {
         String preconj = processPreconj(
                 relations, index, context, engine, info);
 
-        System.out.println("NounPhraseRuleset.extract: processed preconj");
-
         newInfo.put("subj", new Subject(returnList, null));
 
         Tuple rcmod = processRcmod(
                 relations, index, context, engine, newInfo);
 
-        System.out.println("NounPhraseRuleset.extract: processed rcmod");
-
         int[] ids = (int[]) rcmod.get(0);
         Subject wdt = (Subject) rcmod.get(1);
-
-        System.out.println("NounPhraseRuleset.extract: " + Arrays.toString(returnList));
 
         Map<String, Object> ret = new HashMap<>();
         ret.put("return_list", returnList);

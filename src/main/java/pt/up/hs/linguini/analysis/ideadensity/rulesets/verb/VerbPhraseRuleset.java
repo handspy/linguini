@@ -42,17 +42,12 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
-        System.out.println("VerbPhraseRuleset.extract: started");
-
         // process discourse markers
         processDiscourseMarkers(relations, index, context, engine, info);
-
-        System.out.println("VerbPhraseRuleset.extract: processed discourse markers");
 
         Map<String, Object> returnDict;
         if (relations.get(index).word().matches(
                 "^" + engine.getConfigValue("beForms") + "$")) {
-
             returnDict = handleBeAsRoot(
                     relations, index, context, engine, info);
         } else if (relations.get(index).tag().toUpperCase()
@@ -76,33 +71,19 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
             return returnDict;
         }
 
-        System.out.println("VerbPhraseRuleset.extract: return dict obtained");
-
         // adverbial clauses
         processAdvcl(relations, index, context, engine, info,
                 (int[]) returnDict.get("prop_ids"));
-
-        System.out.println("VerbPhraseRuleset.extract: processed advcl");
 
         // conjunctions
         processConjs(relations, index, context, engine, info,
                 subjs, auxs, (int[]) returnDict.get("prop_ids"));
 
-        System.out.println("VerbPhraseRuleset.extract: processed conjs");
-
         // process parataxical clauses
         processParataxes(relations, index, context, engine, info);
 
-        System.out.println("VerbPhraseRuleset.extract: processed parataxis");
-
         // process ignorable elements
         processIgnorables(relations, index, context, engine, info);
-
-        System.out.println("VerbPhraseRuleset.extract: processed ignorables");
-
-        System.out.println("VerbPhraseRuleset.extract: " + subjs);
-
-        System.out.println("VerbPhraseRuleset.extract: " + Arrays.toString(auxs));
 
         returnDict.put("subjs", subjs);
 
@@ -918,11 +899,9 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
     private static void emitPropositionsRcmods(
             Map<String, Object> returnDict, Engine engine) {
 
-        System.out.println("emitPropositionsRcmods: started");
 
         Subject subjs = (Subject) returnDict.get("subjs");
 
-        System.out.println("emitPropositionsRcmods: " + subjs);
 
         if (subjs != null && subjs.getRcmodWdt() != null) {
 
@@ -939,7 +918,6 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
         }
 
         if (returnDict.containsKey("this")) {
-            System.out.println("emitPropositionsRcmods: dict has this");
 
             // emit propositions for copula + NP
             int[] mainPropIds = (int[]) returnDict.get("prop_ids");
@@ -954,8 +932,7 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
             }
         }
 
-        System.out.println("emitPropositionsRcmods: finished");
-    }
+            }
 
     /**
      * Handle 'to be' as the VP root.
@@ -1044,24 +1021,15 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
     protected Map<String, Object> handleActionVerb(
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
-        System.out.println("handleActionVerb: started");
 
         Subject subjs = processSubj(
                 relations, index, context, engine, info);
 
-        System.out.println("handleActionVerb: processed subj - " + String.join(", ", subjs.getReturnList()));
-
         String[] auxs = processAuxs(
                 relations, index, context, engine, info);
 
-        System.out.println("handleActionVerb: processed auxs - " + String.join(", ", auxs));
-
         String prt = processPrt(
                 relations, index, context, engine, info);
-
-        System.out.println("handleActionVerb: processed prt - " + prt);
-
-        System.out.println("handleActionVerb: " + relations.get(index).word());
 
         String[] toJoinVerb;
         if (auxs != null) {
@@ -1078,43 +1046,25 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
 
         String verb = String.join(" ", toJoinVerb);
 
-        System.out.println("handleActionVerb: " + verb);
-
         Map<String, Object> compsInfo = new HashMap<>();
         compsInfo.put("subj", subjs);
 
         String[] comps = processComps(
                 relations, index, context, engine, compsInfo);
 
-        System.out.println("handleActionVerb: processed comps");
-
         processCcomp(relations, index, context, engine, compsInfo);
-
-        System.out.println("handleActionVerb: processed ccomp");
 
         processIobj(relations, index, context, engine, info);
 
-        System.out.println("handleActionVerb: processed iobj");
-
         processOblique(relations, index, context, engine, info);
-
-        System.out.println("handleActionVerb: processed obl");
 
         processAdvs(relations, index, context, engine, info);
 
-        System.out.println("handleActionVerb: processed advs");
-
         processIgnorables(relations, index, context, engine, info);
-
-        System.out.println("handleActionVerb: processed ignorables");
 
         processWhats(relations, index, context, engine, new HashMap<>());
 
-        System.out.println("handleActionVerb: processed what");
-
         processVmods(relations, index, context, engine, info);
-
-        System.out.println("handleActionVerb: processed vmods");
 
         this.subjs = subjs;
         this.auxs = auxs;
@@ -1243,8 +1193,6 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
-        System.out.println("handleCopWithAdjp: started");
-
         Subject subjs = processSubj(
                 relations, index, context, engine, info);
 
@@ -1252,8 +1200,6 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
 
         int[] copIndices = Relation
                 .getChildrenWithDep("cop", relations, index);
-
-        System.out.println("handleCopWithAdjp: copular indices " + Arrays.toString(copIndices));
 
         String cop;
         if (copIndices.length > 0) {

@@ -24,8 +24,6 @@ public class AdverbialPhraseRuleset extends Ruleset<String[]> {
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
-        System.out.println("AdverbialPhraseRuleset.extract: started");
-
         if (info.containsKey("num")) {
             // Advmod modifying number. Treat as quantmod.
             engine.emit(

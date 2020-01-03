@@ -58,12 +58,14 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
     public List<Relation> execute(List<AnnotatedToken<String>> sentence)
             throws LinguiniException {
 
-        GrammaticalStructure gs = depParser.predict(sentence.parallelStream()
+        GrammaticalStructure gs = depParser
+                .predict(sentence.parallelStream()
                 .map(w -> {
                     CoreLabel lbl = CoreLabel.wordFromString(w.word());
                     lbl.setTag(w.getInfo());
                     return lbl;
-                }).collect(Collectors.toList()));
+                })
+                .collect(Collectors.toList()));
 
         List<TypedDependency> tdl = new ArrayList<>(
                 gs.typedDependenciesCollapsed());

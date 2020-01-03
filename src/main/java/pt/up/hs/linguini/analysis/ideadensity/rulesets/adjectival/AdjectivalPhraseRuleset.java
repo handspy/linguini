@@ -29,8 +29,6 @@ public class AdjectivalPhraseRuleset extends Ruleset<String[]> {
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
-        System.out.println("AdjectivalPhraseRuleset.extract: started");
-
         if (info == null) {
             info = new HashMap<>();
         }
