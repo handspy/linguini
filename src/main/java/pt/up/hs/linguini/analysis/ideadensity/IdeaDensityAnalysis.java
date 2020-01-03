@@ -28,7 +28,15 @@ public class IdeaDensityAnalysis implements Step<List<Relation>, List<Propositio
     public List<Proposition> execute(List<Relation> relations)
             throws LinguiniException {
 
+        for (Relation relation: relations) {
+            System.out.println(relation);
+        }
+
         engine.analyze(relations, 0, null, null);
+
+        for (Proposition proposition: engine.getProps()) {
+            System.out.println(proposition);
+        }
 
         return engine.getProps();
     }

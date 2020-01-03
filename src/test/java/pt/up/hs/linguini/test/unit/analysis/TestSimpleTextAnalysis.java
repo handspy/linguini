@@ -57,6 +57,12 @@ public class TestSimpleTextAnalysis {
         Assertions.assertEquals(133, textSummary.getNrOfCharacters());
         Assertions.assertEquals(112, textSummary.getNrOfNonBlankCharacters());
         Assertions.assertEquals(22, textSummary.getNrOfWords());
+        Assertions.assertEquals(9, textSummary.getNrOfContentWords());
+        Assertions.assertEquals(4, textSummary.getNrOfFunctionalWords());
+
+        System.out.println(String.join(", ", textSummary.getContentWords()));
+        System.out.println(String.join(", ", textSummary.getFunctionalWords()));
+
         Assertions.assertEquals(1, textSummary.getNrOfSentences());
         Assertions.assertEquals(0, textSummary.getNrOfErrors());
         Assertions.assertEquals(9, textSummary.getNrOfStopWords());

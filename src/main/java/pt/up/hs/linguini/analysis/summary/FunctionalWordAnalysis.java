@@ -4,7 +4,6 @@ import pt.up.hs.linguini.Config;
 import pt.up.hs.linguini.analysis.Analysis;
 import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.exceptions.ConfigException;
-import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.AnnotatedToken;
 
 import java.util.List;
@@ -42,7 +41,7 @@ public class FunctionalWordAnalysis
             List<AnnotatedToken<String>> taggedTokens) {
 
         return taggedTokens.parallelStream()
-                .filter(tt -> !tt.getInfo().toUpperCase().matches(functionalWordTags))
+                .filter(tt -> tt.getInfo().toUpperCase().matches(functionalWordTags))
                 .collect(Collectors.toList());
     }
 }
