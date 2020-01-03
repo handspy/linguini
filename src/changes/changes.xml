@@ -48,5 +48,14 @@
                 Log4j to catalina home logs folder.
             </action>
         </release>
+        <release version="1.1.0" date="2020-01-03" description="Integrated Stanford NLP">
+            <action dev="jcpaiva" type="update">
+                Optimizations for Portuguese language tokenization, lemmatization, and classification (toponyms, abbreviations, clitics, contractions, augmentative/diminutive/superlative/number declensions, gender normalization, irregular verb conjugations, ...).
+                PoS tagging with Stanford NLP.
+                Neural Network Dependency Parsing with Stanford NLP.
+                Co-occurrence analysis extended from GloVe.
+                Idea Density based on IDD3 (Propositional Idea Density from Dependency Trees).
+            </action>
+        </release>
     </body>
 </document>
