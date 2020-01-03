@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
 # Known text files
 *.css           text diff=css
 *.java          text diff=java
@@ -17,7 +16,6 @@
 *.txt           text
 *.xml           text
 *.yml           text
-
 # Known binary files
 *.class         binary
 *.gif           binary
@@ -27,3 +25,4 @@
 *.jpeg          binary
 *.png           binary
 *.war           binary
+src/main/resources/pt_PT/models/pt_PT.nndep filter=lfs diff=lfs merge=lfs -text
