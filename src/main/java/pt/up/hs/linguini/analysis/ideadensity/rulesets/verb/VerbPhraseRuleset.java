@@ -281,8 +281,12 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
         for (int i: compsIndices) {
             Object obj = engine.analyze(relations, i, newContext, info);
             if (obj instanceof Map) {
-                String comp = (String) ((Map) obj).get("return_value");
-                comps = ArrayUtils.add(comps, comp);
+                Map<String, Object> compTmp = ((Map) obj);
+                if (compTmp.containsKey("return_value")) {
+                    comps = ArrayUtils.add(comps, (String) compTmp.get("return_value"));
+                } else if (compTmp.containsKey("return_list")) {
+                    comps = ArrayUtils.concat(comps, (String[]) compTmp.get("return_list"));
+                }
             } else if (obj instanceof String[]) {
                 comps = ArrayUtils.concat(comps, (String[]) obj);
             } else if (obj != null) {
