@@ -1,7 +1,11 @@
 package pt.up.hs.linguini;
 
+import pt.up.hs.linguini.analysis.cooccurrence.CooccurrenceAnalysis;
+import pt.up.hs.linguini.analysis.cooccurrence.Cooccurrence;
 import pt.up.hs.linguini.analysis.emotional.JSpellEmotionalAnalysis;
 import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
+import pt.up.hs.linguini.analysis.ideadensity.IdeaDensityAnalysis;
+import pt.up.hs.linguini.analysis.ideadensity.Proposition;
 import pt.up.hs.linguini.analysis.lexicaldiversity.HddAnalysis;
 import pt.up.hs.linguini.analysis.lexicaldiversity.LDAlgorithm;
 import pt.up.hs.linguini.analysis.lexicaldiversity.MtldAnalysis;
@@ -13,6 +17,7 @@ import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
 import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.lemmatization.Lemmatizer;
 import pt.up.hs.linguini.models.*;
+import pt.up.hs.linguini.nndep.NNDepParser;
 import pt.up.hs.linguini.pipeline.BatchStep;
 import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.pos.PoSTagger;
@@ -69,20 +74,20 @@ public class TextAnalyzer {
         // count stop words
         textSummary.setNrOfStopWords(
                 nonExpandedTokens.size() -
-                new StopTokenFilter<Token>(locale)
-                    .execute(nonExpandedTokens)
-                    .size()
+                        new StopTokenFilter<Token>(locale)
+                                .execute(nonExpandedTokens)
+                                .size()
         );
 
         List<AnnotatedToken<String>> tokens =
                 new Tokenizer(locale, true)
-                    .pipe(new PoSTagger(locale))
-                    .pipe(new WhitespaceTokenFilter<>())
-                    .pipe(new PunctuationTokenFilter<>())
-                    .pipe(new BatchStep<>(
-                            new LowercaseTokenTransformer<>(locale)))
-                    .pipe(new StopTokenFilter<>(locale))
-                    .execute(text);
+                        .pipe(new PoSTagger(locale))
+                        .pipe(new WhitespaceTokenFilter<>())
+                        .pipe(new PunctuationTokenFilter<>())
+                        .pipe(new BatchStep<>(
+                                new LowercaseTokenTransformer<>(locale)))
+                        .pipe(new StopTokenFilter<>(locale))
+                        .execute(text);
 
         // count functional words
         List<AnnotatedToken<String>> functionalWords =
@@ -236,10 +241,8 @@ public class TextAnalyzer {
      * 42(2), 381-392."
      */
     public static Double analyzeLexicalDiversity(
-            Locale locale,
-            String text, LDAlgorithm algorithm,
-            boolean lemmatize, Double mtldThreshold,
-            Integer hddSampleSize
+            Locale locale, String text, LDAlgorithm algorithm,
+            boolean lemmatize, Double mtldThreshold, Integer hddSampleSize
     ) throws LinguiniException {
 
         Step<String, List<Token>> preprocessPipeline =
@@ -290,5 +293,80 @@ public class TextAnalyzer {
         }
 
         return pipeline.execute(text);
+    }
+
+    /**
+     * Analyze word-word co-occurrences in text.
+     *
+     * @param locale     {@link Locale} locale/language of text.
+     * @param text       {@link String} text to analyze.
+     * @param windowSize {@link Integer} size of the sliding window.
+     *                   Defaults to 5.
+     * @param threshold  {@link Double} Threshold to consider as co-occurrence.
+     *                   Defaults to 0.
+     * @return List of word-word co-occurrences.
+     * @throws LinguiniException if an error occurs during analysis.
+     */
+    public static List<Cooccurrence> analyzeCoOccurrence(
+            Locale locale, String text, Integer windowSize, Double threshold)
+            throws LinguiniException {
+
+        CooccurrenceAnalysis<AnnotatedToken<String>> coOccurrenceAnalysis;
+        if (threshold != null) {
+            if (windowSize != null) {
+                coOccurrenceAnalysis = new CooccurrenceAnalysis<>(
+                        threshold, windowSize);
+            } else {
+                coOccurrenceAnalysis = new CooccurrenceAnalysis<>(threshold);
+            }
+        } else {
+            coOccurrenceAnalysis = new CooccurrenceAnalysis<>();
+        }
+
+        return new SentenceSplitter(locale)
+                .pipe(new BatchStep<>(new Tokenizer(locale, true)))
+                .pipe(new BatchStep<>(new WhitespaceTokenFilter<>()))
+                .pipe(new BatchStep<>(new PunctuationTokenFilter<>()))
+                .pipe(new BatchStep<>(new StopTokenFilter<>(locale)))
+                .pipe(new BatchStep<>(new PoSTagger(locale)))
+                .pipe(new BatchStep<>(new BatchStep<>(new Lemmatizer(locale))))
+                .pipe(coOccurrenceAnalysis)
+                .execute(text);
+    }
+
+    /**
+     * Analyze idea density of a text.
+     *
+     * @param locale {@link Locale} locale/language of text.
+     * @param text   {@link String} text to analyze.
+     * @throws LinguiniException if an exception occurs while analyzing the idea density.
+     */
+    public static double analyzeIdeaDensity(
+            Locale locale, String text) throws LinguiniException {
+
+        List<List<AnnotatedToken<String>>> taggedTokens =
+                new SentenceSplitter(locale)
+                        .pipe(new BatchStep<>(new Tokenizer(locale, true)))
+                        .pipe(new BatchStep<>(new PoSTagger(locale)))
+                        .execute(text);
+
+        int wc = taggedTokens.parallelStream()
+                .mapToInt(tt -> new PunctuationTokenFilter<AnnotatedToken<String>>().execute(tt).size())
+                .sum();
+
+        if (wc == 0) {
+            throw new LinguiniException("No words in text.");
+        }
+
+        List<List<Proposition>> sentencePropositions =
+                new BatchStep<>(NNDepParser.getInstance(locale))
+                    .pipe(new BatchStep<>(new IdeaDensityAnalysis(locale)))
+                    .execute(taggedTokens);
+
+        int pc = sentencePropositions.parallelStream()
+                .mapToInt(List::size)
+                .sum();
+
+        return (double) pc / wc;
     }
 }

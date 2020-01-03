@@ -85,7 +85,7 @@ public class TestSimpleTextAnalysis {
         );
     }
 
-    /*@Test
+    @Test
     public final void testMultipleSentences() {
 
         TextSummary textSummary;
@@ -98,5 +98,5 @@ public class TestSimpleTextAnalysis {
         }
 
         Assertions.assertEquals(7, textSummary.getNrOfSentences());
-    }*/
+    }
 }

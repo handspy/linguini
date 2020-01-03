@@ -4,15 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
-
 import pt.up.hs.linguini.TextAnalyzer;
-import pt.up.hs.linguini.analysis.EmotionalAnalysis;
-import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.AnnotatedToken;
 import pt.up.hs.linguini.models.Emotion;
-import pt.up.hs.linguini.models.Token;
-import pt.up.hs.linguini.processing.TextTokenizer;
 
 import java.util.List;
 import java.util.Locale;
