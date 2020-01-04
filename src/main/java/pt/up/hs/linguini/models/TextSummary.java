@@ -29,6 +29,8 @@ public class TextSummary {
     private double avgContentWordLength;
 
     private Map<String, Integer> wordFrequency;
+    private Map<String, Integer> contentWordFrequency;
+    private Map<String, Integer> functionalWordFrequency;
 
     private Set<String> functionalWords;
     private Set<String> contentWords;
@@ -56,6 +58,8 @@ public class TextSummary {
             double avgFunctionalWordLength,
             double avgContentWordLength,
             Map<String, Integer> wordFrequency,
+            Map<String, Integer> contentWordFrequency,
+            Map<String, Integer> functionalWordFrequency,
             Set<String> functionalWords,
             Set<String> contentWords,
             Map<String, Integer> lemmaFrequency,
@@ -75,6 +79,8 @@ public class TextSummary {
         this.avgFunctionalWordLength = avgFunctionalWordLength;
         this.avgContentWordLength = avgContentWordLength;
         this.wordFrequency = wordFrequency;
+        this.contentWordFrequency = contentWordFrequency;
+        this.functionalWordFrequency = functionalWordFrequency;
         this.functionalWords = functionalWords;
         this.contentWords = contentWords;
         this.lemmaFrequency = lemmaFrequency;
@@ -192,6 +198,22 @@ public class TextSummary {
 
     public void setWordFrequency(Map<String, Integer> wordFrequency) {
         this.wordFrequency = wordFrequency;
+    }
+
+    public Map<String, Integer> getContentWordFrequency() {
+        return contentWordFrequency;
+    }
+
+    public void setContentWordFrequency(Map<String, Integer> contentWordFrequency) {
+        this.contentWordFrequency = contentWordFrequency;
+    }
+
+    public Map<String, Integer> getFunctionalWordFrequency() {
+        return functionalWordFrequency;
+    }
+
+    public void setFunctionalWordFrequency(Map<String, Integer> functionalWordFrequency) {
+        this.functionalWordFrequency = functionalWordFrequency;
     }
 
     public Set<String> getFunctionalWords() {
