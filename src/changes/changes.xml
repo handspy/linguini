@@ -57,5 +57,10 @@
                 Idea Density based on IDD3 (Propositional Idea Density from Dependency Trees).
             </action>
         </release>
+        <release version="1.1.1" date="2020-01-04" description="Fixes concurrency and idea density">
+            <action dev="jcpaiva" type="update">
+                Fixes concurrency and idea density.
+            </action>
+        </release>
     </body>
 </document>

@@ -265,14 +265,14 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
                 .getChildrenWithDep("xcomp", relations, index);
         int[] acompIndices = Relation
                 .getChildrenWithDep("acomp", relations, index);
-        int[] attrIndices = Relation
-                .getChildrenWithDep("attr", relations, index);
+        /*int[] attrIndices = Relation
+                .getChildrenWithDep("attr", relations, index);*/
 
         int[] compsIndices = ArrayUtils.concat(
                 objIndices,
                 xcompIndices,
-                acompIndices,
-                attrIndices
+                acompIndices/*,
+                attrIndices*/
         );
 
         int[] newContext = ArrayUtils.add(context, index);
