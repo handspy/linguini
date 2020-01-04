@@ -57,17 +57,21 @@ public class TestSimpleTextAnalysis {
         Assertions.assertEquals(133, textSummary.getNrOfCharacters());
         Assertions.assertEquals(112, textSummary.getNrOfNonBlankCharacters());
         Assertions.assertEquals(22, textSummary.getNrOfWords());
-        Assertions.assertEquals(9, textSummary.getNrOfContentWords());
-        Assertions.assertEquals(4, textSummary.getNrOfFunctionalWords());
+        Assertions.assertEquals(12, textSummary.getNrOfContentWords());
+        Assertions.assertEquals(1, textSummary.getNrOfFunctionalWords());
 
         Assertions.assertEquals(1, textSummary.getNrOfSentences());
         Assertions.assertEquals(0, textSummary.getNrOfErrors());
         Assertions.assertEquals(9, textSummary.getNrOfStopWords());
         Assertions.assertEquals(13, textSummary.getNrOfDistinctLemmas());
-        Assertions.assertEquals("6.38",
+        Assertions.assertEquals("6.46",
                 String.format(Locale.US, "%.2f", textSummary.getAvgWordLength()));
+        Assertions.assertEquals("6.75",
+                String.format(Locale.US, "%.2f", textSummary.getAvgContentWordLength()));
+        Assertions.assertEquals("3.00",
+                String.format(Locale.US, "%.2f", textSummary.getAvgFunctionalWordLength()));
 
-        Assertions.assertEquals(2, textSummary.getWordFrequency().get("partir"));
+        Assertions.assertEquals(2, textSummary.getWordFrequency().get("partiu"));
         Assertions.assertEquals(1, textSummary.getWordFrequency().get("conhecimento"));
 
         Assertions.assertIterableEquals(

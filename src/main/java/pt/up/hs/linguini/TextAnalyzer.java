@@ -101,15 +101,6 @@ public class TextAnalyzer {
                         .execute(tokens);
         textSummary.setNrOfContentWords(contentWords.size());
 
-        // count distinct lemmas
-        List<AnnotatedToken<String>> lemmaWords =
-                new BatchStep<>(new Lemmatizer(locale))
-                        .execute(tokens);
-        textSummary.setNrOfDistinctLemmas((int) lemmaWords
-                .parallelStream()
-                .distinct()
-                .count());
-
         // calculate average word length, non-stopword length,
         // functional word length, and content word length
         AverageWordLengthAnalysis<AnnotatedToken<String>> avgWordLengthAnalysis =
@@ -143,14 +134,7 @@ public class TextAnalyzer {
                         .collect(Collectors.toSet())
         );
 
-        // set lemmas
-        textSummary.setLemmas(
-                lemmaWords.parallelStream()
-                        .map(HasWord::word)
-                        .collect(Collectors.toSet())
-        );
-
-        // calculate word frequency and lemma frequency
+        // calculate word frequency
         WordFrequencyAnalysis<AnnotatedToken<String>> wordFrequencyAnalysis =
                 new WordFrequencyAnalysis<>();
         textSummary.setWordFrequency(
@@ -162,8 +146,26 @@ public class TextAnalyzer {
         textSummary.setFunctionalWordFrequency(
                 wordFrequencyAnalysis.execute(functionalWords)
         );
+
+        // count distinct lemmas
+        List<AnnotatedToken<String>> lemmaWords =
+                new BatchStep<>(new Lemmatizer(locale))
+                        .execute(tokens);
+        textSummary.setNrOfDistinctLemmas((int) lemmaWords
+                .parallelStream()
+                .distinct()
+                .count());
+
+        // calculate lemma frequency
         textSummary.setLemmaFrequency(
                 wordFrequencyAnalysis.execute(lemmaWords)
+        );
+
+        // set lemmas
+        textSummary.setLemmas(
+                lemmaWords.parallelStream()
+                        .map(HasWord::word)
+                        .collect(Collectors.toSet())
         );
 
         // group words by category
@@ -345,6 +347,7 @@ public class TextAnalyzer {
      *
      * @param locale {@link Locale} locale/language of text.
      * @param text   {@link String} text to analyze.
+     * @return density value
      * @throws LinguiniException if an exception occurs while analyzing the idea density.
      */
     public static double analyzeIdeaDensity(
