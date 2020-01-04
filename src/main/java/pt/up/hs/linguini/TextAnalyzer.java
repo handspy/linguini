@@ -156,6 +156,12 @@ public class TextAnalyzer {
         textSummary.setWordFrequency(
                 wordFrequencyAnalysis.execute(tokens)
         );
+        textSummary.setContentWordFrequency(
+                wordFrequencyAnalysis.execute(contentWords)
+        );
+        textSummary.setFunctionalWordFrequency(
+                wordFrequencyAnalysis.execute(functionalWords)
+        );
         textSummary.setLemmaFrequency(
                 wordFrequencyAnalysis.execute(lemmaWords)
         );
