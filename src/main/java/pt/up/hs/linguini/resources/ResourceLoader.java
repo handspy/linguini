@@ -60,7 +60,7 @@ public class ResourceLoader {
                     ResourceLoader.class.getResourceAsStream(p));
             stopwordsCache.put(p, stopwords);
         }
-        return stopwords;
+        return new ArrayList<>(stopwords);
     }
 
     /**
@@ -100,7 +100,7 @@ public class ResourceLoader {
                     ResourceLoader.class.getResourceAsStream(p));
             replacementsCache.put(p, replacements);
         }
-        return replacements;
+        return Arrays.copyOf(replacements, replacements.length);
     }
 
     /**
@@ -175,7 +175,7 @@ public class ResourceLoader {
                     ResourceLoader.class.getResourceAsStream(p));
             wordRankingCache.put(p, wordRankingEntries);
         }
-        return wordRankingEntries;
+        return new HashMap<>(wordRankingEntries);
     }
 
     /**
@@ -240,7 +240,7 @@ public class ResourceLoader {
                     ResourceLoader.class.getResourceAsStream(p));
             dictionaryCache.put(p, dictionaryEntries);
         }
-        return dictionaryEntries;
+        return new HashMap<>(dictionaryEntries);
     }
 
     /**
