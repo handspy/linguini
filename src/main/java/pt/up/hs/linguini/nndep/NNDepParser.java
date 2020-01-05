@@ -22,9 +22,10 @@ import java.util.stream.Collectors;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Relation>> {
-    private static final String FILE_PATH_FORMAT = "%s/models/%s.nndep";
+    private static final String FILE_PATH_FORMAT =
+            "%s/models/%s.depparser.txt.gz";
 
-    private static Map<Locale, NNDepParser> nnDepParsers = new HashMap<>();
+    /*private static Map<Locale, NNDepParser> nnDepParsers = new HashMap<>();*/
 
     private Locale locale;
 
@@ -46,11 +47,11 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
     }
 
     public static NNDepParser getInstance(Locale locale) {
-        if (nnDepParsers.containsKey(locale)) {
+        /*if (nnDepParsers.containsKey(locale)) {
             return nnDepParsers.get(locale);
-        }
+        }*/
         NNDepParser nnDepParser = new NNDepParser(locale);
-        nnDepParsers.put(locale, nnDepParser);
+        /*nnDepParsers.put(locale, nnDepParser);*/
         return nnDepParser;
     }
 

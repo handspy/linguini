@@ -99,6 +99,7 @@ public class Engine {
                 new CsubjRuleset(),
                 new ParataxisRuleset(),
                 new RcmodRuleset(),
+                new AclRelclRuleset(),
                 new VmodRuleset(),
                 new XcompRuleset(),
 
