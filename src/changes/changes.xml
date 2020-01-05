@@ -77,5 +77,10 @@
                 New PoS tagger for portuguese.
             </action>
         </release>
+        <release version="1.1.5" date="2020-01-05" description="Lighter models, disable caching">
+            <action dev="jcpaiva" type="update">
+                Lighter models, disable caching.
+            </action>
+        </release>
     </body>
 </document>
