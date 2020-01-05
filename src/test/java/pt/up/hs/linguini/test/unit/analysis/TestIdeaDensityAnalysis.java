@@ -110,7 +110,7 @@ public class TestIdeaDensityAnalysis {
 
         System.out.println(idd);
 
-        Assertions.assertEquals("0.316",
+        Assertions.assertEquals("0.170",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -127,7 +127,7 @@ public class TestIdeaDensityAnalysis {
 
         System.out.println(idd);
 
-        Assertions.assertEquals("0.301",
+        Assertions.assertEquals("0.382",
                 String.format(Locale.US, "%.3f", idd));
     }
 

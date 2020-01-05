@@ -54,13 +54,14 @@ public class ResourceLoader {
      */
     public static List<String> readStopwords(String p)
             throws ResourceLoadingException {
-        List<String> stopwords;
+        /*List<String> stopwords;
         if ((stopwords = stopwordsCache.get(p)) == null) {
             stopwords = readStopwords(
                     ResourceLoader.class.getResourceAsStream(p));
             stopwordsCache.put(p, stopwords);
         }
-        return new ArrayList<>(stopwords);
+        return new ArrayList<>(stopwords);*/
+        return readStopwords(ResourceLoader.class.getResourceAsStream(p));
     }
 
     /**
@@ -94,13 +95,14 @@ public class ResourceLoader {
      */
     public static Replacement[] readReplacements(String p)
             throws ResourceLoadingException {
-        Replacement[] replacements;
+        /*Replacement[] replacements;
         if ((replacements = replacementsCache.get(p)) == null) {
             replacements = readReplacements(
                     ResourceLoader.class.getResourceAsStream(p));
             replacementsCache.put(p, replacements);
         }
-        return Arrays.copyOf(replacements, replacements.length);
+        return Arrays.copyOf(replacements, replacements.length);*/
+        return readReplacements(ResourceLoader.class.getResourceAsStream(p));
     }
 
     /**
@@ -169,13 +171,15 @@ public class ResourceLoader {
      */
     public static Map<String, WordRankingEntry> readWordRankingEntries(
             String p) throws ResourceLoadingException {
-        Map<String, WordRankingEntry> wordRankingEntries;
+        /*Map<String, WordRankingEntry> wordRankingEntries;
         if ((wordRankingEntries = wordRankingCache.get(p)) == null) {
             wordRankingEntries = readWordRankingEntries(
                     ResourceLoader.class.getResourceAsStream(p));
             wordRankingCache.put(p, wordRankingEntries);
         }
-        return new HashMap<>(wordRankingEntries);
+        return new HashMap<>(wordRankingEntries);*/
+        return readWordRankingEntries(
+                ResourceLoader.class.getResourceAsStream(p));
     }
 
     /**
@@ -234,13 +238,15 @@ public class ResourceLoader {
      */
     public static Map<String, HashSet<DictionaryEntry>> readDictionaryEntries(
             String p) throws ResourceLoadingException {
-        Map<String, HashSet<DictionaryEntry>> dictionaryEntries;
+        /*Map<String, HashSet<DictionaryEntry>> dictionaryEntries;
         if ((dictionaryEntries = dictionaryCache.get(p)) == null) {
             dictionaryEntries = readDictionaryEntries(
                     ResourceLoader.class.getResourceAsStream(p));
             dictionaryCache.put(p, dictionaryEntries);
         }
-        return new HashMap<>(dictionaryEntries);
+        return new HashMap<>(dictionaryEntries);*/
+        return readDictionaryEntries(
+                ResourceLoader.class.getResourceAsStream(p));
     }
 
     /**

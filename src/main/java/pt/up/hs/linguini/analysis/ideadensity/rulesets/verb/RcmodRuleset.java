@@ -10,4 +10,8 @@ public class RcmodRuleset extends VerbPhraseRuleset {
     public RcmodRuleset() {
         super("rcmod");
     }
+
+    public RcmodRuleset(String rel) {
+        super(rel);
+    }
 }
