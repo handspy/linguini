@@ -64,21 +64,6 @@ public class TextAnalyzer {
         textSummary.setNrOfNonBlankCharacters(
                 text.replaceAll("\\s+", "").length());
 
-        // count words
-        List<Token> nonExpandedTokens = new Tokenizer(locale, false)
-                .pipe(new WhitespaceTokenFilter<>())
-                .pipe(new PunctuationTokenFilter<>())
-                .execute(text);
-        textSummary.setNrOfWords(nonExpandedTokens.size());
-
-        // count stop words
-        textSummary.setNrOfStopWords(
-                nonExpandedTokens.size() -
-                        new StopTokenFilter<Token>(locale)
-                                .execute(nonExpandedTokens)
-                                .size()
-        );
-
         List<AnnotatedToken<String>> tokens =
                 new Tokenizer(locale, true)
                         .pipe(new PoSTagger(locale))
@@ -86,8 +71,17 @@ public class TextAnalyzer {
                         .pipe(new PunctuationTokenFilter<>())
                         .pipe(new BatchStep<>(
                                 new LowercaseTokenTransformer<>(locale)))
-                        .pipe(new StopTokenFilter<>(locale))
+                        /*.pipe(new StopTokenFilter<>(locale))*/
                         .execute(text);
+
+        // count words;
+        textSummary.setNrOfWords(tokens.size());
+        textSummary.setNrOfDistinctWords(
+                (int) tokens.parallelStream()
+                        .map(HasWord::word)
+                        .distinct()
+                        .count()
+        );
 
         // count functional words
         List<AnnotatedToken<String>> functionalWords =
@@ -134,6 +128,20 @@ public class TextAnalyzer {
                         .collect(Collectors.toSet())
         );
 
+        // count distinct content words
+        textSummary.setNrOfDistinctContentWords((int) contentWords
+                .parallelStream()
+                .map(HasWord::word)
+                .distinct()
+                .count());
+
+        // count distinct functional words
+        textSummary.setNrOfDistinctFunctionalWords((int) functionalWords
+                .parallelStream()
+                .map(HasWord::word)
+                .distinct()
+                .count());
+
         // calculate word frequency
         WordFrequencyAnalysis<AnnotatedToken<String>> wordFrequencyAnalysis =
                 new WordFrequencyAnalysis<>();
@@ -153,6 +161,7 @@ public class TextAnalyzer {
                         .execute(tokens);
         textSummary.setNrOfDistinctLemmas((int) lemmaWords
                 .parallelStream()
+                .map(HasWord::word)
                 .distinct()
                 .count());
 

@@ -97,5 +97,10 @@
                 Fix grammatical category mapping.
             </action>
         </release>
+        <release version="1.1.9" date="2020-01-28" description="Do not use stop words in text summarization.">
+            <action dev="jcpaiva" type="update">
+                Do not use stop words in text summarization.
+            </action>
+        </release>
     </body>
 </document>

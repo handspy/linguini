@@ -14,9 +14,13 @@ public class TextSummary {
     private int nrOfNonBlankCharacters;
 
     private int nrOfWords;
+    private int nrOfDistinctWords;
     private int nrOfStopWords;
+
     private int nrOfFunctionalWords;
+    private int nrOfDistinctFunctionalWords;
     private int nrOfContentWords;
+    private int nrOfDistinctContentWords;
 
     private int nrOfErrors;
 
@@ -43,34 +47,16 @@ public class TextSummary {
     public TextSummary() {
     }
 
-    public TextSummary(
-            int nrOfCharacters,
-            int nrOfNonBlankCharacters,
-            int nrOfWords,
-            int nrOfStopWords,
-            int nrOfFunctionalWords,
-            int nrOfContentWords,
-            int nrOfErrors,
-            int nrOfSentences,
-            int nrOfDistinctLemmas,
-            double avgWordLength,
-            double avgNonStopWordLength,
-            double avgFunctionalWordLength,
-            double avgContentWordLength,
-            Map<String, Integer> wordFrequency,
-            Map<String, Integer> contentWordFrequency,
-            Map<String, Integer> functionalWordFrequency,
-            Set<String> functionalWords,
-            Set<String> contentWords,
-            Map<String, Integer> lemmaFrequency,
-            Set<String> lemmas,
-            Map<String, Set<String>> wordsByCategory) {
+    public TextSummary(int nrOfCharacters, int nrOfNonBlankCharacters, int nrOfWords, int nrOfDistinctWords, int nrOfStopWords, int nrOfFunctionalWords, int nrOfDistinctFunctionalWords, int nrOfContentWords, int nrOfDistinctContentWords, int nrOfErrors, int nrOfSentences, int nrOfDistinctLemmas, double avgWordLength, double avgNonStopWordLength, double avgFunctionalWordLength, double avgContentWordLength, Map<String, Integer> wordFrequency, Map<String, Integer> contentWordFrequency, Map<String, Integer> functionalWordFrequency, Set<String> functionalWords, Set<String> contentWords, Map<String, Integer> lemmaFrequency, Set<String> lemmas, Map<String, Set<String>> wordsByCategory) {
         this.nrOfCharacters = nrOfCharacters;
         this.nrOfNonBlankCharacters = nrOfNonBlankCharacters;
         this.nrOfWords = nrOfWords;
+        this.nrOfDistinctWords = nrOfDistinctWords;
         this.nrOfStopWords = nrOfStopWords;
         this.nrOfFunctionalWords = nrOfFunctionalWords;
+        this.nrOfDistinctFunctionalWords = nrOfDistinctFunctionalWords;
         this.nrOfContentWords = nrOfContentWords;
+        this.nrOfDistinctContentWords = nrOfDistinctContentWords;
         this.nrOfErrors = nrOfErrors;
         this.nrOfSentences = nrOfSentences;
         this.nrOfDistinctLemmas = nrOfDistinctLemmas;
@@ -112,6 +98,14 @@ public class TextSummary {
         this.nrOfWords = nrOfWords;
     }
 
+    public int getNrOfDistinctWords() {
+        return nrOfDistinctWords;
+    }
+
+    public void setNrOfDistinctWords(int nrOfDistinctWords) {
+        this.nrOfDistinctWords = nrOfDistinctWords;
+    }
+
     public int getNrOfStopWords() {
         return nrOfStopWords;
     }
@@ -128,12 +122,28 @@ public class TextSummary {
         this.nrOfFunctionalWords = nrOfFunctionalWords;
     }
 
+    public int getNrOfDistinctFunctionalWords() {
+        return nrOfDistinctFunctionalWords;
+    }
+
+    public void setNrOfDistinctFunctionalWords(int nrOfDistinctFunctionalWords) {
+        this.nrOfDistinctFunctionalWords = nrOfDistinctFunctionalWords;
+    }
+
     public int getNrOfContentWords() {
         return nrOfContentWords;
     }
 
     public void setNrOfContentWords(int nrOfContentWords) {
         this.nrOfContentWords = nrOfContentWords;
+    }
+
+    public int getNrOfDistinctContentWords() {
+        return nrOfDistinctContentWords;
+    }
+
+    public void setNrOfDistinctContentWords(int nrOfDistinctContentWords) {
+        this.nrOfDistinctContentWords = nrOfDistinctContentWords;
     }
 
     public int getNrOfErrors() {
