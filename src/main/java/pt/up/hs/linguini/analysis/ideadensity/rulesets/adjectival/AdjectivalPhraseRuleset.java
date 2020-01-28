@@ -83,8 +83,8 @@ public class AdjectivalPhraseRuleset extends Ruleset<String[]> {
 
         List<String> advmods = new ArrayList<>();
         for (int i: advmodIndices) {
-            String advmod = engine.analyze(relations, i, newContext, newInfo);
-            advmods.add(advmod);
+            String[] advmod = engine.analyze(relations, i, newContext, newInfo);
+            advmods.addAll(Arrays.asList(advmod));
         }
 
         return advmods.toArray(new String[0]);
