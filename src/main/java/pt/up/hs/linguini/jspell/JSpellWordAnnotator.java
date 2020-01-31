@@ -58,6 +58,12 @@ public class JSpellWordAnnotator implements
 
             if (StringUtils.isBlankString(token.getWord())) {
                 annotatedTokens.add(new AnnotatedToken<>(token, null));
+                continue;
+            }
+
+            if (!StringUtils.startsWithLetter(token.getWord().trim())) {
+                annotatedTokens.add(new AnnotatedToken<>(token, null));
+                continue;
             }
 
             JSpellInfo info = cache.get(token.getWord());

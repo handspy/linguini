@@ -8,45 +8,55 @@ package pt.up.hs.linguini.utils;
 public class MathUtils {
 
     /**
-     * Hypergeometric probability: the probability that an n-trial hypergeometric
-     * experiment results in exactly x successes, when the population consists of
-     * N items, k of which are classified as successes.
-     * <p>
-     * (here, population = N, population_successes = k, sample = n, sample_successes = x)
-     * h(x; N, n, k) = [ kCx ] * [ N-kCn-x ] / [ NCn ]
+     * Hypergeometric probability
      *
-     * @param population          total items
-     * @param populationSuccesses total successes
-     * @param sample              sample size
-     * @param sampleSuccesses     successes in sample
+     * @param successes           total successes
+     * @param sampleSize          sample size
+     * @param populationSize      total items
+     * @param populationSuccesses                successes in sample
      * @return hypergeometric probability
      */
     public static double hypergeometric(
-            int population,
-            int populationSuccesses,
-            int sample,
-            int sampleSuccesses) {
-        return (combination(populationSuccesses, sampleSuccesses) *
-                combination(population - populationSuccesses, sample - sampleSuccesses)) /
-                combination(population, sample);
+            int successes, int sampleSize, int populationSize, int populationSuccesses
+    ) {
+        try {
+            double prob = 1.0 - (
+                    (
+                            (double) choose(populationSuccesses, successes) *
+                                    choose(
+                                            (populationSize - populationSuccesses),
+                                            (sampleSize - successes)
+                                    )
+                    ) / (double) choose(populationSize, sampleSize)
+            );
+            prob = prob * (1.0D / (double) sampleSize);
+            return prob;
+        } catch (ArithmeticException e) {
+            return 0;
+        }
     }
 
     /**
-     * Combinatorics 'from n choose r'
+     * 'from n choose r'
      *
      * @param n Size of population
-     * @param r Size of sample
+     * @param k Size of sample
      * @return nr of combinations
      */
-    public static double combination(int n, int r) {
-        long rFactorial = factorial(r);
-        double numerator = 1.0;
-        double num = n - r + 1.0;
-        while (num < n + 1.0) {
-            numerator *= num;
-            num += 1.0;
+    public static double choose(int n, int k) {
+        if (k >= 0 && k <= n) {
+            double ntok = 1;
+            double ktok = 1;
+            int it = Math.min(k, n - k) + 1;
+            for (int t = 1; t < it; t++) {
+                ntok *= n;
+                ktok *= t;
+                n -= 1;
+            }
+            return ntok / ktok;
+        } else {
+            return 0;
         }
-        return numerator / rFactorial;
     }
 
     /**

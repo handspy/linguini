@@ -96,6 +96,28 @@ public class TestIdeaDensityAnalysis {
             "-me vontade de cozinhar um doce a acabo fazendo 2 tarte ou bolo " +
             "ou biscoitos, o que me vier à mente. Volto a limpar o que sujei";
 
+    private static final String TEXT_2 = "A experiência mais traumática da mi" +
+            "nha vida foi ficar com os membros paralisados durante um ataque " +
+            "de ansiedade. Nesse momento, senti-me completamente impotente, t" +
+            "udo o que eu tentasse fazer para me mexer era inútil, como se es" +
+            "tivesse acorrentada. “Incrível” como o psicológico afetou o físi" +
+            "co de uma maneira que até ao momento eu considerava impossível. " +
+            "Foi assustador. Senti que ia ficar assim para sempre e o medo go" +
+            "vernou-me. Chorei e a minha mãe também. Muito. Só queria, naquel" +
+            "e momento, puder mexer 1 dedo que fosse, mas não conseguia. Diss" +
+            "eram que era normal ocorrer esta situação e fiquei surpresa. Nun" +
+            "ca tinha tido tal reação durante um ataque de ansiedade, nunca t" +
+            "inha ficado imobilizada. Depois, voltei ao normal.\n" +
+            "Amo os pais. Amo o meu namorado. Amo os meus amigos. O meu maior" +
+            " objetivo é puder retribuir o orgulho que têm em mim. Entrei na " +
+            "faculdade, mas não sei se é realmente isto que quero. Por um lad" +
+            "o, sinto que, se desistir, vou desiludir todos os que me rodeiam" +
+            ", pois têm tantas expectativas em mim. Por outro, sinto que podi" +
+            "a fazer o que realmente quero e mostrar que nem toda a gente pre" +
+            "cisa de uma licenciatura/mestrado para ser feliz. Não que não go" +
+            "ste do curso em que estou, porque adoro, mas sinto que há qualqu" +
+            "er coisa que me diz que pode";
+
     private static final Locale LOCALE = new Locale("pt", "PT");
 
     @Test
@@ -181,6 +203,24 @@ public class TestIdeaDensityAnalysis {
         System.out.println(idd);
 
         Assertions.assertEquals("0.468",
+                String.format(Locale.US, "%.3f", idd));
+    }
+
+    @Test
+    public final void testExecuteText2() throws LinguiniException {
+
+        double idd;
+        try {
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_2);
+        } catch (LinguiniException e) {
+            e.printStackTrace();
+            Assertions.fail("Error thrown during test", e);
+            return;
+        }
+
+        System.out.println(idd);
+
+        Assertions.assertEquals("0.430",
                 String.format(Locale.US, "%.3f", idd));
     }
 

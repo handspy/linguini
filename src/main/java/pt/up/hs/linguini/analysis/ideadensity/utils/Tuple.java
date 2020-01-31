@@ -27,6 +27,10 @@ public class Tuple {
         return (int) items.get(index);
     }
 
+    public double getDouble(int index) {
+        return (double) items.get(index);
+    }
+
     public String getString(int index) {
         return (String) items.get(index);
     }

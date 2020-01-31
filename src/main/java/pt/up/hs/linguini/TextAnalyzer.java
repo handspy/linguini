@@ -6,9 +6,7 @@ import pt.up.hs.linguini.analysis.emotional.JSpellEmotionalAnalysis;
 import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.analysis.ideadensity.IdeaDensityAnalysis;
 import pt.up.hs.linguini.analysis.ideadensity.Proposition;
-import pt.up.hs.linguini.analysis.lexicaldiversity.HddAnalysis;
-import pt.up.hs.linguini.analysis.lexicaldiversity.LDAlgorithm;
-import pt.up.hs.linguini.analysis.lexicaldiversity.MtldAnalysis;
+import pt.up.hs.linguini.analysis.lexicaldiversity.*;
 import pt.up.hs.linguini.analysis.summary.*;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
@@ -248,9 +246,6 @@ public class TextAnalyzer {
      * @param algorithm     {@link LDAlgorithm} algorithm to use to calculate
      *                      lexical diversity.
      * @param lemmatize     {@code boolean} lemmatize tokens before analysis?
-     * @param mtldThreshold {@link Double} threshold to increment counter
-     *                      in MTLD algorithm
-     * @param hddSampleSize {@link Integer} size of sample in HDD algorithm
      * @return {@link Double} lexical diversity of the text.
      * @throws LinguiniException if an error occurs during analysis.
      * @see "MTLD, vocd-D, and HD-D: A validation study of sophisticated
@@ -259,7 +254,7 @@ public class TextAnalyzer {
      */
     public static Double analyzeLexicalDiversity(
             Locale locale, String text, LDAlgorithm algorithm,
-            boolean lemmatize, Double mtldThreshold, Integer hddSampleSize
+            boolean lemmatize
     ) throws LinguiniException {
 
         Step<String, List<Token>> preprocessPipeline =
@@ -274,36 +269,38 @@ public class TextAnalyzer {
                     .pipe(new PoSTagger(locale))
                     // 4. remove punctuation
                     .pipe(new PunctuationTokenFilter<>())
-                    // 5. remove stopwords
+                    // 5. normalize
+                    .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
+                    // 6. remove stopwords
                     .pipe(new StopTokenFilter<>(locale))
-                    // 6. lemmatize text
+                    // 7. lemmatize text
                     .pipe(new BatchStep<>(new Lemmatizer(locale)))
                     .pipe(ats -> ats.parallelStream()
                             .map(AnnotatedToken::getToken)
                             .collect(Collectors.toList()));
         } else {
-            preprocessPipeline
+            preprocessPipeline = preprocessPipeline
                     // 3. remove punctuation
                     .pipe(new PunctuationTokenFilter<>())
-                    // 4. remove stopwords
+                    // 4. normalize
+                    .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
+                    // 5. remove stopwords
                     .pipe(new StopTokenFilter<>(locale));
         }
 
         Step<String, Double> pipeline;
         switch (algorithm) {
+            case BASE_TTR:
+                pipeline = preprocessPipeline.pipe(new BaseTtrAnalysis<>());
+                break;
             case MTLD:
-                if (mtldThreshold == null)
-                    pipeline = preprocessPipeline.pipe(new MtldAnalysis<>());
-                else
-                    pipeline = preprocessPipeline
-                            .pipe(new MtldAnalysis<>(mtldThreshold));
+                pipeline = preprocessPipeline.pipe(new MtldAnalysis<>());
                 break;
             case HDD:
-                if (hddSampleSize == null)
-                    pipeline = preprocessPipeline.pipe(new HddAnalysis<>());
-                else
-                    pipeline = preprocessPipeline.pipe(
-                            new HddAnalysis<>(hddSampleSize));
+                pipeline = preprocessPipeline.pipe(new HddAnalysis<>());
+                break;
+            case VOCD:
+                pipeline = preprocessPipeline.pipe(new VocdAnalysis<>());
                 break;
             default:
                 throw new AnalysisException("Unknown lexical diversity algorithm.");

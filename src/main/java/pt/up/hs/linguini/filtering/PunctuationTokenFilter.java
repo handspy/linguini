@@ -1,7 +1,6 @@
 package pt.up.hs.linguini.filtering;
 
 import pt.up.hs.linguini.models.HasWord;
-import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class PunctuationTokenFilter<T extends HasWord>
     public List<T> execute(List<T> tokens) {
         return tokens
                 .parallelStream()
-                .filter(token -> !StringUtils.isPunctuation(token.word()))
+                .filter(token -> !StringUtils.isPunctuation(token.word().trim()))
                 .collect(Collectors.toList());
     }
 }

@@ -6,6 +6,8 @@ package pt.up.hs.linguini.analysis.lexicaldiversity;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public enum LDAlgorithm {
+    BASE_TTR,
     MTLD,
-    HDD
+    HDD,
+    VOCD
 }

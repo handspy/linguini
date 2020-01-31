@@ -38,6 +38,39 @@ public class TestEmotionalAnalysis {
             "Eduarda, visto que Castro Gomes estava ausente. Carlos chega " +
             "mesmo a comprar uma casa onde instala a amante.";
 
+    private static final String TEXT = "Todos os dias quando acordo, por volt" +
+            "a das 06:30 da manhã, costumo dirigir-me à casa de banho e aí ex" +
+            "ecuto todas as minhas rotinas de higiene pessoal. De seguida, di" +
+            "rijo-me à cozinha para tomar o pequeno-almoço e interagir com os" +
+            " meus pais e irmã. Posteriormente, volto para o meu quarto e vis" +
+            "to-me e arranjo-me para sair de casa.\n\n" +
+            "Após o anteriormente referido, dirijo-me à estação ferroviária d" +
+            "a minha localidade, à boleia de um dos meus pais, por volta das " +
+            "07:30 para apanhar o comboio das 07:41 que me levará até ao Port" +
+            "o onde terei as minhas aulas na faculdade onde estou inscrita. A" +
+            "pós chegar ao Porto, mais propriamente Gaia (General Torres) apa" +
+            "nho o metro que me traz até à paragem do Polo Universitário. É n" +
+            "esta paragem que saio e após subir umas escadas encontro a minha" +
+            " faculdade. Com isto, dirijo-me à faculdade e a primeira coisa q" +
+            "ue faço é descer até ao piso 0 para tomar um café. De seguida, d" +
+            "irijo-me às salas/auditórios onde terei aulas naquele dia e enco" +
+            "ntro-me nesta altura com os meus colegas de curso.\n" +
+            "\n" +
+            "Na hora de almoço e se não tiver aulas de tarde, vou até à canti" +
+            "na ou ao buffet para almoçar e depois volto para as aulas.\n" +
+            "\n" +
+            "Normalmente costumo aproveitar o meu tempo livre na faculdade pa" +
+            "ra ir até à biblioteca estudar e dependendo dos dias e da minha " +
+            "disponibilidade, costumo ficar até ao fecho da mesma.\n" +
+            "\n" +
+            "Por fim, dirijo-me normalmente ao metro que me levará de volta a" +
+            "té General Torres, onde apanharei o comboio para regressar à cid" +
+            "ade onde moro. Lá estará o meu pai para me receber e levar até c" +
+            "asa. De seguida, tomo banho e vou jantar com a minha família. De" +
+            "pendendo das horas, ainda tento acabar algum trabalho e desenvol" +
+            "ver alguma tarefa para a faculdade. Por último, trato normalment" +
+            "e da mina higiene pessoal para me preparar para um novo dia. ";
+
     @Test
     public void testSentenceEmotions() {
 
@@ -112,5 +145,25 @@ public class TestEmotionalAnalysis {
                 emotions.get(6).getToken().getStart()
         );
         Assertions.assertEquals(7, emotions.size());
+    }
+
+    @Test
+    public void testTextEmotions() {
+
+        List<AnnotatedToken<Emotion>> emotions;
+        try {
+            emotions = TextAnalyzer.analyzeEmotions(
+                    new Locale("pt", "PT"),
+                    TEXT,
+                    true
+            );
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
+            return;
+        }
+
+        for (AnnotatedToken<Emotion> emotion: emotions) {
+            System.out.println(emotion.getInfo());
+        }
     }
 }

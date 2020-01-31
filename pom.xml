@@ -20,7 +20,7 @@
 
     <groupId>pt.up.hs</groupId>
     <artifactId>linguini</artifactId>
-    <version>1.1.9</version>
+    <version>1.1.10</version>
     <packaging>jar</packaging>
 
     <name>Linguini</name>

@@ -99,7 +99,7 @@ public class Lemmatizer implements Step<AnnotatedToken<String>, AnnotatedToken<S
 
     private void initialize() throws LemmatizationException {
 
-        this.lowercaseTokenNormalizer = new LowercaseTokenTransformer();
+        this.lowercaseTokenNormalizer = new LowercaseTokenTransformer<>();
 
         // read normalizers' replacements
         try {

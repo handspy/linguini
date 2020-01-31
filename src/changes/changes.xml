@@ -102,5 +102,10 @@
                 Do not use stop words in text summarization.
             </action>
         </release>
+        <release version="1.1.10" date="2020-01-31" description="voc-D, base TTR, and HD-D fix.">
+            <action dev="jcpaiva" type="update">
+                voc-D, base TTR, and HD-D fix.
+            </action>
+        </release>
     </body>
 </document>

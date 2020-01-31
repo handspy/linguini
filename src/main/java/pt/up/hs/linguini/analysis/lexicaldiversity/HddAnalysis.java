@@ -50,10 +50,14 @@ public class HddAnalysis<T extends HasWord>
         }
         double hdd = 0.0;
         for (String word : typeCounts.keySet()) {
-            double contribution = (
-                    1.0 - MathUtils.hypergeometric(
-                            tokens.size(), sampleSize, typeCounts.get(word), 0)
-            ) / (double) sampleSize;
+            double contribution = MathUtils
+                    .hypergeometric(
+                            0,
+                            sampleSize,
+                            tokens.size(),
+                            typeCounts.get(word)
+                    );
+
             hdd += contribution;
         }
         return hdd;
