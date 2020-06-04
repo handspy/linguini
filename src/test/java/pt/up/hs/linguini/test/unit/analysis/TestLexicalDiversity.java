@@ -3,8 +3,6 @@ package pt.up.hs.linguini.test.unit.analysis;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.analysis.lexicaldiversity.LDAlgorithm;
 import pt.up.hs.linguini.exceptions.LinguiniException;
@@ -16,7 +14,6 @@ import java.util.Locale;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestLexicalDiversity {
     private static final double EPSILON = 0.001;
 
@@ -352,9 +349,9 @@ public class TestLexicalDiversity {
         // System.out.println("VOCD + lemma (text): " + result);
 
         Assertions.assertTrue(
-                Double.compare(192.000D, result) < 0 &&
-                        Double.compare(195.000D, result) > 0,
-                "Expected 192.000 < D < 194.000, but voc-D was " + result
+                Double.compare(191.000D, result) < 0 &&
+                        Double.compare(195.500D, result) > 0,
+                "Expected 191.000 < D < 195.500, but voc-D was " + result
         );
     }
 }

@@ -27,9 +27,9 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
 
     /*private static Map<Locale, NNDepParser> nnDepParsers = new HashMap<>();*/
 
-    private Locale locale;
+    private final Locale locale;
 
-    private DependencyParser depParser;
+    private final DependencyParser depParser;
 
     private NNDepParser(Locale locale) {
         this.locale = locale;
@@ -62,7 +62,8 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
         GrammaticalStructure gs = depParser
                 .predict(sentence.parallelStream()
                 .map(w -> {
-                    CoreLabel lbl = CoreLabel.wordFromString(w.word());
+                    CoreLabel lbl = CoreLabel.wordFromString(w.getToken().getOriginal());
+                    lbl.setLemma(w.word());
                     lbl.setTag(w.getInfo());
                     return lbl;
                 })

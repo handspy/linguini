@@ -2,8 +2,6 @@ package pt.up.hs.linguini.test.unit.analysis;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.analysis.cooccurrence.Cooccurrence;
 import pt.up.hs.linguini.exceptions.LinguiniException;
@@ -20,7 +18,6 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestCooccurrenceAnalysis {
     private static final String PARAGRAPHS =
             "Um porta-voz de passageiros que chegaram à capital da Guiné-Bis" +

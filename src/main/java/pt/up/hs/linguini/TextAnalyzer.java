@@ -1,8 +1,8 @@
 package pt.up.hs.linguini;
 
-import pt.up.hs.linguini.analysis.cooccurrence.CooccurrenceAnalysis;
 import pt.up.hs.linguini.analysis.cooccurrence.Cooccurrence;
-import pt.up.hs.linguini.analysis.emotional.JSpellEmotionalAnalysis;
+import pt.up.hs.linguini.analysis.cooccurrence.CooccurrenceAnalysis;
+import pt.up.hs.linguini.analysis.emotional.EmotaixAnalysis;
 import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.analysis.ideadensity.IdeaDensityAnalysis;
 import pt.up.hs.linguini.analysis.ideadensity.Proposition;
@@ -12,7 +12,6 @@ import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
 import pt.up.hs.linguini.filtering.StopTokenFilter;
 import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
-import pt.up.hs.linguini.jspell.JSpellWordAnnotator;
 import pt.up.hs.linguini.lemmatization.Lemmatizer;
 import pt.up.hs.linguini.models.*;
 import pt.up.hs.linguini.nndep.NNDepParser;
@@ -232,7 +231,7 @@ public class TextAnalyzer {
         }
 
         return preprocessPipeline
-                .pipe(new JSpellEmotionalAnalysis(locale))
+                .pipe(new EmotaixAnalysis(locale))
                 .execute(text);
     }
 
@@ -362,6 +361,7 @@ public class TextAnalyzer {
                 new SentenceSplitter(locale)
                         .pipe(new BatchStep<>(new Tokenizer(locale, true)))
                         .pipe(new BatchStep<>(new PoSTagger(locale)))
+                        .pipe(new BatchStep<>(new BatchStep<>(new Lemmatizer(locale))))
                         .execute(text);
 
         int wc = taggedTokens.parallelStream()

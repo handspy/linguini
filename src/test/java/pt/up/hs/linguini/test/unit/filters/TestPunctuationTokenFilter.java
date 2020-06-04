@@ -3,8 +3,6 @@ package pt.up.hs.linguini.test.unit.filters;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.filtering.PunctuationTokenFilter;
 import pt.up.hs.linguini.filtering.TokenFilter;
 import pt.up.hs.linguini.models.Token;
@@ -21,7 +19,6 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestPunctuationTokenFilter {
     private static final String PARAGRAPH = "Carlos passa a infância com o " +
             "avô, formando-se depois, em Medicina em Coimbra. Carlos " +

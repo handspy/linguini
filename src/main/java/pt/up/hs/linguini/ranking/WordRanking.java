@@ -15,7 +15,7 @@ public class WordRanking {
     private static final String FILE_PATH_FORMAT =
             "/%s/frequencies/total.txt";
 
-    private Locale locale;
+    private final Locale locale;
 
     private Map<String, WordRankingEntry> entries;
 

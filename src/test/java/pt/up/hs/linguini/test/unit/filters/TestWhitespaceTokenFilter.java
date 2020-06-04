@@ -3,12 +3,10 @@ package pt.up.hs.linguini.test.unit.filters;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.exceptions.LinguiniException;
-import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.filtering.TokenFilter;
 import pt.up.hs.linguini.filtering.WhitespaceTokenFilter;
+import pt.up.hs.linguini.models.Token;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +16,6 @@ import java.util.List;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestWhitespaceTokenFilter {
 
     private TokenFilter<Token> filter;

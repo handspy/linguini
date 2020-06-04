@@ -2,8 +2,6 @@ package pt.up.hs.linguini.test.unit.utils;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.utils.MathUtils;
 
 /**
@@ -11,7 +9,6 @@ import pt.up.hs.linguini.utils.MathUtils;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class MathUtilsTest {
     private static final double EPSILON = 0.001;
 
@@ -30,7 +27,6 @@ public class MathUtilsTest {
         Assertions.assertTrue(Double.compare(0.3289 + EPSILON, h) > 0);
         Assertions.assertTrue(Double.compare(0.3289 - EPSILON, h) < 0);
         h = MathUtils.hypergeometric(0, 42, 192, 2);
-        System.out.println(h);
         Assertions.assertTrue(Double.compare(0.0093 + EPSILON, h) > 0);
         Assertions.assertTrue(Double.compare(0.0093 - EPSILON, h) < 0);
     }

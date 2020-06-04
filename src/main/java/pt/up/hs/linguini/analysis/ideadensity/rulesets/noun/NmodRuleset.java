@@ -64,7 +64,7 @@ public class NmodRuleset extends Ruleset<String> {
 
             if (wordsTmp instanceof String[]) {
                 words = ArrayUtils.concat(words, (String[]) wordsTmp);
-            } else {
+            } else if (wordsTmp instanceof String) {
                 words = ArrayUtils.add(words, (String) wordsTmp);
             }
         }

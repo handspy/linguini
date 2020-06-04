@@ -22,12 +22,12 @@ public class MathUtils {
         try {
             double prob = 1.0 - (
                     (
-                            (double) choose(populationSuccesses, successes) *
+                            choose(populationSuccesses, successes) *
                                     choose(
                                             (populationSize - populationSuccesses),
                                             (sampleSize - successes)
                                     )
-                    ) / (double) choose(populationSize, sampleSize)
+                    ) / choose(populationSize, sampleSize)
             );
             prob = prob * (1.0D / (double) sampleSize);
             return prob;

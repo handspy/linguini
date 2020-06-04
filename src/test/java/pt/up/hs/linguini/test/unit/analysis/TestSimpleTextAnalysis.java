@@ -1,10 +1,7 @@
 package pt.up.hs.linguini.test.unit.analysis;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.TextSummary;
@@ -18,7 +15,6 @@ import java.util.Locale;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestSimpleTextAnalysis {
     private static final String SENTENCE = "Ao tomar conhecimento, Maria " +
             "Eduarda, agora rica, partiu para o estrangeiro; e Carlos, para " +
@@ -154,6 +150,6 @@ public class TestSimpleTextAnalysis {
             Assertions.fail("Error thrown during test", e);
             return;
         }
-        Assert.assertFalse(textSummary.getWordsByCategory().containsKey(null));
+        Assertions.assertFalse(textSummary.getWordsByCategory().containsKey(null));
     }
 }

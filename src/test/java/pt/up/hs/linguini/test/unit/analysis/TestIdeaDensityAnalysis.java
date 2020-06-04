@@ -2,8 +2,6 @@ package pt.up.hs.linguini.test.unit.analysis;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 
@@ -15,7 +13,6 @@ import java.util.Locale;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestIdeaDensityAnalysis {
     private static final String SENTENCE_1 = "Era uma vez um gato, que dormi" +
             "a todo o dia.";
@@ -160,7 +157,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.170",
+        Assertions.assertEquals("0.426",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -175,7 +172,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.382",
+        Assertions.assertEquals("0.412",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -191,7 +188,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.468",
+        Assertions.assertEquals("0.296",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -207,7 +204,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.430",
+        Assertions.assertEquals("0.483",
                 String.format(Locale.US, "%.3f", idd));
     }
 

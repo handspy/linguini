@@ -1,11 +1,6 @@
 package pt.up.hs.linguini.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 import pt.up.hs.linguini.caching.InMemoryCache;
 import pt.up.hs.linguini.dictionaries.DictionaryEntry;
 import pt.up.hs.linguini.models.Emotion;
@@ -15,9 +10,6 @@ import pt.up.hs.linguini.ranking.WordRankingEntry;
 import pt.up.hs.linguini.resources.exceptions.ResourceFormatException;
 import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,13 +23,6 @@ import java.util.stream.Collectors;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class ResourceLoader {
-    private static final String REPLACEMENT_PREFIX_TAG = "prefix";
-    private static final String REPLACEMENT_SUFFIX_TAG = "suffix";
-    private static final String REPLACEMENT_REPLACEMENT_TAG = "replacement";
-    private static final String REPLACEMENT_EXCEPTIONS_ATTRIBUTE = "exceptions";
-    private static final String REPLACEMENT_TARGET_ATTRIBUTE = "target";
-    private static final String REPLACEMENT_TAG_ATTRIBUTE = "tag";
-
     private final static InMemoryCache<String, List<String>> stopwordsCache =
             new InMemoryCache<>(86400, 3600, 20);
     private final static InMemoryCache<String, Replacement[]> replacementsCache =
@@ -67,7 +52,7 @@ public class ResourceLoader {
                 stopwordsCache.put(p, stopwords);
             }
         }
-        return new ArrayList<>(stopwords);
+        return stopwords;
     }
 
     /**
@@ -113,7 +98,7 @@ public class ResourceLoader {
                 replacementsCache.put(p, replacements);
             }
         }
-        return Arrays.copyOf(replacements, replacements.length);
+        return replacements;
     }
 
     /**
@@ -127,8 +112,6 @@ public class ResourceLoader {
     private static Replacement[] readReplacements(InputStream is)
             throws ResourceLoadingException {
 
-        long startTime = new Date().getTime();
-
         Replacements replacements;
         try {
             replacements = new ObjectMapper().readValue(is, Replacements.class);
@@ -137,55 +120,7 @@ public class ResourceLoader {
             throw new ResourceLoadingException("Reading replacements", e);
         }
 
-        long endTime = new Date().getTime();
-
-        System.out.println((endTime - startTime) + "ms");
-
         return replacements.getReplacements();
-
-        /*DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-
-        Document doc;
-        try {
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            doc = db.parse(is);
-            is.close();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new ResourceLoadingException(e);
-        }
-
-        doc.getDocumentElement().normalize();
-
-        NodeList entries = doc.getElementsByTagName(REPLACEMENT_PREFIX_TAG);
-        String prefix;
-        if (entries.getLength() > 0) {
-            prefix = entries.item(0).getTextContent();
-        } else {
-            prefix = "";
-        }
-
-        entries = doc.getElementsByTagName(REPLACEMENT_SUFFIX_TAG);
-        String suffix;
-        if (entries.getLength() > 0) {
-            suffix = entries.item(0).getTextContent();
-        } else {
-            suffix = "";
-        }
-
-        entries = doc.getElementsByTagName(REPLACEMENT_REPLACEMENT_TAG);
-        Replacement[] replacements = new Replacement[entries.getLength()];
-        for (int i = 0; i < entries.getLength(); i++) {
-            Node entry = entries.item(i);
-            String replacement = entry.getTextContent();
-            String exceptions = ((Element) entry)
-                    .getAttribute(REPLACEMENT_EXCEPTIONS_ATTRIBUTE);
-            String target = ((Element) entry).getAttribute(REPLACEMENT_TARGET_ATTRIBUTE);
-            String tag = ((Element) entry).getAttribute(REPLACEMENT_TAG_ATTRIBUTE);
-            replacements[i] = new Replacement(prefix, target, suffix, tag,
-                    exceptions, replacement);
-        }
-
-        return replacements;*/
     }
 
     /**
@@ -198,6 +133,7 @@ public class ResourceLoader {
      */
     public static Map<String, WordRankingEntry> readWordRankingEntries(
             String p) throws ResourceLoadingException {
+
         Map<String, WordRankingEntry> wordRankingEntries;
         synchronized (wordRankingCache) {
             if ((wordRankingEntries = wordRankingCache.get(p)) == null) {
@@ -206,7 +142,8 @@ public class ResourceLoader {
                 wordRankingCache.put(p, wordRankingEntries);
             }
         }
-        return new HashMap<>(wordRankingEntries);
+
+        return wordRankingEntries;
     }
 
     /**
@@ -275,7 +212,7 @@ public class ResourceLoader {
                 dictionaryCache.put(p, dictionaryEntries);
             }
         }
-        return new HashMap<>(dictionaryEntries);
+        return dictionaryEntries;
     }
 
     /**
@@ -291,7 +228,7 @@ public class ResourceLoader {
 
         Map<String, HashSet<DictionaryEntry>> dictionary = new HashMap<>();
 
-        try (
+        /**/try (
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(is))
         ) {

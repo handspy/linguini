@@ -2,8 +2,6 @@ package pt.up.hs.linguini.test.unit.analysis;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import pt.up.hs.linguini.TextAnalyzer;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.models.AnnotatedToken;
@@ -12,12 +10,13 @@ import pt.up.hs.linguini.models.Emotion;
 import java.util.List;
 import java.util.Locale;
 
+import static pt.up.hs.linguini.models.Emotion.*;
+
 /**
  * Unit tests for emotional analysis.
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-@RunWith(JUnitPlatform.class)
 public class TestEmotionalAnalysis {
     private static final String SENTENCE = "Ao tomar conhecimento, Maria " +
             "Eduarda, agora rica, partiu para o estrangeiro; e Carlos, para " +
@@ -69,7 +68,7 @@ public class TestEmotionalAnalysis {
             "asa. De seguida, tomo banho e vou jantar com a minha família. De" +
             "pendendo das horas, ainda tento acabar algum trabalho e desenvol" +
             "ver alguma tarefa para a faculdade. Por último, trato normalment" +
-            "e da mina higiene pessoal para me preparar para um novo dia. ";
+            "e da minha higiene pessoal para me preparar para um novo dia. ";
 
     @Test
     public void testSentenceEmotions() {
@@ -170,8 +169,24 @@ public class TestEmotionalAnalysis {
             return;
         }
 
-        for (AnnotatedToken<Emotion> emotion: emotions) {
-            System.out.println(emotion.getInfo());
-        }
+        Assertions.assertEquals(2, emotions.size());
+
+        Assertions.assertEquals(
+                "família",
+                emotions.get(0).getToken().getOriginal()
+        );
+        Assertions.assertEquals(
+                new Emotion(Polarity.POSITIVE, Global.BENEVOLENCE, Intermediate.AFFECTION, Specific.LOVE),
+                emotions.get(0).getInfo()
+        );
+
+        Assertions.assertEquals(
+                "tento",
+                emotions.get(1).getToken().getOriginal()
+        );
+        Assertions.assertEquals(
+                new Emotion(Polarity.POSITIVE, Global.BENEVOLENCE, Intermediate.AFFECTION, Specific.ATTRACTION),
+                emotions.get(1).getInfo()
+        );
     }
 }
