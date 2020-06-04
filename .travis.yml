@@ -4,8 +4,8 @@
 # Using Java for the project
 language: java
 jdk:
-# JDK 8 is set to deploy the docs and artifacts
-  - openjdk8
+# JDK 11 is set to deploy the docs and artifacts
+  - openjdk11
 env:
   - DEPLOY=true DEPLOY_DOCS=true LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH PATH=/usr/local/bin:$PATH
 
