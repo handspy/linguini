@@ -1,0 +1,315 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+   "replacement": [
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "a"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ação"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ada"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "adia"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ador"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "adura"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "agem"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ame"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "amento"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ança"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ância"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ante"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ário"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ata"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "atura"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "eiro"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ice"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ismo"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "o"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "or"
+      },
+      {
+         "target": "ar",
+         "tag": "verb",
+         "replacement": "ura"
+      },
+      {
+         "target": "eder",
+         "tag": "verb",
+         "replacement": "essão"
+      },
+      {
+         "target": "edir",
+         "tag": "verb",
+         "replacement": "essão"
+      },
+      {
+         "target": "ender",
+         "tag": "verb",
+         "replacement": "ensão"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "edor"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "edura"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "eitor"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ença"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ença"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ência"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ente"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ição"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "ida"
+      },
+      {
+         "target": "er",
+         "tag": "verb",
+         "replacement": "imento"
+      },
+      {
+         "target": "eter",
+         "tag": "verb",
+         "replacement": "issão"
+      },
+      {
+         "target": "ever",
+         "tag": "verb",
+         "replacement": "itor"
+      },
+      {
+         "target": "dir",
+         "tag": "verb",
+         "replacement": "são"
+      },
+      {
+         "target": "igir",
+         "tag": "verb",
+         "replacement": "ector"
+      },
+      {
+         "target": "imir",
+         "tag": "verb",
+         "replacement": "essão"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "ente"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "ida"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "idor"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "idura"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "imento"
+      },
+      {
+         "target": "ir",
+         "tag": "verb",
+         "replacement": "inte"
+      },
+      {
+         "target": "itir",
+         "tag": "verb",
+         "replacement": "issão"
+      },
+      {
+         "target": "jar",
+         "tag": "verb",
+         "replacement": "gem"
+      },
+      {
+         "target": "rir",
+         "tag": "verb",
+         "replacement": "ertura"
+      },
+      {
+         "target": "ser",
+         "tag": "verb",
+         "replacement": "ente"
+      },
+      {
+         "target": "az",
+         "tag": "adj",
+         "replacement": "ácia"
+      },
+      {
+         "target": "co",
+         "tag": "adj",
+         "replacement": "quedo"
+      },
+      {
+         "target": "co",
+         "tag": "adj",
+         "replacement": "queira"
+      },
+      {
+         "target": "co",
+         "tag": "adj",
+         "replacement": "quice"
+      },
+      {
+         "target": "e",
+         "tag": "adj",
+         "replacement": "ia"
+      },
+      {
+         "target": "emo",
+         "tag": "adj",
+         "replacement": "émia"
+      },
+      {
+         "target": "ês",
+         "tag": "adj",
+         "replacement": "esia"
+      },
+      {
+         "target": "esto",
+         "tag": "adj",
+         "replacement": "éstia"
+      },
+      {
+         "target": "ido",
+         "tag": "adj",
+         "replacement": "ídia"
+      },
+      {
+         "target": "o",
+         "tag": "adj",
+         "replacement": "eira"
+      },
+      {
+         "target": "o",
+         "tag": "adj",
+         "replacement": "ia"
+      },
+      {
+         "target": "o",
+         "tag": "adj",
+         "replacement": "idade"
+      },
+      {
+         "target": "uto",
+         "tag": "adj",
+         "replacement": "úcia"
+      }
+   ]
+}

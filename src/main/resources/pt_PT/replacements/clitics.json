@@ -1,0 +1,921 @@
+{
+  "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+  "replacement": [
+    {
+      "target": "-a",
+      "replacement": " ela"
+    },
+    {
+      "target": "-as",
+      "replacement": " elas"
+    },
+    {
+      "target": "-lhe-á",
+      "replacement": "á a ele"
+    },
+    {
+      "target": "-lhe-ão",
+      "replacement": "ão a ele"
+    },
+    {
+      "target": "-lhe-ás",
+      "replacement": "ás a ele"
+    },
+    {
+      "target": "-lhe-ei",
+      "replacement": "ei a ele"
+    },
+    {
+      "target": "-lhe-emos",
+      "replacement": "emos a ele"
+    },
+    {
+      "target": "-lhe-ia",
+      "replacement": "ia a ele"
+    },
+    {
+      "target": "-lhe",
+      "replacement": " a ele"
+    },
+    {
+      "target": "-lhes-á",
+      "replacement": "á a eles"
+    },
+    {
+      "target": "-lhes-ão",
+      "replacement": "ão a eles"
+    },
+    {
+      "target": "-lhes-ás",
+      "replacement": "ás a eles"
+    },
+    {
+      "target": "-lhes-ei",
+      "replacement": "ei a eles"
+    },
+    {
+      "target": "-lhes-emos",
+      "replacement": "emos a eles"
+    },
+    {
+      "target": "-lhes-ia",
+      "replacement": "ia a eles"
+    },
+    {
+      "target": "-lhes",
+      "replacement": " a eles"
+    },
+    {
+      "target": "-ma",
+      "replacement": " ela a mim"
+    },
+    {
+      "target": "-mas",
+      "replacement": " elas a mim"
+    },
+    {
+      "target": "-me-á",
+      "replacement": "á a mim"
+    },
+    {
+      "target": "-me-ão",
+      "replacement": "ão a mim"
+    },
+    {
+      "target": "-me-ás",
+      "replacement": "ás a mim"
+    },
+    {
+      "target": "-me-ei",
+      "replacement": "ei a mim"
+    },
+    {
+      "target": "-me-emos",
+      "replacement": "emos a mim"
+    },
+    {
+      "target": "-me-ia",
+      "replacement": "ia a mim"
+    },
+    {
+      "target": "-me",
+      "replacement": " a mim"
+    },
+    {
+      "target": "-mo",
+      "replacement": " ele a mim"
+    },
+    {
+      "target": "-mos",
+      "replacement": " eles a mim"
+    },
+    {
+      "target": "-na",
+      "replacement": " ela"
+    },
+    {
+      "target": "-nas",
+      "replacement": " elas"
+    },
+    {
+      "target": "-no",
+      "replacement": " ele"
+    },
+    {
+      "target": "-nos-á",
+      "replacement": "á a nós"
+    },
+    {
+      "target": "-nos-ão",
+      "replacement": "ão a nós"
+    },
+    {
+      "target": "-nos-ás",
+      "replacement": "ás a nós"
+    },
+    {
+      "target": "-nos-ei",
+      "replacement": "ei a nós"
+    },
+    {
+      "target": "-nos-emos",
+      "replacement": "emos a nós"
+    },
+    {
+      "target": "-nos-ia",
+      "replacement": "ia a nós"
+    },
+    {
+      "target": "-nos",
+      "replacement": " a nós"
+    },
+    {
+      "target": "-nos",
+      "replacement": " eles"
+    },
+    {
+      "target": "-o",
+      "replacement": " ele"
+    },
+    {
+      "target": "-os",
+      "replacement": " eles"
+    },
+    {
+      "target": "-se-á",
+      "replacement": "á se"
+    },
+    {
+      "target": "-se-ão",
+      "replacement": "ão se"
+    },
+    {
+      "target": "-se-ia",
+      "replacement": "ia se"
+    },
+    {
+      "target": "-se",
+      "replacement": " se"
+    },
+    {
+      "target": "-te-á",
+      "replacement": "á a ti"
+    },
+    {
+      "target": "-te-ão",
+      "replacement": "ão a ti"
+    },
+    {
+      "target": "-te-ás",
+      "replacement": "ás a ti"
+    },
+    {
+      "target": "-te-ei",
+      "replacement": "ei a ti"
+    },
+    {
+      "target": "-te-emos",
+      "replacement": "emos a ti"
+    },
+    {
+      "target": "-te-ia",
+      "replacement": "ia a ti"
+    },
+    {
+      "target": "-te",
+      "replacement": " a ti"
+    },
+    {
+      "target": "-vos-á",
+      "replacement": "á a vós"
+    },
+    {
+      "target": "-vos-ão",
+      "replacement": "ão a vós"
+    },
+    {
+      "target": "-vos-ás",
+      "replacement": "ás a vós"
+    },
+    {
+      "target": "-vos-ei",
+      "replacement": "ei a vós"
+    },
+    {
+      "target": "-vos-emos",
+      "replacement": "emos a vós"
+    },
+    {
+      "target": "-vos-ia",
+      "replacement": "ia a vós"
+    },
+    {
+      "target": "-vos",
+      "replacement": " a vós"
+    },
+    {
+      "target": "á-la-á",
+      "replacement": "ará ela"
+    },
+    {
+      "target": "á-la-ão",
+      "replacement": "arão ela"
+    },
+    {
+      "target": "á-la-ás",
+      "replacement": "arás ela"
+    },
+    {
+      "target": "á-la-ei",
+      "replacement": "arei ela"
+    },
+    {
+      "target": "á-la-emos",
+      "replacement": "aremos ela"
+    },
+    {
+      "target": "á-la-ia",
+      "replacement": "aria ela"
+    },
+    {
+      "target": "á-la",
+      "replacement": "ar ela"
+    },
+    {
+      "target": "a-la",
+      "replacement": "as ela"
+    },
+    {
+      "target": "á-las-á",
+      "replacement": "ará elas"
+    },
+    {
+      "target": "á-las-ão",
+      "replacement": "arão elas"
+    },
+    {
+      "target": "á-las-ás",
+      "replacement": "arás elas"
+    },
+    {
+      "target": "á-las-ei",
+      "replacement": "arei elas"
+    },
+    {
+      "target": "á-las-emos",
+      "replacement": "aremos elas"
+    },
+    {
+      "target": "á-las-ia",
+      "replacement": "aria elas"
+    },
+    {
+      "target": "á-las",
+      "replacement": "ar elas"
+    },
+    {
+      "target": "a-las",
+      "replacement": "as eles"
+    },
+    {
+      "target": "á-lo-á",
+      "replacement": "ará ele"
+    },
+    {
+      "target": "á-lo-ão",
+      "replacement": "arão ele"
+    },
+    {
+      "target": "á-lo-ás",
+      "replacement": "arás ele"
+    },
+    {
+      "target": "á-lo-ei",
+      "replacement": "arei ele"
+    },
+    {
+      "target": "á-lo-emos",
+      "replacement": "aremos ele"
+    },
+    {
+      "target": "á-lo-ia",
+      "replacement": "aria ele"
+    },
+    {
+      "target": "á-lo",
+      "replacement": "ar ele"
+    },
+    {
+      "target": "a-lo",
+      "replacement": "as ele"
+    },
+    {
+      "target": "á-los-á",
+      "replacement": "ará eles"
+    },
+    {
+      "target": "á-los-ão",
+      "replacement": "arão eles"
+    },
+    {
+      "target": "á-los-ás",
+      "replacement": "arás eles"
+    },
+    {
+      "target": "á-los-ei",
+      "replacement": "arei eles"
+    },
+    {
+      "target": "á-los-emos",
+      "replacement": "aremos eles"
+    },
+    {
+      "target": "á-los-ia",
+      "replacement": "aria eles"
+    },
+    {
+      "target": "á-los",
+      "replacement": "ar ele"
+    },
+    {
+      "target": "a-los",
+      "replacement": "as eles"
+    },
+    {
+      "target": "di-la",
+      "replacement": "diz ela"
+    },
+    {
+      "target": "di-lo",
+      "replacement": "diz ele"
+    },
+    {
+      "target": "ê-la-á",
+      "replacement": "erá ela"
+    },
+    {
+      "target": "ê-la-ão",
+      "replacement": "erão ela"
+    },
+    {
+      "target": "ê-la-ás",
+      "replacement": "erás ela"
+    },
+    {
+      "target": "ê-la-ei",
+      "replacement": "erei ela"
+    },
+    {
+      "target": "ê-la-emos",
+      "replacement": "eremos ela"
+    },
+    {
+      "target": "ê-la-ia",
+      "replacement": "eria ela"
+    },
+    {
+      "target": "ê-la",
+      "replacement": "er ela"
+    },
+    {
+      "target": "e-la",
+      "replacement": "es ela"
+    },
+    {
+      "target": "ê-las-á",
+      "replacement": "erá elas"
+    },
+    {
+      "target": "ê-las-ão",
+      "replacement": "erão elas"
+    },
+    {
+      "target": "ê-las-ás",
+      "replacement": "erás elas"
+    },
+    {
+      "target": "ê-las-ei",
+      "replacement": "erei elas"
+    },
+    {
+      "target": "ê-las-emos",
+      "replacement": "eremos elas"
+    },
+    {
+      "target": "ê-las-ia",
+      "replacement": "eria elas"
+    },
+    {
+      "target": "ê-las",
+      "replacement": "er elas"
+    },
+    {
+      "target": "e-las",
+      "replacement": "es elas"
+    },
+    {
+      "target": "ê-lo-á",
+      "replacement": "erá ele"
+    },
+    {
+      "target": "ê-lo-ão",
+      "replacement": "erão ele"
+    },
+    {
+      "target": "ê-lo-ás",
+      "replacement": "erás ele"
+    },
+    {
+      "target": "ê-lo-ei",
+      "replacement": "erei ele"
+    },
+    {
+      "target": "ê-lo-ia",
+      "replacement": "eria ele"
+    },
+    {
+      "target": "ê-lo",
+      "replacement": "er ele"
+    },
+    {
+      "target": "e-lo",
+      "replacement": "es ele"
+    },
+    {
+      "target": "ê-los-á",
+      "replacement": "erá eles"
+    },
+    {
+      "target": "ê-los-ão",
+      "replacement": "erão eles"
+    },
+    {
+      "target": "ê-los-ás",
+      "replacement": "erás eles"
+    },
+    {
+      "target": "ê-los-ei",
+      "replacement": "erei eles"
+    },
+    {
+      "target": "ê-los-emos",
+      "replacement": "eremos eles"
+    },
+    {
+      "target": "ê-los-ia",
+      "replacement": "eria eles"
+    },
+    {
+      "target": "ê-los",
+      "replacement": "er eles"
+    },
+    {
+      "target": "e-los",
+      "replacement": "es eles"
+    },
+    {
+      "target": "fá-la",
+      "replacement": "faz ela"
+    },
+    {
+      "target": "fá-lo",
+      "replacement": "faz ele"
+    },
+    {
+      "target": "fê-la",
+      "replacement": "fez ela"
+    },
+    {
+      "target": "fê-las",
+      "replacement": "fez elas"
+    },
+    {
+      "target": "fê-lo",
+      "replacement": "fez ele"
+    },
+    {
+      "target": "fê-los",
+      "replacement": "fez eles"
+    },
+    {
+      "target": "i-la-á",
+      "replacement": "irá ela"
+    },
+    {
+      "target": "i-la-ão",
+      "replacement": "irão ela"
+    },
+    {
+      "target": "i-la-ás",
+      "replacement": "irás ela"
+    },
+    {
+      "target": "i-la-ei",
+      "replacement": "irei ela"
+    },
+    {
+      "target": "i-la-emos",
+      "replacement": "iremos ela"
+    },
+    {
+      "target": "i-la-ia",
+      "replacement": "iria ela"
+    },
+    {
+      "target": "i-la",
+      "replacement": "ir ela"
+    },
+    {
+      "target": "i-la",
+      "replacement": "is ela"
+    },
+    {
+      "target": "i-las-á",
+      "replacement": "irá elas"
+    },
+    {
+      "target": "i-las-ão",
+      "replacement": "irão elas"
+    },
+    {
+      "target": "i-las-ás",
+      "replacement": "irás elas"
+    },
+    {
+      "target": "i-las-ei",
+      "replacement": "irei elas"
+    },
+    {
+      "target": "i-las-emos",
+      "replacement": "iremos elas"
+    },
+    {
+      "target": "i-las-ia",
+      "replacement": "iria elas"
+    },
+    {
+      "target": "i-las",
+      "replacement": "ir elas"
+    },
+    {
+      "target": "i-las",
+      "replacement": "is elas"
+    },
+    {
+      "target": "i-lo-á",
+      "replacement": "irá ele"
+    },
+    {
+      "target": "i-lo-ão",
+      "replacement": "irão ele"
+    },
+    {
+      "target": "i-lo-ás",
+      "replacement": "irás ele"
+    },
+    {
+      "target": "i-lo-ei",
+      "replacement": "irei ele"
+    },
+    {
+      "target": "i-lo-emos",
+      "replacement": "iremos ele"
+    },
+    {
+      "target": "i-lo-ia",
+      "replacement": "iria ele"
+    },
+    {
+      "target": "i-lo",
+      "replacement": "ir ele"
+    },
+    {
+      "target": "i-lo",
+      "replacement": "is ele"
+    },
+    {
+      "target": "i-los-á",
+      "replacement": "irá eles"
+    },
+    {
+      "target": "i-los-ão",
+      "replacement": "irão eles"
+    },
+    {
+      "target": "i-los-ás",
+      "replacement": "irás eles"
+    },
+    {
+      "target": "i-los-ei",
+      "replacement": "irei eles"
+    },
+    {
+      "target": "i-los-em",
+      "replacement": "iremos eles"
+    },
+    {
+      "target": "i-los-ia",
+      "replacement": "iria eles"
+    },
+    {
+      "target": "i-los",
+      "replacement": "ir eles"
+    },
+    {
+      "target": "i-los",
+      "replacement": "is eles"
+    },
+    {
+      "target": "m-la",
+      "replacement": "ns ela"
+    },
+    {
+      "target": "m-las",
+      "replacement": "ns elas"
+    },
+    {
+      "target": "m-lo",
+      "replacement": "ns ele"
+    },
+    {
+      "target": "m-los",
+      "replacement": "ns eles"
+    },
+    {
+      "target": "m-na",
+      "replacement": "m ela"
+    },
+    {
+      "target": "m-nas",
+      "replacement": "m elas"
+    },
+    {
+      "target": "m-no",
+      "replacement": "m ele"
+    },
+    {
+      "target": "m-nos",
+      "replacement": "m eles"
+    },
+    {
+      "target": "mo-la",
+      "replacement": "mos ela"
+    },
+    {
+      "target": "mo-lo",
+      "replacement": "mos ele"
+    },
+    {
+      "target": "mo-nos",
+      "replacement": "mos nós"
+    },
+    {
+      "target": "mo-vos",
+      "replacement": "mos vós"
+    },
+    {
+      "target": "ô-la-á",
+      "replacement": "orá ela"
+    },
+    {
+      "target": "ô-la-ão",
+      "replacement": "orão ela"
+    },
+    {
+      "target": "ô-la-ás",
+      "replacement": "orás ela"
+    },
+    {
+      "target": "ô-la-ei",
+      "replacement": "orei ela"
+    },
+    {
+      "target": "ô-la-emos",
+      "replacement": "oremos ela"
+    },
+    {
+      "target": "ô-la-ia",
+      "replacement": "oria ela"
+    },
+    {
+      "target": "ô-la",
+      "replacement": "ôr ela"
+    },
+    {
+      "target": "ô-las-á",
+      "replacement": "orá elas"
+    },
+    {
+      "target": "ô-las-ão",
+      "replacement": "orão elas"
+    },
+    {
+      "target": "ô-las-ás",
+      "replacement": "orás elas"
+    },
+    {
+      "target": "ô-las-ei",
+      "replacement": "orei elas"
+    },
+    {
+      "target": "ô-las-emos",
+      "replacement": "oremos elas"
+    },
+    {
+      "target": "ô-las-ia",
+      "replacement": "oria elas"
+    },
+    {
+      "target": "ô-las",
+      "replacement": "ôr elas"
+    },
+    {
+      "target": "ô-lo-á",
+      "replacement": "orá ele"
+    },
+    {
+      "target": "ô-lo-ão",
+      "replacement": "orão ele"
+    },
+    {
+      "target": "ô-lo-ás",
+      "replacement": "orás ele"
+    },
+    {
+      "target": "ô-lo-ei",
+      "replacement": "orei ele"
+    },
+    {
+      "target": "ô-lo-emos",
+      "replacement": "oremos ele"
+    },
+    {
+      "target": "ô-lo-ia",
+      "replacement": "oria ele"
+    },
+    {
+      "target": "ô-lo",
+      "replacement": "ôr ele"
+    },
+    {
+      "target": "ô-los-á",
+      "replacement": "orá eles"
+    },
+    {
+      "target": "ô-los-ão",
+      "replacement": "orão eles"
+    },
+    {
+      "target": "ô-los-ás",
+      "replacement": "orás eles"
+    },
+    {
+      "target": "ô-los-ei",
+      "replacement": "orei eles"
+    },
+    {
+      "target": "ô-los-em",
+      "replacement": "oremos eles"
+    },
+    {
+      "target": "ô-los-ia",
+      "replacement": "oria eles"
+    },
+    {
+      "target": "ô-los",
+      "replacement": "ôr eles"
+    },
+    {
+      "target": "pô-la",
+      "replacement": "pôs ela"
+    },
+    {
+      "target": "pô-lo",
+      "replacement": "pôs ele"
+    },
+    {
+      "target": "quere-a",
+      "replacement": "quer ela"
+    },
+    {
+      "target": "quere-as",
+      "replacement": "quer elas"
+    },
+    {
+      "target": "quere-o",
+      "replacement": "quer ele"
+    },
+    {
+      "target": "quere-os",
+      "replacement": "quer eles"
+    },
+    {
+      "target": "quere-lo",
+      "replacement": "queres ele"
+    },
+    {
+      "target": "queres-lo",
+      "replacement": "queres ele"
+    },
+    {
+      "target": "quere-los",
+      "replacement": "queres eles"
+    },
+    {
+      "target": "queres-los",
+      "replacement": "queres eles"
+    },
+    {
+      "target": "tem-na",
+      "replacement": "tens ela"
+    },
+    {
+      "target": "tem-no",
+      "replacement": "tens ele"
+    },
+    {
+      "target": "tem-nas",
+      "replacement": "tens elas"
+    },
+    {
+      "target": "tem-nos",
+      "replacement": "tens eles"
+    },
+    {
+      "target": "tem-la",
+      "replacement": "tem ela"
+    },
+    {
+      "target": "tem-lo",
+      "replacement": "tem ele"
+    },
+    {
+      "target": "tem-las",
+      "replacement": "tem elas"
+    },
+    {
+      "target": "tem-los",
+      "replacement": "tem eles"
+    },
+    {
+      "target": "torna-la",
+      "replacement": "tornas ela"
+    },
+    {
+      "target": "torna-las",
+      "replacement": "tornas elas"
+    },
+    {
+      "target": "torna-lo",
+      "replacement": "tornas ele"
+    },
+    {
+      "target": "torna-los",
+      "replacement": "tornas eles"
+    },
+    {
+      "target": "trá-la",
+      "replacement": "traz ela"
+    },
+    {
+      "target": "trá-lo",
+      "replacement": "traz ele"
+    },
+    {
+      "target": "u-la",
+      "replacement": "uz ela"
+    },
+    {
+      "target": "u-las",
+      "replacement": "uz elas"
+    },
+    {
+      "target": "u-lo",
+      "replacement": "uz ele"
+    },
+    {
+      "target": "u-los",
+      "replacement": "uz eles"
+    }
+  ]
+}

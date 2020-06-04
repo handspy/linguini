@@ -1,0 +1,604 @@
+{
+  "replacement": [
+    {
+      "target": "à",
+      "replacement": "a a"
+    },
+    {
+      "target": "ao",
+      "replacement": "a o"
+    },
+    {
+      "target": "aos",
+      "replacement": "a os"
+    },
+    {
+      "target": "àquela",
+      "replacement": "a aquela"
+    },
+    {
+      "target": "àquelas",
+      "replacement": "a aquelas"
+    },
+    {
+      "target": "àquele",
+      "replacement": "a aquele"
+    },
+    {
+      "target": "àqueles",
+      "replacement": "a aqueles"
+    },
+    {
+      "target": "aqueloutra",
+      "replacement": "aquela outra"
+    },
+    {
+      "target": "àqueloutra",
+      "replacement": "a aquela outra"
+    },
+    {
+      "target": "aqueloutras",
+      "replacement": "aquelas outras"
+    },
+    {
+      "target": "àqueloutras",
+      "replacement": "a aquelas outras"
+    },
+    {
+      "target": "aqueloutro",
+      "replacement": "aquele outro"
+    },
+    {
+      "target": "àqueloutro",
+      "replacement": "a aquele outro"
+    },
+    {
+      "target": "aqueloutros",
+      "replacement": "aqueles outros"
+    },
+    {
+      "target": "àqueloutros",
+      "replacement": "a aqueles outros"
+    },
+    {
+      "target": "àquilo",
+      "replacement": "a aquilo"
+    },
+    {
+      "target": "às",
+      "replacement": "a as"
+    },
+    {
+      "target": "comigo",
+      "replacement": "com mim"
+    },
+    {
+      "target": "connosco",
+      "replacement": "com nós"
+    },
+    {
+      "target": "contigo",
+      "replacement": "com ti"
+    },
+    {
+      "target": "convosco",
+      "replacement": "com vós"
+    },
+    {
+      "target": "da",
+      "replacement": "de a"
+    },
+    {
+      "target": "daí",
+      "replacement": "de aí"
+    },
+    {
+      "target": "dalém",
+      "replacement": "de além"
+    },
+    {
+      "target": "dalgo",
+      "replacement": "de algo"
+    },
+    {
+      "target": "dalguém",
+      "replacement": "de alguem"
+    },
+    {
+      "target": "dalgum",
+      "replacement": "de algum"
+    },
+    {
+      "target": "dalguma",
+      "replacement": "de alguma"
+    },
+    {
+      "target": "dalgumas",
+      "replacement": "de algumas"
+    },
+    {
+      "target": "dalguns",
+      "replacement": "de alguns"
+    },
+    {
+      "target": "dalgures",
+      "replacement": "de algures"
+    },
+    {
+      "target": "dalhures",
+      "replacement": "de alhures"
+    },
+    {
+      "target": "dali",
+      "replacement": "de ali"
+    },
+    {
+      "target": "dantes",
+      "replacement": "de antes"
+    },
+    {
+      "target": "daquela",
+      "replacement": "de aquela"
+    },
+    {
+      "target": "daquelas",
+      "replacement": "de aquelas"
+    },
+    {
+      "target": "daquele",
+      "replacement": "de aquele"
+    },
+    {
+      "target": "daqueles",
+      "replacement": "de aqueles"
+    },
+    {
+      "target": "daqueloutra",
+      "replacement": "de aquela outra"
+    },
+    {
+      "target": "daqueloutras",
+      "replacement": "de aquelas outras"
+    },
+    {
+      "target": "daqueloutro",
+      "replacement": "de aquele outro"
+    },
+    {
+      "target": "daqueloutros",
+      "replacement": "de aqueles outros"
+    },
+    {
+      "target": "daquém",
+      "replacement": "de aquém"
+    },
+    {
+      "target": "daquilo",
+      "replacement": "de aquilo"
+    },
+    {
+      "target": "das",
+      "replacement": "de as"
+    },
+    {
+      "target": "dela",
+      "replacement": "de ela"
+    },
+    {
+      "target": "delas",
+      "replacement": "de elas"
+    },
+    {
+      "target": "dele",
+      "replacement": "de ele"
+    },
+    {
+      "target": "deles",
+      "replacement": "de eles"
+    },
+    {
+      "target": "dentre",
+      "replacement": "de entre"
+    },
+    {
+      "target": "dessa",
+      "replacement": "de essa"
+    },
+    {
+      "target": "dessas",
+      "replacement": "de essas"
+    },
+    {
+      "target": "dessoutra",
+      "replacement": "de essa outra"
+    },
+    {
+      "target": "dessoutras",
+      "replacement": "de essas outras"
+    },
+    {
+      "target": "dessoutro",
+      "replacement": "de esse outro"
+    },
+    {
+      "target": "dessoutros",
+      "replacement": "de esses outros"
+    },
+    {
+      "target": "desta",
+      "replacement": "de esta"
+    },
+    {
+      "target": "destas",
+      "replacement": "de estas"
+    },
+    {
+      "target": "destoutra",
+      "replacement": "de esta outra"
+    },
+    {
+      "target": "destoutras",
+      "replacement": "de estas outras"
+    },
+    {
+      "target": "destoutro",
+      "replacement": "de este outro"
+    },
+    {
+      "target": "destoutros",
+      "replacement": "de estes outros"
+    },
+    {
+      "target": "disso",
+      "replacement": "de isso"
+    },
+    {
+      "target": "disto",
+      "replacement": "de isto"
+    },
+    {
+      "target": "do",
+      "replacement": "de o"
+    },
+    {
+      "target": "donde",
+      "replacement": "de onde"
+    },
+    {
+      "target": "doravante",
+      "replacement": "de ora avante"
+    },
+    {
+      "target": "dos",
+      "replacement": "de os"
+    },
+    {
+      "target": "doutra",
+      "replacement": "de outra"
+    },
+    {
+      "target": "doutras",
+      "replacement": "de outras"
+    },
+    {
+      "target": "doutro",
+      "replacement": "de outro"
+    },
+    {
+      "target": "doutrora",
+      "replacement": "de outrora"
+    },
+    {
+      "target": "doutros",
+      "replacement": "de outros"
+    },
+    {
+      "target": "dum",
+      "replacement": "de um"
+    },
+    {
+      "target": "duma",
+      "replacement": "de uma"
+    },
+    {
+      "target": "dumas",
+      "replacement": "de umas"
+    },
+    {
+      "target": "duns",
+      "replacement": "de uns"
+    },
+    {
+      "target": "essoutra",
+      "replacement": "essa outra"
+    },
+    {
+      "target": "essoutras",
+      "replacement": "essas outras"
+    },
+    {
+      "target": "essoutro",
+      "replacement": "esse outro"
+    },
+    {
+      "target": "essoutros",
+      "replacement": "esses outros"
+    },
+    {
+      "target": "estoutra",
+      "replacement": "esta outra"
+    },
+    {
+      "target": "estoutras",
+      "replacement": "estas outras"
+    },
+    {
+      "target": "estoutro",
+      "replacement": "este outro"
+    },
+    {
+      "target": "estoutros",
+      "replacement": "estes outros"
+    },
+    {
+      "target": "lha",
+      "replacement": "ela a ele"
+    },
+    {
+      "target": "lhas",
+      "replacement": "elas a ele"
+    },
+    {
+      "target": "lhe",
+      "replacement": "a ele"
+    },
+    {
+      "target": "lhes",
+      "replacement": "a eles"
+    },
+    {
+      "target": "lho",
+      "replacement": "ele a ele"
+    },
+    {
+      "target": "lhos",
+      "replacement": "eles a ele"
+    },
+    {
+      "target": "ma",
+      "replacement": "ela a mim"
+    },
+    {
+      "target": "mo",
+      "replacement": "ele a mim"
+    },
+    {
+      "target": "mos",
+      "replacement": "a mim eles"
+    },
+    {
+      "target": "na",
+      "replacement": "em a"
+    },
+    {
+      "target": "nalgum",
+      "replacement": "em um"
+    },
+    {
+      "target": "nalguma",
+      "replacement": "em uma"
+    },
+    {
+      "target": "nalgumas",
+      "replacement": "em uma"
+    },
+    {
+      "target": "nalguns",
+      "replacement": "em uns"
+    },
+    {
+      "target": "naquela",
+      "replacement": "em aquela"
+    },
+    {
+      "target": "naquelas",
+      "replacement": "em aquelas"
+    },
+    {
+      "target": "naquele",
+      "replacement": "em aquele"
+    },
+    {
+      "target": "naqueles",
+      "replacement": "em aqueles"
+    },
+    {
+      "target": "naqueloutra",
+      "replacement": "em aquela outra"
+    },
+    {
+      "target": "naqueloutras",
+      "replacement": "em aquelas outras"
+    },
+    {
+      "target": "naqueloutro",
+      "replacement": "em aquele outro"
+    },
+    {
+      "target": "naqueloutros",
+      "replacement": "em aqueles outros"
+    },
+    {
+      "target": "naquilo",
+      "replacement": "em aquilo"
+    },
+    {
+      "target": "nas",
+      "replacement": "em as"
+    },
+    {
+      "target": "nela",
+      "replacement": "em ela"
+    },
+    {
+      "target": "nelas",
+      "replacement": "em elas"
+    },
+    {
+      "target": "nele",
+      "replacement": "em ele"
+    },
+    {
+      "target": "neles",
+      "replacement": "em eles"
+    },
+    {
+      "target": "nessa",
+      "replacement": "em essa"
+    },
+    {
+      "target": "nessas",
+      "replacement": "em essas"
+    },
+    {
+      "target": "nesse",
+      "replacement": "em esse"
+    },
+    {
+      "target": "nesses",
+      "replacement": "em esses"
+    },
+    {
+      "target": "nessoutra",
+      "replacement": "em essa outra"
+    },
+    {
+      "target": "nessoutras",
+      "replacement": "em essas outras"
+    },
+    {
+      "target": "nessoutro",
+      "replacement": "em esse outro"
+    },
+    {
+      "target": "nessoutros",
+      "replacement": "em esses outros"
+    },
+    {
+      "target": "nesta",
+      "replacement": "em esta"
+    },
+    {
+      "target": "nestas",
+      "replacement": "em estas"
+    },
+    {
+      "target": "neste",
+      "replacement": "em este"
+    },
+    {
+      "target": "nestes",
+      "replacement": "em estes"
+    },
+    {
+      "target": "nestoutra",
+      "replacement": "em esta outra"
+    },
+    {
+      "target": "nestoutras",
+      "replacement": "em estas outras"
+    },
+    {
+      "target": "nestoutro",
+      "replacement": "em este outro"
+    },
+    {
+      "target": "nestoutros",
+      "replacement": "em estes outros"
+    },
+    {
+      "target": "nisso",
+      "replacement": "em isso"
+    },
+    {
+      "target": "nisto",
+      "replacement": "em isto"
+    },
+    {
+      "target": "no",
+      "replacement": "em o"
+    },
+    {
+      "target": "nos",
+      "replacement": "em os"
+    },
+    {
+      "target": "noutra",
+      "replacement": "em outra"
+    },
+    {
+      "target": "noutras",
+      "replacement": "em outras"
+    },
+    {
+      "target": "noutrem",
+      "replacement": "em outrem"
+    },
+    {
+      "target": "noutro",
+      "replacement": "em outro"
+    },
+    {
+      "target": "noutros",
+      "replacement": "em outros"
+    },
+    {
+      "target": "num",
+      "replacement": "em um"
+    },
+    {
+      "target": "numa",
+      "replacement": "em uma"
+    },
+    {
+      "target": "numas",
+      "replacement": "em umas"
+    },
+    {
+      "target": "nuns",
+      "replacement": "em uns"
+    },
+    {
+      "target": "pela",
+      "replacement": "por a"
+    },
+    {
+      "target": "pelas",
+      "replacement": "por as"
+    },
+    {
+      "target": "pelo",
+      "replacement": "por o"
+    },
+    {
+      "target": "pelos",
+      "replacement": "por os"
+    },
+    {
+      "target": "ta",
+      "replacement": "ela a ti"
+    },
+    {
+      "target": "tas",
+      "replacement": "elas a ti"
+    },
+    {
+      "target": "to",
+      "replacement": "ele a ti"
+    },
+    {
+      "target": "tos",
+      "replacement": "les a ti"
+    }
+  ]
+}

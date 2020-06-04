@@ -1,0 +1,354 @@
+{
+  "replacement": [
+    {
+      "target": "abadessa",
+      "tag": "noun|adj",
+      "replacement": "abade"
+    },
+    {
+      "target": "abelha",
+      "tag": "noun|adj",
+      "replacement": "zangão"
+    },
+    {
+      "target": "actriz",
+      "tag": "noun|adj",
+      "replacement": "actor"
+    },
+    {
+      "target": "alcaidessa",
+      "tag": "noun|adj",
+      "replacement": "alcaide"
+    },
+    {
+      "target": "aliá",
+      "tag": "noun|adj",
+      "replacement": "elefante"
+    },
+    {
+      "target": "avó",
+      "tag": "noun|adj",
+      "replacement": "avô"
+    },
+    {
+      "target": "baronesa",
+      "tag": "noun|adj",
+      "replacement": "barão"
+    },
+    {
+      "target": "boa",
+      "tag": "noun|adj",
+      "replacement": "bom"
+    },
+    {
+      "target": "cabra",
+      "tag": "noun|adj",
+      "replacement": "bode"
+    },
+    {
+      "target": "cadela",
+      "tag": "noun|adj",
+      "replacement": "cão"
+    },
+    {
+      "target": "comadre",
+      "tag": "noun|adj",
+      "replacement": "compadre"
+    },
+    {
+      "target": "condessa",
+      "tag": "noun|adj",
+      "replacement": "conde"
+    },
+    {
+      "target": "consulesa",
+      "tag": "noun|adj",
+      "replacement": "cônsul"
+    },
+    {
+      "target": "czarina",
+      "tag": "noun|adj",
+      "replacement": "czar"
+    },
+    {
+      "target": "dama",
+      "tag": "noun|adj",
+      "replacement": "cavalheiro"
+    },
+    {
+      "target": "deusa",
+      "tag": "noun|adj",
+      "replacement": "deus"
+    },
+    {
+      "target": "diaconisa",
+      "tag": "noun|adj",
+      "replacement": "diácono"
+    },
+    {
+      "target": "dona",
+      "tag": "noun|adj",
+      "replacement": "dom"
+    },
+    {
+      "target": "duquesa",
+      "tag": "noun|adj",
+      "replacement": "duque"
+    },
+    {
+      "target": "égua",
+      "tag": "noun|adj",
+      "replacement": "cavalo"
+    },
+    {
+      "target": "elefanta",
+      "tag": "noun|adj",
+      "replacement": "elefante"
+    },
+    {
+      "target": "embaixatriz",
+      "tag": "noun|adj",
+      "replacement": "embaixador"
+    },
+    {
+      "target": "espia",
+      "tag": "noun|adj",
+      "replacement": "espião"
+    },
+    {
+      "target": "felaína",
+      "tag": "noun|adj",
+      "replacement": "felá"
+    },
+    {
+      "target": "fêmea",
+      "tag": "noun|adj",
+      "replacement": "macho"
+    },
+    {
+      "target": "freira",
+      "tag": "noun|adj",
+      "replacement": "frei"
+    },
+    {
+      "target": "galinha",
+      "tag": "noun|adj",
+      "replacement": "galo"
+    },
+    {
+      "target": "governanta",
+      "tag": "noun|adj",
+      "replacement": "governante"
+    },
+    {
+      "target": "grua",
+      "tag": "noun|adj",
+      "replacement": "grou"
+    },
+    {
+      "target": "heroína",
+      "tag": "noun|adj",
+      "replacement": "herói"
+    },
+    {
+      "target": "ilhoa",
+      "tag": "noun|adj",
+      "replacement": "ilhéu"
+    },
+    {
+      "target": "imperatriz",
+      "tag": "noun|adj",
+      "replacement": "imperador"
+    },
+    {
+      "target": "jogralesa",
+      "tag": "noun|adj",
+      "replacement": "jogral"
+    },
+    {
+      "target": "judia",
+      "tag": "noun|adj",
+      "replacement": "judeu"
+    },
+    {
+      "target": "ladra",
+      "tag": "noun|adj",
+      "replacement": "ladrão"
+    },
+    {
+      "target": "lebre",
+      "tag": "noun|adj",
+      "replacement": "lebrão"
+    },
+    {
+      "target": "má",
+      "tag": "noun|adj",
+      "replacement": "mau"
+    },
+    {
+      "target": "madrasta",
+      "tag": "noun|adj",
+      "replacement": "padrasto"
+    },
+    {
+      "target": "madrinha",
+      "tag": "noun|adj",
+      "replacement": "padrinho"
+    },
+    {
+      "target": "mãe",
+      "tag": "noun|adj",
+      "replacement": "pai"
+    },
+    {
+      "target": "maestrina",
+      "tag": "noun|adj",
+      "replacement": "maestro"
+    },
+    {
+      "target": "mélroa",
+      "tag": "noun|adj",
+      "replacement": "melro"
+    },
+    {
+      "target": "mestra",
+      "tag": "noun|adj",
+      "replacement": "mestre"
+    },
+    {
+      "target": "monja",
+      "tag": "noun|adj",
+      "replacement": "monge"
+    },
+    {
+      "target": "mula",
+      "tag": "noun|adj",
+      "replacement": "macho"
+    },
+    {
+      "target": "mulher",
+      "tag": "noun|adj",
+      "replacement": "homem"
+    },
+    {
+      "target": "nora",
+      "tag": "noun|adj",
+      "replacement": "genro"
+    },
+    {
+      "target": "ovelha",
+      "tag": "noun|adj",
+      "replacement": "carneiro"
+    },
+    {
+      "target": "papisa",
+      "tag": "noun|adj",
+      "replacement": "papa"
+    },
+    {
+      "target": "parenta",
+      "tag": "noun|adj",
+      "replacement": "parente"
+    },
+    {
+      "target": "perdiz",
+      "tag": "noun|adj",
+      "replacement": "perdigão"
+    },
+    {
+      "target": "pitonisa",
+      "tag": "noun|adj",
+      "replacement": "píton"
+    },
+    {
+      "target": "poetisa",
+      "tag": "noun|adj",
+      "replacement": "poeta"
+    },
+    {
+      "target": "presidenta",
+      "tag": "noun|adj",
+      "replacement": "presidente"
+    },
+    {
+      "target": "princesa",
+      "tag": "noun|adj",
+      "replacement": "príncipe"
+    },
+    {
+      "target": "prioresa",
+      "tag": "noun|adj",
+      "replacement": "prior"
+    },
+    {
+      "target": "profetisa",
+      "tag": "noun|adj",
+      "replacement": "profeta"
+    },
+    {
+      "target": "rainha",
+      "tag": "noun|adj",
+      "replacement": "rei"
+    },
+    {
+      "target": "râni",
+      "tag": "noun|adj",
+      "replacement": "rajá"
+    },
+    {
+      "target": "rapariga",
+      "tag": "noun|adj",
+      "replacement": "rapaz"
+    },
+    {
+      "target": "ré",
+      "tag": "noun|adj",
+      "replacement": "réu"
+    },
+    {
+      "target": "s[oó]ror",
+      "tag": "noun|adj",
+      "replacement": "frei"
+    },
+    {
+      "target": "sacerdotisa",
+      "tag": "noun|adj",
+      "replacement": "sacerdote"
+    },
+    {
+      "target": "sandia",
+      "tag": "noun|adj",
+      "replacement": "sandeu"
+    },
+    {
+      "target": "sílfide",
+      "tag": "noun|adj",
+      "replacement": "silfo"
+    },
+    {
+      "target": "sultana",
+      "tag": "noun|adj",
+      "replacement": "sultão"
+    },
+    {
+      "target": "tecedeira",
+      "tag": "noun|adj",
+      "replacement": "tecelão"
+    },
+    {
+      "target": "vaca",
+      "tag": "noun|adj",
+      "replacement": "boi"
+    },
+    {
+      "target": "viscondessa",
+      "tag": "noun|adj",
+      "replacement": "visconde"
+    },
+    {
+      "target": "zagala",
+      "tag": "noun|adj",
+      "replacement": "zagal"
+    }
+  ]
+}

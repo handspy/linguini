@@ -1,0 +1,339 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+   "replacement": [
+      {
+         "target": "ã",
+         "tag": "noun|adj",
+         "exceptions": "afã|amanhã|avelã|catamarã|clã|divã|fã|hortelã|imã|lã|maçã|manhã",
+         "replacement": "ão"
+      },
+      {
+         "target": "ada",
+         "tag": "noun|adj",
+         "exceptions": "bancada|bandeirada|bilheteira|camada|camarada|chamada|chegada|década|embaixada|enseada|entrada|escada|esplanada|estrada|facada|fantochada|feijoada|guinada|incursão|granada|jogada|jornada|lâmpada|olimpíada|madrugada|mesada|pancada|papelada|parada|piada|pomada|porrada|pousada|retirada|risada|salada|temporada|tonelada",
+         "replacement": "ado"
+      },
+      {
+         "target": "anda",
+         "tag": "noun|adj",
+         "exceptions": "banda|ciranda|demanda|propaganda|varanda",
+         "replacement": "ando"
+      },
+      {
+         "target": "ária",
+         "tag": "noun|adj",
+         "exceptions": "ária|malária",
+         "replacement": "ário"
+      },
+      {
+         "target": "ara",
+         "tag": "noun|adj",
+         "exceptions": "câmara",
+         "replacement": "aro"
+      },
+      {
+         "target": "ava",
+         "tag": "noun|adj",
+         "exceptions": "câmara",
+         "replacement": "avo"
+      },
+      {
+         "target": "deira",
+         "tag": "noun|adj",
+         "exceptions": "bandeira|brincadeira|caçadeira|cadeira|caldeira|espreguiçadeira|frigideira|pregadeira",
+         "replacement": "dor"
+      },
+      {
+         "target": "eia",
+         "tag": "noun|adj",
+         "exceptions": "aldeia|assembleia|estreia|ideia|geleia|meia|plateia",
+         "replacement": "eu"
+      },
+      {
+         "target": "éia",
+         "tag": "noun|adj",
+         "exceptions": "aldéia|assembléia|estréia|idéia|geléia|platéia",
+         "replacement": "eu"
+      },
+      {
+         "target": "eita",
+         "tag": "noun|adj",
+         "exceptions": "colheita|receita|seita",
+         "replacement": "eito"
+      },
+      {
+         "target": "enha",
+         "tag": "noun|adj",
+         "exceptions": "lenha",
+         "replacement": "enho"
+      },
+      {
+         "target": "erta",
+         "tag": "noun|adj",
+         "replacement": "erto"
+      },
+      {
+         "target": "esa",
+         "tag": "noun|adj",
+         "exceptions": "defesa|despesa|empresa|framboesa|ilesa|obesa|mesa|presa|princesa|represa|sobremesa|surpresa",
+         "replacement": "ês"
+      },
+      {
+         "target": "esa",
+         "tag": "noun|adj",
+         "exceptions": "baronesa|(auto)?defesa|despesa|(arqui)?duquesa|empresa|framboesa|(sobre)?mesa|princesa|represa|retesa|surpr[eê]sa|turquesa",
+         "replacement": "ês"
+      },
+      {
+         "target": "esca",
+         "tag": "noun|adj",
+         "replacement": "esco"
+      },
+      {
+         "target": "estra",
+         "tag": "noun|adj",
+         "replacement": "estro"
+      },
+      {
+         "target": "eta",
+         "tag": "noun|adj",
+         "exceptions": "atleta|bicicleta|caderneta|caneta|camiseta|cometa|corneta|dieta|estafeta|estatueta|etiqueta|faceta|gaveta|lisboeta|maqueta|marioneta|meta|motocicleta|perneta|peseta|pipeta|pirueta|planeta|poeta|praceta|profeta|proveta|roleta|tabuleta|vedeta",
+         "replacement": "eto"
+      },
+      {
+         "target": "eva",
+         "tag": "noun|adj",
+         "exceptions": "treva",
+         "replacement": "evo"
+      },
+      {
+         "target": "exta",
+         "tag": "noun|adj",
+         "replacement": "exto"
+      },
+      {
+         "target": "íaca",
+         "tag": "noun|adj",
+         "replacement": "íaco"
+      },
+      {
+         "target": "ica",
+         "tag": "noun|adj",
+         "exceptions": "dica|fábrica|(hidro)?ginástica|música|réplica|república",
+         "replacement": "ico"
+      },
+      {
+         "target": "ida",
+         "tag": "noun|adj",
+         "exceptions": "avenida|comida|corrida|dívida|dúvida|homicida|(contra)?medida|partida|sida|suícida|vida",
+         "replacement": "ido"
+      },
+      {
+         "target": "ída",
+         "tag": "noun|adj",
+         "exceptions": "recaída|saída",
+         "replacement": "ído"
+      },
+      {
+         "target": "iga",
+         "tag": "noun|adj",
+         "exceptions": "barriga|briga|cantiga|espiga|intriga|(super)?liga|manteiga|rapariga|viga",
+         "replacement": "igo"
+      },
+      {
+         "target": "ima",
+         "tag": "noun|adj",
+         "exceptions": "cima|clima|coima|estima|guloseima|lágrima|queima|vítima",
+         "replacement": "imo"
+      },
+      {
+         "target": "inha",
+         "tag": "noun|adj",
+         "exceptions": "alfacinha|azinha|carapinha|cozinha|espinha|farinha|galinha|linha|madrinha|marinha|pinha|rainha|sardinha|tinha|vinha|vizinha",
+         "replacement": "inho"
+      },
+      {
+         "target": "inta",
+         "tag": "noun|adj",
+         "replacement": "into"
+      },
+      {
+         "target": "ira",
+         "tag": "noun|adj",
+         "exceptions": "albufeira|algibeira|bandeira|barreira|beira|bilheteira|brincadeira|cabeceira|caçadeira|cachoeira|cadeira|caleira|caldeira|capoeira|carreira|carteira|clareira|cordilheira|eira|espreguiçadeira|esteira|estribeira|feira|figueira|fileira|fogueira|freira|frieira|frigideira|fronteira|ira|leira|madeira|maneira|mangueira|mentira|papeira|peneira|poeira|prateleira|pregadeira|pulseira|regadeira|traineira",
+         "replacement": "iro"
+      },
+      {
+         "target": "istra",
+         "tag": "noun|adj",
+         "replacement": "istro"
+      },
+      {
+         "target": "iva",
+         "tag": "noun|adj",
+         "exceptions": "classificativa|comitiva|conviva|dádiva|deriva|diva|estimativa|expectativa|iniciativa|ofensiva|perspectiva|prerrogativa|raiva|retrospectiva|saliva|tentativa",
+         "replacement": "ivo"
+      },
+      {
+         "target": "iza",
+         "tag": "noun|adj",
+         "replacement": "iz"
+      },
+      {
+         "target": "íza",
+         "tag": "noun|adj",
+         "replacement": "iz"
+      },
+      {
+         "target": "na",
+         "tag": "noun|adj",
+         "exceptions": "acetona|amazona|antena|ardina|arena|aspirina|azeitona|banana|barbatana|boina|cabana|cabina|cana|caserna|cena|centena|chacina|cisterna|cocaína|coluna|cortisona|dezena|disciplina|doutrina|duna|esquina|fauna|fortuna|gabardina|gasolina|lacuna|lanterna|lona|máquina|maratona|margarina|matina|medicina|milena|mina|monótona|neblina|nicotina|oficina|oxitocina|página|paisana|pena|perna|pestana|piscina|plasticina|platina|propina|proteína|ruína|quinzena|roldana|rotina|[\\wàáãâéêíóõôúç\\-]*semana|serpentina|urna|usina|tuna|vacatura|vacina|vitamina|vitrina|zarabatana|zona",
+         "replacement": "no"
+      },
+      {
+         "target": "nhola",
+         "tag": "noun|adj",
+         "replacement": "nhol"
+      },
+      {
+         "target": "oga",
+         "tag": "noun|adj",
+         "exceptions": "sinagoga",
+         "replacement": "ogo"
+      },
+      {
+         "target": "oa",
+         "tag": "noun|adj",
+         "exceptions": "boa|ilhoa|toa",
+         "replacement": "ão"
+      },
+      {
+         "target": "ona",
+         "tag": "noun|adj",
+         "exceptions": "acetona|amazona|cona|cortisona|lona|maratona|monótona|sanfona|zona",
+         "replacement": "ão"
+      },
+      {
+         "target": "ora",
+         "tag": "noun|adj",
+         "exceptions": "amora|demora|fora|hora|impressora|metáfora|metralhadora|mora|pólvora",
+         "replacement": "or"
+      },
+      {
+         "target": "osa",
+         "tag": "noun|adj",
+         "exceptions": "mucosa|prosa|rosa",
+         "replacement": "oso"
+      },
+      {
+         "target": "ova",
+         "tag": "noun|adj",
+         "exceptions": "escova|ova|(contra)?prova|supernova",
+         "replacement": "ovo"
+      },
+      {
+         "target": "ua",
+         "tag": "noun|adj",
+         "exceptions": "gazua|grua|lua|mua|pua|rua",
+         "replacement": "u"
+      },
+      {
+         "target": "unda",
+         "tag": "noun|adj",
+         "replacement": "undo"
+      },
+      {
+         "target": "ura",
+         "tag": "noun|adj",
+         "exceptions": "(re)?abertura|abreviatura|agrura|altura|amargura|armadura|arquite(c)?tura||assinatura|aventura|brochura|candidatura|candura|cenoura|captura|censura|cintura|cobertura|conje(c)?tura|conjuntura|contra(c)?tura|costura|criatura|cura|ditadura|envergadura|escravatura|escritura|escultura|espessura|estatura|estrutura|factura|fartura|fechadura|feitura|figura|formatura|fractura|frescura|gordura|largura|legislatura|leitura|licenciatura|ligadura|literatura|loucura|mistura|partitura|pintura|postura|prefeitura|procura|releitura|quadratura|ruptura|sepultura|status|temperatura|tempura|ternura|tortura|viatura|[\\wàáãâéêíóõôúç]*cultura|[\\wàáãâéêíóõôúç\\-]*estrutura",
+         "replacement": "uro"
+      },
+      {
+         "target": "uta",
+         "tag": "noun|adj",
+         "exceptions": "conduta|disputa|escuta|fruta|gruta|juta|luta|permuta|recruta|truta|[\\wàáãâéêíóõôúç]+auta",
+         "replacement": "uto"
+      },
+      {
+         "target": "úva",
+         "tag": "noun|adj",
+         "replacement": "úvo"
+      },
+      {
+         "target": "uza",
+         "tag": "noun|adj",
+         "replacement": "uz"
+      },
+      {
+         "target": "a",
+         "tag": "det|pron",
+         "exceptions": "aquela|cada|dela|ela|minha|nada|sua|tua|uma",
+         "replacement": "o"
+      },
+      {
+         "target": "ambas",
+         "tag": "det|pron",
+         "replacement": "ambos"
+      },
+      {
+         "target": "ela",
+         "tag": "det|pron",
+         "replacement": "ele"
+      },
+      {
+         "target": "essa",
+         "tag": "det|pron",
+         "replacement": "esse"
+      },
+      {
+         "target": "esta",
+         "tag": "det|pron",
+         "replacement": "este"
+      },
+      {
+         "target": "minha",
+         "tag": "det|pron",
+         "replacement": "meu"
+      },
+      {
+         "target": "sua",
+         "tag": "det|pron",
+         "replacement": "seu"
+      },
+      {
+         "target": "tua",
+         "tag": "det|pron",
+         "replacement": "teu"
+      },
+      {
+         "target": "uma",
+         "tag": "det|pron",
+         "replacement": "um"
+      },
+      {
+         "target": "várias",
+         "tag": "det|pron",
+         "replacement": "vários"
+      },
+      {
+         "target": "centas",
+         "tag": "num",
+         "replacement": "centos"
+      },
+      {
+         "target": "duas",
+         "tag": "num",
+         "replacement": "dois"
+      },
+      {
+         "target": "uma",
+         "tag": "num",
+         "replacement": "um"
+      },
+      {
+         "target": "zentas",
+         "tag": "num",
+         "replacement": "zentos"
+      }
+   ]
+}

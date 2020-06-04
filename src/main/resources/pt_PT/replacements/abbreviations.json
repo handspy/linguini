@@ -1,0 +1,8402 @@
+{
+  "replacement": [
+    {
+      "target": "a."
+    },
+    {
+      "target": "a.al."
+    },
+    {
+      "target": "a.b."
+    },
+    {
+      "target": "a.c."
+    },
+    {
+      "target": "a.c.e."
+    },
+    {
+      "target": "a.d."
+    },
+    {
+      "target": "a.h."
+    },
+    {
+      "target": "a.m."
+    },
+    {
+      "target": "a.m.a."
+    },
+    {
+      "target": "a.m.d.g."
+    },
+    {
+      "target": "a.p."
+    },
+    {
+      "target": "a.r."
+    },
+    {
+      "target": "a.s."
+    },
+    {
+      "target": "a.-s."
+    },
+    {
+      "target": "a.t."
+    },
+    {
+      "target": "a.u.c."
+    },
+    {
+      "target": "a.v."
+    },
+    {
+      "target": "a.v.c."
+    },
+    {
+      "target": "aa."
+    },
+    {
+      "target": "ab."
+    },
+    {
+      "target": "abc."
+    },
+    {
+      "target": "abis."
+    },
+    {
+      "target": "abissín."
+    },
+    {
+      "target": "abl."
+    },
+    {
+      "target": "abr."
+    },
+    {
+      "target": "abrev."
+    },
+    {
+      "target": "abs."
+    },
+    {
+      "target": "åbs."
+    },
+    {
+      "target": "absol."
+    },
+    {
+      "target": "abstr."
+    },
+    {
+      "target": "abus."
+    },
+    {
+      "target": "ac."
+    },
+    {
+      "target": "acad."
+    },
+    {
+      "target": "academ."
+    },
+    {
+      "target": "acadêm."
+    },
+    {
+      "target": "acc."
+    },
+    {
+      "target": "accel."
+    },
+    {
+      "target": "acep."
+    },
+    {
+      "target": "acepç."
+    },
+    {
+      "target": "açor."
+    },
+    {
+      "target": "acus."
+    },
+    {
+      "target": "acúst."
+    },
+    {
+      "target": "ad."
+    },
+    {
+      "target": "adag."
+    },
+    {
+      "target": "adapt."
+    },
+    {
+      "target": "adit."
+    },
+    {
+      "target": "adj."
+    },
+    {
+      "target": "adj. bif."
+    },
+    {
+      "target": "adj. s.2g."
+    },
+    {
+      "target": "adj. s.2g.2n."
+    },
+    {
+      "target": "adj. s.f."
+    },
+    {
+      "target": "adj. s.m."
+    },
+    {
+      "target": "adj. unif."
+    },
+    {
+      "target": "adj.2g."
+    },
+    {
+      "target": "adj.2g. s.f."
+    },
+    {
+      "target": "adj.2g. s.m."
+    },
+    {
+      "target": "adj.2g.2n."
+    },
+    {
+      "target": "adjet."
+    },
+    {
+      "target": "adm."
+    },
+    {
+      "target": "adm. ecl."
+    },
+    {
+      "target": "adm. púb."
+    },
+    {
+      "target": "adm. rom."
+    },
+    {
+      "target": "admir."
+    },
+    {
+      "target": "admr."
+    },
+    {
+      "target": "adv."
+    },
+    {
+      "target": "adv. af."
+    },
+    {
+      "target": "adv. conf."
+    },
+    {
+      "target": "adv. design."
+    },
+    {
+      "target": "adv. dúv."
+    },
+    {
+      "target": "adv. excl."
+    },
+    {
+      "target": "adv. interr."
+    },
+    {
+      "target": "adv. lug."
+    },
+    {
+      "target": "adv. mod."
+    },
+    {
+      "target": "adv. neg."
+    },
+    {
+      "target": "adv. num."
+    },
+    {
+      "target": "adv. quant."
+    },
+    {
+      "target": "adv. rel."
+    },
+    {
+      "target": "adv. temp."
+    },
+    {
+      "target": "adverb."
+    },
+    {
+      "target": "advoc."
+    },
+    {
+      "target": "aer."
+    },
+    {
+      "target": "aer. mil."
+    },
+    {
+      "target": "aerof."
+    },
+    {
+      "target": "aeron."
+    },
+    {
+      "target": "aerost."
+    },
+    {
+      "target": "aet."
+    },
+    {
+      "target": "aetat."
+    },
+    {
+      "target": "afér."
+    },
+    {
+      "target": "afl."
+    },
+    {
+      "target": "afls."
+    },
+    {
+      "target": "afor."
+    },
+    {
+      "target": "afr."
+    },
+    {
+      "target": "afric."
+    },
+    {
+      "target": "afrolus."
+    },
+    {
+      "target": "ag."
+    },
+    {
+      "target": "ág."
+    },
+    {
+      "target": "fl."
+    },
+    {
+      "target": "agl."
+    },
+    {
+      "target": "agn."
+    },
+    {
+      "target": "ago."
+    },
+    {
+      "target": "agr."
+    },
+    {
+      "target": "agric."
+    },
+    {
+      "target": "agrim."
+    },
+    {
+      "target": "agrol."
+    },
+    {
+      "target": "agron."
+    },
+    {
+      "target": "aj."
+    },
+    {
+      "target": "al."
+    },
+    {
+      "target": "al. hist."
+    },
+    {
+      "target": "al. lit."
+    },
+    {
+      "target": "al. mit."
+    },
+    {
+      "target": "alat."
+    },
+    {
+      "target": "alb."
+    },
+    {
+      "target": "alent."
+    },
+    {
+      "target": "alentej."
+    },
+    {
+      "target": "alf."
+    },
+    {
+      "target": "alf. ar."
+    },
+    {
+      "target": "alf. aráb."
+    },
+    {
+      "target": "alf. cir."
+    },
+    {
+      "target": "alf. gr."
+    },
+    {
+      "target": "alf. hebr."
+    },
+    {
+      "target": "alf. lat."
+    },
+    {
+      "target": "alfaiat."
+    },
+    {
+      "target": "álg. abst."
+    },
+    {
+      "target": "alg."
+    },
+    {
+      "target": "álg."
+    },
+    {
+      "target": "álg. mod."
+    },
+    {
+      "target": "álg. sup."
+    },
+    {
+      "target": "algar."
+    },
+    {
+      "target": "algv."
+    },
+    {
+      "target": "alm."
+    },
+    {
+      "target": "alop."
+    },
+    {
+      "target": "alp."
+    },
+    {
+      "target": "alq."
+    },
+    {
+      "target": "alquil."
+    },
+    {
+      "target": "als."
+    },
+    {
+      "target": "alt."
+    },
+    {
+      "target": "alt.-al."
+    },
+    {
+      "target": "altan."
+    },
+    {
+      "target": "alter."
+    },
+    {
+      "target": "altern."
+    },
+    {
+      "target": "altit."
+    },
+    {
+      "target": "alto-al."
+    },
+    {
+      "target": "alus."
+    },
+    {
+      "target": "alus. lit."
+    },
+    {
+      "target": "alv."
+    },
+    {
+      "target": "alveit."
+    },
+    {
+      "target": "alven."
+    },
+    {
+      "target": "am."
+    },
+    {
+      "target": "amár."
+    },
+    {
+      "target": "amer."
+    },
+    {
+      "target": "an."
+    },
+    {
+      "target": "anál."
+    },
+    {
+      "target": "anal."
+    },
+    {
+      "target": "anál. clín."
+    },
+    {
+      "target": "anál. mat."
+    },
+    {
+      "target": "anam."
+    },
+    {
+      "target": "anarq."
+    },
+    {
+      "target": "anat."
+    },
+    {
+      "target": "and."
+    },
+    {
+      "target": "anes."
+    },
+    {
+      "target": "ang."
+    },
+    {
+      "target": "angl."
+    },
+    {
+      "target": "angl.-sax."
+    },
+    {
+      "target": "angol."
+    },
+    {
+      "target": "anim."
+    },
+    {
+      "target": "anôn."
+    },
+    {
+      "target": "ant. a.-al."
+    },
+    {
+      "target": "ant. alt.-al."
+    },
+    {
+      "target": "ant."
+    },
+    {
+      "target": "ant. biz."
+    },
+    {
+      "target": "ant. clás."
+    },
+    {
+      "target": "ant. egíp."
+    },
+    {
+      "target": "ant. gr."
+    },
+    {
+      "target": "ant. hebr."
+    },
+    {
+      "target": "ant. mex."
+    },
+    {
+      "target": "ant. or."
+    },
+    {
+      "target": "ant. rom."
+    },
+    {
+      "target": "antec."
+    },
+    {
+      "target": "antig."
+    },
+    {
+      "target": "antiq."
+    },
+    {
+      "target": "antol."
+    },
+    {
+      "target": "antôn."
+    },
+    {
+      "target": "anton."
+    },
+    {
+      "target": "antonom."
+    },
+    {
+      "target": "antr."
+    },
+    {
+      "target": "antr. f."
+    },
+    {
+      "target": "antr. m."
+    },
+    {
+      "target": "antrop."
+    },
+    {
+      "target": "antropogr."
+    },
+    {
+      "target": "antropol."
+    },
+    {
+      "target": "antropon."
+    },
+    {
+      "target": "antropôn."
+    },
+    {
+      "target": "antropôn. fem."
+    },
+    {
+      "target": "antropôn. masc."
+    },
+    {
+      "target": "anu."
+    },
+    {
+      "target": "ap."
+    },
+    {
+      "target": "apart."
+    },
+    {
+      "target": "apênd."
+    },
+    {
+      "target": "apic."
+    },
+    {
+      "target": "apl."
+    },
+    {
+      "target": "apóc."
+    },
+    {
+      "target": "aport."
+    },
+    {
+      "target": "aportg."
+    },
+    {
+      "target": "aportug."
+    },
+    {
+      "target": "aprox."
+    },
+    {
+      "target": "aq."
+    },
+    {
+      "target": "ár."
+    },
+    {
+      "target": "ar."
+    },
+    {
+      "target": "ar. tang."
+    },
+    {
+      "target": "ara."
+    },
+    {
+      "target": "aráb."
+    },
+    {
+      "target": "aracn."
+    },
+    {
+      "target": "aram."
+    },
+    {
+      "target": "arb."
+    },
+    {
+      "target": "arboric."
+    },
+    {
+      "target": "arc."
+    },
+    {
+      "target": "arc. cos."
+    },
+    {
+      "target": "arc. sen."
+    },
+    {
+      "target": "arcaic."
+    },
+    {
+      "target": "arceb."
+    },
+    {
+      "target": "arcebd."
+    },
+    {
+      "target": "arcip."
+    },
+    {
+      "target": "arcipd."
+    },
+    {
+      "target": "ard."
+    },
+    {
+      "target": "arg."
+    },
+    {
+      "target": "arit."
+    },
+    {
+      "target": "aritm."
+    },
+    {
+      "target": "aritmol."
+    },
+    {
+      "target": "arm. ant."
+    },
+    {
+      "target": "arm."
+    },
+    {
+      "target": "arq. ant."
+    },
+    {
+      "target": "arq."
+    },
+    {
+      "target": "arq. col. bras."
+    },
+    {
+      "target": "arq. hidr."
+    },
+    {
+      "target": "arq. rel."
+    },
+    {
+      "target": "arq. rom."
+    },
+    {
+      "target": "arqueol."
+    },
+    {
+      "target": "arquid."
+    },
+    {
+      "target": "arquip."
+    },
+    {
+      "target": "arquit."
+    },
+    {
+      "target": "arquit. hidr."
+    },
+    {
+      "target": "arquit. hidrául."
+    },
+    {
+      "target": "arquit. mil."
+    },
+    {
+      "target": "arquit. nav."
+    },
+    {
+      "target": "arr."
+    },
+    {
+      "target": "art."
+    },
+    {
+      "target": "art. dec."
+    },
+    {
+      "target": "art. def."
+    },
+    {
+      "target": "art. dom."
+    },
+    {
+      "target": "art. dram."
+    },
+    {
+      "target": "art. gráf."
+    },
+    {
+      "target": "art. ind."
+    },
+    {
+      "target": "art. indef."
+    },
+    {
+      "target": "art. mil."
+    },
+    {
+      "target": "art. plást."
+    },
+    {
+      "target": "artes."
+    },
+    {
+      "target": "artesan."
+    },
+    {
+      "target": "artilh."
+    },
+    {
+      "target": "artíst."
+    },
+    {
+      "target": "aru."
+    },
+    {
+      "target": "as."
+    },
+    {
+      "target": "asap."
+    },
+    {
+      "target": "ascet."
+    },
+    {
+      "target": "asiát."
+    },
+    {
+      "target": "ásio-lus."
+    },
+    {
+      "target": "asolus."
+    },
+    {
+      "target": "asp."
+    },
+    {
+      "target": "ass."
+    },
+    {
+      "target": "assem."
+    },
+    {
+      "target": "assemb."
+    },
+    {
+      "target": "assim."
+    },
+    {
+      "target": "assist."
+    },
+    {
+      "target": "assoc."
+    },
+    {
+      "target": "ast."
+    },
+    {
+      "target": "astr."
+    },
+    {
+      "target": "astr.f."
+    },
+    {
+      "target": "astr.f.pl."
+    },
+    {
+      "target": "astr.m."
+    },
+    {
+      "target": "astr.m.pl."
+    },
+    {
+      "target": "astrol."
+    },
+    {
+      "target": "astron."
+    },
+    {
+      "target": "astrôn."
+    },
+    {
+      "target": "astrôn. fem."
+    },
+    {
+      "target": "astrôn. masc."
+    },
+    {
+      "target": "astronáut."
+    },
+    {
+      "target": "astroním."
+    },
+    {
+      "target": "at."
+    },
+    {
+      "target": "át."
+    },
+    {
+      "target": "ativ."
+    },
+    {
+      "target": "atl."
+    },
+    {
+      "target": "atlt."
+    },
+    {
+      "target": "atm."
+    },
+    {
+      "target": "atôm."
+    },
+    {
+      "target": "atom."
+    },
+    {
+      "target": "atr."
+    },
+    {
+      "target": "atual."
+    },
+    {
+      "target": "atualid."
+    },
+    {
+      "target": "atualm."
+    },
+    {
+      "target": "au."
+    },
+    {
+      "target": "aum."
+    },
+    {
+      "target": "aus."
+    },
+    {
+      "target": "austr."
+    },
+    {
+      "target": "austral."
+    },
+    {
+      "target": "aut."
+    },
+    {
+      "target": "auto."
+    },
+    {
+      "target": "autom."
+    },
+    {
+      "target": "automat."
+    },
+    {
+      "target": "aux."
+    },
+    {
+      "target": "av."
+    },
+    {
+      "target": "aven."
+    },
+    {
+      "target": "aviaç."
+    },
+    {
+      "target": "avic."
+    },
+    {
+      "target": "ax."
+    },
+    {
+      "target": "axiôn."
+    },
+    {
+      "target": "b."
+    },
+    {
+      "target": "b. lat."
+    },
+    {
+      "target": "b. lit."
+    },
+    {
+      "target": "b.a."
+    },
+    {
+      "target": "b.-art."
+    },
+    {
+      "target": "b.b."
+    },
+    {
+      "target": "b.f."
+    },
+    {
+      "target": "b.i.d."
+    },
+    {
+      "target": "b.-lat."
+    },
+    {
+      "target": "b.-letr."
+    },
+    {
+      "target": "b.m."
+    },
+    {
+      "target": "b.t.u."
+    },
+    {
+      "target": "b.v."
+    },
+    {
+      "target": "bact."
+    },
+    {
+      "target": "bacter."
+    },
+    {
+      "target": "bacteriol."
+    },
+    {
+      "target": "bal."
+    },
+    {
+      "target": "balíst."
+    },
+    {
+      "target": "bált."
+    },
+    {
+      "target": "bar."
+    },
+    {
+      "target": "bárb."
+    },
+    {
+      "target": "basq."
+    },
+    {
+      "target": "bat."
+    },
+    {
+      "target": "bbl."
+    },
+    {
+      "target": "beir."
+    },
+    {
+      "target": "bel.-art."
+    },
+    {
+      "target": "beng."
+    },
+    {
+      "target": "berb."
+    },
+    {
+      "target": "bíb."
+    },
+    {
+      "target": "bíbl."
+    },
+    {
+      "target": "bibl."
+    },
+    {
+      "target": "bibl.f."
+    },
+    {
+      "target": "bibl.m."
+    },
+    {
+      "target": "bibl.m.pl."
+    },
+    {
+      "target": "bibliof."
+    },
+    {
+      "target": "bibliog."
+    },
+    {
+      "target": "bibliogr."
+    },
+    {
+      "target": "bibliol."
+    },
+    {
+      "target": "bibliôn. fem."
+    },
+    {
+      "target": "bibliôn. masc."
+    },
+    {
+      "target": "bibliot."
+    },
+    {
+      "target": "bibliotec."
+    },
+    {
+      "target": "bibliotecon."
+    },
+    {
+      "target": "biblog."
+    },
+    {
+      "target": "biblol."
+    },
+    {
+      "target": "biblon."
+    },
+    {
+      "target": "bim."
+    },
+    {
+      "target": "bimen."
+    },
+    {
+      "target": "biodim."
+    },
+    {
+      "target": "biofís."
+    },
+    {
+      "target": "biogên."
+    },
+    {
+      "target": "biogen."
+    },
+    {
+      "target": "biogeo."
+    },
+    {
+      "target": "biogeog."
+    },
+    {
+      "target": "biogeogr."
+    },
+    {
+      "target": "biogr."
+    },
+    {
+      "target": "biol."
+    },
+    {
+      "target": "biol. ger."
+    },
+    {
+      "target": "biom."
+    },
+    {
+      "target": "bioq."
+    },
+    {
+      "target": "bioquím."
+    },
+    {
+      "target": "biot."
+    },
+    {
+      "target": "biotip."
+    },
+    {
+      "target": "biotipol."
+    },
+    {
+      "target": "birm."
+    },
+    {
+      "target": "birrel."
+    },
+    {
+      "target": "bisp."
+    },
+    {
+      "target": "bispd."
+    },
+    {
+      "target": "bitr."
+    },
+    {
+      "target": "bitrans."
+    },
+    {
+      "target": "bm."
+    },
+    {
+      "target": "boêm."
+    },
+    {
+      "target": "bol."
+    },
+    {
+      "target": "boliv."
+    },
+    {
+      "target": "b.o.m."
+    },
+    {
+      "target": "bomb."
+    },
+    {
+      "target": "bor."
+    },
+    {
+      "target": "bord."
+    },
+    {
+      "target": "borg."
+    },
+    {
+      "target": "borr."
+    },
+    {
+      "target": "bot."
+    },
+    {
+      "target": "bpo."
+    },
+    {
+      "target": "br."
+    },
+    {
+      "target": "bras."
+    },
+    {
+      "target": "brasil."
+    },
+    {
+      "target": "bret."
+    },
+    {
+      "target": "brig."
+    },
+    {
+      "target": "brit."
+    },
+    {
+      "target": "brom."
+    },
+    {
+      "target": "bromat."
+    },
+    {
+      "target": "btl."
+    },
+    {
+      "target": "bud."
+    },
+    {
+      "target": "búlg."
+    },
+    {
+      "target": "bur."
+    },
+    {
+      "target": "burl."
+    },
+    {
+      "target": "buroc."
+    },
+    {
+      "target": "c."
+    },
+    {
+      "target": "c. mil."
+    },
+    {
+      "target": "c.a.a."
+    },
+    {
+      "target": "c.ág."
+    },
+    {
+      "target": "c.-alm."
+    },
+    {
+      "target": "c.b."
+    },
+    {
+      "target": "c.c."
+    },
+    {
+      "target": "c.com."
+    },
+    {
+      "target": "c.d."
+    },
+    {
+      "target": "c.g.s."
+    },
+    {
+      "target": "c.h."
+    },
+    {
+      "target": "c.i.f."
+    },
+    {
+      "target": "c.-riq."
+    },
+    {
+      "target": "c.v."
+    },
+    {
+      "target": "cab."
+    },
+    {
+      "target": "cabo-verd."
+    },
+    {
+      "target": "caç."
+    },
+    {
+      "target": "cad."
+    },
+    {
+      "target": "caf."
+    },
+    {
+      "target": "cal."
+    },
+    {
+      "target": "calç."
+    },
+    {
+      "target": "cálc."
+    },
+    {
+      "target": "cálc. vect."
+    },
+    {
+      "target": "cálc. vet."
+    },
+    {
+      "target": "calcog."
+    },
+    {
+      "target": "calcogr."
+    },
+    {
+      "target": "cald."
+    },
+    {
+      "target": "calig."
+    },
+    {
+      "target": "caligr."
+    },
+    {
+      "target": "calor."
+    },
+    {
+      "target": "calorim."
+    },
+    {
+      "target": "calv."
+    },
+    {
+      "target": "calvin."
+    },
+    {
+      "target": "câm."
+    },
+    {
+      "target": "can."
+    },
+    {
+      "target": "canad."
+    },
+    {
+      "target": "canal."
+    },
+    {
+      "target": "canaliz."
+    },
+    {
+      "target": "cant."
+    },
+    {
+      "target": "cap."
+    },
+    {
+      "target": "cap. corv."
+    },
+    {
+      "target": "cap. fr."
+    },
+    {
+      "target": "cap. frag."
+    },
+    {
+      "target": "cap.m.g."
+    },
+    {
+      "target": "cap.-ten."
+    },
+    {
+      "target": "capac."
+    },
+    {
+      "target": "capit."
+    },
+    {
+      "target": "capix."
+    },
+    {
+      "target": "caps."
+    },
+    {
+      "target": "capt."
+    },
+    {
+      "target": "car."
+    },
+    {
+      "target": "card."
+    },
+    {
+      "target": "carn."
+    },
+    {
+      "target": "carp."
+    },
+    {
+      "target": "carr."
+    },
+    {
+      "target": "cart."
+    },
+    {
+      "target": "cartogr."
+    },
+    {
+      "target": "cast."
+    },
+    {
+      "target": "casuís."
+    },
+    {
+      "target": "casuíst."
+    },
+    {
+      "target": "cat."
+    },
+    {
+      "target": "cat. morf."
+    },
+    {
+      "target": "catal."
+    },
+    {
+      "target": "catar."
+    },
+    {
+      "target": "catarin."
+    },
+    {
+      "target": "categ."
+    },
+    {
+      "target": "catol."
+    },
+    {
+      "target": "catól."
+    },
+    {
+      "target": "catolic."
+    },
+    {
+      "target": "catóp."
+    },
+    {
+      "target": "catópt."
+    },
+    {
+      "target": "caus."
+    },
+    {
+      "target": "causal."
+    },
+    {
+      "target": "causalid."
+    },
+    {
+      "target": "cav."
+    },
+    {
+      "target": "cb."
+    },
+    {
+      "target": "cc."
+    },
+    {
+      "target": "ce."
+    },
+    {
+      "target": "cear."
+    },
+    {
+      "target": "celt."
+    },
+    {
+      "target": "célt."
+    },
+    {
+      "target": "cên."
+    },
+    {
+      "target": "cenog."
+    },
+    {
+      "target": "cent."
+    },
+    {
+      "target": "cênt."
+    },
+    {
+      "target": "centr."
+    },
+    {
+      "target": "cer."
+    },
+    {
+      "target": "cerâm."
+    },
+    {
+      "target": "cerv."
+    },
+    {
+      "target": "cest."
+    },
+    {
+      "target": "cet. par."
+    },
+    {
+      "target": "cf."
+    },
+    {
+      "target": "cfr."
+    },
+    {
+      "target": "ch."
+    },
+    {
+      "target": "ch.b."
+    },
+    {
+      "target": "ch.m."
+    },
+    {
+      "target": "chanc."
+    },
+    {
+      "target": "chancel."
+    },
+    {
+      "target": "chap."
+    },
+    {
+      "target": "chapel."
+    },
+    {
+      "target": "chil."
+    },
+    {
+      "target": "chin."
+    },
+    {
+      "target": "chul."
+    },
+    {
+      "target": "cia."
+    },
+    {
+      "target": "ciber."
+    },
+    {
+      "target": "cibern."
+    },
+    {
+      "target": "cicl."
+    },
+    {
+      "target": "cid."
+    },
+    {
+      "target": "ciênc."
+    },
+    {
+      "target": "ciênc. oc."
+    },
+    {
+      "target": "cienc. pol."
+    },
+    {
+      "target": "cient."
+    },
+    {
+      "target": "cig."
+    },
+    {
+      "target": "cin."
+    },
+    {
+      "target": "cineg."
+    },
+    {
+      "target": "cinem."
+    },
+    {
+      "target": "cinematogr."
+    },
+    {
+      "target": "cing."
+    },
+    {
+      "target": "cinol."
+    },
+    {
+      "target": "cinz."
+    },
+    {
+      "target": "cir."
+    },
+    {
+      "target": "circ."
+    },
+    {
+      "target": "círc."
+    },
+    {
+      "target": "circunscr."
+    },
+    {
+      "target": "cirurg."
+    },
+    {
+      "target": "cit."
+    },
+    {
+      "target": "citol."
+    },
+    {
+      "target": "citt."
+    },
+    {
+      "target": "cl."
+    },
+    {
+      "target": "clas."
+    },
+    {
+      "target": "clás."
+    },
+    {
+      "target": "cláss."
+    },
+    {
+      "target": "clich."
+    },
+    {
+      "target": "clim."
+    },
+    {
+      "target": "climatol."
+    },
+    {
+      "target": "clín."
+    },
+    {
+      "target": "cob."
+    },
+    {
+      "target": "cód."
+    },
+    {
+      "target": "cód. civ."
+    },
+    {
+      "target": "cód. com."
+    },
+    {
+      "target": "cód. cont."
+    },
+    {
+      "target": "cód. fl."
+    },
+    {
+      "target": "cód. just. mil."
+    },
+    {
+      "target": "cód. mil."
+    },
+    {
+      "target": "cód. pen."
+    },
+    {
+      "target": "cód. proc. civ."
+    },
+    {
+      "target": "cód. proc."
+    },
+    {
+      "target": "cód. proc. pen."
+    },
+    {
+      "target": "cód. trab."
+    },
+    {
+      "target": "códs."
+    },
+    {
+      "target": "cogn."
+    },
+    {
+      "target": "col."
+    },
+    {
+      "target": "col. part."
+    },
+    {
+      "target": "colet."
+    },
+    {
+      "target": "colomb."
+    },
+    {
+      "target": "cols."
+    },
+    {
+      "target": "com."
+    },
+    {
+      "target": "comb."
+    },
+    {
+      "target": "combin."
+    },
+    {
+      "target": "combinat."
+    },
+    {
+      "target": "combust."
+    },
+    {
+      "target": "comdor."
+    },
+    {
+      "target": "comend."
+    },
+    {
+      "target": "comerc."
+    },
+    {
+      "target": "c.q.d."
+    },
+    {
+      "target": "comp."
+    },
+    {
+      "target": "compar."
+    },
+    {
+      "target": "compl."
+    },
+    {
+      "target": "compr."
+    },
+    {
+      "target": "compt."
+    },
+    {
+      "target": "comte."
+    },
+    {
+      "target": "comunic."
+    },
+    {
+      "target": "côn."
+    },
+    {
+      "target": "con."
+    },
+    {
+      "target": "conc."
+    },
+    {
+      "target": "concess."
+    },
+    {
+      "target": "concret."
+    },
+    {
+      "target": "cond."
+    },
+    {
+      "target": "conf."
+    },
+    {
+      "target": "confed."
+    },
+    {
+      "target": "confeit."
+    },
+    {
+      "target": "confl."
+    },
+    {
+      "target": "confls."
+    },
+    {
+      "target": "cong."
+    },
+    {
+      "target": "conhec."
+    },
+    {
+      "target": "conj. adit."
+    },
+    {
+      "target": "conj. adv."
+    },
+    {
+      "target": "conj. advers."
+    },
+    {
+      "target": "conj. alt."
+    },
+    {
+      "target": "conj. cau."
+    },
+    {
+      "target": "conj. caus."
+    },
+    {
+      "target": "conj."
+    },
+    {
+      "target": "conj. comp."
+    },
+    {
+      "target": "conj. compar."
+    },
+    {
+      "target": "conj. conc."
+    },
+    {
+      "target": "conj. conces."
+    },
+    {
+      "target": "conj. concl."
+    },
+    {
+      "target": "conj. cond."
+    },
+    {
+      "target": "conj. condic."
+    },
+    {
+      "target": "conj. conf."
+    },
+    {
+      "target": "conj. cons."
+    },
+    {
+      "target": "conj. consec."
+    },
+    {
+      "target": "conj. coord."
+    },
+    {
+      "target": "conj. expl."
+    },
+    {
+      "target": "conj. fin."
+    },
+    {
+      "target": "conj. int."
+    },
+    {
+      "target": "conj. integr."
+    },
+    {
+      "target": "conj. prop."
+    },
+    {
+      "target": "conj. sub."
+    },
+    {
+      "target": "conj. subord."
+    },
+    {
+      "target": "conj. temp."
+    },
+    {
+      "target": "conjug."
+    },
+    {
+      "target": "conq."
+    },
+    {
+      "target": "conquil."
+    },
+    {
+      "target": "conquiliol."
+    },
+    {
+      "target": "cons."
+    },
+    {
+      "target": "consel."
+    },
+    {
+      "target": "conselh."
+    },
+    {
+      "target": "conseq."
+    },
+    {
+      "target": "const."
+    },
+    {
+      "target": "const. nav."
+    },
+    {
+      "target": "const. rur."
+    },
+    {
+      "target": "constel."
+    },
+    {
+      "target": "constr."
+    },
+    {
+      "target": "constr. nav."
+    },
+    {
+      "target": "cont."
+    },
+    {
+      "target": "contab."
+    },
+    {
+      "target": "contemp."
+    },
+    {
+      "target": "contr."
+    },
+    {
+      "target": "coord."
+    },
+    {
+      "target": "cop."
+    },
+    {
+      "target": "copul."
+    },
+    {
+      "target": "copulat."
+    },
+    {
+      "target": "coq."
+    },
+    {
+      "target": "cor."
+    },
+    {
+      "target": "coreog."
+    },
+    {
+      "target": "coreogr."
+    },
+    {
+      "target": "corog."
+    },
+    {
+      "target": "corogr."
+    },
+    {
+      "target": "corr."
+    },
+    {
+      "target": "correi."
+    },
+    {
+      "target": "corresp."
+    },
+    {
+      "target": "corrup."
+    },
+    {
+      "target": "corrupt."
+    },
+    {
+      "target": "corrut."
+    },
+    {
+      "target": "cos."
+    },
+    {
+      "target": "cosec."
+    },
+    {
+      "target": "cosm."
+    },
+    {
+      "target": "cosmog."
+    },
+    {
+      "target": "cosmogr."
+    },
+    {
+      "target": "cosmol."
+    },
+    {
+      "target": "cost."
+    },
+    {
+      "target": "costa-ric."
+    },
+    {
+      "target": "costa-riq."
+    },
+    {
+      "target": "cot."
+    },
+    {
+      "target": "côv."
+    },
+    {
+      "target": "cp."
+    },
+    {
+      "target": "cr."
+    },
+    {
+      "target": "créd."
+    },
+    {
+      "target": "cresc."
+    },
+    {
+      "target": "crim."
+    },
+    {
+      "target": "criminol."
+    },
+    {
+      "target": "cript."
+    },
+    {
+      "target": "criptog."
+    },
+    {
+      "target": "crist."
+    },
+    {
+      "target": "cristal."
+    },
+    {
+      "target": "cristalogr."
+    },
+    {
+      "target": "cristand."
+    },
+    {
+      "target": "cristian."
+    },
+    {
+      "target": "crôn."
+    },
+    {
+      "target": "cron."
+    },
+    {
+      "target": "cron.f."
+    },
+    {
+      "target": "cron.f.pl."
+    },
+    {
+      "target": "cron.m."
+    },
+    {
+      "target": "cron.m.pl."
+    },
+    {
+      "target": "cronol."
+    },
+    {
+      "target": "cronom."
+    },
+    {
+      "target": "cronôn. fem."
+    },
+    {
+      "target": "cronôn. masc."
+    },
+    {
+      "target": "crust."
+    },
+    {
+      "target": "cruz."
+    },
+    {
+      "target": "ctv."
+    },
+    {
+      "target": "cu.ft."
+    },
+    {
+      "target": "cu.in."
+    },
+    {
+      "target": "cu.yd."
+    },
+    {
+      "target": "cul."
+    },
+    {
+      "target": "culin."
+    },
+    {
+      "target": "cult."
+    },
+    {
+      "target": "curt."
+    },
+    {
+      "target": "cut."
+    },
+    {
+      "target": "cutel."
+    },
+    {
+      "target": "cv."
+    },
+    {
+      "target": "cvs."
+    },
+    {
+      "target": "cx."
+    },
+    {
+      "target": "cyat."
+    },
+    {
+      "target": "d.c."
+    },
+    {
+      "target": "d."
+    },
+    {
+      "target": "d.a."
+    },
+    {
+      "target": "d.b."
+    },
+    {
+      "target": "d.c.c."
+    },
+    {
+      "target": "d.g."
+    },
+    {
+      "target": "dna."
+    },
+    {
+      "target": "d.p."
+    },
+    {
+      "target": "d.v."
+    },
+    {
+      "target": "da."
+    },
+    {
+      "target": "dactilog."
+    },
+    {
+      "target": "dactilogr."
+    },
+    {
+      "target": "dactilos."
+    },
+    {
+      "target": "dactilosc."
+    },
+    {
+      "target": "dad."
+    },
+    {
+      "target": "dasim."
+    },
+    {
+      "target": "dat."
+    },
+    {
+      "target": "dd."
+    },
+    {
+      "target": "dec."
+    },
+    {
+      "target": "decl."
+    },
+    {
+      "target": "declin."
+    },
+    {
+      "target": "decor."
+    },
+    {
+      "target": "decr."
+    },
+    {
+      "target": "decresc."
+    },
+    {
+      "target": "def."
+    },
+    {
+      "target": "defect."
+    },
+    {
+      "target": "defin."
+    },
+    {
+      "target": "definit."
+    },
+    {
+      "target": "del."
+    },
+    {
+      "target": "dele."
+    },
+    {
+      "target": "dem."
+    },
+    {
+      "target": "democ."
+    },
+    {
+      "target": "democr."
+    },
+    {
+      "target": "demog."
+    },
+    {
+      "target": "demogr."
+    },
+    {
+      "target": "demonstr."
+    },
+    {
+      "target": "dens."
+    },
+    {
+      "target": "dep."
+    },
+    {
+      "target": "depto."
+    },
+    {
+      "target": "dpto."
+    },
+    {
+      "target": "depr."
+    },
+    {
+      "target": "deprec."
+    },
+    {
+      "target": "deps."
+    },
+    {
+      "target": "der."
+    },
+    {
+      "target": "deriv."
+    },
+    {
+      "target": "derm."
+    },
+    {
+      "target": "des."
+    },
+    {
+      "target": "desc."
+    },
+    {
+      "target": "desemb."
+    },
+    {
+      "target": "desemboc."
+    },
+    {
+      "target": "desen."
+    },
+    {
+      "target": "desin."
+    },
+    {
+      "target": "desp."
+    },
+    {
+      "target": "despor."
+    },
+    {
+      "target": "desus."
+    },
+    {
+      "target": "det."
+    },
+    {
+      "target": "determ."
+    },
+    {
+      "target": "dev."
+    },
+    {
+      "target": "dez."
+    },
+    {
+      "target": "diác."
+    },
+    {
+      "target": "dial."
+    },
+    {
+      "target": "dialet."
+    },
+    {
+      "target": "dialét."
+    },
+    {
+      "target": "dic."
+    },
+    {
+      "target": "did."
+    },
+    {
+      "target": "didát."
+    },
+    {
+      "target": "diet."
+    },
+    {
+      "target": "dif."
+    },
+    {
+      "target": "dim."
+    },
+    {
+      "target": "dimin."
+    },
+    {
+      "target": "din."
+    },
+    {
+      "target": "dinam."
+    },
+    {
+      "target": "dinâm."
+    },
+    {
+      "target": "dioc."
+    },
+    {
+      "target": "dipl."
+    },
+    {
+      "target": "diplom."
+    },
+    {
+      "target": "dir. adm."
+    },
+    {
+      "target": "dir. ant."
+    },
+    {
+      "target": "dir. can."
+    },
+    {
+      "target": "dir. civ."
+    },
+    {
+      "target": "dir. com."
+    },
+    {
+      "target": "dir. comerc."
+    },
+    {
+      "target": "dir. cons."
+    },
+    {
+      "target": "dir. const."
+    },
+    {
+      "target": "dir. consuet."
+    },
+    {
+      "target": "dir. corp."
+    },
+    {
+      "target": "dir. crim."
+    },
+    {
+      "target": "dir."
+    },
+    {
+      "target": "dir. ecl."
+    },
+    {
+      "target": "dir. ecles."
+    },
+    {
+      "target": "dir. fam."
+    },
+    {
+      "target": "dir. feud."
+    },
+    {
+      "target": "dir. fis."
+    },
+    {
+      "target": "dir. int."
+    },
+    {
+      "target": "dir. intern."
+    },
+    {
+      "target": "dir. mar."
+    },
+    {
+      "target": "dir. marít."
+    },
+    {
+      "target": "dir. parl."
+    },
+    {
+      "target": "dir. pen."
+    },
+    {
+      "target": "dir. pol."
+    },
+    {
+      "target": "dir. proc."
+    },
+    {
+      "target": "dir. públ."
+    },
+    {
+      "target": "dir. rom."
+    },
+    {
+      "target": "dir. rur."
+    },
+    {
+      "target": "dir. trab."
+    },
+    {
+      "target": "disc."
+    },
+    {
+      "target": "disfem."
+    },
+    {
+      "target": "diss."
+    },
+    {
+      "target": "docs."
+    },
+    {
+      "target": "docum."
+    },
+    {
+      "target": "dog."
+    },
+    {
+      "target": "dogm."
+    },
+    {
+      "target": "dogmát."
+    },
+    {
+      "target": "dól."
+    },
+    {
+      "target": "dom."
+    },
+    {
+      "target": "domin."
+    },
+    {
+      "target": "domín."
+    },
+    {
+      "target": "dór."
+    },
+    {
+      "target": "dr."
+    },
+    {
+      "target": "dra."
+    },
+    {
+      "target": "dram."
+    },
+    {
+      "target": "drav."
+    },
+    {
+      "target": "drs."
+    },
+    {
+      "target": "dual."
+    },
+    {
+      "target": "dualid."
+    },
+    {
+      "target": "dur."
+    },
+    {
+      "target": "dz."
+    },
+    {
+      "target": "e."
+    },
+    {
+      "target": "f."
+    },
+    {
+      "target": "e.a."
+    },
+    {
+      "target": "e.b."
+    },
+    {
+      "target": "e.c."
+    },
+    {
+      "target": "e.c.f."
+    },
+    {
+      "target": "e.d."
+    },
+    {
+      "target": "e.e.m.p."
+    },
+    {
+      "target": "e.e.p."
+    },
+    {
+      "target": "e.f."
+    },
+    {
+      "target": "e.g."
+    },
+    {
+      "target": "e.m."
+    },
+    {
+      "target": "e.-m."
+    },
+    {
+      "target": "e.m.p."
+    },
+    {
+      "target": "e.n.e."
+    },
+    {
+      "target": "e.r."
+    },
+    {
+      "target": "e.r.m."
+    },
+    {
+      "target": "e.s.e."
+    },
+    {
+      "target": "e/s."
+    },
+    {
+      "target": "ecd."
+    },
+    {
+      "target": "ecl."
+    },
+    {
+      "target": "écl."
+    },
+    {
+      "target": "ecles."
+    },
+    {
+      "target": "ecol."
+    },
+    {
+      "target": "econ. dom."
+    },
+    {
+      "target": "econ."
+    },
+    {
+      "target": "econ. emp."
+    },
+    {
+      "target": "econ. ext."
+    },
+    {
+      "target": "econ. fin."
+    },
+    {
+      "target": "econ. fl."
+    },
+    {
+      "target": "econ. pol."
+    },
+    {
+      "target": "econ. rur."
+    },
+    {
+      "target": "ed."
+    },
+    {
+      "target": "edd."
+    },
+    {
+      "target": "edif."
+    },
+    {
+      "target": "educ."
+    },
+    {
+      "target": "educ. fís."
+    },
+    {
+      "target": "educ. nac."
+    },
+    {
+      "target": "ee."
+    },
+    {
+      "target": "efem."
+    },
+    {
+      "target": "egíp."
+    },
+    {
+      "target": "el. adj."
+    },
+    {
+      "target": "el. adv."
+    },
+    {
+      "target": "el. antr."
+    },
+    {
+      "target": "el. antropon."
+    },
+    {
+      "target": "el. art."
+    },
+    {
+      "target": "el. comp."
+    },
+    {
+      "target": "el. nom."
+    },
+    {
+      "target": "el. nom.f."
+    },
+    {
+      "target": "el. nom.f.pl."
+    },
+    {
+      "target": "el. nom.m."
+    },
+    {
+      "target": "el. nom.m.pl."
+    },
+    {
+      "target": "el. part."
+    },
+    {
+      "target": "el. partic."
+    },
+    {
+      "target": "el. prot."
+    },
+    {
+      "target": "el. protét."
+    },
+    {
+      "target": "el. subst."
+    },
+    {
+      "target": "el. top."
+    },
+    {
+      "target": "el. topon."
+    },
+    {
+      "target": "el.s."
+    },
+    {
+      "target": "el.s.f."
+    },
+    {
+      "target": "el.s.f.pl."
+    },
+    {
+      "target": "el.s.m."
+    },
+    {
+      "target": "el.s.m.pl."
+    },
+    {
+      "target": "elem."
+    },
+    {
+      "target": "eletr."
+    },
+    {
+      "target": "eletrodin."
+    },
+    {
+      "target": "eletrol."
+    },
+    {
+      "target": "eletrom."
+    },
+    {
+      "target": "eletrôn."
+    },
+    {
+      "target": "eletrot."
+    },
+    {
+      "target": "elipt."
+    },
+    {
+      "target": "emb."
+    },
+    {
+      "target": "embal."
+    },
+    {
+      "target": "embr."
+    },
+    {
+      "target": "embriol."
+    },
+    {
+      "target": "emigr."
+    },
+    {
+      "target": "emol."
+    },
+    {
+      "target": "emp."
+    },
+    {
+      "target": "empreend."
+    },
+    {
+      "target": "empír."
+    },
+    {
+      "target": "empr."
+    },
+    {
+      "target": "emprés."
+    },
+    {
+      "target": "enc."
+    },
+    {
+      "target": "encícl."
+    },
+    {
+      "target": "encicl."
+    },
+    {
+      "target": "end. tel."
+    },
+    {
+      "target": "endoc."
+    },
+    {
+      "target": "energ."
+    },
+    {
+      "target": "energét."
+    },
+    {
+      "target": "enf."
+    },
+    {
+      "target": "eng."
+    },
+    {
+      "target": "eng. civ."
+    },
+    {
+      "target": "eng. elétr."
+    },
+    {
+      "target": "eng. eletrôn."
+    },
+    {
+      "target": "eng. hidr."
+    },
+    {
+      "target": "eng. ind."
+    },
+    {
+      "target": "eng. nucl."
+    },
+    {
+      "target": "enol."
+    },
+    {
+      "target": "ens."
+    },
+    {
+      "target": "ent."
+    },
+    {
+      "target": "entom."
+    },
+    {
+      "target": "entomol."
+    },
+    {
+      "target": "enx."
+    },
+    {
+      "target": "epig."
+    },
+    {
+      "target": "epigr."
+    },
+    {
+      "target": "epíst."
+    },
+    {
+      "target": "eq. dom."
+    },
+    {
+      "target": "eq."
+    },
+    {
+      "target": "equat."
+    },
+    {
+      "target": "equit."
+    },
+    {
+      "target": "equiv."
+    },
+    {
+      "target": "ergol."
+    },
+    {
+      "target": "erud."
+    },
+    {
+      "target": "esc."
+    },
+    {
+      "target": "escand."
+    },
+    {
+      "target": "escoc."
+    },
+    {
+      "target": "escol."
+    },
+    {
+      "target": "escolást."
+    },
+    {
+      "target": "escr."
+    },
+    {
+      "target": "escul."
+    },
+    {
+      "target": "escult."
+    },
+    {
+      "target": "esgr."
+    },
+    {
+      "target": "esl."
+    },
+    {
+      "target": "eslav."
+    },
+    {
+      "target": "eslov."
+    },
+    {
+      "target": "esot."
+    },
+    {
+      "target": "esp."
+    },
+    {
+      "target": "espec."
+    },
+    {
+      "target": "especialm."
+    },
+    {
+      "target": "especif."
+    },
+    {
+      "target": "específ."
+    },
+    {
+      "target": "espect."
+    },
+    {
+      "target": "espectrogr."
+    },
+    {
+      "target": "espel."
+    },
+    {
+      "target": "espeleol."
+    },
+    {
+      "target": "espet."
+    },
+    {
+      "target": "espir."
+    },
+    {
+      "target": "espirit."
+    },
+    {
+      "target": "espiritual."
+    },
+    {
+      "target": "esport."
+    },
+    {
+      "target": "esq."
+    },
+    {
+      "target": "est."
+    },
+    {
+      "target": "estad."
+    },
+    {
+      "target": "estat."
+    },
+    {
+      "target": "estatíst."
+    },
+    {
+      "target": "estenog."
+    },
+    {
+      "target": "estenogr."
+    },
+    {
+      "target": "estereogr."
+    },
+    {
+      "target": "estét."
+    },
+    {
+      "target": "estil."
+    },
+    {
+      "target": "estim."
+    },
+    {
+      "target": "eston."
+    },
+    {
+      "target": "estr."
+    },
+    {
+      "target": "estrang."
+    },
+    {
+      "target": "estrangeir."
+    },
+    {
+      "target": "estrat."
+    },
+    {
+      "target": "estratég."
+    },
+    {
+      "target": "estrem."
+    },
+    {
+      "target": "estrut."
+    },
+    {
+      "target": "estud."
+    },
+    {
+      "target": "et."
+    },
+    {
+      "target": "et.m.pl."
+    },
+    {
+      "target": "etc."
+    },
+    {
+      "target": "etim."
+    },
+    {
+      "target": "etim. pop."
+    },
+    {
+      "target": "etimol."
+    },
+    {
+      "target": "etióp."
+    },
+    {
+      "target": "étn."
+    },
+    {
+      "target": "etn."
+    },
+    {
+      "target": "etnog. bras."
+    },
+    {
+      "target": "etnog."
+    },
+    {
+      "target": "etnogr."
+    },
+    {
+      "target": "etnol. bras."
+    },
+    {
+      "target": "etnol."
+    },
+    {
+      "target": "etnolog."
+    },
+    {
+      "target": "etol."
+    },
+    {
+      "target": "euf."
+    },
+    {
+      "target": "eufêm."
+    },
+    {
+      "target": "eufem."
+    },
+    {
+      "target": "eufon."
+    },
+    {
+      "target": "eufôn."
+    },
+    {
+      "target": "eufor."
+    },
+    {
+      "target": "eur."
+    },
+    {
+      "target": "ex."
+    },
+    {
+      "target": "excl."
+    },
+    {
+      "target": "exclam."
+    },
+    {
+      "target": "exclamat."
+    },
+    {
+      "target": "excurs."
+    },
+    {
+      "target": "exe."
+    },
+    {
+      "target": "exérc."
+    },
+    {
+      "target": "exp."
+    },
+    {
+      "target": "exper."
+    },
+    {
+      "target": "experim."
+    },
+    {
+      "target": "expl."
+    },
+    {
+      "target": "explet."
+    },
+    {
+      "target": "explor."
+    },
+    {
+      "target": "explos."
+    },
+    {
+      "target": "export."
+    },
+    {
+      "target": "expr."
+    },
+    {
+      "target": "express."
+    },
+    {
+      "target": "expression."
+    },
+    {
+      "target": "ext."
+    },
+    {
+      "target": "extens."
+    },
+    {
+      "target": "extrat."
+    },
+    {
+      "target": "f.adv."
+    },
+    {
+      "target": "f.aport."
+    },
+    {
+      "target": "f.d."
+    },
+    {
+      "target": "f.e.m."
+    },
+    {
+      "target": "f.m.m."
+    },
+    {
+      "target": "f.nom."
+    },
+    {
+      "target": "f.o.b."
+    },
+    {
+      "target": "f.paral."
+    },
+    {
+      "target": "f.parl."
+    },
+    {
+      "target": "f.port."
+    },
+    {
+      "target": "f.r."
+    },
+    {
+      "target": "f.red."
+    },
+    {
+      "target": "f.s.a. fac."
+    },
+    {
+      "target": "f.v."
+    },
+    {
+      "target": "f.verb."
+    },
+    {
+      "target": "fáb."
+    },
+    {
+      "target": "fac."
+    },
+    {
+      "target": "falc."
+    },
+    {
+      "target": "falcoar."
+    },
+    {
+      "target": "fam."
+    },
+    {
+      "target": "farm."
+    },
+    {
+      "target": "farmac."
+    },
+    {
+      "target": "farmacol."
+    },
+    {
+      "target": "farmacop."
+    },
+    {
+      "target": "fasc."
+    },
+    {
+      "target": "fascs."
+    },
+    {
+      "target": "fauv."
+    },
+    {
+      "target": "fed."
+    },
+    {
+      "target": "feder."
+    },
+    {
+      "target": "feit."
+    },
+    {
+      "target": "fem."
+    },
+    {
+      "target": "fen."
+    },
+    {
+      "target": "fenom."
+    },
+    {
+      "target": "fenôm."
+    },
+    {
+      "target": "fer."
+    },
+    {
+      "target": "ferrad."
+    },
+    {
+      "target": "ferrov."
+    },
+    {
+      "target": "feud."
+    },
+    {
+      "target": "fev."
+    },
+    {
+      "target": "ff."
+    },
+    {
+      "target": "fg."
+    },
+    {
+      "target": "fig."
+    },
+    {
+      "target": "figd."
+    },
+    {
+      "target": "figur."
+    },
+    {
+      "target": "figurat."
+    },
+    {
+      "target": "figurativ."
+    },
+    {
+      "target": "fil."
+    },
+    {
+      "target": "filat."
+    },
+    {
+      "target": "filol."
+    },
+    {
+      "target": "filos."
+    },
+    {
+      "target": "fin."
+    },
+    {
+      "target": "fin. públ."
+    },
+    {
+      "target": "finl."
+    },
+    {
+      "target": "fís. atôm."
+    },
+    {
+      "target": "fís."
+    },
+    {
+      "target": "fís. mat."
+    },
+    {
+      "target": "fís. méd."
+    },
+    {
+      "target": "fís. nucl."
+    },
+    {
+      "target": "fis. veg."
+    },
+    {
+      "target": "fís.-quím."
+    },
+    {
+      "target": "fisc."
+    },
+    {
+      "target": "fisioc."
+    },
+    {
+      "target": "fisiocr."
+    },
+    {
+      "target": "fisiocrat."
+    },
+    {
+      "target": "fisiol."
+    },
+    {
+      "target": "fisiol. veg."
+    },
+    {
+      "target": "fisl."
+    },
+    {
+      "target": "fispat."
+    },
+    {
+      "target": "fitog."
+    },
+    {
+      "target": "fitogr."
+    },
+    {
+      "target": "fitol."
+    },
+    {
+      "target": "fitopat."
+    },
+    {
+      "target": "fitossoc."
+    },
+    {
+      "target": "fl. dr."
+    },
+    {
+      "target": "fl. dram."
+    },
+    {
+      "target": "fl. oz."
+    },
+    {
+      "target": "fl. sc."
+    },
+    {
+      "target": "flam."
+    },
+    {
+      "target": "flex."
+    },
+    {
+      "target": "flor."
+    },
+    {
+      "target": "floric."
+    },
+    {
+      "target": "fls."
+    },
+    {
+      "target": "flum."
+    },
+    {
+      "target": "flumin."
+    },
+    {
+      "target": "fluv."
+    },
+    {
+      "target": "fm. adv."
+    },
+    {
+      "target": "fm."
+    },
+    {
+      "target": "fm. nom."
+    },
+    {
+      "target": "fm. paral."
+    },
+    {
+      "target": "fo."
+    },
+    {
+      "target": "fog."
+    },
+    {
+      "target": "fol."
+    },
+    {
+      "target": "folc. bras."
+    },
+    {
+      "target": "folc."
+    },
+    {
+      "target": "folcl."
+    },
+    {
+      "target": "folh."
+    },
+    {
+      "target": "fols."
+    },
+    {
+      "target": "fon."
+    },
+    {
+      "target": "fonét."
+    },
+    {
+      "target": "fonol."
+    },
+    {
+      "target": "for."
+    },
+    {
+      "target": "form."
+    },
+    {
+      "target": "fórm."
+    },
+    {
+      "target": "form. port."
+    },
+    {
+      "target": "formul."
+    },
+    {
+      "target": "fort."
+    },
+    {
+      "target": "fos."
+    },
+    {
+      "target": "fós."
+    },
+    {
+      "target": "fot."
+    },
+    {
+      "target": "foto."
+    },
+    {
+      "target": "fotoan."
+    },
+    {
+      "target": "fotoanál."
+    },
+    {
+      "target": "fotogr."
+    },
+    {
+      "target": "fotom."
+    },
+    {
+      "target": "fov."
+    },
+    {
+      "target": "fr."
+    },
+    {
+      "target": "fr. prov."
+    },
+    {
+      "target": "fr.-maç."
+    },
+    {
+      "target": "frânc."
+    },
+    {
+      "target": "franc."
+    },
+    {
+      "target": "freg."
+    },
+    {
+      "target": "frenol."
+    },
+    {
+      "target": "freq."
+    },
+    {
+      "target": "frig."
+    },
+    {
+      "target": "frut."
+    },
+    {
+      "target": "fs."
+    },
+    {
+      "target": "fss."
+    },
+    {
+      "target": "ft."
+    },
+    {
+      "target": "ft.p. min."
+    },
+    {
+      "target": "fulv."
+    },
+    {
+      "target": "fund."
+    },
+    {
+      "target": "fut. conj."
+    },
+    {
+      "target": "fut."
+    },
+    {
+      "target": "fut. ind."
+    },
+    {
+      "target": "fut. pret."
+    },
+    {
+      "target": "fut. subj."
+    },
+    {
+      "target": "futb."
+    },
+    {
+      "target": "futeb."
+    },
+    {
+      "target": "futur."
+    },
+    {
+      "target": "g."
+    },
+    {
+      "target": "g. quím."
+    },
+    {
+      "target": "g.m."
+    },
+    {
+      "target": "g.-m."
+    },
+    {
+      "target": "g.m.t."
+    },
+    {
+      "target": "g.p."
+    },
+    {
+      "target": "gaél."
+    },
+    {
+      "target": "gal."
+    },
+    {
+      "target": "galic."
+    },
+    {
+      "target": "galv."
+    },
+    {
+      "target": "gar."
+    },
+    {
+      "target": "gasc."
+    },
+    {
+      "target": "gaul."
+    },
+    {
+      "target": "gav."
+    },
+    {
+      "target": "gen."
+    },
+    {
+      "target": "gên."
+    },
+    {
+      "target": "geneal."
+    },
+    {
+      "target": "genét."
+    },
+    {
+      "target": "genov."
+    },
+    {
+      "target": "geo. ant."
+    },
+    {
+      "target": "geo. bras."
+    },
+    {
+      "target": "geo. econ."
+    },
+    {
+      "target": "geo. fís."
+    },
+    {
+      "target": "geo."
+    },
+    {
+      "target": "geo. hum."
+    },
+    {
+      "target": "geod."
+    },
+    {
+      "target": "geof."
+    },
+    {
+      "target": "geofís."
+    },
+    {
+      "target": "geog."
+    },
+    {
+      "target": "geog. pol."
+    },
+    {
+      "target": "geogn."
+    },
+    {
+      "target": "geogr."
+    },
+    {
+      "target": "geol."
+    },
+    {
+      "target": "geom. anal."
+    },
+    {
+      "target": "geom. ded."
+    },
+    {
+      "target": "geom. descr."
+    },
+    {
+      "target": "geom. dif."
+    },
+    {
+      "target": "geom."
+    },
+    {
+      "target": "geomor."
+    },
+    {
+      "target": "geomorf."
+    },
+    {
+      "target": "geon."
+    },
+    {
+      "target": "geôn."
+    },
+    {
+      "target": "ger."
+    },
+    {
+      "target": "germ."
+    },
+    {
+      "target": "gin."
+    },
+    {
+      "target": "ginást."
+    },
+    {
+      "target": "ginec."
+    },
+    {
+      "target": "ginecol."
+    },
+    {
+      "target": "gír. cig."
+    },
+    {
+      "target": "gír. esc."
+    },
+    {
+      "target": "gír. fut."
+    },
+    {
+      "target": "gír. gat."
+    },
+    {
+      "target": "gír."
+    },
+    {
+      "target": "gír. pol."
+    },
+    {
+      "target": "gliptog."
+    },
+    {
+      "target": "gliptogr."
+    },
+    {
+      "target": "gliptol."
+    },
+    {
+      "target": "gliptot."
+    },
+    {
+      "target": "gloss."
+    },
+    {
+      "target": "glót."
+    },
+    {
+      "target": "glotol."
+    },
+    {
+      "target": "gn."
+    },
+    {
+      "target": "gnom."
+    },
+    {
+      "target": "gót."
+    },
+    {
+      "target": "gov."
+    },
+    {
+      "target": "gr. biz."
+    },
+    {
+      "target": "gr."
+    },
+    {
+      "target": "gr. mod."
+    },
+    {
+      "target": "gráf."
+    },
+    {
+      "target": "graf."
+    },
+    {
+      "target": "grafol."
+    },
+    {
+      "target": "grafosc."
+    },
+    {
+      "target": "gram."
+    },
+    {
+      "target": "grav."
+    },
+    {
+      "target": "grd."
+    },
+    {
+      "target": "groen."
+    },
+    {
+      "target": "groenl."
+    },
+    {
+      "target": "gt."
+    },
+    {
+      "target": "guar."
+    },
+    {
+      "target": "guat."
+    },
+    {
+      "target": "guatem."
+    },
+    {
+      "target": "guin."
+    },
+    {
+      "target": "gutt."
+    },
+    {
+      "target": "guz."
+    },
+    {
+      "target": "h."
+    },
+    {
+      "target": "h.c."
+    },
+    {
+      "target": "h.cont."
+    },
+    {
+      "target": "h.i.s."
+    },
+    {
+      "target": "h.j.s."
+    },
+    {
+      "target": "h.mod."
+    },
+    {
+      "target": "h.n."
+    },
+    {
+      "target": "h.p."
+    },
+    {
+      "target": "h.p.-h."
+    },
+    {
+      "target": "h.sag."
+    },
+    {
+      "target": "hab."
+    },
+    {
+      "target": "hag."
+    },
+    {
+      "target": "hagiog."
+    },
+    {
+      "target": "hagiogr."
+    },
+    {
+      "target": "hagiol."
+    },
+    {
+      "target": "haplol."
+    },
+    {
+      "target": "hast."
+    },
+    {
+      "target": "hebd."
+    },
+    {
+      "target": "hebr."
+    },
+    {
+      "target": "helm."
+    },
+    {
+      "target": "helmin."
+    },
+    {
+      "target": "helmintol."
+    },
+    {
+      "target": "hem."
+    },
+    {
+      "target": "heort."
+    },
+    {
+      "target": "heort.f."
+    },
+    {
+      "target": "heort.f.pl."
+    },
+    {
+      "target": "heort.m."
+    },
+    {
+      "target": "heort.m.pl."
+    },
+    {
+      "target": "heortôn. fem."
+    },
+    {
+      "target": "heortôn. masc."
+    },
+    {
+      "target": "her."
+    },
+    {
+      "target": "herál."
+    },
+    {
+      "target": "heráld."
+    },
+    {
+      "target": "herb."
+    },
+    {
+      "target": "herp."
+    },
+    {
+      "target": "herpét."
+    },
+    {
+      "target": "herpet."
+    },
+    {
+      "target": "herpetogr."
+    },
+    {
+      "target": "herpetol."
+    },
+    {
+      "target": "het."
+    },
+    {
+      "target": "hib."
+    },
+    {
+      "target": "híb."
+    },
+    {
+      "target": "hibr."
+    },
+    {
+      "target": "híbr."
+    },
+    {
+      "target": "hibrid."
+    },
+    {
+      "target": "hidr. fl."
+    },
+    {
+      "target": "hidr."
+    },
+    {
+      "target": "hidrául."
+    },
+    {
+      "target": "hidrod."
+    },
+    {
+      "target": "hidrog."
+    },
+    {
+      "target": "hidrogr."
+    },
+    {
+      "target": "hidrol."
+    },
+    {
+      "target": "hidrom."
+    },
+    {
+      "target": "hidrost."
+    },
+    {
+      "target": "hidrot."
+    },
+    {
+      "target": "hier."
+    },
+    {
+      "target": "hier.f."
+    },
+    {
+      "target": "hier.f.pl."
+    },
+    {
+      "target": "hier.m."
+    },
+    {
+      "target": "hier.m.pl."
+    },
+    {
+      "target": "hierôn."
+    },
+    {
+      "target": "hierosolim."
+    },
+    {
+      "target": "hig."
+    },
+    {
+      "target": "higr."
+    },
+    {
+      "target": "hind."
+    },
+    {
+      "target": "híp."
+    },
+    {
+      "target": "hip."
+    },
+    {
+      "target": "hipiat."
+    },
+    {
+      "target": "hipnot."
+    },
+    {
+      "target": "hipnoter."
+    },
+    {
+      "target": "hipoc."
+    },
+    {
+      "target": "hipocor."
+    },
+    {
+      "target": "hipol."
+    },
+    {
+      "target": "hipót."
+    },
+    {
+      "target": "hipot."
+    },
+    {
+      "target": "hisp."
+    },
+    {
+      "target": "hisp.-am."
+    },
+    {
+      "target": "hisp.-amer."
+    },
+    {
+      "target": "hisp.-lat."
+    },
+    {
+      "target": "hisp-ár."
+    },
+    {
+      "target": "hist. ant."
+    },
+    {
+      "target": "hist. bíb."
+    },
+    {
+      "target": "hist. bíbl."
+    },
+    {
+      "target": "hist. bras."
+    },
+    {
+      "target": "hist. col."
+    },
+    {
+      "target": "hist. contemp."
+    },
+    {
+      "target": "hist. ecl."
+    },
+    {
+      "target": "hist. ecles."
+    },
+    {
+      "target": "hist. filos."
+    },
+    {
+      "target": "hist. gr."
+    },
+    {
+      "target": "hist."
+    },
+    {
+      "target": "hist. inst."
+    },
+    {
+      "target": "hist. mar. bras."
+    },
+    {
+      "target": "hist. mar."
+    },
+    {
+      "target": "hist. mil."
+    },
+    {
+      "target": "hist. mod."
+    },
+    {
+      "target": "hist. nat."
+    },
+    {
+      "target": "hist. rel."
+    },
+    {
+      "target": "hist. rom."
+    },
+    {
+      "target": "hist. sagr."
+    },
+    {
+      "target": "histol."
+    },
+    {
+      "target": "historiog."
+    },
+    {
+      "target": "historiogr."
+    },
+    {
+      "target": "hol."
+    },
+    {
+      "target": "hom."
+    },
+    {
+      "target": "homeo."
+    },
+    {
+      "target": "homeop."
+    },
+    {
+      "target": "homof."
+    },
+    {
+      "target": "homog."
+    },
+    {
+      "target": "homogr."
+    },
+    {
+      "target": "homon."
+    },
+    {
+      "target": "homôn."
+    },
+    {
+      "target": "hon."
+    },
+    {
+      "target": "hond."
+    },
+    {
+      "target": "hort."
+    },
+    {
+      "target": "hortic."
+    },
+    {
+      "target": "hot."
+    },
+    {
+      "target": "hotent."
+    },
+    {
+      "target": "humor."
+    },
+    {
+      "target": "húng."
+    },
+    {
+      "target": "i."
+    },
+    {
+      "target": "i.d."
+    },
+    {
+      "target": "i.e."
+    },
+    {
+      "target": "iat."
+    },
+    {
+      "target": "ib."
+    },
+    {
+      "target": "ibér."
+    },
+    {
+      "target": "ibid."
+    },
+    {
+      "target": "iconog."
+    },
+    {
+      "target": "iconogr."
+    },
+    {
+      "target": "iconol."
+    },
+    {
+      "target": "ict."
+    },
+    {
+      "target": "ictiol."
+    },
+    {
+      "target": "id."
+    },
+    {
+      "target": "id.q."
+    },
+    {
+      "target": "idiot."
+    },
+    {
+      "target": "idol."
+    },
+    {
+      "target": "idolol."
+    },
+    {
+      "target": "igr."
+    },
+    {
+      "target": "il."
+    },
+    {
+      "target": "ilum."
+    },
+    {
+      "target": "ilus."
+    },
+    {
+      "target": "ilusion."
+    },
+    {
+      "target": "ilustr."
+    },
+    {
+      "target": "imigr."
+    },
+    {
+      "target": "imit."
+    },
+    {
+      "target": "imp."
+    },
+    {
+      "target": "imp. ind."
+    },
+    {
+      "target": "imp. subj."
+    },
+    {
+      "target": "imper. conj."
+    },
+    {
+      "target": "imper."
+    },
+    {
+      "target": "imperat."
+    },
+    {
+      "target": "imperf."
+    },
+    {
+      "target": "imperf. ind."
+    },
+    {
+      "target": "imperf. subj."
+    },
+    {
+      "target": "impes."
+    },
+    {
+      "target": "impess."
+    },
+    {
+      "target": "import."
+    },
+    {
+      "target": "impr."
+    },
+    {
+      "target": "impres."
+    },
+    {
+      "target": "impression."
+    },
+    {
+      "target": "improp."
+    },
+    {
+      "target": "impror."
+    },
+    {
+      "target": "in."
+    },
+    {
+      "target": "inc."
+    },
+    {
+      "target": "incoat."
+    },
+    {
+      "target": "incóg."
+    },
+    {
+      "target": "ind. aç."
+    },
+    {
+      "target": "ind. ag."
+    },
+    {
+      "target": "ind. ext."
+    },
+    {
+      "target": "ind."
+    },
+    {
+      "target": "índ."
+    },
+    {
+      "target": "ind. mad."
+    },
+    {
+      "target": "indef."
+    },
+    {
+      "target": "indet."
+    },
+    {
+      "target": "indian."
+    },
+    {
+      "target": "indiv."
+    },
+    {
+      "target": "indoch."
+    },
+    {
+      "target": "indon."
+    },
+    {
+      "target": "indost."
+    },
+    {
+      "target": "indum."
+    },
+    {
+      "target": "indust."
+    },
+    {
+      "target": "indúst."
+    },
+    {
+      "target": "inf."
+    },
+    {
+      "target": "inf. pess."
+    },
+    {
+      "target": "infan."
+    },
+    {
+      "target": "infant."
+    },
+    {
+      "target": "infer."
+    },
+    {
+      "target": "infin."
+    },
+    {
+      "target": "infinit."
+    },
+    {
+      "target": "infinitiv. pes."
+    },
+    {
+      "target": "infl."
+    },
+    {
+      "target": "inform."
+    },
+    {
+      "target": "ing."
+    },
+    {
+      "target": "ing.-n.-am."
+    },
+    {
+      "target": "ingl."
+    },
+    {
+      "target": "ins."
+    },
+    {
+      "target": "inscr."
+    },
+    {
+      "target": "insep."
+    },
+    {
+      "target": "inst. ag."
+    },
+    {
+      "target": "inst."
+    },
+    {
+      "target": "inst. pol."
+    },
+    {
+      "target": "inst. púb."
+    },
+    {
+      "target": "instit."
+    },
+    {
+      "target": "int."
+    },
+    {
+      "target": "integr."
+    },
+    {
+      "target": "intens."
+    },
+    {
+      "target": "interamn."
+    },
+    {
+      "target": "interj. excl."
+    },
+    {
+      "target": "interj."
+    },
+    {
+      "target": "interj. voc."
+    },
+    {
+      "target": "interjet."
+    },
+    {
+      "target": "intern."
+    },
+    {
+      "target": "internac."
+    },
+    {
+      "target": "interr."
+    },
+    {
+      "target": "interrog."
+    },
+    {
+      "target": "interrogat."
+    },
+    {
+      "target": "intj."
+    },
+    {
+      "target": "intr."
+    },
+    {
+      "target": "intrans."
+    },
+    {
+      "target": "inus."
+    },
+    {
+      "target": "inv."
+    },
+    {
+      "target": "invar."
+    },
+    {
+      "target": "invariav."
+    },
+    {
+      "target": "invenç."
+    },
+    {
+      "target": "invest."
+    },
+    {
+      "target": "investig."
+    },
+    {
+      "target": "iog."
+    },
+    {
+      "target": "ir."
+    },
+    {
+      "target": "iran."
+    },
+    {
+      "target": "iraq."
+    },
+    {
+      "target": "irl."
+    },
+    {
+      "target": "iron."
+    },
+    {
+      "target": "irôn."
+    },
+    {
+      "target": "irr."
+    },
+    {
+      "target": "irreg."
+    },
+    {
+      "target": "isl."
+    },
+    {
+      "target": "islam."
+    },
+    {
+      "target": "island."
+    },
+    {
+      "target": "isr."
+    },
+    {
+      "target": "israel."
+    },
+    {
+      "target": "it."
+    },
+    {
+      "target": "ít."
+    },
+    {
+      "target": "ital."
+    },
+    {
+      "target": "itál."
+    },
+    {
+      "target": "italian."
+    },
+    {
+      "target": "iug."
+    },
+    {
+      "target": "j.d."
+    },
+    {
+      "target": "jam."
+    },
+    {
+      "target": "jan."
+    },
+    {
+      "target": "jap."
+    },
+    {
+      "target": "jard."
+    },
+    {
+      "target": "jardin."
+    },
+    {
+      "target": "jav."
+    },
+    {
+      "target": "jaz."
+    },
+    {
+      "target": "jes."
+    },
+    {
+      "target": "joalh."
+    },
+    {
+      "target": "joc."
+    },
+    {
+      "target": "jog."
+    },
+    {
+      "target": "jorn."
+    },
+    {
+      "target": "jr."
+    },
+    {
+      "target": "jud."
+    },
+    {
+      "target": "jul."
+    },
+    {
+      "target": "jun."
+    },
+    {
+      "target": "jur."
+    },
+    {
+      "target": "juris."
+    },
+    {
+      "target": "jurisp."
+    },
+    {
+      "target": "jurispr."
+    },
+    {
+      "target": "just. mil."
+    },
+    {
+      "target": "k.o."
+    },
+    {
+      "target": "l."
+    },
+    {
+      "target": "l.c."
+    },
+    {
+      "target": "l.l.b."
+    },
+    {
+      "target": "l.l.d."
+    },
+    {
+      "target": "l.n."
+    },
+    {
+      "target": "l.o.l."
+    },
+    {
+      "target": "l.p."
+    },
+    {
+      "target": "l.q."
+    },
+    {
+      "target": "lab."
+    },
+    {
+      "target": "labor."
+    },
+    {
+      "target": "laborat."
+    },
+    {
+      "target": "labort."
+    },
+    {
+      "target": "lact."
+    },
+    {
+      "target": "lâm."
+    },
+    {
+      "target": "lanç."
+    },
+    {
+      "target": "lanc."
+    },
+    {
+      "target": "lap."
+    },
+    {
+      "target": "lapid."
+    },
+    {
+      "target": "larg."
+    },
+    {
+      "target": "lat. bárb."
+    },
+    {
+      "target": "lat. cien."
+    },
+    {
+      "target": "lat. ecl."
+    },
+    {
+      "target": "lat. hip."
+    },
+    {
+      "target": "lat. hipotét."
+    },
+    {
+      "target": "lat. ing."
+    },
+    {
+      "target": "lat."
+    },
+    {
+      "target": "lat. mediev."
+    },
+    {
+      "target": "lat. tard."
+    },
+    {
+      "target": "lat. vulg."
+    },
+    {
+      "target": "latit."
+    },
+    {
+      "target": "latoar."
+    },
+    {
+      "target": "lb."
+    },
+    {
+      "target": "leg. fin."
+    },
+    {
+      "target": "leg."
+    },
+    {
+      "target": "lég."
+    },
+    {
+      "target": "leg. soc."
+    },
+    {
+      "target": "legisl."
+    },
+    {
+      "target": "légs."
+    },
+    {
+      "target": "leit."
+    },
+    {
+      "target": "let."
+    },
+    {
+      "target": "lex."
+    },
+    {
+      "target": "lib."
+    },
+    {
+      "target": "lig."
+    },
+    {
+      "target": "lim."
+    },
+    {
+      "target": "lin."
+    },
+    {
+      "target": "líng."
+    },
+    {
+      "target": "ling."
+    },
+    {
+      "target": "lingüíst."
+    },
+    {
+      "target": "líq."
+    },
+    {
+      "target": "lit. cat."
+    },
+    {
+      "target": "lit."
+    },
+    {
+      "target": "liter."
+    },
+    {
+      "target": "literal."
+    },
+    {
+      "target": "literat."
+    },
+    {
+      "target": "litog."
+    },
+    {
+      "target": "litogr."
+    },
+    {
+      "target": "litol."
+    },
+    {
+      "target": "litt.d."
+    },
+    {
+      "target": "lituan."
+    },
+    {
+      "target": "litur."
+    },
+    {
+      "target": "liturg."
+    },
+    {
+      "target": "liv."
+    },
+    {
+      "target": "livr."
+    },
+    {
+      "target": "ll."
+    },
+    {
+      "target": "loc. adj."
+    },
+    {
+      "target": "loc. adv. lat."
+    },
+    {
+      "target": "loc. adv."
+    },
+    {
+      "target": "loc. adv. mod."
+    },
+    {
+      "target": "loc. adv. temp."
+    },
+    {
+      "target": "loc. cit."
+    },
+    {
+      "target": "loc. conj."
+    },
+    {
+      "target": "loc. fam."
+    },
+    {
+      "target": "loc. int."
+    },
+    {
+      "target": "loc."
+    },
+    {
+      "target": "loc. prep."
+    },
+    {
+      "target": "loc. pron. pess."
+    },
+    {
+      "target": "loc.s."
+    },
+    {
+      "target": "loc.v."
+    },
+    {
+      "target": "log."
+    },
+    {
+      "target": "lóg."
+    },
+    {
+      "target": "logar."
+    },
+    {
+      "target": "logíst."
+    },
+    {
+      "target": "lomb."
+    },
+    {
+      "target": "long."
+    },
+    {
+      "target": "loq."
+    },
+    {
+      "target": "lr."
+    },
+    {
+      "target": "ltd."
+    },
+    {
+      "target": "ltda."
+    },
+    {
+      "target": "ludol."
+    },
+    {
+      "target": "lug."
+    },
+    {
+      "target": "lund."
+    },
+    {
+      "target": "lunf."
+    },
+    {
+      "target": "lus."
+    },
+    {
+      "target": "lusit."
+    },
+    {
+      "target": "luso-afr."
+    },
+    {
+      "target": "luso-asit."
+    },
+    {
+      "target": "lut."
+    },
+    {
+      "target": "luv."
+    },
+    {
+      "target": "m."
+    },
+    {
+      "target": "m. us."
+    },
+    {
+      "target": "m.a.-al."
+    },
+    {
+      "target": "m.alt.-al."
+    },
+    {
+      "target": "m.b."
+    },
+    {
+      "target": "m.d."
+    },
+    {
+      "target": "m.d.c."
+    },
+    {
+      "target": "m.f."
+    },
+    {
+      "target": "m.m.c."
+    },
+    {
+      "target": "m.-q.-perf. ind."
+    },
+    {
+      "target": "m.q.perf."
+    },
+    {
+      "target": "m.-q.-perf."
+    },
+    {
+      "target": "m.t.s."
+    },
+    {
+      "target": "maç."
+    },
+    {
+      "target": "maçon."
+    },
+    {
+      "target": "mad."
+    },
+    {
+      "target": "madeir."
+    },
+    {
+      "target": "mag."
+    },
+    {
+      "target": "magn."
+    },
+    {
+      "target": "magnet."
+    },
+    {
+      "target": "magnit."
+    },
+    {
+      "target": "mai."
+    },
+    {
+      "target": "maiúsc."
+    },
+    {
+      "target": "maj."
+    },
+    {
+      "target": "maj.-brig."
+    },
+    {
+      "target": "mal."
+    },
+    {
+      "target": "malab."
+    },
+    {
+      "target": "malac."
+    },
+    {
+      "target": "malacol."
+    },
+    {
+      "target": "malai."
+    },
+    {
+      "target": "malg."
+    },
+    {
+      "target": "malh."
+    },
+    {
+      "target": "mamal."
+    },
+    {
+      "target": "man."
+    },
+    {
+      "target": "manuf."
+    },
+    {
+      "target": "maomet."
+    },
+    {
+      "target": "map."
+    },
+    {
+      "target": "máq. ag."
+    },
+    {
+      "target": "máq."
+    },
+    {
+      "target": "maq."
+    },
+    {
+      "target": "maquinof."
+    },
+    {
+      "target": "mar. ant."
+    },
+    {
+      "target": "mar."
+    },
+    {
+      "target": "mar. mil."
+    },
+    {
+      "target": "mar.g."
+    },
+    {
+      "target": "maranh."
+    },
+    {
+      "target": "marc."
+    },
+    {
+      "target": "march."
+    },
+    {
+      "target": "marchet."
+    },
+    {
+      "target": "marg."
+    },
+    {
+      "target": "marin."
+    },
+    {
+      "target": "marinh."
+    },
+    {
+      "target": "marn."
+    },
+    {
+      "target": "marr."
+    },
+    {
+      "target": "marroq."
+    },
+    {
+      "target": "martin."
+    },
+    {
+      "target": "marx."
+    },
+    {
+      "target": "masc."
+    },
+    {
+      "target": "mat. fin."
+    },
+    {
+      "target": "mat."
+    },
+    {
+      "target": "mat. pl."
+    },
+    {
+      "target": "mat. sup."
+    },
+    {
+      "target": "matad."
+    },
+    {
+      "target": "matem."
+    },
+    {
+      "target": "mater."
+    },
+    {
+      "target": "material."
+    },
+    {
+      "target": "matogros."
+    },
+    {
+      "target": "mato-gros."
+    },
+    {
+      "target": "máx."
+    },
+    {
+      "target": "mct."
+    },
+    {
+      "target": "mec."
+    },
+    {
+      "target": "mecân."
+    },
+    {
+      "target": "mecan."
+    },
+    {
+      "target": "mecanogr."
+    },
+    {
+      "target": "med. ant."
+    },
+    {
+      "target": "med. leg."
+    },
+    {
+      "target": "med."
+    },
+    {
+      "target": "méd."
+    },
+    {
+      "target": "med. nucl."
+    },
+    {
+      "target": "med. san."
+    },
+    {
+      "target": "med. trab."
+    },
+    {
+      "target": "méd. vet."
+    },
+    {
+      "target": "mediev."
+    },
+    {
+      "target": "medv."
+    },
+    {
+      "target": "mem."
+    },
+    {
+      "target": "memo."
+    },
+    {
+      "target": "memor."
+    },
+    {
+      "target": "mens."
+    },
+    {
+      "target": "mer."
+    },
+    {
+      "target": "merc."
+    },
+    {
+      "target": "mercad."
+    },
+    {
+      "target": "merid."
+    },
+    {
+      "target": "met."
+    },
+    {
+      "target": "metáf."
+    },
+    {
+      "target": "metaf."
+    },
+    {
+      "target": "metafis."
+    },
+    {
+      "target": "metafór."
+    },
+    {
+      "target": "metal."
+    },
+    {
+      "target": "metalog."
+    },
+    {
+      "target": "metalur."
+    },
+    {
+      "target": "metát."
+    },
+    {
+      "target": "meteor."
+    },
+    {
+      "target": "meton."
+    },
+    {
+      "target": "métr."
+    },
+    {
+      "target": "metr."
+    },
+    {
+      "target": "metrif."
+    },
+    {
+      "target": "metrol."
+    },
+    {
+      "target": "mex."
+    },
+    {
+      "target": "mexic."
+    },
+    {
+      "target": "mi."
+    },
+    {
+      "target": "micol."
+    },
+    {
+      "target": "microbiol."
+    },
+    {
+      "target": "microfot."
+    },
+    {
+      "target": "microg."
+    },
+    {
+      "target": "microl."
+    },
+    {
+      "target": "microm."
+    },
+    {
+      "target": "microsc."
+    },
+    {
+      "target": "microscóp."
+    },
+    {
+      "target": "mil."
+    },
+    {
+      "target": "min."
+    },
+    {
+      "target": "mín."
+    },
+    {
+      "target": "miner."
+    },
+    {
+      "target": "ming."
+    },
+    {
+      "target": "minh."
+    },
+    {
+      "target": "minúsc."
+    },
+    {
+      "target": "miss."
+    },
+    {
+      "target": "mist."
+    },
+    {
+      "target": "míst."
+    },
+    {
+      "target": "mit. esc."
+    },
+    {
+      "target": "mit. ger."
+    },
+    {
+      "target": "mit."
+    },
+    {
+      "target": "mit. rom."
+    },
+    {
+      "target": "mit. sem."
+    },
+    {
+      "target": "mit.f."
+    },
+    {
+      "target": "mit.f.pl."
+    },
+    {
+      "target": "mit.gr."
+    },
+    {
+      "target": "mit.m."
+    },
+    {
+      "target": "mit.m.f."
+    },
+    {
+      "target": "mit.m.pl."
+    },
+    {
+      "target": "mitol."
+    },
+    {
+      "target": "mitôn. fem."
+    },
+    {
+      "target": "mitôn. masc."
+    },
+    {
+      "target": "mitôn."
+    },
+    {
+      "target": "mk."
+    },
+    {
+      "target": "mm."
+    },
+    {
+      "target": "mmin."
+    },
+    {
+      "target": "moag."
+    },
+    {
+      "target": "mob."
+    },
+    {
+      "target": "moçamb."
+    },
+    {
+      "target": "mod."
+    },
+    {
+      "target": "moed."
+    },
+    {
+      "target": "mon."
+    },
+    {
+      "target": "monog."
+    },
+    {
+      "target": "monogr."
+    },
+    {
+      "target": "mons."
+    },
+    {
+      "target": "mont."
+    },
+    {
+      "target": "montanh."
+    },
+    {
+      "target": "mor."
+    },
+    {
+      "target": "moralid."
+    },
+    {
+      "target": "morf."
+    },
+    {
+      "target": "morfol."
+    },
+    {
+      "target": "morfol. veg."
+    },
+    {
+      "target": "moto."
+    },
+    {
+      "target": "mov."
+    },
+    {
+      "target": "mr."
+    },
+    {
+      "target": "mrs."
+    },
+    {
+      "target": "ms."
+    },
+    {
+      "target": "mun."
+    },
+    {
+      "target": "mús. concr."
+    },
+    {
+      "target": "mus."
+    },
+    {
+      "target": "mús."
+    },
+    {
+      "target": "mus.b."
+    },
+    {
+      "target": "mus.d."
+    },
+    {
+      "target": "mus.h."
+    },
+    {
+      "target": "museol."
+    },
+    {
+      "target": "n.a.s.a."
+    },
+    {
+      "target": "unidos."
+    },
+    {
+      "target": "n."
+    },
+    {
+      "target": "r."
+    },
+    {
+      "target": "t."
+    },
+    {
+      "target": "n.b."
+    },
+    {
+      "target": "n.e."
+    },
+    {
+      "target": "n.f."
+    },
+    {
+      "target": "n.n."
+    },
+    {
+      "target": "n.n.e."
+    },
+    {
+      "target": "n.n.o."
+    },
+    {
+      "target": "n.n.w."
+    },
+    {
+      "target": "n.o."
+    },
+    {
+      "target": "n.obs."
+    },
+    {
+      "target": "n.p."
+    },
+    {
+      "target": "n.p.loc."
+    },
+    {
+      "target": "n.p.pers."
+    },
+    {
+      "target": "n.pr."
+    },
+    {
+      "target": "n.r.p."
+    },
+    {
+      "target": "n.s."
+    },
+    {
+      "target": "n.s.p."
+    },
+    {
+      "target": "n.ss.p."
+    },
+    {
+      "target": "n.t."
+    },
+    {
+      "target": "n.w."
+    },
+    {
+      "target": "nac."
+    },
+    {
+      "target": "nap."
+    },
+    {
+      "target": "nat."
+    },
+    {
+      "target": "natur."
+    },
+    {
+      "target": "náu."
+    },
+    {
+      "target": "náua."
+    },
+    {
+      "target": "náut."
+    },
+    {
+      "target": "nav. fluv."
+    },
+    {
+      "target": "nav. mar."
+    },
+    {
+      "target": "nav. marít."
+    },
+    {
+      "target": "nav."
+    },
+    {
+      "target": "nav.fl."
+    },
+    {
+      "target": "naz."
+    },
+    {
+      "target": "neerl."
+    },
+    {
+      "target": "neg."
+    },
+    {
+      "target": "neo-ár."
+    },
+    {
+      "target": "neoguin."
+    },
+    {
+      "target": "neol."
+    },
+    {
+      "target": "neolog."
+    },
+    {
+      "target": "neozel."
+    },
+    {
+      "target": "nep."
+    },
+    {
+      "target": "neur."
+    },
+    {
+      "target": "neutr."
+    },
+    {
+      "target": "nicar."
+    },
+    {
+      "target": "nicarag."
+    },
+    {
+      "target": "nig."
+    },
+    {
+      "target": "niger."
+    },
+    {
+      "target": "nob."
+    },
+    {
+      "target": "nobil."
+    },
+    {
+      "target": "nom."
+    },
+    {
+      "target": "nom.-acus."
+    },
+    {
+      "target": "nor."
+    },
+    {
+      "target": "nórd."
+    },
+    {
+      "target": "norm."
+    },
+    {
+      "target": "normat."
+    },
+    {
+      "target": "nort.-am."
+    },
+    {
+      "target": "norueg."
+    },
+    {
+      "target": "notic."
+    },
+    {
+      "target": "nov."
+    },
+    {
+      "target": "num. card."
+    },
+    {
+      "target": "num. distr."
+    },
+    {
+      "target": "num. frac."
+    },
+    {
+      "target": "num. fracc."
+    },
+    {
+      "target": "num. mult."
+    },
+    {
+      "target": "num."
+    },
+    {
+      "target": "núm."
+    },
+    {
+      "target": "num. ord."
+    },
+    {
+      "target": "numis."
+    },
+    {
+      "target": "numism."
+    },
+    {
+      "target": "nutr."
+    },
+    {
+      "target": "o."
+    },
+    {
+      "target": "o.d.c."
+    },
+    {
+      "target": "o.k."
+    },
+    {
+      "target": "o.n.o."
+    },
+    {
+      "target": "ob. cit."
+    },
+    {
+      "target": "ob."
+    },
+    {
+      "target": "obed."
+    },
+    {
+      "target": "obr. púb."
+    },
+    {
+      "target": "obs."
+    },
+    {
+      "target": "obsol."
+    },
+    {
+      "target": "obst."
+    },
+    {
+      "target": "obstet."
+    },
+    {
+      "target": "oc."
+    },
+    {
+      "target": "ocean. biol."
+    },
+    {
+      "target": "ocean."
+    },
+    {
+      "target": "oceanogr."
+    },
+    {
+      "target": "ocid."
+    },
+    {
+      "target": "ocul."
+    },
+    {
+      "target": "ocult."
+    },
+    {
+      "target": "odont."
+    },
+    {
+      "target": "odontol."
+    },
+    {
+      "target": "of."
+    },
+    {
+      "target": "ofid."
+    },
+    {
+      "target": "oft."
+    },
+    {
+      "target": "oftalm."
+    },
+    {
+      "target": "oftalmol."
+    },
+    {
+      "target": "olig."
+    },
+    {
+      "target": "onç."
+    },
+    {
+      "target": "oneol."
+    },
+    {
+      "target": "onom."
+    },
+    {
+      "target": "onomást."
+    },
+    {
+      "target": "onomat."
+    },
+    {
+      "target": "onomatop."
+    },
+    {
+      "target": "op. cit."
+    },
+    {
+      "target": "op. laud."
+    },
+    {
+      "target": "op."
+    },
+    {
+      "target": "opp. citt."
+    },
+    {
+      "target": "ópt."
+    },
+    {
+      "target": "optat."
+    },
+    {
+      "target": "or. gr."
+    },
+    {
+      "target": "or. lat."
+    },
+    {
+      "target": "or."
+    },
+    {
+      "target": "orat."
+    },
+    {
+      "target": "ord."
+    },
+    {
+      "target": "ordin."
+    },
+    {
+      "target": "org."
+    },
+    {
+      "target": "org. pol."
+    },
+    {
+      "target": "organiz."
+    },
+    {
+      "target": "orig."
+    },
+    {
+      "target": "origin."
+    },
+    {
+      "target": "orign."
+    },
+    {
+      "target": "orn."
+    },
+    {
+      "target": "ornit."
+    },
+    {
+      "target": "ornitol."
+    },
+    {
+      "target": "orog."
+    },
+    {
+      "target": "orogr."
+    },
+    {
+      "target": "orôn."
+    },
+    {
+      "target": "ort."
+    },
+    {
+      "target": "ortogr."
+    },
+    {
+      "target": "ortográf."
+    },
+    {
+      "target": "ortop."
+    },
+    {
+      "target": "ostr."
+    },
+    {
+      "target": "otorr."
+    },
+    {
+      "target": "otorrin."
+    },
+    {
+      "target": "otorrino."
+    },
+    {
+      "target": "our."
+    },
+    {
+      "target": "ouriv."
+    },
+    {
+      "target": "out."
+    },
+    {
+      "target": "oz."
+    },
+    {
+      "target": "p. anal."
+    },
+    {
+      "target": "p. arom."
+    },
+    {
+      "target": "p. bien."
+    },
+    {
+      "target": "p. comp."
+    },
+    {
+      "target": "p. exag."
+    },
+    {
+      "target": "p. ext."
+    },
+    {
+      "target": "p. fl."
+    },
+    {
+      "target": "p. forrag."
+    },
+    {
+      "target": "p. frutíf."
+    },
+    {
+      "target": "p. herb."
+    },
+    {
+      "target": "p. hist."
+    },
+    {
+      "target": "p. iron."
+    },
+    {
+      "target": "p. med."
+    },
+    {
+      "target": "p. meton."
+    },
+    {
+      "target": "p. opos."
+    },
+    {
+      "target": "p. orn."
+    },
+    {
+      "target": "p."
+    },
+    {
+      "target": "p. têxt."
+    },
+    {
+      "target": "p. us."
+    },
+    {
+      "target": "p. ven."
+    },
+    {
+      "target": "p.ae."
+    },
+    {
+      "target": "p.al."
+    },
+    {
+      "target": "p.b."
+    },
+    {
+      "target": "p.c."
+    },
+    {
+      "target": "p.c.c."
+    },
+    {
+      "target": "p.d."
+    },
+    {
+      "target": "p.e."
+    },
+    {
+      "target": "p.e.f."
+    },
+    {
+      "target": "p.e.o."
+    },
+    {
+      "target": "p.ex."
+    },
+    {
+      "target": "p.ext."
+    },
+    {
+      "target": "p.f."
+    },
+    {
+      "target": "p.f.v."
+    },
+    {
+      "target": "p.h."
+    },
+    {
+      "target": "p.i."
+    },
+    {
+      "target": "p.j."
+    },
+    {
+      "target": "p.l."
+    },
+    {
+      "target": "p.m."
+    },
+    {
+      "target": "p.m.e."
+    },
+    {
+      "target": "p.m.o."
+    },
+    {
+      "target": "p.m.o.m."
+    },
+    {
+      "target": "p.m.p."
+    },
+    {
+      "target": "p.n."
+    },
+    {
+      "target": "p.n.a.m."
+    },
+    {
+      "target": "p.p."
+    },
+    {
+      "target": "p.p.s."
+    },
+    {
+      "target": "p.per."
+    },
+    {
+      "target": "p.r."
+    },
+    {
+      "target": "p.r.j."
+    },
+    {
+      "target": "p.s."
+    },
+    {
+      "target": "p.v."
+    },
+    {
+      "target": "pa."
+    },
+    {
+      "target": "pa.g."
+    },
+    {
+      "target": "pag."
+    },
+    {
+      "target": "pág."
+    },
+    {
+      "target": "pagg."
+    },
+    {
+      "target": "págg."
+    },
+    {
+      "target": "págs."
+    },
+    {
+      "target": "pal."
+    },
+    {
+      "target": "paleob."
+    },
+    {
+      "target": "paleog."
+    },
+    {
+      "target": "paleogr."
+    },
+    {
+      "target": "paleont."
+    },
+    {
+      "target": "paleontol."
+    },
+    {
+      "target": "paleoz."
+    },
+    {
+      "target": "pals."
+    },
+    {
+      "target": "pan."
+    },
+    {
+      "target": "pan.-amer."
+    },
+    {
+      "target": "panam."
+    },
+    {
+      "target": "papel."
+    },
+    {
+      "target": "paq."
+    },
+    {
+      "target": "par."
+    },
+    {
+      "target": "paraens."
+    },
+    {
+      "target": "parag."
+    },
+    {
+      "target": "paraib."
+    },
+    {
+      "target": "paral."
+    },
+    {
+      "target": "paran."
+    },
+    {
+      "target": "paras."
+    },
+    {
+      "target": "parassint."
+    },
+    {
+      "target": "parl."
+    },
+    {
+      "target": "parn."
+    },
+    {
+      "target": "parnas."
+    },
+    {
+      "target": "parôn."
+    },
+    {
+      "target": "part. apass."
+    },
+    {
+      "target": "part. aux."
+    },
+    {
+      "target": "part. expl."
+    },
+    {
+      "target": "part."
+    },
+    {
+      "target": "part. pass."
+    },
+    {
+      "target": "part. pres."
+    },
+    {
+      "target": "partic."
+    },
+    {
+      "target": "pass."
+    },
+    {
+      "target": "passm."
+    },
+    {
+      "target": "passr."
+    },
+    {
+      "target": "passt."
+    },
+    {
+      "target": "past."
+    },
+    {
+      "target": "pat. an."
+    },
+    {
+      "target": "patol."
+    },
+    {
+      "target": "pátr."
+    },
+    {
+      "target": "patr."
+    },
+    {
+      "target": "patr.f."
+    },
+    {
+      "target": "patr.f.pl."
+    },
+    {
+      "target": "patr.m."
+    },
+    {
+      "target": "patr.m.pl."
+    },
+    {
+      "target": "patron."
+    },
+    {
+      "target": "patrôn."
+    },
+    {
+      "target": "paul."
+    },
+    {
+      "target": "paulist."
+    },
+    {
+      "target": "pç."
+    },
+    {
+      "target": "pça."
+    },
+    {
+      "target": "pdl."
+    },
+    {
+      "target": "pe."
+    },
+    {
+      "target": "pec."
+    },
+    {
+      "target": "ped."
+    },
+    {
+      "target": "pedag."
+    },
+    {
+      "target": "pediat."
+    },
+    {
+      "target": "pedol."
+    },
+    {
+      "target": "pedr."
+    },
+    {
+      "target": "pej."
+    },
+    {
+      "target": "pel."
+    },
+    {
+      "target": "pent."
+    },
+    {
+      "target": "peq."
+    },
+    {
+      "target": "per."
+    },
+    {
+      "target": "pér."
+    },
+    {
+      "target": "perf. ind."
+    },
+    {
+      "target": "perf."
+    },
+    {
+      "target": "perfum."
+    },
+    {
+      "target": "períf."
+    },
+    {
+      "target": "perífr."
+    },
+    {
+      "target": "pern."
+    },
+    {
+      "target": "pernamb."
+    },
+    {
+      "target": "pers."
+    },
+    {
+      "target": "pérs."
+    },
+    {
+      "target": "perspect."
+    },
+    {
+      "target": "perspectiv."
+    },
+    {
+      "target": "peruv."
+    },
+    {
+      "target": "pesc."
+    },
+    {
+      "target": "pesq."
+    },
+    {
+      "target": "pess."
+    },
+    {
+      "target": "pet."
+    },
+    {
+      "target": "petr."
+    },
+    {
+      "target": "petrog."
+    },
+    {
+      "target": "petrogr."
+    },
+    {
+      "target": "petrol."
+    },
+    {
+      "target": "petroq."
+    },
+    {
+      "target": "pf."
+    },
+    {
+      "target": "pg."
+    },
+    {
+      "target": "pgto."
+    },
+    {
+      "target": "ph.b."
+    },
+    {
+      "target": "ph.d."
+    },
+    {
+      "target": "piauí."
+    },
+    {
+      "target": "piauien."
+    },
+    {
+      "target": "picar."
+    },
+    {
+      "target": "píl."
+    },
+    {
+      "target": "pint."
+    },
+    {
+      "target": "pinx."
+    },
+    {
+      "target": "pirot."
+    },
+    {
+      "target": "pirotec."
+    },
+    {
+      "target": "pirotéc."
+    },
+    {
+      "target": "pisc."
+    },
+    {
+      "target": "piscic."
+    },
+    {
+      "target": "pizz."
+    },
+    {
+      "target": "pl."
+    },
+    {
+      "target": "pl. reg."
+    },
+    {
+      "target": "planej."
+    },
+    {
+      "target": "plat."
+    },
+    {
+      "target": "pleb."
+    },
+    {
+      "target": "pm."
+    },
+    {
+      "target": "pneu."
+    },
+    {
+      "target": "poes."
+    },
+    {
+      "target": "poét."
+    },
+    {
+      "target": "pol."
+    },
+    {
+      "target": "políc."
+    },
+    {
+      "target": "polin."
+    },
+    {
+      "target": "polít."
+    },
+    {
+      "target": "pop."
+    },
+    {
+      "target": "popul."
+    },
+    {
+      "target": "port."
+    },
+    {
+      "target": "porto-riq."
+    },
+    {
+      "target": "posit."
+    },
+    {
+      "target": "poss."
+    },
+    {
+      "target": "possess."
+    },
+    {
+      "target": "pot."
+    },
+    {
+      "target": "potam."
+    },
+    {
+      "target": "pov."
+    },
+    {
+      "target": "pp."
+    },
+    {
+      "target": "pr."
+    },
+    {
+      "target": "prác."
+    },
+    {
+      "target": "prát."
+    },
+    {
+      "target": "prec."
+    },
+    {
+      "target": "preced."
+    },
+    {
+      "target": "precis."
+    },
+    {
+      "target": "pred."
+    },
+    {
+      "target": "predic."
+    },
+    {
+      "target": "pref."
+    },
+    {
+      "target": "pré-hist."
+    },
+    {
+      "target": "prep."
+    },
+    {
+      "target": "prepos."
+    },
+    {
+      "target": "pres. conj."
+    },
+    {
+      "target": "pres. ind."
+    },
+    {
+      "target": "pres."
+    },
+    {
+      "target": "pres. subj."
+    },
+    {
+      "target": "presc."
+    },
+    {
+      "target": "presid."
+    },
+    {
+      "target": "prest."
+    },
+    {
+      "target": "pret."
+    },
+    {
+      "target": "prev."
+    },
+    {
+      "target": "prev. soc."
+    },
+    {
+      "target": "prim."
+    },
+    {
+      "target": "primit."
+    },
+    {
+      "target": "princ."
+    },
+    {
+      "target": "princip."
+    },
+    {
+      "target": "priv."
+    },
+    {
+      "target": "probl."
+    },
+    {
+      "target": "problem."
+    },
+    {
+      "target": "proc."
+    },
+    {
+      "target": "prod."
+    },
+    {
+      "target": "prof."
+    },
+    {
+      "target": "profis."
+    },
+    {
+      "target": "profiss."
+    },
+    {
+      "target": "profission."
+    },
+    {
+      "target": "profs."
+    },
+    {
+      "target": "prom. vend."
+    },
+    {
+      "target": "pron. dem."
+    },
+    {
+      "target": "pron. ind."
+    },
+    {
+      "target": "pron. int."
+    },
+    {
+      "target": "pron. interr."
+    },
+    {
+      "target": "pron. pess. compl."
+    },
+    {
+      "target": "pron. pess."
+    },
+    {
+      "target": "pron. pess. suj."
+    },
+    {
+      "target": "pron. poss."
+    },
+    {
+      "target": "pron."
+    },
+    {
+      "target": "pron. refl."
+    },
+    {
+      "target": "pron. reflex."
+    },
+    {
+      "target": "pron. rel."
+    },
+    {
+      "target": "pronon."
+    },
+    {
+      "target": "pronún."
+    },
+    {
+      "target": "propag."
+    },
+    {
+      "target": "propos."
+    },
+    {
+      "target": "propr."
+    },
+    {
+      "target": "pros."
+    },
+    {
+      "target": "pros.f."
+    },
+    {
+      "target": "pros.m."
+    },
+    {
+      "target": "prosc."
+    },
+    {
+      "target": "prosôn."
+    },
+    {
+      "target": "prost."
+    },
+    {
+      "target": "prostét."
+    },
+    {
+      "target": "prót."
+    },
+    {
+      "target": "prot."
+    },
+    {
+      "target": "protest."
+    },
+    {
+      "target": "protét."
+    },
+    {
+      "target": "protoc."
+    },
+    {
+      "target": "protoz."
+    },
+    {
+      "target": "prov. port."
+    },
+    {
+      "target": "prov."
+    },
+    {
+      "target": "provav."
+    },
+    {
+      "target": "provb."
+    },
+    {
+      "target": "provç."
+    },
+    {
+      "target": "provc."
+    },
+    {
+      "target": "proven."
+    },
+    {
+      "target": "provenç."
+    },
+    {
+      "target": "provinc."
+    },
+    {
+      "target": "prox."
+    },
+    {
+      "target": "pseud."
+    },
+    {
+      "target": "psic. an."
+    },
+    {
+      "target": "psic."
+    },
+    {
+      "target": "psic. soc."
+    },
+    {
+      "target": "psican."
+    },
+    {
+      "target": "psicofisl."
+    },
+    {
+      "target": "psicogn."
+    },
+    {
+      "target": "psicol."
+    },
+    {
+      "target": "psicopat."
+    },
+    {
+      "target": "psiq."
+    },
+    {
+      "target": "psiquiat."
+    },
+    {
+      "target": "pto."
+    },
+    {
+      "target": "pts."
+    },
+    {
+      "target": "pub."
+    },
+    {
+      "target": "public."
+    },
+    {
+      "target": "pug."
+    },
+    {
+      "target": "pulv."
+    },
+    {
+      "target": "q."
+    },
+    {
+      "target": "q.b."
+    },
+    {
+      "target": "q.e.d."
+    },
+    {
+      "target": "q.g."
+    },
+    {
+      "target": "q.-g."
+    },
+    {
+      "target": "q.i.d."
+    },
+    {
+      "target": "q.l."
+    },
+    {
+      "target": "q.p."
+    },
+    {
+      "target": "q.s."
+    },
+    {
+      "target": "q.s.i.d."
+    },
+    {
+      "target": "q.v."
+    },
+    {
+      "target": "ql."
+    },
+    {
+      "target": "qq.v."
+    },
+    {
+      "target": "qual."
+    },
+    {
+      "target": "qualif."
+    },
+    {
+      "target": "quant."
+    },
+    {
+      "target": "quant. suff."
+    },
+    {
+      "target": "quantit."
+    },
+    {
+      "target": "quart."
+    },
+    {
+      "target": "quest."
+    },
+    {
+      "target": "quí."
+    },
+    {
+      "target": "quích."
+    },
+    {
+      "target": "quím. ant."
+    },
+    {
+      "target": "quím. biol."
+    },
+    {
+      "target": "quím. ger."
+    },
+    {
+      "target": "quím. ind."
+    },
+    {
+      "target": "quím. org."
+    },
+    {
+      "target": "quím."
+    },
+    {
+      "target": "quimb."
+    },
+    {
+      "target": "quinz."
+    },
+    {
+      "target": "quinzen."
+    },
+    {
+      "target": "quir."
+    },
+    {
+      "target": "quirom."
+    },
+    {
+      "target": "r.i.p."
+    },
+    {
+      "target": "r.m."
+    },
+    {
+      "target": "r.p."
+    },
+    {
+      "target": "r.p.m."
+    },
+    {
+      "target": "r.p.s."
+    },
+    {
+      "target": "r.s.a."
+    },
+    {
+      "target": "r.s.v.p."
+    },
+    {
+      "target": "rac."
+    },
+    {
+      "target": "racion."
+    },
+    {
+      "target": "racional."
+    },
+    {
+      "target": "rad."
+    },
+    {
+      "target": "rád."
+    },
+    {
+      "target": "radical."
+    },
+    {
+      "target": "radioat."
+    },
+    {
+      "target": "radiod."
+    },
+    {
+      "target": "radiodif."
+    },
+    {
+      "target": "radiog."
+    },
+    {
+      "target": "radiogr."
+    },
+    {
+      "target": "radiol."
+    },
+    {
+      "target": "radiot."
+    },
+    {
+      "target": "radiotec."
+    },
+    {
+      "target": "radiotéc."
+    },
+    {
+      "target": "radiotécn."
+    },
+    {
+      "target": "radioter."
+    },
+    {
+      "target": "rall."
+    },
+    {
+      "target": "rd."
+    },
+    {
+      "target": "real."
+    },
+    {
+      "target": "realid."
+    },
+    {
+      "target": "rec."
+    },
+    {
+      "target": "recip."
+    },
+    {
+      "target": "recíp."
+    },
+    {
+      "target": "recípr."
+    },
+    {
+      "target": "red. pop."
+    },
+    {
+      "target": "red."
+    },
+    {
+      "target": "ref."
+    },
+    {
+      "target": "refl."
+    },
+    {
+      "target": "reform."
+    },
+    {
+      "target": "reg."
+    },
+    {
+      "target": "regim."
+    },
+    {
+      "target": "region."
+    },
+    {
+      "target": "regress."
+    },
+    {
+      "target": "rel."
+    },
+    {
+      "target": "relaç."
+    },
+    {
+      "target": "relat."
+    },
+    {
+      "target": "relativ."
+    },
+    {
+      "target": "relig."
+    },
+    {
+      "target": "reloj."
+    },
+    {
+      "target": "rem."
+    },
+    {
+      "target": "rep."
+    },
+    {
+      "target": "repart."
+    },
+    {
+      "target": "repert."
+    },
+    {
+      "target": "report."
+    },
+    {
+      "target": "repúb."
+    },
+    {
+      "target": "res."
+    },
+    {
+      "target": "rest."
+    },
+    {
+      "target": "restr."
+    },
+    {
+      "target": "restrit."
+    },
+    {
+      "target": "result."
+    },
+    {
+      "target": "ret."
+    },
+    {
+      "target": "retór."
+    },
+    {
+      "target": "retrosp."
+    },
+    {
+      "target": "rev."
+    },
+    {
+      "target": "revers."
+    },
+    {
+      "target": "rg."
+    },
+    {
+      "target": "rib."
+    },
+    {
+      "target": "rit."
+    },
+    {
+      "target": "rod."
+    },
+    {
+      "target": "rol."
+    },
+    {
+      "target": "rom."
+    },
+    {
+      "target": "romn."
+    },
+    {
+      "target": "rot."
+    },
+    {
+      "target": "rub."
+    },
+    {
+      "target": "rum."
+    },
+    {
+      "target": "rur."
+    },
+    {
+      "target": "rural."
+    },
+    {
+      "target": "rus."
+    },
+    {
+      "target": "russ."
+    },
+    {
+      "target": "rúst."
+    },
+    {
+      "target": "s."
+    },
+    {
+      "target": "s.2g."
+    },
+    {
+      "target": "s.2g.2n."
+    },
+    {
+      "target": "s.a."
+    },
+    {
+      "target": "s.a.c."
+    },
+    {
+      "target": "s.a.f."
+    },
+    {
+      "target": "s.a.i."
+    },
+    {
+      "target": "s.a.r."
+    },
+    {
+      "target": "s.a.r.l."
+    },
+    {
+      "target": "s.a.s."
+    },
+    {
+      "target": "s.a.t.g."
+    },
+    {
+      "target": "s.b."
+    },
+    {
+      "target": "s.c."
+    },
+    {
+      "target": "s.d."
+    },
+    {
+      "target": "s.e."
+    },
+    {
+      "target": "s.e.o."
+    },
+    {
+      "target": "s.f."
+    },
+    {
+      "target": "s.f.2n."
+    },
+    {
+      "target": "s.f.f."
+    },
+    {
+      "target": "s.f.m."
+    },
+    {
+      "target": "s.f.pl."
+    },
+    {
+      "target": "s.g."
+    },
+    {
+      "target": "s.h."
+    },
+    {
+      "target": "s.i.d."
+    },
+    {
+      "target": "s.j.d."
+    },
+    {
+      "target": "s.l.n.d."
+    },
+    {
+      "target": "s.loc."
+    },
+    {
+      "target": "s.m."
+    },
+    {
+      "target": "s.m.2n."
+    },
+    {
+      "target": "s.m.a."
+    },
+    {
+      "target": "s.m.f."
+    },
+    {
+      "target": "s.m.i."
+    },
+    {
+      "target": "s.m.j."
+    },
+    {
+      "target": "s.m.pl."
+    },
+    {
+      "target": "s.n."
+    },
+    {
+      "target": "s.o."
+    },
+    {
+      "target": "s.o.s."
+    },
+    {
+      "target": "s.p."
+    },
+    {
+      "target": "s.p.loc."
+    },
+    {
+      "target": "s.p.pers."
+    },
+    {
+      "target": "s.p.q.r."
+    },
+    {
+      "target": "s.r."
+    },
+    {
+      "target": "s.s."
+    },
+    {
+      "target": "s.s.a.a."
+    },
+    {
+      "target": "s.s.e."
+    },
+    {
+      "target": "s.s.o."
+    },
+    {
+      "target": "s.s.w."
+    },
+    {
+      "target": "s.t.d."
+    },
+    {
+      "target": "s.t.l."
+    },
+    {
+      "target": "s.v."
+    },
+    {
+      "target": "s.vv."
+    },
+    {
+      "target": "s.w."
+    },
+    {
+      "target": "sab."
+    },
+    {
+      "target": "sac."
+    },
+    {
+      "target": "sal."
+    },
+    {
+      "target": "sals."
+    },
+    {
+      "target": "sân."
+    },
+    {
+      "target": "sâns."
+    },
+    {
+      "target": "sânscr."
+    },
+    {
+      "target": "sap."
+    },
+    {
+      "target": "sapat."
+    },
+    {
+      "target": "sarg."
+    },
+    {
+      "target": "sarg.-aj."
+    },
+    {
+      "target": "sát."
+    },
+    {
+      "target": "sb."
+    },
+    {
+      "target": "sc."
+    },
+    {
+      "target": "sc.b."
+    },
+    {
+      "target": "sc.d."
+    },
+    {
+      "target": "sc.i.d."
+    },
+    {
+      "target": "sc.j.d."
+    },
+    {
+      "target": "sc.m."
+    },
+    {
+      "target": "sc.t.d."
+    },
+    {
+      "target": "sch."
+    },
+    {
+      "target": "scr."
+    },
+    {
+      "target": "scul."
+    },
+    {
+      "target": "sec."
+    },
+    {
+      "target": "séc."
+    },
+    {
+      "target": "secr."
+    },
+    {
+      "target": "sécs."
+    },
+    {
+      "target": "sect."
+    },
+    {
+      "target": "seg. púb."
+    },
+    {
+      "target": "seg."
+    },
+    {
+      "target": "seg. soc."
+    },
+    {
+      "target": "segg."
+    },
+    {
+      "target": "segs."
+    },
+    {
+      "target": "sel."
+    },
+    {
+      "target": "sem."
+    },
+    {
+      "target": "semânt."
+    },
+    {
+      "target": "semic."
+    },
+    {
+      "target": "semin."
+    },
+    {
+      "target": "semiol."
+    },
+    {
+      "target": "semít."
+    },
+    {
+      "target": "semit."
+    },
+    {
+      "target": "sen."
+    },
+    {
+      "target": "sent."
+    },
+    {
+      "target": "sep."
+    },
+    {
+      "target": "septent."
+    },
+    {
+      "target": "seq."
+    },
+    {
+      "target": "seqq."
+    },
+    {
+      "target": "sér."
+    },
+    {
+      "target": "ser.-cr."
+    },
+    {
+      "target": "serg."
+    },
+    {
+      "target": "seric."
+    },
+    {
+      "target": "sericic."
+    },
+    {
+      "target": "serr."
+    },
+    {
+      "target": "serralh."
+    },
+    {
+      "target": "serv."
+    },
+    {
+      "target": "sço."
+    },
+    {
+      "target": "sv."
+    },
+    {
+      "target": "sérv."
+    },
+    {
+      "target": "set."
+    },
+    {
+      "target": "setent."
+    },
+    {
+      "target": "sf."
+    },
+    {
+      "target": "sg."
+    },
+    {
+      "target": "sh.tn."
+    },
+    {
+      "target": "siam."
+    },
+    {
+      "target": "sib."
+    },
+    {
+      "target": "sid."
+    },
+    {
+      "target": "sider."
+    },
+    {
+      "target": "siderogr."
+    },
+    {
+      "target": "siderotéc."
+    },
+    {
+      "target": "sigil."
+    },
+    {
+      "target": "sign."
+    },
+    {
+      "target": "signif."
+    },
+    {
+      "target": "síl."
+    },
+    {
+      "target": "silog."
+    },
+    {
+      "target": "silv."
+    },
+    {
+      "target": "silvic."
+    },
+    {
+      "target": "simb."
+    },
+    {
+      "target": "símb."
+    },
+    {
+      "target": "simból."
+    },
+    {
+      "target": "simbol."
+    },
+    {
+      "target": "simpl."
+    },
+    {
+      "target": "sin. ger."
+    },
+    {
+      "target": "sin."
+    },
+    {
+      "target": "sing."
+    },
+    {
+      "target": "sinon."
+    },
+    {
+      "target": "sinôn."
+    },
+    {
+      "target": "sint."
+    },
+    {
+      "target": "sínt."
+    },
+    {
+      "target": "sir."
+    },
+    {
+      "target": "sír."
+    },
+    {
+      "target": "sist."
+    },
+    {
+      "target": "sit."
+    },
+    {
+      "target": "snr."
+    },
+    {
+      "target": "soc."
+    },
+    {
+      "target": "social."
+    },
+    {
+      "target": "sociol."
+    },
+    {
+      "target": "sól."
+    },
+    {
+      "target": "son."
+    },
+    {
+      "target": "sor."
+    },
+    {
+      "target": "sór."
+    },
+    {
+      "target": "sost."
+    },
+    {
+      "target": "sov."
+    },
+    {
+      "target": "soviét."
+    },
+    {
+      "target": "sos."
+    },
+    {
+      "target": "sp."
+    },
+    {
+      "target": "spp."
+    },
+    {
+      "target": "sq.ft."
+    },
+    {
+      "target": "sq.in."
+    },
+    {
+      "target": "sq.m."
+    },
+    {
+      "target": "sq.rd."
+    },
+    {
+      "target": "sq.yd."
+    },
+    {
+      "target": "sr."
+    },
+    {
+      "target": "sres."
+    },
+    {
+      "target": "ss."
+    },
+    {
+      "target": "ss.aa.cc."
+    },
+    {
+      "target": "ss.aa.ff."
+    },
+    {
+      "target": "ss.aa.ii."
+    },
+    {
+      "target": "ss.aa.rr."
+    },
+    {
+      "target": "ss.aa.ss."
+    },
+    {
+      "target": "ss.gg."
+    },
+    {
+      "target": "ss.hh."
+    },
+    {
+      "target": "ss.mm."
+    },
+    {
+      "target": "ss.mm.aa."
+    },
+    {
+      "target": "ss.mm.ff."
+    },
+    {
+      "target": "ss.mm.ii."
+    },
+    {
+      "target": "ss.pp."
+    },
+    {
+      "target": "ss.ss."
+    },
+    {
+      "target": "stac."
+    },
+    {
+      "target": "sto."
+    },
+    {
+      "target": "sub."
+    },
+    {
+      "target": "subafl."
+    },
+    {
+      "target": "subafls."
+    },
+    {
+      "target": "subdiác."
+    },
+    {
+      "target": "subj."
+    },
+    {
+      "target": "subjunt."
+    },
+    {
+      "target": "subord."
+    },
+    {
+      "target": "subst."
+    },
+    {
+      "target": "subvar."
+    },
+    {
+      "target": "suc."
+    },
+    {
+      "target": "sue."
+    },
+    {
+      "target": "suec."
+    },
+    {
+      "target": "suf. nom."
+    },
+    {
+      "target": "suf."
+    },
+    {
+      "target": "suf. verb."
+    },
+    {
+      "target": "sul."
+    },
+    {
+      "target": "sul-af."
+    },
+    {
+      "target": "sul-afr."
+    },
+    {
+      "target": "sul-amer."
+    },
+    {
+      "target": "sup."
+    },
+    {
+      "target": "super."
+    },
+    {
+      "target": "superf."
+    },
+    {
+      "target": "superl. abs. sint."
+    },
+    {
+      "target": "superl."
+    },
+    {
+      "target": "supl."
+    },
+    {
+      "target": "suprf."
+    },
+    {
+      "target": "suprl."
+    },
+    {
+      "target": "suprs."
+    },
+    {
+      "target": "surr."
+    },
+    {
+      "target": "surreal."
+    },
+    {
+      "target": "t.c."
+    },
+    {
+      "target": "t.d."
+    },
+    {
+      "target": "t.geogr. sign."
+    },
+    {
+      "target": "t.i."
+    },
+    {
+      "target": "t.i.d."
+    },
+    {
+      "target": "t.p."
+    },
+    {
+      "target": "t.p.m."
+    },
+    {
+      "target": "t.s.f."
+    },
+    {
+      "target": "tab."
+    },
+    {
+      "target": "táb."
+    },
+    {
+      "target": "tai."
+    },
+    {
+      "target": "taí."
+    },
+    {
+      "target": "tail."
+    },
+    {
+      "target": "tam."
+    },
+    {
+      "target": "tâm."
+    },
+    {
+      "target": "tan."
+    },
+    {
+      "target": "tang."
+    },
+    {
+      "target": "tanoar."
+    },
+    {
+      "target": "taquigr."
+    },
+    {
+      "target": "tát."
+    },
+    {
+      "target": "taur."
+    },
+    {
+      "target": "taurom."
+    },
+    {
+      "target": "taxid."
+    },
+    {
+      "target": "também."
+    },
+    {
+      "target": "teat."
+    },
+    {
+      "target": "teatr."
+    },
+    {
+      "target": "tec."
+    },
+    {
+      "target": "téc."
+    },
+    {
+      "target": "tecna."
+    },
+    {
+      "target": "tecgo."
+    },
+    {
+      "target": "tecel."
+    },
+    {
+      "target": "técn."
+    },
+    {
+      "target": "tecn."
+    },
+    {
+      "target": "tecnog."
+    },
+    {
+      "target": "tecnogr."
+    },
+    {
+      "target": "tecnol."
+    },
+    {
+      "target": "tect."
+    },
+    {
+      "target": "tel."
+    },
+    {
+      "target": "tele."
+    },
+    {
+      "target": "telec."
+    },
+    {
+      "target": "telecom."
+    },
+    {
+      "target": "telef."
+    },
+    {
+      "target": "telef.s."
+    },
+    {
+      "target": "teleg."
+    },
+    {
+      "target": "telegr."
+    },
+    {
+      "target": "telégr."
+    },
+    {
+      "target": "telem."
+    },
+    {
+      "target": "telev."
+    },
+    {
+      "target": "temp."
+    },
+    {
+      "target": "temper."
+    },
+    {
+      "target": "ten."
+    },
+    {
+      "target": "ten.-cel."
+    },
+    {
+      "target": "teol."
+    },
+    {
+      "target": "teôn."
+    },
+    {
+      "target": "teor."
+    },
+    {
+      "target": "teos."
+    },
+    {
+      "target": "ter."
+    },
+    {
+      "target": "terap."
+    },
+    {
+      "target": "terapêut."
+    },
+    {
+      "target": "terat."
+    },
+    {
+      "target": "teratol."
+    },
+    {
+      "target": "térm."
+    },
+    {
+      "target": "term."
+    },
+    {
+      "target": "termin."
+    },
+    {
+      "target": "terminol."
+    },
+    {
+      "target": "termod."
+    },
+    {
+      "target": "termodinâm."
+    },
+    {
+      "target": "termom."
+    },
+    {
+      "target": "terr."
+    },
+    {
+      "target": "territ."
+    },
+    {
+      "target": "tes."
+    },
+    {
+      "target": "test."
+    },
+    {
+      "target": "têxt."
+    },
+    {
+      "target": "tib."
+    },
+    {
+      "target": "tibet."
+    },
+    {
+      "target": "tint."
+    },
+    {
+      "target": "tip."
+    },
+    {
+      "target": "tipogr."
+    },
+    {
+      "target": "tipol."
+    },
+    {
+      "target": "tir."
+    },
+    {
+      "target": "tít."
+    },
+    {
+      "target": "ton."
+    },
+    {
+      "target": "tôn."
+    },
+    {
+      "target": "tóp."
+    },
+    {
+      "target": "top."
+    },
+    {
+      "target": "top.f."
+    },
+    {
+      "target": "top.f.pl."
+    },
+    {
+      "target": "top.m."
+    },
+    {
+      "target": "top.m.f."
+    },
+    {
+      "target": "top.m.pl."
+    },
+    {
+      "target": "topog."
+    },
+    {
+      "target": "topogr."
+    },
+    {
+      "target": "topol."
+    },
+    {
+      "target": "topon."
+    },
+    {
+      "target": "topôn."
+    },
+    {
+      "target": "torp."
+    },
+    {
+      "target": "tosc."
+    },
+    {
+      "target": "tox."
+    },
+    {
+      "target": "toxiol."
+    },
+    {
+      "target": "tr."
+    },
+    {
+      "target": "trab."
+    },
+    {
+      "target": "trabalh."
+    },
+    {
+      "target": "trad. bras."
+    },
+    {
+      "target": "trad."
+    },
+    {
+      "target": "tradic."
+    },
+    {
+      "target": "tráf."
+    },
+    {
+      "target": "trans."
+    },
+    {
+      "target": "transit."
+    },
+    {
+      "target": "transj."
+    },
+    {
+      "target": "transm."
+    },
+    {
+      "target": "transmont."
+    },
+    {
+      "target": "transobj."
+    },
+    {
+      "target": "transp."
+    },
+    {
+      "target": "trat."
+    },
+    {
+      "target": "trav."
+    },
+    {
+      "target": "trem."
+    },
+    {
+      "target": "trib."
+    },
+    {
+      "target": "trig."
+    },
+    {
+      "target": "trigon."
+    },
+    {
+      "target": "trim."
+    },
+    {
+      "target": "trimest."
+    },
+    {
+      "target": "trit."
+    },
+    {
+      "target": "triv."
+    },
+    {
+      "target": "trop."
+    },
+    {
+      "target": "tt."
+    },
+    {
+      "target": "tun."
+    },
+    {
+      "target": "tunis."
+    },
+    {
+      "target": "tup."
+    },
+    {
+      "target": "tupi-guar."
+    },
+    {
+      "target": "tur."
+    },
+    {
+      "target": "turc."
+    },
+    {
+      "target": "turism."
+    },
+    {
+      "target": "tv."
+    },
+    {
+      "target": "u."
+    },
+    {
+      "target": "u.e."
+    },
+    {
+      "target": "u.i."
+    },
+    {
+      "target": "u.inf."
+    },
+    {
+      "target": "u.s."
+    },
+    {
+      "target": "u.sup."
+    },
+    {
+      "target": "ucr."
+    },
+    {
+      "target": "ucraín."
+    },
+    {
+      "target": "ucran."
+    },
+    {
+      "target": "ult."
+    },
+    {
+      "target": "umb."
+    },
+    {
+      "target": "un."
+    },
+    {
+      "target": "unif."
+    },
+    {
+      "target": "univ."
+    },
+    {
+      "target": "univers."
+    },
+    {
+      "target": "urb."
+    },
+    {
+      "target": "urban."
+    },
+    {
+      "target": "urol."
+    },
+    {
+      "target": "urug."
+    },
+    {
+      "target": "us."
+    },
+    {
+      "target": "usual."
+    },
+    {
+      "target": "útil."
+    },
+    {
+      "target": "utilid."
+    },
+    {
+      "target": "utilit."
+    },
+    {
+      "target": "utop."
+    },
+    {
+      "target": "utópi."
+    },
+    {
+      "target": "v. sup."
+    },
+    {
+      "target": "v."
+    },
+    {
+      "target": "v.a."
+    },
+    {
+      "target": "v.-alm."
+    },
+    {
+      "target": "v.g."
+    },
+    {
+      "target": "v.h."
+    },
+    {
+      "target": "v.i."
+    },
+    {
+      "target": "v.l."
+    },
+    {
+      "target": "v.m."
+    },
+    {
+      "target": "v.p."
+    },
+    {
+      "target": "v.s."
+    },
+    {
+      "target": "v.s.f.f."
+    },
+    {
+      "target": "v.s.s."
+    },
+    {
+      "target": "va."
+    },
+    {
+      "target": "vad."
+    },
+    {
+      "target": "vadm."
+    },
+    {
+      "target": "val."
+    },
+    {
+      "target": "var. pros."
+    },
+    {
+      "target": "var."
+    },
+    {
+      "target": "vasc."
+    },
+    {
+      "target": "vb."
+    },
+    {
+      "target": "vc."
+    },
+    {
+      "target": "veg. inf."
+    },
+    {
+      "target": "veg."
+    },
+    {
+      "target": "vel."
+    },
+    {
+      "target": "veloc."
+    },
+    {
+      "target": "ven."
+    },
+    {
+      "target": "venat."
+    },
+    {
+      "target": "venez."
+    },
+    {
+      "target": "venezuel."
+    },
+    {
+      "target": "verb."
+    },
+    {
+      "target": "verbal."
+    },
+    {
+      "target": "vern."
+    },
+    {
+      "target": "veros."
+    },
+    {
+      "target": "veross."
+    },
+    {
+      "target": "vers."
+    },
+    {
+      "target": "versif."
+    },
+    {
+      "target": "vet."
+    },
+    {
+      "target": "veter."
+    },
+    {
+      "target": "vid."
+    },
+    {
+      "target": "vidr."
+    },
+    {
+      "target": "vig."
+    },
+    {
+      "target": "vin."
+    },
+    {
+      "target": "vinic."
+    },
+    {
+      "target": "viol."
+    },
+    {
+      "target": "vit."
+    },
+    {
+      "target": "vitic."
+    },
+    {
+      "target": "vitr."
+    },
+    {
+      "target": "viz."
+    },
+    {
+      "target": "vl."
+    },
+    {
+      "target": "vla."
+    },
+    {
+      "target": "vlc."
+    },
+    {
+      "target": "vln."
+    },
+    {
+      "target": "vn."
+    },
+    {
+      "target": "vo."
+    },
+    {
+      "target": "voc. pop."
+    },
+    {
+      "target": "voc."
+    },
+    {
+      "target": "vog."
+    },
+    {
+      "target": "vol. esp."
+    },
+    {
+      "target": "vol."
+    },
+    {
+      "target": "volat."
+    },
+    {
+      "target": "voll."
+    },
+    {
+      "target": "vols."
+    },
+    {
+      "target": "vox. pop."
+    },
+    {
+      "target": "vs."
+    },
+    {
+      "target": "vulc."
+    },
+    {
+      "target": "vulg."
+    },
+    {
+      "target": "vv."
+    },
+    {
+      "target": "vv.aa."
+    },
+    {
+      "target": "vv.gg."
+    },
+    {
+      "target": "vv.hh."
+    },
+    {
+      "target": "vv.ll."
+    },
+    {
+      "target": "vv.mm."
+    },
+    {
+      "target": "vv.pp."
+    },
+    {
+      "target": "vv.ss."
+    },
+    {
+      "target": "w."
+    },
+    {
+      "target": "w.c."
+    },
+    {
+      "target": "x."
+    },
+    {
+      "target": "x.p.t.o."
+    },
+    {
+      "target": "x.y.z."
+    },
+    {
+      "target": "xenof."
+    },
+    {
+      "target": "xerog."
+    },
+    {
+      "target": "xerogr."
+    },
+    {
+      "target": "xilog."
+    },
+    {
+      "target": "xin."
+    },
+    {
+      "target": "yd.p.sec."
+    },
+    {
+      "target": "z."
+    },
+    {
+      "target": "zend."
+    },
+    {
+      "target": "zo."
+    },
+    {
+      "target": "zoo."
+    },
+    {
+      "target": "zool."
+    },
+    {
+      "target": "zoot."
+    },
+    {
+      "target": "zootec."
+    },
+    {
+      "target": "zootéc."
+    }
+  ]
+}
+

@@ -1,0 +1,1175 @@
+{
+  "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+  "replacement": [
+    {
+      "target": "a",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ado",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ai",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ais",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "am",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "amos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ámos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ando",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ar",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ara",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ará",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aram",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "áramos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "arão",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aras",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "arás",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ardes",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "arei",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "areis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "áreis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "arem",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aremos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ares",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aria",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ariam",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aríamos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "arias",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aríeis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "armos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "as",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "asse",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ásseis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "assem",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ássemos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "asses",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "aste",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "astes",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ava",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "avam",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ávamos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "avas",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "áveis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ce",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "cei",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "ceis",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "cem",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "cemos",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "ces",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "e",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ei",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "eia",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eiam",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eias",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eie",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eiem",
+      "tag": "verb",
+      "replacement": "çar"
+    },
+    {
+      "target": "eiem",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eies",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eio",
+      "tag": "verb",
+      "replacement": "ear"
+    },
+    {
+      "target": "eis",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "em",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "emos",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "es",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "gue",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "gúe",
+      "tag": "verb",
+      "replacement": "guar"
+    },
+    {
+      "target": "guei",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "gueis",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "guem",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "gúem",
+      "tag": "verb",
+      "replacement": "guar"
+    },
+    {
+      "target": "guemos",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "gues",
+      "tag": "verb",
+      "replacement": "gar"
+    },
+    {
+      "target": "gúes",
+      "tag": "verb",
+      "replacement": "guar"
+    },
+    {
+      "target": "o",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "ou",
+      "tag": "verb",
+      "replacement": "ar"
+    },
+    {
+      "target": "que",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "qúe",
+      "tag": "verb",
+      "replacement": "quar"
+    },
+    {
+      "target": "quei",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "queis",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "quem",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "qúem",
+      "tag": "verb",
+      "replacement": "quar"
+    },
+    {
+      "target": "quemos",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "ques",
+      "tag": "verb",
+      "replacement": "car"
+    },
+    {
+      "target": "qúes",
+      "tag": "verb",
+      "replacement": "quar"
+    },
+    {
+      "target": "a",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ais",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "am",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "amos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "as",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ça",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "çais",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "çam",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "çam",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "çamos",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "ças",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "ço",
+      "tag": "verb",
+      "replacement": "cer"
+    },
+    {
+      "target": "e",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ei",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "em",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "emos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "endo",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "er",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "era",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erá",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eram",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "êramos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erão",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eras",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erás",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erdes",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erei",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ereis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "êreis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erem",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eremos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eres",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eria",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eriam",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eríamos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "erias",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eríeis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ermos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "es",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "esse",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "êsseis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "essem",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "êssemos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "esses",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "este",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "estes",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "eu",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ga",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "gais",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "gam",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "gamos",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "gas",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "go",
+      "tag": "verb",
+      "replacement": "guer"
+    },
+    {
+      "target": "i",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ia",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "iam",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "íamos",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ias",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ido",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "íeis",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "ja",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "jais",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "jam",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "jamos",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "jas",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "jo",
+      "tag": "verb",
+      "replacement": "ger"
+    },
+    {
+      "target": "o",
+      "tag": "verb",
+      "replacement": "er"
+    },
+    {
+      "target": "a",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ai",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aí",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aía",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíam",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aías",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aído",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "aímos",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aio",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíra",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíram",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíras",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aírem",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíres",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "ais",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aís",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "ais",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "aísse",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíssem",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aísses",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aíste",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "aístes",
+      "tag": "verb",
+      "replacement": "air"
+    },
+    {
+      "target": "am",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "amos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "as",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ca",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "ca",
+      "tag": "verb",
+      "replacement": "quir>"
+    },
+    {
+      "target": "cais",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "cam",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "camos",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "cas",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "co",
+      "tag": "verb",
+      "replacement": "quir"
+    },
+    {
+      "target": "e",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "em",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "es",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "gúem",
+      "tag": "verb",
+      "replacement": "guir"
+    },
+    {
+      "target": "gúi",
+      "tag": "verb",
+      "replacement": "guir"
+    },
+    {
+      "target": "gúis",
+      "tag": "verb",
+      "replacement": "guir"
+    },
+    {
+      "target": "i",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ia",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iam",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "íamos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ias",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ido",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "íeis",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "imos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "indo",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ir",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ira",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irá",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iram",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "íramos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irão",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iras",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irás",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irdes",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irei",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ireis",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "íreis",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irem",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iremos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ires",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iria",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iriam",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iríamos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irias",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iríeis",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "irmos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "is",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "isse",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ísseis",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "issem",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "íssemos",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "isses",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iste",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "istes",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "iu",
+      "tag": "verb",
+      "replacement": "ir"
+    },
+    {
+      "target": "ja",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "jais",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "jam",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "jamos",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "jas",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "jo",
+      "tag": "verb",
+      "replacement": "gir"
+    },
+    {
+      "target": "o",
+      "tag": "verb",
+      "replacement": "ir"
+    }
+  ]
+}

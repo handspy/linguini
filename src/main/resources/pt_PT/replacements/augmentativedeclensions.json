@@ -1,0 +1,72 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+   "replacement": [
+      {
+         "target": "aço",
+         "tag": "noun|adj",
+         "exceptions": "aço|antebraço|bagaço|baraço|braço|calhamaço|cansaço|embaraço|espaço|estilhaço|inchaço|laço|paço|palhaço|pedaço|traço",
+         "replacement": "o"
+      },
+      {
+         "target": "adão",
+         "tag": "noun|adj",
+         "exceptions": "cidadão",
+         "replacement": "o"
+      },
+      {
+         "target": "alhão",
+         "tag": "noun|adj",
+         "exceptions": "batalhão|grandalhão",
+         "replacement": "o"
+      },
+      {
+         "target": "alhão",
+         "tag": "noun|adj",
+         "exceptions": "batalhão",
+         "replacement": "e"
+      },
+      {
+         "target": "aníssimo",
+         "tag": "noun|adj",
+         "replacement": "ão"
+      },
+      {
+         "target": "ão",
+         "tag": "noun|adj",
+         "exceptions": "açafrão|acordão|alcatrão|alçapão|afegão|alemão|aptidão|arranhão|arrastão|balão|balcão|barão|barracão|batalhão|betão|bilhão|botão|burlão|calçadão|camarão|campeão|cantão|cão|capitão|cartão|carvão|certidão|cidadão|chão|coesão|colchão|(auto)?combustão|comissão|(super)?computação|conclusão|cordão|cristão|cupão|decisão|demissão|difusão|digressão|dimensão|diversão|divisão|então|escalão|escrivão|explosão|expulsão|falcão|filão|fogão|foguetão|furacão|fusão|galão|galardão|galpão|gamão|garanhão|garrafão|gestão|glutão|grão|ilusão|inclusão|infusão|ingestão|(re)?invasão|inversão|irmão|ladrão|lampião|leão|leilão|lesão|limão|mão|melão|milhão|missão|molengão|motão|muão|multidão|não|órfão|órgão|padrão|pagão|paixão|pão|patrão|pavilhão|pedinchão|pelintrão|pelotão|perdão|pinhão|porão|portão|precisão|pressão|previsão|prisão|pulmão|quarteirão|razão|rescisão|revisão|questão|quinhão|saguão|salão|senão|são|serão|sesão|sessão|solidão|sugestão|talhão|televisão|trapalhão|travão|trovão|tubarão|turbilhão|vão|verão|vilão|violão|visão|vulcão|[\\wàáãâéêíóõôúç\\-]+(ção|eão|esão|ião|lsão|nsão|são|ssão|xão)",
+         "replacement": "o"
+      },
+      {
+         "target": "ão",
+         "tag": "noun|adj",
+         "exceptions": "açafrão|acordão|alcatrão|alçapão|afegão|alemão|aptidão|arranhão|arrastão|balão|balcão|barão|barracão|batalhão|betão|bilhão|botão|burlão|calçadão|camarão|campeão|cantão|cão|capitão|cartão|carvão|certidão|cidadão|chão|coesão|colchão|(auto)?combustão|comissão|(super)?computação|conclusão|cordão|cristão|cupão|decisão|demissão|difusão|digressão|dimensão|diversão|divisão|então|escalão|escrivão|explosão|expulsão|falcão|filão|fogão|foguetão|furacão|fusão|galão|galardão|galpão|gamão|garanhão|garrafão|gestão|glutão|grão|ilusão|inclusão|infusão|ingestão|(re)?invasão|inversão|irmão|ladrão|lampião|leão|leilão|lesão|limão|mão|melão|milhão|missão|muão|multidão|não|órfão|órgão|padrão|pagão|paixão|pão|patrão|pavilhão|pelotão|perdão|pinhão|porão|portão|precisão|pressão|previsão|prisão|pulmão|quarteirão|razão|rescisão|revisão|questão|quinhão|saguão|salão|senão|são|serão|sesão|sessão|solidão|sugestão|talhão|televisão|trapalhão|travão|trovão|tubarão|turbilhão|vão|verão|vilão|violão|visão|vulcão|[\\wàáãâéêíóõôúç\\-]+(ção|eão|esão|ião|lsão|nsão|são|ssão|xão)",
+         "replacement": "a"
+      },
+      {
+         "target": "arra",
+         "tag": "noun|adj",
+         "exceptions": "alcaparra|amarra|barra|etarra|fanfarra|garra|guitarra|parra",
+         "replacement": "a"
+      },
+      {
+         "target": "ázio",
+         "tag": "noun|adj",
+         "exceptions": "topázio",
+         "replacement": "o"
+      },
+      {
+         "target": "nzarrão",
+         "tag": "noun|adj",
+         "replacement": "em"
+      },
+      {
+         "target": "zão",
+         "tag": "noun|adj",
+         "exceptions": "razão"
+      },
+      {
+         "target": "zarrão",
+         "tag": "noun|adj"
+      }
+   ]
+}

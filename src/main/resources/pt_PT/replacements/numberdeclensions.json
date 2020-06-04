@@ -1,0 +1,163 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+   "replacement": [
+      {
+         "target": "ães",
+         "tag": "noun|adj",
+         "exceptions": "mães",
+         "replacement": "ão"
+      },
+      {
+         "target": "ãezinhos",
+         "tag": "noun|adj",
+         "replacement": "ãozinho"
+      },
+      {
+         "target": "ãezitos",
+         "tag": "noun|adj",
+         "replacement": "ãozito"
+      },
+      {
+         "target": "ais",
+         "tag": "noun|adj",
+         "exceptions": "cais|mais|pais",
+         "replacement": "al"
+      },
+      {
+         "target": "ases",
+         "tag": "noun|adj",
+         "exceptions": "bases|crases|ênfases|fases|frases",
+         "replacement": "ás"
+      },
+      {
+         "target": "eis",
+         "tag": "noun|adj",
+         "exceptions": "leis",
+         "replacement": "il"
+      },
+      {
+         "target": "eis",
+         "tag": "noun|adj",
+         "exceptions": "ágeis|débeis|difíceis|dúcteis|erécteis|estéreis|fáceis|férteis|físseis|flébeis|fósseis|frágeis|fúteis|gráceis|hábeis|húmeis|ignóbeis|inábeis|leis|mísseis|núbeis|pênseis|portáteis|projécteis|répteis|retrácteis|símeis|tácteis|úteis|verosímeis|versáteis|vibráteis|voláteis",
+         "replacement": "el"
+      },
+      {
+         "target": "éis",
+         "tag": "noun|adj",
+         "replacement": "el"
+      },
+      {
+         "target": "és",
+         "tag": "noun|adj",
+         "exceptions": "convés",
+         "replacement": "é"
+      },
+      {
+         "target": "eses",
+         "tag": "noun|adj",
+         "exceptions": "[\\wàáãâéêíóõôúç]*teses|conveses",
+         "replacement": "ês"
+      },
+      {
+         "target": "eses",
+         "tag": "noun|adj",
+         "exceptions": "[\\wàáãâéêíóõôúç]*teses",
+         "replacement": "és"
+      },
+      {
+         "target": "is",
+         "tag": "noun|adj",
+         "exceptions": "azuis|bílis|biquínis|bois|cais|chassis|crúcis|dois|génesis|lápis|leis|libris|mais|nazis|oásis|pais|pauis|p[éê]naltis|p[éê]nis|(extra-)?praxis|ralis|safaris|sífilis|t[éê]nis",
+         "replacement": "il"
+      },
+      {
+         "target": "íses",
+         "tag": "noun|adj",
+         "replacement": "ís"
+      },
+      {
+         "target": "ízes",
+         "tag": "noun|adj",
+         "replacement": "iz"
+      },
+      {
+         "target": "ales",
+         "tag": "noun|adj",
+         "replacement": "al"
+      },
+      {
+         "target": "ns",
+         "tag": "noun|adj",
+         "replacement": "m"
+      },
+      {
+         "target": "ões",
+         "tag": "noun|adj",
+         "replacement": "ão"
+      },
+      {
+         "target": "õezinhos",
+         "tag": "noun|adj",
+         "replacement": "ãozinho"
+      },
+      {
+         "target": "õezitos",
+         "tag": "noun|adj",
+         "replacement": "ãozito"
+      },
+      {
+         "target": "óis",
+         "tag": "noun|adj",
+         "replacement": "ol"
+      },
+      {
+         "target": "res",
+         "tag": "noun|adj",
+         "exceptions": "abutres|arredores|árvores|balaústres|desastres|hectares|livres|mármores|massacres|mestres|padres|pedestres|pires|pobres|podres|poses|semilivres|terrestres|timbres",
+         "replacement": "r"
+      },
+      {
+         "target": "s",
+         "tag": "noun|adj",
+         "exceptions": "adeus|alferes|ananás|arredores|atlas|bílis|b[óô]nus|quebra-cabeças|cais|caos|convés|crúcis|deus|férias|fezes|gás|génesis|lápis|libris|[óô]nus|ourives|mais|males|menos|mês|messias|oásis|[óô]nibus|opus|país|p[éê]nis|pêsames|pires|pós|praxis|pus|(\\-redes)|reles|revés|s|simples|sífilis|t[éê]nis|trevas|vírus|s|[\\wàáãâéêíóõôúç]+ês|((\\d+h)?(\\d+m))?\\d+s"
+      },
+      {
+         "target": "ses",
+         "tag": "noun|adj",
+         "exceptions": "análises|bases|crises|fases|frases|passes|[\\wàáãâéêíóõôúç]+nses|[\\wàáãâéêíóõôúç]+sses|[\\wàáãâéêíóõôúç]*teses",
+         "replacement": "s"
+      },
+      {
+         "target": "uis",
+         "tag": "noun|adj",
+         "replacement": "ul"
+      },
+      {
+         "target": "zes",
+         "tag": "noun|adj",
+         "exceptions": "fezes",
+         "replacement": "z"
+      },
+      {
+         "target": "ais",
+         "tag": "art|pron|pron-indp",
+         "exceptions": "demais|mais",
+         "replacement": "al"
+      },
+      {
+         "target": "ns",
+         "tag": "art|pron|pron-indp",
+         "replacement": "m"
+      },
+      {
+         "target": "quaisquer",
+         "tag": "art|pron|pron-indp",
+         "replacement": "qualquer"
+      },
+      {
+         "target": "s",
+         "tag": "art|pron|pron-indp",
+         "exceptions": "ambas|ambos|demais|diversas|diversos|mais|menos|nós|s|várias|vários|vós"
+      }
+   ]
+}

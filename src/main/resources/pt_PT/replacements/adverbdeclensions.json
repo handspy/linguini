@@ -1,0 +1,561 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç\\-]*",
+   "replacement": [
+      {
+         "target": "abiamente",
+         "tag": "adv",
+         "replacement": "ábio"
+      },
+      {
+         "target": "abilmente",
+         "tag": "adv",
+         "replacement": "ábil"
+      },
+      {
+         "target": "acicamente",
+         "tag": "adv",
+         "replacement": "ácico"
+      },
+      {
+         "target": "acidamente",
+         "tag": "adv",
+         "replacement": "ácido"
+      },
+      {
+         "target": "acitamente",
+         "tag": "adv",
+         "replacement": "ácito"
+      },
+      {
+         "target": "acticamente",
+         "tag": "adv",
+         "replacement": "áctico"
+      },
+      {
+         "target": "adicamente",
+         "tag": "adv",
+         "replacement": "ádico"
+      },
+      {
+         "target": "aficamente",
+         "tag": "adv",
+         "replacement": "áfico"
+      },
+      {
+         "target": "agicamente",
+         "tag": "adv",
+         "replacement": "ágico"
+      },
+      {
+         "target": "agilmente",
+         "tag": "adv",
+         "replacement": "ágil"
+      },
+      {
+         "target": "ãmente",
+         "tag": "adv",
+         "replacement": "ão"
+      },
+      {
+         "target": "amente",
+         "tag": "adv",
+         "replacement": "o"
+      },
+      {
+         "target": "amicamente",
+         "tag": "adv",
+         "replacement": "âmico"
+      },
+      {
+         "target": "aneamente",
+         "tag": "adv",
+         "replacement": "âneo"
+      },
+      {
+         "target": "anicamente",
+         "tag": "adv",
+         "replacement": "ânico"
+      },
+      {
+         "target": "animamente",
+         "tag": "adv",
+         "replacement": "ânimo"
+      },
+      {
+         "target": "arduamente",
+         "tag": "adv",
+         "replacement": "árduo"
+      },
+      {
+         "target": "ariamente",
+         "tag": "adv",
+         "replacement": "ário"
+      },
+      {
+         "target": "arquicamente",
+         "tag": "adv",
+         "replacement": "árquico"
+      },
+      {
+         "target": "assicamente",
+         "tag": "adv",
+         "replacement": "ássico"
+      },
+      {
+         "target": "asticamente",
+         "tag": "adv",
+         "replacement": "ástico"
+      },
+      {
+         "target": "aticamente",
+         "tag": "adv",
+         "replacement": "ático"
+      },
+      {
+         "target": "avelmente",
+         "tag": "adv",
+         "replacement": "ável"
+      },
+      {
+         "target": "aximamente",
+         "tag": "adv",
+         "replacement": "áximo"
+      },
+      {
+         "target": "ebilmente",
+         "tag": "adv",
+         "replacement": "ébil"
+      },
+      {
+         "target": "ebricamente",
+         "tag": "adv",
+         "replacement": "ébrico"
+      },
+      {
+         "target": "ecticamente",
+         "tag": "adv",
+         "replacement": "éctico"
+      },
+      {
+         "target": "egiamente",
+         "tag": "adv",
+         "replacement": "égio"
+      },
+      {
+         "target": "elebremente",
+         "tag": "adv",
+         "replacement": "élebre"
+      },
+      {
+         "target": "eleremente",
+         "tag": "adv",
+         "replacement": "élere"
+      },
+      {
+         "target": "elicamente",
+         "tag": "adv",
+         "replacement": "élico"
+      },
+      {
+         "target": "emicamente",
+         "tag": "adv",
+         "replacement": "émico"
+      },
+      {
+         "target": "eneamente",
+         "tag": "adv",
+         "replacement": "éneo"
+      },
+      {
+         "target": "enicamente",
+         "tag": "adv",
+         "replacement": "énico"
+      },
+      {
+         "target": "enuemente",
+         "tag": "adv",
+         "replacement": "énue"
+      },
+      {
+         "target": "epicamente",
+         "tag": "adv",
+         "replacement": "épico"
+      },
+      {
+         "target": "epidamente",
+         "tag": "adv",
+         "replacement": "épido"
+      },
+      {
+         "target": "ericamente",
+         "tag": "adv",
+         "replacement": "érico"
+      },
+      {
+         "target": "eritamente",
+         "tag": "adv",
+         "replacement": "ético"
+      },
+      {
+         "target": "errimamente",
+         "tag": "adv",
+         "replacement": "érrimo"
+      },
+      {
+         "target": "ertilmente",
+         "tag": "adv",
+         "replacement": "értil"
+      },
+      {
+         "target": "essimamente",
+         "tag": "adv",
+         "replacement": "éssimo"
+      },
+      {
+         "target": "esticamente",
+         "tag": "adv",
+         "replacement": "éstico"
+      },
+      {
+         "target": "eticamente",
+         "tag": "adv",
+         "replacement": "ético"
+      },
+      {
+         "target": "etnicamente",
+         "tag": "adv",
+         "replacement": "étnico"
+      },
+      {
+         "target": "etricamente",
+         "tag": "adv",
+         "replacement": "étrico"
+      },
+      {
+         "target": "etuamente",
+         "tag": "adv",
+         "replacement": "étuo"
+      },
+      {
+         "target": "evolmente",
+         "tag": "adv",
+         "replacement": "évolo"
+      },
+      {
+         "target": "exicalmente",
+         "tag": "adv",
+         "replacement": "éxical"
+      },
+      {
+         "target": "ibiamente",
+         "tag": "adv",
+         "replacement": "íbio"
+      },
+      {
+         "target": "ibridamente",
+         "tag": "adv",
+         "replacement": "íbrido"
+      },
+      {
+         "target": "icilmente",
+         "tag": "adv",
+         "replacement": "ícil"
+      },
+      {
+         "target": "icimamente",
+         "tag": "adv",
+         "replacement": "ícito"
+      },
+      {
+         "target": "icuamente",
+         "tag": "adv",
+         "replacement": "ícuo"
+      },
+      {
+         "target": "iculamente",
+         "tag": "adv",
+         "replacement": "ículo"
+      },
+      {
+         "target": "idamente",
+         "tag": "adv",
+         "replacement": "ído"
+      },
+      {
+         "target": "idicamente",
+         "tag": "adv",
+         "replacement": "ídico"
+      },
+      {
+         "target": "iferamente",
+         "tag": "adv",
+         "replacement": "ífero"
+      },
+      {
+         "target": "ifiamente",
+         "tag": "adv",
+         "replacement": "ífio"
+      },
+      {
+         "target": "ificamente",
+         "tag": "adv",
+         "replacement": "ífico"
+      },
+      {
+         "target": "igidamente",
+         "tag": "adv",
+         "replacement": "ígido"
+      },
+      {
+         "target": "ilicamente",
+         "tag": "adv",
+         "replacement": "ílico"
+      },
+      {
+         "target": "imicamente",
+         "tag": "adv",
+         "replacement": "ímico"
+      },
+      {
+         "target": "imilmente",
+         "tag": "adv",
+         "replacement": "ímil"
+      },
+      {
+         "target": "inicamente",
+         "tag": "adv",
+         "replacement": "ínico"
+      },
+      {
+         "target": "inimamente",
+         "tag": "adv",
+         "replacement": "ínimo"
+      },
+      {
+         "target": "insecamente",
+         "tag": "adv",
+         "replacement": "ínseco"
+      },
+      {
+         "target": "intimamente",
+         "tag": "adv",
+         "replacement": "íntimo"
+      },
+      {
+         "target": "inuamente",
+         "tag": "adv",
+         "replacement": "ínuo"
+      },
+      {
+         "target": "ipidamente",
+         "tag": "adv",
+         "replacement": "ípido"
+      },
+      {
+         "target": "ipticamente",
+         "tag": "adv",
+         "replacement": "íptico"
+      },
+      {
+         "target": "iquicamente",
+         "tag": "adv",
+         "replacement": "íquico"
+      },
+      {
+         "target": "iricamente",
+         "tag": "adv",
+         "replacement": "írico"
+      },
+      {
+         "target": "isicamente",
+         "tag": "adv",
+         "replacement": "ísico"
+      },
+      {
+         "target": "issimamente",
+         "tag": "adv",
+         "replacement": "íssimo"
+      },
+      {
+         "target": "isticamente",
+         "tag": "adv",
+         "replacement": "ístico"
+      },
+      {
+         "target": "iticamente",
+         "tag": "adv",
+         "replacement": "ítico"
+      },
+      {
+         "target": "itidamente",
+         "tag": "adv",
+         "replacement": "ítido"
+      },
+      {
+         "target": "itimamente",
+         "tag": "adv",
+         "replacement": "ítimo"
+      },
+      {
+         "target": "ivelmente",
+         "tag": "adv",
+         "replacement": "ível"
+      },
+      {
+         "target": "ivocamente",
+         "tag": "adv",
+         "replacement": "ívoco"
+      },
+      {
+         "target": "mente",
+         "tag": "adv",
+         "exceptions": "mente"
+      },
+      {
+         "target": "obilmente",
+         "tag": "adv",
+         "replacement": "óbil"
+      },
+      {
+         "target": "ocilmente",
+         "tag": "adv",
+         "replacement": "ócil"
+      },
+      {
+         "target": "ocrifamente",
+         "tag": "adv",
+         "replacement": "ócrifo"
+      },
+      {
+         "target": "ocritamente",
+         "tag": "adv",
+         "replacement": "ócrita"
+      },
+      {
+         "target": "odiamente",
+         "tag": "adv",
+         "replacement": "ôdio"
+      },
+      {
+         "target": "odicamente",
+         "tag": "adv",
+         "replacement": "ódico"
+      },
+      {
+         "target": "oficamente",
+         "tag": "adv",
+         "replacement": "ófico"
+      },
+      {
+         "target": "ogicamente",
+         "tag": "adv",
+         "replacement": "ógico"
+      },
+      {
+         "target": "oicamente",
+         "tag": "adv",
+         "replacement": "óico"
+      },
+      {
+         "target": "olicamente",
+         "tag": "adv",
+         "replacement": "ólico"
+      },
+      {
+         "target": "omente",
+         "tag": "adv",
+         "replacement": "ó"
+      },
+      {
+         "target": "omicamente",
+         "tag": "adv",
+         "replacement": "ómico"
+      },
+      {
+         "target": "onicamente",
+         "tag": "adv",
+         "replacement": "ónico"
+      },
+      {
+         "target": "opicamente",
+         "tag": "adv",
+         "replacement": "ópico"
+      },
+      {
+         "target": "opriamente",
+         "tag": "adv",
+         "replacement": "óprio"
+      },
+      {
+         "target": "opticamente",
+         "tag": "adv",
+         "replacement": "óptico"
+      },
+      {
+         "target": "optimamente",
+         "tag": "adv",
+         "replacement": "óptimo"
+      },
+      {
+         "target": "ordicamente",
+         "tag": "adv",
+         "replacement": "órdico"
+      },
+      {
+         "target": "ordidamente",
+         "tag": "adv",
+         "replacement": "órdido"
+      },
+      {
+         "target": "oriamente",
+         "tag": "adv",
+         "replacement": "ório"
+      },
+      {
+         "target": "oricamente",
+         "tag": "adv",
+         "replacement": "órico"
+      },
+      {
+         "target": "osmicamente",
+         "tag": "adv",
+         "replacement": "ósmico"
+      },
+      {
+         "target": "ostilmente",
+         "tag": "adv",
+         "replacement": "óstil"
+      },
+      {
+         "target": "oticamente",
+         "tag": "adv",
+         "replacement": "ótico"
+      },
+      {
+         "target": "oximamente",
+         "tag": "adv",
+         "replacement": "óximo"
+      },
+      {
+         "target": "unicamente",
+         "tag": "adv",
+         "replacement": "único"
+      },
+      {
+         "target": "udamente",
+         "tag": "adv",
+         "replacement": "údo"
+      },
+      {
+         "target": "udicamente",
+         "tag": "adv",
+         "replacement": "údico"
+      },
+      {
+         "target": "utilmente",
+         "tag": "adv",
+         "replacement": "útil"
+      }
+   ]
+}
+

@@ -1,0 +1,1477 @@
+{
+  "replacement": [
+    {
+      "target": "(?<=(Antes|Com|Contudo|Em|Embora|Entretanto|Mas|Na|No|Porém)\\s)[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+(\\s((((d(a|as|e|o|os))|e)\\s)|(d'))?(([A-Z](.|.\\s)?)+\\s)?[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+)+"
+    },
+    {
+      "target": "[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+(\\s((((d(a|as|e|o|os))|e)\\s)|(d'))?(([A-Z](.|.\\s)?)+\\s)?[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+)+"
+    },
+    {
+      "target": "\\d+(\\s((((d(a|as|e|o|os))|e)\\s)|(d'))?[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+)+"
+    },
+    {
+      "target": "[A-ZÀÁÃÂÉÊÍÓÕÔÚÇ][\\wàáãâéêíóõôúçÀÁÃÂÉÊÍÓÕÔÚÇ]+\\s(((d(a|as|e|o|os))|e)\\s)?\\d+"
+    },
+    {
+      "target": "(um(a)?|dois|duas|três|quatro(centos)?|cinco|seis(centos)?|sete(centos|nta)?|oito(centos)?|nove(centos|nta)?|dez|onze|doze|treze|catorze|quinze|dezasseis|dezassete|dezoito|dezanove|vinte|trinta|quarenta|cinquenta|sessenta|oitenta|cem|cento|duzentos|trezentos|quinhentos|mil(h(ão|ões))?|bili(ão|ões)|trili(ão|ões))+(\\s(e\\s)?(um(a)?|dois|duas|três|quatro(centos)?|cinco|seis(centos)?|sete(centos|nta)?|oito(centos)?|nove(centos|nta)?|dez|onze|doze|treze|catorze|quinze|dezasseis|dezassete|dezoito|dezanove|vinte|trinta|quarenta|cinquenta|sessenta|oitenta|cem|cento|duzentos|trezentos|quinhentos|mil(h(ão|ões))?|bili(ão|ões)|trili(ão|ões)))*"
+    },
+    {
+      "target": "(primeir[ao]s?|segund[ao]s?|terceir[ao]s?|quart[ao]s?|quint[ao]s?|sext[ao]s?|sétim[ao]s?|oitav[ao]s?|non[ao]s?|décim[ao]s?|undécim[ao]s?|duodécim[ao]s?|(vig|trig|quadrag|quinquag|sexag|septuag|octo|nonag|cent|duocent|tricent|quadrigent|quingent|sexcent|septingent|octingent|nongent|mil(ion)?)ésim[ao]s?)+(\\s(e\\s)?(primeir[ao]s?|segund[ao]s?|terceir[ao]s?|quart[ao]s?|quint[ao]s?|sext[ao]s?|sétim[ao]s?|oitav[ao]s?|non[ao]s?|décim[ao]s?|undécim[ao]s?|duodécim[ao]s?|(vig|trig|quadrag|quinquag|sexag|septuag|octo|nonag|cent|duocent|tricent|quadrigent|quingent|sexcent|septingent|octingent|nongent|mil(ion)?)ésim[ao]s?))*"
+    },
+    {
+      "target": "à beira de"
+    },
+    {
+      "target": "a bem dizer"
+    },
+    {
+      "target": "a bordo"
+    },
+    {
+      "target": "a breve prazo"
+    },
+    {
+      "target": "a breve trecho"
+    },
+    {
+      "target": "a cargo de"
+    },
+    {
+      "target": "a céu aberto"
+    },
+    {
+      "target": "a coberto de"
+    },
+    {
+      "target": "à custa de"
+    },
+    {
+      "target": "a custo"
+    },
+    {
+      "target": "a descoberto"
+    },
+    {
+      "target": "a eito"
+    },
+    {
+      "target": "à espreita"
+    },
+    {
+      "target": "a exemplo"
+    },
+    {
+      "target": "a favor"
+    },
+    {
+      "target": "a favor de"
+    },
+    {
+      "target": "a favor ou contra"
+    },
+    {
+      "target": "a ferro e fogo"
+    },
+    {
+      "target": "a fim de"
+    },
+    {
+      "target": "a fim de que"
+    },
+    {
+      "target": "à flor da pele"
+    },
+    {
+      "target": "a fundo"
+    },
+    {
+      "target": "à hora de"
+    },
+    {
+      "target": "a horas"
+    },
+    {
+      "target": "a longo prazo"
+    },
+    {
+      "target": "à luz de"
+    },
+    {
+      "target": "a mais de"
+    },
+    {
+      "target": "a mal"
+    },
+    {
+      "target": "à maneira de"
+    },
+    {
+      "target": "à medida de"
+    },
+    {
+      "target": "à medida que"
+    },
+    {
+      "target": "a meu ver"
+    },
+    {
+      "target": "a não ser que"
+    },
+    {
+      "target": "a par"
+    },
+    {
+      "target": "a par de"
+    },
+    {
+      "target": "a partir de"
+    },
+    {
+      "target": "à partida"
+    },
+    {
+      "target": "a pé"
+    },
+    {
+      "target": "a pedido"
+    },
+    {
+      "target": "a ponto de"
+    },
+    {
+      "target": "a posteriori"
+    },
+    {
+      "target": "a postos"
+    },
+    {
+      "target": "a preceito"
+    },
+    {
+      "target": "à primeira vista"
+    },
+    {
+      "target": "a priori"
+    },
+    {
+      "target": "a propósito"
+    },
+    {
+      "target": "a propósito de"
+    },
+    {
+      "target": "a qual"
+    },
+    {
+      "target": "à queima-roupa"
+    },
+    {
+      "target": "a respeito de"
+    },
+    {
+      "target": "a rigor"
+    },
+    {
+      "target": "a salvo"
+    },
+    {
+      "target": "a seguir"
+    },
+    {
+      "target": "a seu modo"
+    },
+    {
+      "target": "a tempo"
+    },
+    {
+      "target": "a tempo de"
+    },
+    {
+      "target": "a título de"
+    },
+    {
+      "target": "a toda a"
+    },
+    {
+      "target": "a todo o pano"
+    },
+    {
+      "target": "à venda em"
+    },
+    {
+      "target": "à vista de"
+    },
+    {
+      "target": "à volta de"
+    },
+    {
+      "target": "abaixo de"
+    },
+    {
+      "target": "acerca de"
+    },
+    {
+      "target": "acima de"
+    },
+    {
+      "target": "afinal de contas"
+    },
+    {
+      "target": "agora que"
+    },
+    {
+      "target": "ainda assim"
+    },
+    {
+      "target": "ainda bem"
+    },
+    {
+      "target": "ainda por cima"
+    },
+    {
+      "target": "ainda que"
+    },
+    {
+      "target": "além de"
+    },
+    {
+      "target": "ao ar livre"
+    },
+    {
+      "target": "ao cabo de"
+    },
+    {
+      "target": "ao certo"
+    },
+    {
+      "target": "ao compasso de"
+    },
+    {
+      "target": "ao contrário"
+    },
+    {
+      "target": "ao contrário de"
+    },
+    {
+      "target": "ao encontro de"
+    },
+    {
+      "target": "ao fim da manhã"
+    },
+    {
+      "target": "ao fim da tarde"
+    },
+    {
+      "target": "ao fim do dia"
+    },
+    {
+      "target": "ao fundo"
+    },
+    {
+      "target": "ao invés"
+    },
+    {
+      "target": "ao invés de"
+    },
+    {
+      "target": "ao lado de"
+    },
+    {
+      "target": "ao largo de"
+    },
+    {
+      "target": "ao longe"
+    },
+    {
+      "target": "ao longo de"
+    },
+    {
+      "target": "ao máximo"
+    },
+    {
+      "target": "ao menos"
+    },
+    {
+      "target": "ao mesmo tempo"
+    },
+    {
+      "target": "ao passo que"
+    },
+    {
+      "target": "ao pé de"
+    },
+    {
+      "target": "ao todo"
+    },
+    {
+      "target": "ao vivo"
+    },
+    {
+      "target": "aos olhos de"
+    },
+    {
+      "target": "aos trancos e barrancos"
+    },
+    {
+      "target": "apesar de"
+    },
+    {
+      "target": "apesar disso"
+    },
+    {
+      "target": "aquando de"
+    },
+    {
+      "target": "aquém de"
+    },
+    {
+      "target": "aqui e ali"
+    },
+    {
+      "target": "às avessas"
+    },
+    {
+      "target": "às escondidas"
+    },
+    {
+      "target": "às mil maravilhas"
+    },
+    {
+      "target": "às vezes"
+    },
+    {
+      "target": "assim como"
+    },
+    {
+      "target": "até então"
+    },
+    {
+      "target": "até mesmo"
+    },
+    {
+      "target": "até que ponto"
+    },
+    {
+      "target": "atrás de"
+    },
+    {
+      "target": "através de"
+    },
+    {
+      "target": "bem como"
+    },
+    {
+      "target": "cada qual"
+    },
+    {
+      "target": "cada um"
+    },
+    {
+      "target": "cada vez"
+    },
+    {
+      "target": "cada vez mais"
+    },
+    {
+      "target": "cerca de"
+    },
+    {
+      "target": "com antecedência"
+    },
+    {
+      "target": "com base em"
+    },
+    {
+      "target": "com bons olhos"
+    },
+    {
+      "target": "com distinção"
+    },
+    {
+      "target": "com efeito"
+    },
+    {
+      "target": "com relação a"
+    },
+    {
+      "target": "com tempo"
+    },
+    {
+      "target": "com vista a"
+    },
+    {
+      "target": "com vontade"
+    },
+    {
+      "target": "como que"
+    },
+    {
+      "target": "como se"
+    },
+    {
+      "target": "como também"
+    },
+    {
+      "target": "da ordem"
+    },
+    {
+      "target": "da parte de"
+    },
+    {
+      "target": "dado que"
+    },
+    {
+      "target": "daí em diante"
+    },
+    {
+      "target": "de acordo"
+    },
+    {
+      "target": "de agora"
+    },
+    {
+      "target": "de agora em diante"
+    },
+    {
+      "target": "de ali para diante"
+    },
+    {
+      "target": "de antemão"
+    },
+    {
+      "target": "de cima"
+    },
+    {
+      "target": "de comprimento"
+    },
+    {
+      "target": "de conta"
+    },
+    {
+      "target": "de destaque"
+    },
+    {
+      "target": "de dia"
+    },
+    {
+      "target": "de direito"
+    },
+    {
+      "target": "de estilo"
+    },
+    {
+      "target": "de estudo"
+    },
+    {
+      "target": "de facto"
+    },
+    {
+      "target": "de fora"
+    },
+    {
+      "target": "de fora de"
+    },
+    {
+      "target": "de forma a"
+    },
+    {
+      "target": "de fundo"
+    },
+    {
+      "target": "de graça"
+    },
+    {
+      "target": "de hoje em diante"
+    },
+    {
+      "target": "de imediato"
+    },
+    {
+      "target": "de lei"
+    },
+    {
+      "target": "de longe"
+    },
+    {
+      "target": "de madrugada"
+    },
+    {
+      "target": "de maneira a"
+    },
+    {
+      "target": "de manhã"
+    },
+    {
+      "target": "de manhã cedo"
+    },
+    {
+      "target": "de marca"
+    },
+    {
+      "target": "de modo a"
+    },
+    {
+      "target": "de modo algum"
+    },
+    {
+      "target": "de modo que"
+    },
+    {
+      "target": "de noite"
+    },
+    {
+      "target": "de novo"
+    },
+    {
+      "target": "de outro lado"
+    },
+    {
+      "target": "de outro modo"
+    },
+    {
+      "target": "de pé"
+    },
+    {
+      "target": "de perto"
+    },
+    {
+      "target": "de peso"
+    },
+    {
+      "target": "de prata"
+    },
+    {
+      "target": "de preferência"
+    },
+    {
+      "target": "de profissão"
+    },
+    {
+      "target": "de propósito"
+    },
+    {
+      "target": "de qualquer maneira"
+    },
+    {
+      "target": "de qualquer modo"
+    },
+    {
+      "target": "de quebra"
+    },
+    {
+      "target": "de raiz"
+    },
+    {
+      "target": "de rastos"
+    },
+    {
+      "target": "de repetição"
+    },
+    {
+      "target": "de resto"
+    },
+    {
+      "target": "de saída"
+    },
+    {
+      "target": "de seguida"
+    },
+    {
+      "target": "de súbito"
+    },
+    {
+      "target": "de surpresa"
+    },
+    {
+      "target": "de tal forma"
+    },
+    {
+      "target": "de tal modo que"
+    },
+    {
+      "target": "de tarde"
+    },
+    {
+      "target": "de topo"
+    },
+    {
+      "target": "de trás"
+    },
+    {
+      "target": "de um lado"
+    },
+    {
+      "target": "de uma vez por todas"
+    },
+    {
+      "target": "de urgência"
+    },
+    {
+      "target": "de vez"
+    },
+    {
+      "target": "de vez em quando"
+    },
+    {
+      "target": "de volta"
+    },
+    {
+      "target": "debaixo de"
+    },
+    {
+      "target": "dentro de"
+    },
+    {
+      "target": "desde então"
+    },
+    {
+      "target": "desde há"
+    },
+    {
+      "target": "desde já"
+    },
+    {
+      "target": "desde logo"
+    },
+    {
+      "target": "desde pequeno"
+    },
+    {
+      "target": "desde que"
+    },
+    {
+      "target": "desta feita"
+    },
+    {
+      "target": "desta forma"
+    },
+    {
+      "target": "desta vez"
+    },
+    {
+      "target": "detrás de"
+    },
+    {
+      "target": "devido a"
+    },
+    {
+      "target": "dia e noite"
+    },
+    {
+      "target": "diante de"
+    },
+    {
+      "target": "do que"
+    },
+    {
+      "target": "e assim por diante"
+    },
+    {
+      "target": "e por aí"
+    },
+    {
+      "target": "é que"
+    },
+    {
+      "target": "eis que"
+    },
+    {
+      "target": "em abono de"
+    },
+    {
+      "target": "em bloco"
+    },
+    {
+      "target": "em breve"
+    },
+    {
+      "target": "em carne e osso"
+    },
+    {
+      "target": "em casa"
+    },
+    {
+      "target": "em causa"
+    },
+    {
+      "target": "em cima"
+    },
+    {
+      "target": "em cima de"
+    },
+    {
+      "target": "em conjunto"
+    },
+    {
+      "target": "em conta"
+    },
+    {
+      "target": "em contrapartida"
+    },
+    {
+      "target": "em curso"
+    },
+    {
+      "target": "em debate"
+    },
+    {
+      "target": "em diante"
+    },
+    {
+      "target": "em dinheiro"
+    },
+    {
+      "target": "em direcção a"
+    },
+    {
+      "target": "em dois tempos"
+    },
+    {
+      "target": "em face de"
+    },
+    {
+      "target": "em favor de"
+    },
+    {
+      "target": "em flagrante"
+    },
+    {
+      "target": "em força"
+    },
+    {
+      "target": "em forma"
+    },
+    {
+      "target": "em frente"
+    },
+    {
+      "target": "em função de"
+    },
+    {
+      "target": "em geral"
+    },
+    {
+      "target": "em grande parte"
+    },
+    {
+      "target": "em homenagem a"
+    },
+    {
+      "target": "em jeito de"
+    },
+    {
+      "target": "em larga escala"
+    },
+    {
+      "target": "em massa"
+    },
+    {
+      "target": "em nome de"
+    },
+    {
+      "target": "em terceiro lugar"
+    },
+    {
+      "target": "em obediência a"
+    },
+    {
+      "target": "em parte"
+    },
+    {
+      "target": "em particular"
+    },
+    {
+      "target": "em pé"
+    },
+    {
+      "target": "em pé de igualdade"
+    },
+    {
+      "target": "em primeiro lugar"
+    },
+    {
+      "target": "em princípio"
+    },
+    {
+      "target": "em prol de"
+    },
+    {
+      "target": "em público"
+    },
+    {
+      "target": "em questão"
+    },
+    {
+      "target": "em razão de"
+    },
+    {
+      "target": "em relação a"
+    },
+    {
+      "target": "em seguida"
+    },
+    {
+      "target": "em segundo lugar"
+    },
+    {
+      "target": "em si"
+    },
+    {
+      "target": "em suma"
+    },
+    {
+      "target": "em termos"
+    },
+    {
+      "target": "em termos de"
+    },
+    {
+      "target": "em tese"
+    },
+    {
+      "target": "em torno de"
+    },
+    {
+      "target": "em troca"
+    },
+    {
+      "target": "em verdade"
+    },
+    {
+      "target": "em vez de"
+    },
+    {
+      "target": "em vias de"
+    },
+    {
+      "target": "em vigor"
+    },
+    {
+      "target": "em virtude de"
+    },
+    {
+      "target": "enquanto que"
+    },
+    {
+      "target": "entre si"
+    },
+    {
+      "target": "face a"
+    },
+    {
+      "target": "fora de"
+    },
+    {
+      "target": "fora de forma"
+    },
+    {
+      "target": "fora de mão"
+    },
+    {
+      "target": "frente a"
+    },
+    {
+      "target": "frente a frente"
+    },
+    {
+      "target": "graças a"
+    },
+    {
+      "target": "hoje de manhã"
+    },
+    {
+      "target": "hoje em dia"
+    },
+    {
+      "target": "hoje mesmo"
+    },
+    {
+      "target": "in loco"
+    },
+    {
+      "target": "in natura"
+    },
+    {
+      "target": "isto é"
+    },
+    {
+      "target": "já não"
+    },
+    {
+      "target": "já que"
+    },
+    {
+      "target": "junto com"
+    },
+    {
+      "target": "logo a seguir"
+    },
+    {
+      "target": "logo que"
+    },
+    {
+      "target": "longe de"
+    },
+    {
+      "target": "mais de"
+    },
+    {
+      "target": "mais nada"
+    },
+    {
+      "target": "mais ou menos"
+    },
+    {
+      "target": "mais uma vez"
+    },
+    {
+      "target": "mar adentro"
+    },
+    {
+      "target": "menos de"
+    },
+    {
+      "target": "mesmo assim"
+    },
+    {
+      "target": "mesmo que"
+    },
+    {
+      "target": "muitas vezes"
+    },
+    {
+      "target": "muito de"
+    },
+    {
+      "target": "muito tempo"
+    },
+    {
+      "target": "na frente de"
+    },
+    {
+      "target": "na generalidade"
+    },
+    {
+      "target": "na íntegra"
+    },
+    {
+      "target": "na medida em que"
+    },
+    {
+      "target": "na melhor das hipóteses"
+    },
+    {
+      "target": "na presença de"
+    },
+    {
+      "target": "na sua maior parte"
+    },
+    {
+      "target": "nada do que"
+    },
+    {
+      "target": "nada mais nada menos"
+    },
+    {
+      "target": "nada mal"
+    },
+    {
+      "target": "não obstante"
+    },
+    {
+      "target": "não só"
+    },
+    {
+      "target": "nem mesmo"
+    },
+    {
+      "target": "nem sequer"
+    },
+    {
+      "target": "nessa altura"
+    },
+    {
+      "target": "no caso de"
+    },
+    {
+      "target": "no cimo de"
+    },
+    {
+      "target": "no conceito de"
+    },
+    {
+      "target": "no decorrer de"
+    },
+    {
+      "target": "no decurso de"
+    },
+    {
+      "target": "no entanto"
+    },
+    {
+      "target": "no meio de"
+    },
+    {
+      "target": "no que se refere"
+    },
+    {
+      "target": "nos termos de"
+    },
+    {
+      "target": "o qual"
+    },
+    {
+      "target": "o que"
+    },
+    {
+      "target": "ontem de manhã"
+    },
+    {
+      "target": "os quais"
+    },
+    {
+      "target": "ou melhor"
+    },
+    {
+      "target": "ou seja"
+    },
+    {
+      "target": "outra coisa"
+    },
+    {
+      "target": "outra vez"
+    },
+    {
+      "target": "para a direita"
+    },
+    {
+      "target": "para além"
+    },
+    {
+      "target": "para além de"
+    },
+    {
+      "target": "para caramba"
+    },
+    {
+      "target": "para casa"
+    },
+    {
+      "target": "para cima"
+    },
+    {
+      "target": "para fora de"
+    },
+    {
+      "target": "para já"
+    },
+    {
+      "target": "para onde"
+    },
+    {
+      "target": "para os lados de"
+    },
+    {
+      "target": "para que"
+    },
+    {
+      "target": "para sempre"
+    },
+    {
+      "target": "pela manhã"
+    },
+    {
+      "target": "pela primeira vez"
+    },
+    {
+      "target": "pela tangente"
+    },
+    {
+      "target": "pelo contrário"
+    },
+    {
+      "target": "pelo menos"
+    },
+    {
+      "target": "pelos vistos"
+    },
+    {
+      "target": "perto de"
+    },
+    {
+      "target": "pois é"
+    },
+    {
+      "target": "pois então"
+    },
+    {
+      "target": "pois que"
+    },
+    {
+      "target": "por acaso"
+    },
+    {
+      "target": "por agora"
+    },
+    {
+      "target": "por aqui"
+    },
+    {
+      "target": "por assim dizer"
+    },
+    {
+      "target": "por baixo"
+    },
+    {
+      "target": "por causa de"
+    },
+    {
+      "target": "por cima"
+    },
+    {
+      "target": "por cima de"
+    },
+    {
+      "target": "por completo"
+    },
+    {
+      "target": "por concurso"
+    },
+    {
+      "target": "por conseguinte"
+    },
+    {
+      "target": "por conta"
+    },
+    {
+      "target": "por conveniência"
+    },
+    {
+      "target": "por detrás de"
+    },
+    {
+      "target": "por enquanto"
+    },
+    {
+      "target": "por entre"
+    },
+    {
+      "target": "por escrito"
+    },
+    {
+      "target": "por excelência"
+    },
+    {
+      "target": "por exclusão"
+    },
+    {
+      "target": "por exemplo"
+    },
+    {
+      "target": "por fim"
+    },
+    {
+      "target": "por força de"
+    },
+    {
+      "target": "por iniciativa de"
+    },
+    {
+      "target": "por isso"
+    },
+    {
+      "target": "por mais que"
+    },
+    {
+      "target": "por mar"
+    },
+    {
+      "target": "por meio de"
+    },
+    {
+      "target": "por ocasião de"
+    },
+    {
+      "target": "por onde"
+    },
+    {
+      "target": "por ora"
+    },
+    {
+      "target": "por outro lado"
+    },
+    {
+      "target": "por parte de"
+    },
+    {
+      "target": "por pessoa"
+    },
+    {
+      "target": "por pouco"
+    },
+    {
+      "target": "por que"
+    },
+    {
+      "target": "por quê"
+    },
+    {
+      "target": "por si"
+    },
+    {
+      "target": "por sua vez"
+    },
+    {
+      "target": "por terra"
+    },
+    {
+      "target": "por trás"
+    },
+    {
+      "target": "por último"
+    },
+    {
+      "target": "por um lado"
+    },
+    {
+      "target": "por unanimidade"
+    },
+    {
+      "target": "por vezes"
+    },
+    {
+      "target": "por via de"
+    },
+    {
+      "target": "por volta de"
+    },
+    {
+      "target": "pouco a pouco"
+    },
+    {
+      "target": "próximo a"
+    },
+    {
+      "target": "próximo de"
+    },
+    {
+      "target": "qual quê"
+    },
+    {
+      "target": "qualquer que fosse"
+    },
+    {
+      "target": "quando de"
+    },
+    {
+      "target": "quando muito"
+    },
+    {
+      "target": "quanto a"
+    },
+    {
+      "target": "quanto mais"
+    },
+    {
+      "target": "quer dizer"
+    },
+    {
+      "target": "referente a"
+    },
+    {
+      "target": "relativamente a"
+    },
+    {
+      "target": "se bem que"
+    },
+    {
+      "target": "se calhar"
+    },
+    {
+      "target": "se tanto"
+    },
+    {
+      "target": "sem conta"
+    },
+    {
+      "target": "sem par"
+    },
+    {
+      "target": "sempre que"
+    },
+    {
+      "target": "sendo que"
+    },
+    {
+      "target": "sob pena de"
+    },
+    {
+      "target": "tal como"
+    },
+    {
+      "target": "tanto mais quanto"
+    },
+    {
+      "target": "tanto mais que"
+    },
+    {
+      "target": "tão logo"
+    },
+    {
+      "target": "toda a"
+    },
+    {
+      "target": "toda a gente"
+    },
+    {
+      "target": "toda vez que"
+    },
+    {
+      "target": "todas as"
+    },
+    {
+      "target": "todo mundo"
+    },
+    {
+      "target": "todo o"
+    },
+    {
+      "target": "todo o mundo"
+    },
+    {
+      "target": "todos os"
+    },
+    {
+      "target": "todos os dias"
+    },
+    {
+      "target": "tudo isso"
+    },
+    {
+      "target": "tudo isto"
+    },
+    {
+      "target": "tudo o que"
+    },
+    {
+      "target": "tudo quanto"
+    },
+    {
+      "target": "um ao outro"
+    },
+    {
+      "target": "um pouco"
+    },
+    {
+      "target": "um tanto"
+    },
+    {
+      "target": "um vez que"
+    },
+    {
+      "target": "uma a uma"
+    },
+    {
+      "target": "uma vez"
+    },
+    {
+      "target": "uma vez mais"
+    },
+    {
+      "target": "uma vez que"
+    },
+    {
+      "target": "visto que"
+    },
+    {
+      "target": "à busca de"
+    },
+    {
+      "target": "a despeito de"
+    },
+    {
+      "target": "à distância de"
+    },
+    {
+      "target": "a instâncias de"
+    },
+    {
+      "target": "à procura de"
+    },
+    {
+      "target": "a todo o vapor"
+    },
+    {
+      "target": "antes de"
+    },
+    {
+      "target": "ao redor de"
+    },
+    {
+      "target": "até a"
+    },
+    {
+      "target": "com excepção de"
+    },
+    {
+      "target": "de acordo com"
+    },
+    {
+      "target": "de encontro a"
+    },
+    {
+      "target": "de harmonia com"
+    },
+    {
+      "target": "defronte a"
+    },
+    {
+      "target": "defronte de"
+    },
+    {
+      "target": "depois de"
+    },
+    {
+      "target": "em atenção a"
+    },
+    {
+      "target": "em conformidade com"
+    },
+    {
+      "target": "em harmonia com"
+    },
+    {
+      "target": "em fase de"
+    },
+    {
+      "target": "em frente a"
+    },
+    {
+      "target": "em frente de"
+    },
+    {
+      "target": "em lugar de"
+    },
+    {
+      "target": "em volta de"
+    },
+    {
+      "target": "embaixo de"
+    },
+    {
+      "target": "junto a"
+    },
+    {
+      "target": "junto com"
+    },
+    {
+      "target": "junto de"
+    },
+    {
+      "target": "para com"
+    },
+    {
+      "target": "por trás de"
+    }
+  ]
+}

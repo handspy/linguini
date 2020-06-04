@@ -1,0 +1,298 @@
+{
+   "prefix": "[\\wàáãâéêíóõôúç]*",
+   "replacement": [
+      {
+         "target": "abilíssimo",
+         "tag": "noun|adj",
+         "replacement": "ável"
+      },
+      {
+         "target": "acílimo",
+         "tag": "noun|adj",
+         "replacement": "ácil"
+      },
+      {
+         "target": "alíssimo",
+         "tag": "noun|adj",
+         "replacement": "al"
+      },
+      {
+         "target": "aníssimo",
+         "tag": "noun|adj",
+         "replacement": "ão"
+      },
+      {
+         "target": "ápientíssimo",
+         "tag": "noun|adj",
+         "replacement": "ábio"
+      },
+      {
+         "target": "aspérrimo",
+         "tag": "noun|adj",
+         "replacement": "áspero"
+      },
+      {
+         "target": "bérrimo",
+         "tag": "noun|adj",
+         "replacement": "vre"
+      },
+      {
+         "target": "císsimo",
+         "tag": "noun|adj",
+         "exceptions": "amicíssimo",
+         "replacement": "z"
+      },
+      {
+         "target": "císsimo",
+         "tag": "noun|adj",
+         "replacement": "go"
+      },
+      {
+         "target": "crudelíssimo",
+         "tag": "noun|adj",
+         "replacement": "cruel"
+      },
+      {
+         "target": "delíssimo",
+         "tag": "noun|adj",
+         "replacement": "el"
+      },
+      {
+         "target": "díssimo",
+         "tag": "noun|adj",
+         "replacement": "do"
+      },
+      {
+         "target": "ebilíssimo",
+         "tag": "noun|adj",
+         "replacement": "ével"
+      },
+      {
+         "target": "elebérrimo",
+         "tag": "noun|adj",
+         "replacement": "élebre"
+      },
+      {
+         "target": "entíssimo",
+         "tag": "noun|adj",
+         "replacement": "o"
+      },
+      {
+         "target": "érrimo",
+         "tag": "noun|adj",
+         "exceptions": "acérrimo",
+         "replacement": "ro"
+      },
+      {
+         "target": "érrimo",
+         "tag": "noun|adj",
+         "replacement": "re"
+      },
+      {
+         "target": "facílimo",
+         "tag": "noun|adj",
+         "replacement": "fácil"
+      },
+      {
+         "target": "fidelíssimo",
+         "tag": "noun|adj",
+         "replacement": "fiel"
+      },
+      {
+         "target": "generalissímo",
+         "tag": "noun|adj",
+         "replacement": "geral"
+      },
+      {
+         "target": "gidíssimo",
+         "tag": "noun|adj",
+         "replacement": "io"
+      },
+      {
+         "target": "humílimo",
+         "tag": "noun|adj",
+         "replacement": "humilde"
+      },
+      {
+         "target": "ianíssimo",
+         "tag": "noun|adj",
+         "replacement": "ão"
+      },
+      {
+         "target": "ibilíssimo",
+         "tag": "noun|adj",
+         "replacement": "ível"
+      },
+      {
+         "target": "icílimo",
+         "tag": "noun|adj",
+         "replacement": "ícil"
+      },
+      {
+         "target": "icíssimo",
+         "tag": "noun|adj",
+         "replacement": "es"
+      },
+      {
+         "target": "ilíssimo",
+         "tag": "noun|adj",
+         "exceptions": "humilíssimo",
+         "replacement": "re"
+      },
+      {
+         "target": "ilíssimo",
+         "tag": "noun|adj",
+         "replacement": "ilde"
+      },
+      {
+         "target": "inferior",
+         "tag": "noun|adj",
+         "replacement": "baixo"
+      },
+      {
+         "target": "ínfimo",
+         "tag": "noun|adj",
+         "replacement": "baixo"
+      },
+      {
+         "target": "íssimo",
+         "tag": "noun|adj",
+         "exceptions": "amaríssimo|docíssimo|fortíssimo|simplíssimo",
+         "replacement": "o"
+      },
+      {
+         "target": "íssimo",
+         "tag": "noun|adj",
+         "exceptions": "amaríssimo|simplíssimo",
+         "replacement": "e"
+      },
+      {
+         "target": "íssimo",
+         "tag": "noun|adj",
+         "exceptions": "simplíssimo",
+         "replacement": "go"
+      },
+      {
+         "target": "íssimo",
+         "tag": "noun|adj",
+         "replacement": "es"
+      },
+      {
+         "target": "maior",
+         "tag": "noun|adj",
+         "replacement": "grande"
+      },
+      {
+         "target": "malíssimo",
+         "tag": "noun|adj",
+         "replacement": "mau"
+      },
+      {
+         "target": "máximo",
+         "tag": "noun|adj",
+         "replacement": "grande"
+      },
+      {
+         "target": "melhor",
+         "tag": "noun|adj",
+         "replacement": "bom"
+      },
+      {
+         "target": "menor",
+         "tag": "noun|adj",
+         "replacement": "pequeno"
+      },
+      {
+         "target": "mínimo",
+         "tag": "noun|adj",
+         "replacement": "pequeno"
+      },
+      {
+         "target": "níssimo",
+         "tag": "noun|adj",
+         "replacement": "m"
+      },
+      {
+         "target": "obilíssimo",
+         "tag": "noun|adj",
+         "exceptions": "nobilíssimo",
+         "replacement": "óvel"
+      },
+      {
+         "target": "óptimo",
+         "tag": "noun|adj",
+         "replacement": "bom"
+      },
+      {
+         "target": "ótimo",
+         "tag": "noun|adj",
+         "replacement": "bom"
+      },
+      {
+         "target": "personalíssimo",
+         "tag": "noun|adj",
+         "replacement": "pessoal"
+      },
+      {
+         "target": "péssimo",
+         "tag": "noun|adj",
+         "replacement": "mau"
+      },
+      {
+         "target": "pior",
+         "tag": "noun|adj",
+         "replacement": "mau"
+      },
+      {
+         "target": "quíssimo",
+         "tag": "noun|adj",
+         "exceptions": "antiquíssimo",
+         "replacement": "co"
+      },
+      {
+         "target": "quíssimo",
+         "tag": "noun|adj",
+         "replacement": "go"
+      },
+      {
+         "target": "sacratíssimo",
+         "tag": "noun|adj",
+         "replacement": "sagrado"
+      },
+      {
+         "target": "sapientíssimo",
+         "tag": "noun|adj",
+         "replacement": "sábio"
+      },
+      {
+         "target": "sumo",
+         "tag": "noun|adj",
+         "replacement": "alto"
+      },
+      {
+         "target": "superbíssimo",
+         "tag": "noun|adj",
+         "replacement": "soberbo"
+      },
+      {
+         "target": "superior",
+         "tag": "noun|adj",
+         "replacement": "alto"
+      },
+      {
+         "target": "supremo",
+         "tag": "noun|adj",
+         "replacement": "alto"
+      },
+      {
+         "target": "ubilíssimo",
+         "tag": "noun|adj",
+         "replacement": "úvel"
+      },
+      {
+         "target": "ulcíssimo",
+         "tag": "noun|adj",
+         "replacement": "oce"
+      }
+   ]
+}
