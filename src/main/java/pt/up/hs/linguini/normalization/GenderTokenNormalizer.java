@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public class GenderTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/genderdeclensions.xml";
+            "/%s/replacements/genderdeclensions.json";
 
     public GenderTokenNormalizer() throws NormalizationException {
         this(Locale.getDefault());

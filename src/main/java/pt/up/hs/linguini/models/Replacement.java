@@ -10,12 +10,15 @@ import java.util.regex.Pattern;
  */
 public class Replacement implements Comparable<Replacement> {
 
-    private String target;
-    private String tag;
-    private String prefix;
-    private String suffix;
-    private String exceptions;
-    private String replacement;
+    private String target = "";
+    private String tag = "";
+    private String prefix = "";
+    private String suffix = "";
+    private String exceptions = "";
+    private String replacement = "";
+
+    public Replacement() {
+    }
 
     /**
      * Creates a new <code>Replacement</code> object.

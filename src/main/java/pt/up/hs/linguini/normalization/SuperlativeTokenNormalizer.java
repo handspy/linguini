@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public class SuperlativeTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/superlativedeclensions.xml";
+            "/%s/replacements/superlativedeclensions.json";
 
     public SuperlativeTokenNormalizer() throws NormalizationException {
         this(Locale.getDefault());

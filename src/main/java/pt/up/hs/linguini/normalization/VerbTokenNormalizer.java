@@ -20,11 +20,11 @@ import java.util.stream.Stream;
  */
 public class VerbTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String VERB_DECLENSIONS_FILE_PATH_FORMAT =
-            "/%s/replacements/verbdeclensions.xml";
+            "/%s/replacements/verbdeclensions.json";
     private static final String VERB_IRREGULAR_CONJ_FILE_PATH_FORMAT =
-            "/%s/replacements/verbirregularconj.xml";
+            "/%s/replacements/verbirregularconj.json";
     private static final String VERB_LEXEMES_FILE_PATH_FORMAT =
-            "/%s/replacements/verblexemes.xml";
+            "/%s/replacements/verblexemes.json";
 
     private Pattern[] conjugationTargetsWithoutPrefixes;
     private Pattern[] conjugationTargets;

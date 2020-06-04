@@ -232,7 +232,6 @@ public class TextAnalyzer {
         }
 
         return preprocessPipeline
-                .pipe(new JSpellWordAnnotator(locale))
                 .pipe(new JSpellEmotionalAnalysis(locale))
                 .execute(text);
     }
@@ -241,11 +240,11 @@ public class TextAnalyzer {
      * Analysis to calculate lexical diversity. Lexical diversity is a measure
      * of how many different words are used in a text.
      *
-     * @param locale        {@link Locale} locale/language of text.
-     * @param text          {@link String} text to analyze.
-     * @param algorithm     {@link LDAlgorithm} algorithm to use to calculate
-     *                      lexical diversity.
-     * @param lemmatize     {@code boolean} lemmatize tokens before analysis?
+     * @param locale    {@link Locale} locale/language of text.
+     * @param text      {@link String} text to analyze.
+     * @param algorithm {@link LDAlgorithm} algorithm to use to calculate
+     *                  lexical diversity.
+     * @param lemmatize {@code boolean} lemmatize tokens before analysis?
      * @return {@link Double} lexical diversity of the text.
      * @throws LinguiniException if an error occurs during analysis.
      * @see "MTLD, vocd-D, and HD-D: A validation study of sophisticated
@@ -375,8 +374,8 @@ public class TextAnalyzer {
 
         List<List<Proposition>> sentencePropositions =
                 new BatchStep<>(NNDepParser.getInstance(locale))
-                    .pipe(new BatchStep<>(new IdeaDensityAnalysis(locale)))
-                    .execute(taggedTokens);
+                        .pipe(new BatchStep<>(new IdeaDensityAnalysis(locale)))
+                        .execute(taggedTokens);
 
         int pc = sentencePropositions.parallelStream()
                 .mapToInt(List::size)

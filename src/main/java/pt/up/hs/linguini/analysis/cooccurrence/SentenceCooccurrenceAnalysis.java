@@ -17,7 +17,7 @@ public class SentenceCooccurrenceAnalysis<T extends HasWord>
         implements Step<List<T>, Map<UnorderedPair<String>, Double>> {
     private static final int DEFAULT_WINDOW_SIZE = 5;
 
-    private int windowSize;
+    private final int windowSize;
 
     public SentenceCooccurrenceAnalysis() {
         this(DEFAULT_WINDOW_SIZE);

@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class DiminutiveTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/diminutivedeclensions.xml";
+            "/%s/replacements/diminutivedeclensions.json";
 
     public DiminutiveTokenNormalizer() throws NormalizationException {
         this(Locale.getDefault());

@@ -12,11 +12,13 @@ public class Emotion {
     private Global global;
     private Intermediate intermediate;
     private Specific specific;
+    private Polarity  polarity;
 
     public Emotion() {
     }
 
-    public Emotion(Global global, Intermediate intermediate, Specific specific) {
+    public Emotion(Polarity polarity, Global global, Intermediate intermediate, Specific specific) {
+        this.polarity = polarity;
         this.global = global;
         this.intermediate = intermediate;
         this.specific = specific;
@@ -44,6 +46,19 @@ public class Emotion {
 
     public void setSpecific(Specific specific) {
         this.specific = specific;
+    }
+
+    public Polarity getPolarity() {
+        return polarity;
+    }
+
+    public void setPolarity(Polarity polarity) {
+        this.polarity = polarity;
+    }
+
+    public enum Polarity {
+        POSITIVE,
+        NEGATIVE
     }
 
     public enum Global {
@@ -187,21 +202,25 @@ public class Emotion {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Emotion)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Emotion emotion = (Emotion) o;
-        return global == emotion.global &&
-                intermediate == emotion.intermediate &&
-                specific == emotion.specific;
+        return getGlobal() == emotion.getGlobal() &&
+                getIntermediate() == emotion.getIntermediate() &&
+                getSpecific() == emotion.getSpecific() &&
+                getPolarity() == emotion.getPolarity();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(global, intermediate, specific);
+        return Objects.hash(getGlobal(), getIntermediate(), getSpecific(), getPolarity());
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        if (polarity != null) {
+            sb.append(polarity.equals(Polarity.POSITIVE) ? "(+)" : "(-)").append(' ');
+        }
         if (global != null) {
             sb.append(global.toString());
 

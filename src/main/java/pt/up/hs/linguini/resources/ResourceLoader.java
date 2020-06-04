@@ -1,5 +1,6 @@
 package pt.up.hs.linguini.resources;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -7,7 +8,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import pt.up.hs.linguini.caching.InMemoryCache;
 import pt.up.hs.linguini.dictionaries.DictionaryEntry;
+import pt.up.hs.linguini.models.Emotion;
 import pt.up.hs.linguini.models.Replacement;
+import pt.up.hs.linguini.models.Replacements;
 import pt.up.hs.linguini.ranking.WordRankingEntry;
 import pt.up.hs.linguini.resources.exceptions.ResourceFormatException;
 import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
@@ -42,6 +45,8 @@ public class ResourceLoader {
     private final static InMemoryCache<String, Map<String, WordRankingEntry>> wordRankingCache =
             new InMemoryCache<>(86400, 3600, 20);
     private final static InMemoryCache<String, Map<String, HashSet<DictionaryEntry>>> dictionaryCache =
+            new InMemoryCache<>(86400, 3600, 20);
+    private static final InMemoryCache<String, Map<String, List<Emotion>>> emotaixCache =
             new InMemoryCache<>(86400, 3600, 20);
 
     /**
@@ -122,7 +127,23 @@ public class ResourceLoader {
     private static Replacement[] readReplacements(InputStream is)
             throws ResourceLoadingException {
 
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        long startTime = new Date().getTime();
+
+        Replacements replacements;
+        try {
+            replacements = new ObjectMapper().readValue(is, Replacements.class);
+            is.close();
+        } catch (IOException e) {
+            throw new ResourceLoadingException("Reading replacements", e);
+        }
+
+        long endTime = new Date().getTime();
+
+        System.out.println((endTime - startTime) + "ms");
+
+        return replacements.getReplacements();
+
+        /*DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
         Document doc;
         try {
@@ -164,7 +185,7 @@ public class ResourceLoader {
                     exceptions, replacement);
         }
 
-        return replacements;
+        return replacements;*/
     }
 
     /**
@@ -338,6 +359,71 @@ public class ResourceLoader {
         }
 
         return dictionary;
+    }
+
+    /**
+     * Read emotaix entries from a {@link String} path.
+     *
+     * @param p {@link String} path to a emotaix entries JSON file.
+     * @return {@link List} stopwords read
+     * @throws ResourceLoadingException if an exception occurs while
+     *      reading stopwords
+     */
+    public static Map<String, List<Emotion>> readEmotaixEntries(String p)
+            throws ResourceLoadingException {
+        Map<String, List<Emotion>> entries;
+        synchronized (emotaixCache) {
+            if ((entries = emotaixCache.get(p)) == null) {
+                entries = readEmotaixEntries(
+                        ResourceLoader.class.getResourceAsStream(p));
+                emotaixCache.put(p, entries);
+            }
+        }
+        return entries;
+    }
+
+    /**
+     * Read emotaix entries from an {@link InputStream} stream.
+     *
+     * @param is {@link InputStream} input stream from a emotaix JSON file.
+     * @return {@link Map} entries read
+     * @throws ResourceLoadingException if an exception occurs while
+     *      reading entries.
+     */
+    private static Map<String, List<Emotion>> readEmotaixEntries(InputStream is)
+            throws ResourceLoadingException {
+
+        try {
+            Map<String, List<LinkedHashMap<String, String>>> entries =
+                    new ObjectMapper().readValue(is, Map.class);
+            Map<String, List<Emotion>> emotaixEntries = new HashMap<>();
+            for (String key: entries.keySet()) {
+                List<LinkedHashMap<String, String>> value = entries.get(key);
+                List<Emotion> emotions = value.parallelStream().map(hm -> {
+                    Emotion emotion = new Emotion();
+                    if (hm.containsKey("polarity")) {
+                        emotion.setPolarity(Emotion.Polarity.valueOf(hm.get("polarity")));
+                    }
+                    if (hm.containsKey("primary") && !hm.get("primary").isEmpty()) {
+                        emotion.setGlobal(Emotion.Global.valueOf(hm.get("primary")));
+                    }
+                    if (hm.containsKey("secondary") && !hm.get("secondary").isEmpty()) {
+                        emotion.setIntermediate(Emotion.Intermediate.valueOf(hm.get("secondary")));
+                    }
+                    if (hm.containsKey("tertiary") && !hm.get("tertiary").isEmpty()) {
+                        emotion.setSpecific(Emotion.Specific.valueOf(hm.get("tertiary")));
+                    }
+                    return emotion;
+                }).collect(Collectors.toList());
+                emotaixEntries.put(key, emotions);
+            }
+
+            is.close();
+
+            return emotaixEntries;
+        } catch (IOException e) {
+            throw new ResourceLoadingException("Reading emotaix entries", e);
+        }
     }
 
     private static List<String> readAllLines(InputStream is)

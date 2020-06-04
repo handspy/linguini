@@ -88,6 +88,7 @@ public class TestEmotionalAnalysis {
 
         Assertions.assertEquals(
                 new Emotion(
+                        Emotion.Polarity.NEGATIVE,
                         Emotion.Global.DISCOMFORT,
                         Emotion.Intermediate.DISTURBANCE,
                         Emotion.Specific.AGITATION
@@ -113,7 +114,12 @@ public class TestEmotionalAnalysis {
         }
 
         Assertions.assertEquals(
-                new Emotion(Emotion.Global.BENEVOLENCE, Emotion.Intermediate.AFFECTION, Emotion.Specific.LOVE),
+                new Emotion(
+                        Emotion.Polarity.POSITIVE,
+                        Emotion.Global.BENEVOLENCE,
+                        Emotion.Intermediate.AFFECTION,
+                        Emotion.Specific.LOVE
+                ),
                 emotions.get(0).getInfo()
         );
         Assertions.assertEquals(
@@ -121,30 +127,32 @@ public class TestEmotionalAnalysis {
                 emotions.get(0).getToken().getStart()
         );
         Assertions.assertEquals(
-                new Emotion(Emotion.Global.NON_SPECIFIC, null, null),
+                new Emotion(
+                        Emotion.Polarity.NEGATIVE,
+                        Emotion.Global.DISCOMFORT,
+                        Emotion.Intermediate.DEPRESSION,
+                        Emotion.Specific.SADNESS
+                ),
                 emotions.get(1).getInfo()
         );
         Assertions.assertEquals(
-                330,
+                386,
                 emotions.get(1).getToken().getStart()
         );
         Assertions.assertEquals(
-                new Emotion(Emotion.Global.DISCOMFORT, Emotion.Intermediate.DEPRESSION, Emotion.Specific.SADNESS),
-                emotions.get(2).getInfo()
-        );
-        Assertions.assertEquals(
-                386,
-                emotions.get(2).getToken().getStart()
-        );
-        Assertions.assertEquals(
-                new Emotion(Emotion.Global.BENEVOLENCE, Emotion.Intermediate.AFFECTION, Emotion.Specific.LOVE),
-                emotions.get(6).getInfo()
+                new Emotion(
+                        Emotion.Polarity.POSITIVE,
+                        Emotion.Global.BENEVOLENCE,
+                        Emotion.Intermediate.AFFECTION,
+                        Emotion.Specific.LOVE
+                ),
+                emotions.get(4).getInfo()
         );
         Assertions.assertEquals(
                 793,
-                emotions.get(6).getToken().getStart()
+                emotions.get(4).getToken().getStart()
         );
-        Assertions.assertEquals(7, emotions.size());
+        Assertions.assertEquals(5, emotions.size());
     }
 
     @Test

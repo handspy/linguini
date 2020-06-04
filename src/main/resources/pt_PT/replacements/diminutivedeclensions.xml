@@ -8,7 +8,7 @@
   <replacement target="cinho" tag="noun|adj" exceptions="ancinho|lencinho">ço</replacement>
   <replacement target="guinha" tag="noun|adj" exceptions="sanguinha">ga</replacement>
   <replacement target="guinho" tag="noun|adj" exceptions="rodriguinho|sanguinho">go</replacement>
-  <replacement target="guita" tag="noun|adj" exceptins="gasguita|guita">ga</replacement>
+  <replacement target="guita" tag="noun|adj" exceptions="gasguita|guita">ga</replacement>
   <replacement target="guito" tag="noun|adj" exceptions="gasguito|guito|manguito">go</replacement>
   <replacement target="nzinho" tag="noun|adj">m</replacement>
   <replacement target="nzito" tag="noun|adj">m</replacement>

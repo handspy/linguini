@@ -19,7 +19,7 @@ public class ContentWordAnalysis
         implements Analysis<List<AnnotatedToken<String>>, List<AnnotatedToken<String>>> {
 
     private Locale locale;
-    private String contentWordTags;
+    private final String contentWordTags;
 
     public ContentWordAnalysis() throws AnalysisException {
         this(Locale.getDefault());

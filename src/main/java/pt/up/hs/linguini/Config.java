@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class Config {
             String path = String.format(FILE_PATH_FORMAT, locale.toString());
             try (
                     InputStream is = Config.class.getResourceAsStream(path);
-                    InputStreamReader isr = new InputStreamReader(is, Charset.forName("UTF-8"));
+                    InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
             ) {
                 properties.load(isr);
             } catch (IOException e) {

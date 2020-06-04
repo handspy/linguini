@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public class NumberTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/numberdeclensions.xml";
+            "/%s/replacements/numberdeclensions.json";
 
     public NumberTokenNormalizer() throws NormalizationException {
         this(Locale.getDefault());

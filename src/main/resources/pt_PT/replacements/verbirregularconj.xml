@@ -1907,7 +1907,8 @@
   <replacement target="reviste" tag="verb|aux">rever</replacement>
   <replacement target="revistes" tag="verb|aux">rever</replacement>
   <replacement target="revist[ao]s?" tag="verb|aux">rever</replacement>
-  <replacement target="reviu" tag="verb|aux">rever</replacement>  <!-- rir irregular -->
+  <replacement target="reviu" tag="verb|aux">rever</replacement>
+  <!-- rir irregular -->
   <replacement target="ri" tag="verb|aux">rir</replacement>
   <replacement target="ria" tag="verb|aux">rir</replacement>
   <replacement target="riais" tag="verb|aux">rir</replacement>

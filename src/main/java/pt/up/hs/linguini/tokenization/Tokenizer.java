@@ -24,11 +24,11 @@ import java.util.stream.Collectors;
  */
 public class Tokenizer implements Step<String, List<Token>> {
     private static final String ABBREV_FILE_PATH_FORMAT =
-            "/%s/replacements/abbreviations.xml";
+            "/%s/replacements/abbreviations.json";
     private static final String CONTRACTIONS_FILE_PATH_FORMAT =
-            "/%s/replacements/contractions.xml";
+            "/%s/replacements/contractions.json";
     private static final String CLITICS_FILE_PATH_FORMAT =
-            "/%s/replacements/clitics.xml";
+            "/%s/replacements/clitics.json";
 
     private boolean expandTokens = false;
 

@@ -130,9 +130,6 @@ public class TestIdeaDensityAnalysis {
             Assertions.fail("Error thrown during test", e);
             return;
         }
-
-        System.out.println(idd);
-
         Assertions.assertEquals("0.300",
                 String.format(Locale.US, "%.3f", idd));
     }
@@ -147,8 +144,6 @@ public class TestIdeaDensityAnalysis {
             Assertions.fail("Error thrown during test", e);
             return;
         }
-
-        System.out.println(idd);
 
         Assertions.assertEquals("0.286",
                 String.format(Locale.US, "%.3f", idd));
@@ -165,8 +160,6 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        System.out.println(idd);
-
         Assertions.assertEquals("0.170",
                 String.format(Locale.US, "%.3f", idd));
     }
@@ -181,8 +174,6 @@ public class TestIdeaDensityAnalysis {
             Assertions.fail("Error thrown during test", e);
             return;
         }
-
-        System.out.println(idd);
 
         Assertions.assertEquals("0.382",
                 String.format(Locale.US, "%.3f", idd));
@@ -200,8 +191,6 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        System.out.println(idd);
-
         Assertions.assertEquals("0.468",
                 String.format(Locale.US, "%.3f", idd));
     }
@@ -217,8 +206,6 @@ public class TestIdeaDensityAnalysis {
             Assertions.fail("Error thrown during test", e);
             return;
         }
-
-        System.out.println(idd);
 
         Assertions.assertEquals("0.430",
                 String.format(Locale.US, "%.3f", idd));

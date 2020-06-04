@@ -36,17 +36,17 @@ public class Lemmatizer implements Step<AnnotatedToken<String>, AnnotatedToken<S
     private static final int VERB = 128;               // Binary 10000000
     private static final int ALL = 255;                // Binary 11111111
 
-    private static InMemoryCache<LemmaCacheKey, String> cache =
+    private static final InMemoryCache<LemmaCacheKey, String> cache =
             new InMemoryCache<>(86400, 3600, 20);
 
-    private Locale locale;
+    private final Locale locale;
+
+    private final boolean breakOnHyphen;
+    private final boolean breakOnUnderscore;
 
     private int flags = 0;                            // Binary 000000000
 
-    private boolean breakOnHyphen;
-    private boolean breakOnUnderscore;
-
-    private LowercaseTokenTransformer lowercaseTokenNormalizer;
+    private LowercaseTokenTransformer<Token> lowercaseTokenNormalizer;
     private AdverbTokenNormalizer adverbNormalizer;
     private AugmentativeTokenNormalizer augmentativeNormalizer;
     private DiminutiveTokenNormalizer diminutiveNormalizer;

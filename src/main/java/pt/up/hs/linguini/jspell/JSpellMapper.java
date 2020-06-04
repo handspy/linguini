@@ -15,6 +15,7 @@ public class JSpellMapper {
 
     public static Emotion mapEmotion(String global, String intermediate, String specific) {
         return new Emotion(
+                null,
                 mapGlobalEmotion(global),
                 mapIntermediateEmotion(intermediate),
                 mapSpecificEmotion(specific)

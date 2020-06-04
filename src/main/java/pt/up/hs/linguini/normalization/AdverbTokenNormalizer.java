@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public class AdverbTokenNormalizer extends DeclensionTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/adverbdeclensions.xml";
+            "/%s/replacements/adverbdeclensions.json";
 
     public AdverbTokenNormalizer() throws NormalizationException {
         this(Locale.getDefault());

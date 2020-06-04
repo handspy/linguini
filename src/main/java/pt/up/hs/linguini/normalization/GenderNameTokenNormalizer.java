@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class GenderNameTokenNormalizer extends ReplacementTokenNormalizer {
     private static final String FILE_PATH_FORMAT =
-            "/%s/replacements/gendernames.xml";
+            "/%s/replacements/gendernames.json";
 
     private Pattern[] targets;
     private Pattern[] tags;

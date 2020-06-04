@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class Lexicon {
 
-    private HashMap<String, HashSet<String>> lexicon =
+    private final HashMap<String, HashSet<String>> lexicon =
             new HashMap<>();
 
     private Lexicon() {

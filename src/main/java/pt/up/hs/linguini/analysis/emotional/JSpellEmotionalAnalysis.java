@@ -1,6 +1,8 @@
 package pt.up.hs.linguini.analysis.emotional;
 
 import pt.up.hs.linguini.analysis.Analysis;
+import pt.up.hs.linguini.dictionaries.exceptions.DictionaryException;
+import pt.up.hs.linguini.emotaix.Emotaix;
 import pt.up.hs.linguini.jspell.JSpellInfo;
 import pt.up.hs.linguini.jspell.JSpellLex;
 import pt.up.hs.linguini.models.AnnotatedToken;
@@ -17,7 +19,7 @@ import java.util.Locale;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class JSpellEmotionalAnalysis
-        implements Analysis<List<AnnotatedToken<JSpellInfo>>, List<AnnotatedToken<Emotion>>> {
+        implements Analysis<List<Token>, List<AnnotatedToken<Emotion>>> {
 
     private Locale locale;
 
@@ -31,23 +33,22 @@ public class JSpellEmotionalAnalysis
 
     @Override
     public List<AnnotatedToken<Emotion>> execute(
-            List<AnnotatedToken<JSpellInfo>> jSpellAnnotatedTokens) {
+            List<Token> tokens) throws DictionaryException {
 
-        List<AnnotatedToken<Emotion>> emotions = new ArrayList<>();
+        Emotaix emotaix = new Emotaix(locale);
 
-        for (AnnotatedToken<JSpellInfo> jSpellAnnotatedToken: jSpellAnnotatedTokens) {
-            Token token = jSpellAnnotatedToken.getToken();
-            JSpellInfo info = jSpellAnnotatedToken.getInfo();
-            if (info != null && info.getRelated() != null &&
-                    !info.getRelated().isEmpty()) {
-                JSpellLex selectedLex = info.getRelated().get(0);
-                Emotion emotion = selectedLex.getEmotion();
+        List<AnnotatedToken<Emotion>> annotatedTokens = new ArrayList<>();
+        for (Token token: tokens) {
+            List<Emotion> emotions = emotaix.retrieveEmotions(token.word());
+
+            if (emotions != null) {
+                Emotion emotion = emotions.get(0);
                 if (emotion != null) {
-                    emotions.add(new AnnotatedToken<>(token, emotion));
+                    annotatedTokens.add(new AnnotatedToken<>(token, emotion));
                 }
             }
         }
 
-        return emotions;
+        return annotatedTokens;
     }
 }

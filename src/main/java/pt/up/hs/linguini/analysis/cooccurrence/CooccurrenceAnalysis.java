@@ -19,9 +19,9 @@ public class CooccurrenceAnalysis<T extends HasWord>
         implements Step<List<List<T>>, List<Cooccurrence>> {
     private static final double DEFAULT_COOCCURRENCE_THRESHOLD = 2.0;
 
-    private double threshold;
+    private final double threshold;
 
-    private SentenceCooccurrenceAnalysis<T> step;
+    private final SentenceCooccurrenceAnalysis<T> step;
 
     public CooccurrenceAnalysis() {
         this(DEFAULT_COOCCURRENCE_THRESHOLD);

@@ -208,6 +208,7 @@
         <!-- ============================================== -->
         <!-- =========== DEPENDENCIES VERSIONS ============ -->
         <!-- ============================================== -->
+        <jackson-core.version>2.11.0</jackson-core.version>
         <guava.version>28.1-jre</guava.version>
         <junit.jupiter.version>5.4.0</junit.jupiter.version>
         <mockito.version>3.1.0</mockito.version>
@@ -241,6 +242,18 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <!-- Jackson JSON -->
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-core.version}</version>
+        </dependency>
+        <dependency>
+            <!-- Jackson JSON -->
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-core.version}</version>
+        </dependency>
         <dependency>
             <!-- Guava -->
             <groupId>com.google.guava</groupId>
@@ -336,11 +349,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <systemPropertyVariables>
-                        <ujspellPath>${env.UJSPELL_PATH}</ujspellPath>
-                    </systemPropertyVariables>
-                </configuration>
             </plugin>
             <plugin>
                 <!-- Site -->

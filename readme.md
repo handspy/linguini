@@ -22,7 +22,7 @@ The project by default comes with a useful series of features:
 
 - a simple text analysis providing an overall summary of stats from the text
 - a lexical diversity analysis, which can use either MTLD or HD-D
-- an emotional analysis based on an annotated dictionary for [JSpell](https://natura.di.uminho.pt/wiki/doku.php?id=ferramentas:jspell)
+- an emotional analysis based on an annotated dictionary
 
 ## Documentation
 
@@ -57,7 +57,6 @@ It is a Java library, meant to be included as a dependency on any project which 
 
 The project has been tested on the following Java versions:
 * JDK 8
-* [JSpell](https://natura.di.uminho.pt/wiki/doku.php?id=ferramentas:jspell)
 
 All other dependencies are handled through Maven, and noted in the included POM file.
 
