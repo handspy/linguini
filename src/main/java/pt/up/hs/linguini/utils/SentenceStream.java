@@ -17,9 +17,9 @@ import java.util.stream.StreamSupport;
 public class SentenceStream extends Spliterators.AbstractSpliterator<String>
         implements Consumer<CharSequence> {
 
-    private Spliterator<? extends CharSequence> source;
+    private final Spliterator<? extends CharSequence> source;
     private CharBuffer buffer;
-    private BreakIterator iterator;
+    private final BreakIterator iterator;
 
     public SentenceStream(Spliterator<? extends CharSequence> source) {
         this(Locale.ENGLISH, source);

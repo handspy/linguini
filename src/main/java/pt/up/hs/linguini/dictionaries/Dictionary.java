@@ -19,7 +19,7 @@ public class Dictionary {
 
     private Map<String, HashSet<DictionaryEntry>> dictionary;
 
-    private Locale locale;
+    private final Locale locale;
 
     public Dictionary(Locale locale) throws DictionaryException {
         this.locale = locale;

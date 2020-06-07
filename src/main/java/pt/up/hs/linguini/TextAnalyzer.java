@@ -1,7 +1,7 @@
 package pt.up.hs.linguini;
 
-import pt.up.hs.linguini.analysis.cooccurrence.Cooccurrence;
-import pt.up.hs.linguini.analysis.cooccurrence.CooccurrenceAnalysis;
+import pt.up.hs.linguini.analysis.cooccurrence.CoOccurrence;
+import pt.up.hs.linguini.analysis.cooccurrence.CoOccurrenceAnalysis;
 import pt.up.hs.linguini.analysis.emotional.EmotaixAnalysis;
 import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.analysis.ideadensity.IdeaDensityAnalysis;
@@ -203,32 +203,7 @@ public class TextAnalyzer {
             Locale locale, String text, boolean lemmatize
     ) throws LinguiniException {
 
-        Step<String, List<Token>> preprocessPipeline =
-                // 1. tokenize text
-                new Tokenizer(locale, true)
-                        // 2. remove whitespaces
-                        .pipe(new WhitespaceTokenFilter<>());
-
-        if (lemmatize) {
-            preprocessPipeline = preprocessPipeline
-                    // 3. PoS Tagging
-                    .pipe(new PoSTagger(locale))
-                    // 4. remove punctuation
-                    .pipe(new PunctuationTokenFilter<>())
-                    // 5. remove stopwords
-                    .pipe(new StopTokenFilter<>(locale))
-                    // 6. lemmatize text
-                    .pipe(new BatchStep<>(new Lemmatizer(locale)))
-                    .pipe(ats -> ats.parallelStream()
-                            .map(AnnotatedToken::getToken)
-                            .collect(Collectors.toList()));
-        } else {
-            preprocessPipeline
-                    // 3. remove punctuation
-                    .pipe(new PunctuationTokenFilter<>())
-                    // 4. remove stopwords
-                    .pipe(new StopTokenFilter<>(locale));
-        }
+        Step<String, List<Token>> preprocessPipeline = preprocessingPipeline(locale, lemmatize);
 
         return preprocessPipeline
                 .pipe(new EmotaixAnalysis(locale))
@@ -255,36 +230,7 @@ public class TextAnalyzer {
             boolean lemmatize
     ) throws LinguiniException {
 
-        Step<String, List<Token>> preprocessPipeline =
-                // 1. tokenize text
-                new Tokenizer(locale, true)
-                        // 2. remove whitespaces
-                        .pipe(new WhitespaceTokenFilter<>());
-
-        if (lemmatize) {
-            preprocessPipeline = preprocessPipeline
-                    // 3. PoS Tagging
-                    .pipe(new PoSTagger(locale))
-                    // 4. remove punctuation
-                    .pipe(new PunctuationTokenFilter<>())
-                    // 5. normalize
-                    .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
-                    // 6. remove stopwords
-                    .pipe(new StopTokenFilter<>(locale))
-                    // 7. lemmatize text
-                    .pipe(new BatchStep<>(new Lemmatizer(locale)))
-                    .pipe(ats -> ats.parallelStream()
-                            .map(AnnotatedToken::getToken)
-                            .collect(Collectors.toList()));
-        } else {
-            preprocessPipeline = preprocessPipeline
-                    // 3. remove punctuation
-                    .pipe(new PunctuationTokenFilter<>())
-                    // 4. normalize
-                    .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
-                    // 5. remove stopwords
-                    .pipe(new StopTokenFilter<>(locale));
-        }
+        Step<String, List<Token>> preprocessPipeline = preprocessingPipeline(locale, lemmatize);
 
         Step<String, Double> pipeline;
         switch (algorithm) {
@@ -319,29 +265,29 @@ public class TextAnalyzer {
      * @return List of word-word co-occurrences.
      * @throws LinguiniException if an error occurs during analysis.
      */
-    public static List<Cooccurrence> analyzeCoOccurrence(
+    public static List<CoOccurrence> analyzeCoOccurrence(
             Locale locale, String text, Integer windowSize, Double threshold)
             throws LinguiniException {
 
-        CooccurrenceAnalysis<AnnotatedToken<String>> coOccurrenceAnalysis;
+        CoOccurrenceAnalysis<AnnotatedToken<String>> coOccurrenceAnalysis;
         if (threshold != null) {
             if (windowSize != null) {
-                coOccurrenceAnalysis = new CooccurrenceAnalysis<>(
+                coOccurrenceAnalysis = new CoOccurrenceAnalysis<>(
                         threshold, windowSize);
             } else {
-                coOccurrenceAnalysis = new CooccurrenceAnalysis<>(threshold);
+                coOccurrenceAnalysis = new CoOccurrenceAnalysis<>(threshold);
             }
         } else {
-            coOccurrenceAnalysis = new CooccurrenceAnalysis<>();
+            coOccurrenceAnalysis = new CoOccurrenceAnalysis<>();
         }
 
         return new SentenceSplitter(locale)
                 .pipe(new BatchStep<>(new Tokenizer(locale, true)))
                 .pipe(new BatchStep<>(new WhitespaceTokenFilter<>()))
-                .pipe(new BatchStep<>(new PunctuationTokenFilter<>()))
-                .pipe(new BatchStep<>(new StopTokenFilter<>(locale)))
                 .pipe(new BatchStep<>(new PoSTagger(locale)))
                 .pipe(new BatchStep<>(new BatchStep<>(new Lemmatizer(locale))))
+                .pipe(new BatchStep<>(new StopTokenFilter<>(locale)))
+                .pipe(new BatchStep<>(new PunctuationTokenFilter<>()))
                 .pipe(coOccurrenceAnalysis)
                 .execute(text);
     }
@@ -382,5 +328,37 @@ public class TextAnalyzer {
                 .sum();
 
         return (double) pc / wc;
+    }
+
+    private static Step<String, List<Token>> preprocessingPipeline(
+            Locale locale, boolean lemmatize
+    ) throws LinguiniException {
+
+        Step<String, List<Token>> preprocessPipeline =
+                // 1. tokenize text
+                new Tokenizer(locale, true)
+                // 2. remove whitespaces
+                .pipe(new WhitespaceTokenFilter<>());
+
+        if (lemmatize) {
+            preprocessPipeline = preprocessPipeline
+                    // 3. PoS tagging
+                    .pipe(new PoSTagger(locale))
+                    // 4. lemmatize text
+                    .pipe(new BatchStep<>(new Lemmatizer(locale)))
+                    .pipe(ats -> ats.parallelStream()
+                            .map(AnnotatedToken::getToken)
+                            .collect(Collectors.toList()));
+        }
+
+        preprocessPipeline = preprocessPipeline
+                // 5. remove punctuation
+                .pipe(new PunctuationTokenFilter<>())
+                // 6. normalize
+                .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
+                // 7. remove stopwords
+                .pipe(new StopTokenFilter<>(locale));
+
+        return preprocessPipeline;
     }
 }

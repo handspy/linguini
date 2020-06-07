@@ -8,8 +8,8 @@ import java.util.Objects;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class Token implements HasWord {
-    private int start;
-    private String original;
+    private final int start;
+    private final String original;
 
     private String word;
 
@@ -43,6 +43,11 @@ public class Token implements HasWord {
     @Override
     public void word(String word) {
         this.word = word;
+    }
+
+    @Override
+    public String original() {
+        return original;
     }
 
     @Override

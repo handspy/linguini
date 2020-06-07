@@ -15,30 +15,30 @@ import java.util.Map;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class CooccurrenceAnalysis<T extends HasWord>
-        implements Step<List<List<T>>, List<Cooccurrence>> {
+public class CoOccurrenceAnalysis<T extends HasWord>
+        implements Step<List<List<T>>, List<CoOccurrence>> {
     private static final double DEFAULT_COOCCURRENCE_THRESHOLD = 2.0;
 
     private final double threshold;
 
     private final SentenceCooccurrenceAnalysis<T> step;
 
-    public CooccurrenceAnalysis() {
+    public CoOccurrenceAnalysis() {
         this(DEFAULT_COOCCURRENCE_THRESHOLD);
     }
 
-    public CooccurrenceAnalysis(double threshold) {
+    public CoOccurrenceAnalysis(double threshold) {
         this.threshold = threshold;
         this.step = new SentenceCooccurrenceAnalysis<>();
     }
 
-    public CooccurrenceAnalysis(double threshold, int windowSize) {
+    public CoOccurrenceAnalysis(double threshold, int windowSize) {
         this.threshold = threshold;
         this.step = new SentenceCooccurrenceAnalysis<>(windowSize);
     }
 
     @Override
-    public List<Cooccurrence> execute(List<List<T>> sentences) throws LinguiniException {
+    public List<CoOccurrence> execute(List<List<T>> sentences) throws LinguiniException {
 
         final Map<UnorderedPair<String>, Double> cooccurrenceValues = new HashMap<>();
 
@@ -51,14 +51,14 @@ public class CooccurrenceAnalysis<T extends HasWord>
             }
         }
 
-        List<Cooccurrence> coocurrences = new ArrayList<>();
+        List<CoOccurrence> coocurrences = new ArrayList<>();
         for (Map.Entry<UnorderedPair<String>, Double> entry :
                 cooccurrenceValues.entrySet()) {
 
             if (entry.getValue() < threshold)
                 continue;
 
-            Cooccurrence c = new Cooccurrence(entry.getKey().getFirst(),
+            CoOccurrence c = new CoOccurrence(entry.getKey().getFirst(),
                     entry.getKey().getSecond(),
                     entry.getValue());
 

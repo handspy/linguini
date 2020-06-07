@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
 public class StopTokenFilter<T extends HasWord> implements TokenFilter<T> {
     private static final String STOPWORDS_PATH = "/%s/stopwords/stopwords.txt";
 
-    private Locale locale;
+    private final Locale locale;
 
-    private Collection<String> stopwords;
+    private final Collection<String> stopwords;
 
     public StopTokenFilter(Locale locale) throws FilteringException {
         this.locale = locale;

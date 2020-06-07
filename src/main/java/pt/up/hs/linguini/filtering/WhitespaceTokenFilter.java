@@ -12,8 +12,7 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class WhitespaceTokenFilter<T extends HasWord>
-        implements TokenFilter<T> {
+public class WhitespaceTokenFilter<T extends HasWord> implements TokenFilter<T> {
 
     @Override
     public List<T> execute(List<T> tokens) {

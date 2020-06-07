@@ -3,16 +3,19 @@ package pt.up.hs.linguini.tokenization;
 import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.process.PTBTokenizer;
 import edu.stanford.nlp.process.WordTokenFactory;
-import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.models.Replacement;
 import pt.up.hs.linguini.models.Token;
+import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.resources.ResourceLoader;
 import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
 import pt.up.hs.linguini.tokenization.exceptions.TokenizationException;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.StringReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -30,15 +33,15 @@ public class Tokenizer implements Step<String, List<Token>> {
     private static final String CLITICS_FILE_PATH_FORMAT =
             "/%s/replacements/clitics.json";
 
-    private boolean expandTokens = false;
+    private final boolean expandTokens;
 
     private Pattern abbreviationTarget;
     private Pattern[] contractionTargets;
     private Pattern[] cliticTargets;
 
-    private Replacement[] abbreviations;
-    private Replacement[] contractions;
-    private Replacement[] clitics;
+    private final Replacement[] abbreviations;
+    private final Replacement[] contractions;
+    private final Replacement[] clitics;
 
     public Tokenizer() throws TokenizationException {
         this(Locale.getDefault(), false);
@@ -113,6 +116,20 @@ public class Tokenizer implements Step<String, List<Token>> {
         for (int i = 0; i < tokens.size(); i++) {
             Token token = tokens.get(i);
 
+            Matcher abbrevMatcher = abbreviationTarget.matcher(token.getWord().toLowerCase());
+
+            // check for overlooked cases
+            if (StringUtils.hasPunctuation(token.getWord())) {
+                if (
+                        !token.getWord().matches(".*\\d\\.\\d.*") &&
+                                !token.getWord().matches(".*\\d,\\d.*") &&
+                                !token.getWord().matches(".*\\d:\\d.*") &&
+                                !token.getWord().matches(".*\\d/\\d.*") &&
+                                !abbrevMatcher.matches()) {
+                    token.setWord(StringUtils.separatePunctuation(token.getWord()));
+                }
+            }
+
             if (expandTokens) {
                 for (int j = 0; j < contractions.length; j++) {
                     if (contractionTargets[j].matcher(
@@ -130,73 +147,18 @@ public class Tokenizer implements Step<String, List<Token>> {
                 }
 
                 for (int j = 0; j < clitics.length; j++) {
-                    if (cliticTargets[j].matcher(token.getWord().toLowerCase()).matches()) {
-                        token.setWord(
-                                token.getWord().substring(
-                                        0,
-                                        token.getWord().length() - clitics[j].getTarget().length()
-                                ) + clitics[j].getReplacement()
-                        );
-                        break;
+                    String[] parts = token.getWord().split("\\s");
+                    for (int k = 0; k < parts.length; k++) {
+                        String part = parts[k];
+                        if (cliticTargets[j].matcher(part.toLowerCase()).matches()) {
+                            parts[k] = part.substring(
+                                    0,
+                                    part.length() - clitics[j].getTarget().length()
+                            ) + clitics[j].getReplacement();
+                        }
                     }
+                    token.setWord(String.join(" ", parts));
                 }
-            }
-
-            Matcher abbrevMatcher = abbreviationTarget.matcher(token.getWord().toLowerCase());
-
-            // check for overlooked cases
-            if (token.getWord().contains(".") && !token.getWord().matches(".*\\d\\.\\d.*")
-                    && !abbrevMatcher.matches()) {
-                token.setWord(token.getWord().replace(".", " . "));
-            }
-            if (token.getWord().contains(",") && !token.getWord().matches(".*\\d,\\d.*")) {
-                token.setWord(token.getWord().replace(",", " , "));
-            }
-            if (token.getWord().contains(":") && !token.getWord().matches(".*\\d:\\d.*")) {
-                token.setWord(token.getWord().replace(":", " : "));
-            }
-            if (token.getWord().contains("/") && !token.getWord().matches(".*\\d/\\d.*")
-                    && !abbrevMatcher.matches()) {
-                token.setWord(token.getWord().replace("/", " / "));
-            }
-            if (token.getWord().contains("'")) {
-                token.setWord(token.getWord().replace("'", " ' "));
-            }
-            if (token.getWord().contains("\"")) {
-                token.setWord(token.getWord().replace("\"", " \" "));
-            }
-            if (token.getWord().contains("«")) {
-                token.setWord(token.getWord().replace("«", " « "));
-            }
-            if (token.getWord().contains("»")) {
-                token.setWord(token.getWord().replace("»", " » "));
-            }
-            if (token.getWord().contains(";")) {
-                token.setWord(token.getWord().replace(";", " ; "));
-            }
-            if (token.getWord().contains("!")) {
-                token.setWord(token.getWord().replace("!", " ! "));
-            }
-            if (token.getWord().contains("?")) {
-                token.setWord(token.getWord().replace("?", " ? "));
-            }
-            if (token.getWord().contains("(")) {
-                token.setWord(token.getWord().replace("(", " ( "));
-            }
-            if (token.getWord().contains(")")) {
-                token.setWord(token.getWord().replace(")", " ) "));
-            }
-            if (token.getWord().contains("[")) {
-                token.setWord(token.getWord().replace("[", " [ "));
-            }
-            if (token.getWord().contains("]")) {
-                token.setWord(token.getWord().replace("]", " ] "));
-            }
-            if (token.getWord().contains("{")) {
-                token.setWord(token.getWord().replace("{", " { "));
-            }
-            if (token.getWord().contains("}")) {
-                token.setWord(token.getWord().replace("}", " } "));
             }
         }
 

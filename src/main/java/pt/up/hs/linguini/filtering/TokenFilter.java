@@ -11,6 +11,5 @@ import java.util.List;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public interface TokenFilter<T extends HasWord>
-        extends Step<List<T>, List<T>> {
+public interface TokenFilter<T extends HasWord> extends Step<List<T>, List<T>> {
 }

@@ -27,11 +27,11 @@ public class Config {
     private static final String FUNCTIONAL_WORD_TAGS_PROP = "functionalWordTags";
     private static final String CONTENT_WORD_TAGS_PROP = "contentWordTags";
 
-    private static Map<Locale, Config> configs = new HashMap<>();
+    private static final Map<Locale, Config> configs = new HashMap<>();
 
-    private Locale locale;
+    private final Locale locale;
 
-    private Properties properties;
+    private final Properties properties;
 
     private Config(Locale locale, Properties properties) {
         this.locale = locale;

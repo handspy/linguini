@@ -20,9 +20,9 @@ public class PoSTagger implements Step<List<Token>, List<AnnotatedToken<String>>
     private static final String FILE_PATH_FORMAT =
             "/%s/models/%s.tagger";
 
-    private Locale locale;
+    private final Locale locale;
 
-    private MaxentTagger maxentTagger;
+    private final MaxentTagger maxentTagger;
 
     public PoSTagger(Locale locale) {
         this.locale = locale;
@@ -63,10 +63,7 @@ public class PoSTagger implements Step<List<Token>, List<AnnotatedToken<String>>
         List<AnnotatedToken<String>> annotatedTokens = new ArrayList<>();
         for (int i = 0; i < tokens.size(); i++) {
             annotatedTokens.add(
-                    new AnnotatedToken<>(
-                            tokens.get(i),
-                            labels.get(i).tag()
-                    )
+                    new AnnotatedToken<>(tokens.get(i), labels.get(i).tag())
             );
         }
 

@@ -7,17 +7,17 @@ import java.util.Objects;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class Cooccurrence {
+public class CoOccurrence {
 
     private String firstWord;
     private String secondWord;
 
     private double value;
 
-    public Cooccurrence() {
+    public CoOccurrence() {
     }
 
-    public Cooccurrence(String firstWord, String secondWord, double value) {
+    public CoOccurrence(String firstWord, String secondWord, double value) {
         this.firstWord = firstWord;
         this.secondWord = secondWord;
         this.value = value;
@@ -50,8 +50,8 @@ public class Cooccurrence {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cooccurrence)) return false;
-        Cooccurrence that = (Cooccurrence) o;
+        if (!(o instanceof CoOccurrence)) return false;
+        CoOccurrence that = (CoOccurrence) o;
         return Double.compare(that.value, value) == 0 &&
                 Objects.equals(firstWord, that.firstWord) &&
                 Objects.equals(secondWord, that.secondWord);

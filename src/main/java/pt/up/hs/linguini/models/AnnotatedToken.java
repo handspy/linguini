@@ -12,6 +12,11 @@ public class AnnotatedToken<T> implements HasWord {
     private T info;
 
     public AnnotatedToken() {
+        this(null, null);
+    }
+
+    public AnnotatedToken(Token token) {
+        this(token, null);
     }
 
     public AnnotatedToken(Token token, T info) {
@@ -46,5 +51,13 @@ public class AnnotatedToken<T> implements HasWord {
     @Override
     public void word(String word) {
         token.word(word);
+    }
+
+    @Override
+    public String original() {
+        if (token == null) {
+            return null;
+        }
+        return token.getOriginal();
     }
 }

@@ -3,7 +3,7 @@ package pt.up.hs.linguini.test.unit.analysis;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pt.up.hs.linguini.TextAnalyzer;
-import pt.up.hs.linguini.analysis.cooccurrence.Cooccurrence;
+import pt.up.hs.linguini.analysis.cooccurrence.CoOccurrence;
 import pt.up.hs.linguini.exceptions.LinguiniException;
 import pt.up.hs.linguini.utils.UnorderedPair;
 
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class TestCooccurrenceAnalysis {
+public class TestCoOccurrenceAnalysis {
     private static final String PARAGRAPHS =
             "Um porta-voz de passageiros que chegaram à capital da Guiné-Bis" +
             "sau nos últimos dias, providentes de Lisboa, anunciou que vão b" +
@@ -47,9 +47,9 @@ public class TestCooccurrenceAnalysis {
     @Test
     public void testSentenceEmotions() {
 
-        List<Cooccurrence> cooccurrences;
+        List<CoOccurrence> coOccurrences;
         try {
-            cooccurrences = TextAnalyzer.analyzeCoOccurrence(
+            coOccurrences = TextAnalyzer.analyzeCoOccurrence(
                     new Locale("pt", "PT"),
                     PARAGRAPHS,
                     5,
@@ -69,7 +69,7 @@ public class TestCooccurrenceAnalysis {
                         new UnorderedPair<>("mala", "reter"),
                         new UnorderedPair<>("olívio", "barreto"),
                         new UnorderedPair<>("porta-voz", "passageiro"))),
-                cooccurrences.parallelStream()
+                coOccurrences.parallelStream()
                         .map(cooccurrence -> new UnorderedPair<>(cooccurrence.getFirstWord(), cooccurrence.getSecondWord()))
                         .collect(Collectors.toSet()));
     }

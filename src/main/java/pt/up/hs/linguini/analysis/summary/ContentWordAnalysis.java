@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ContentWordAnalysis
         implements Analysis<List<AnnotatedToken<String>>, List<AnnotatedToken<String>>> {
 
-    private Locale locale;
+    private final Locale locale;
     private final String contentWordTags;
 
     public ContentWordAnalysis() throws AnalysisException {

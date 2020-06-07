@@ -188,7 +188,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.296",
+        Assertions.assertEquals("0.319",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -204,8 +204,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.483",
+        Assertions.assertEquals("0.496",
                 String.format(Locale.US, "%.3f", idd));
     }
-
 }

@@ -133,6 +133,10 @@
       "replacement": "de ali"
     },
     {
+      "target": "daqui",
+      "replacement": "de aqui"
+    },
+    {
       "target": "dantes",
       "replacement": "de antes"
     },

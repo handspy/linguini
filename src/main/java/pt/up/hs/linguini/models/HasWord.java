@@ -10,4 +10,6 @@ public interface HasWord {
     String word();
 
     void word(String word);
+
+    String original();
 }

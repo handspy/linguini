@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 public class SentenceSplitter implements Step<String, List<String>> {
 
-    private Locale locale;
+    private final Locale locale;
 
     public SentenceSplitter() {
         this(Locale.getDefault());

@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 public class FunctionalWordAnalysis
         implements Analysis<List<AnnotatedToken<String>>, List<AnnotatedToken<String>>> {
 
-    private Locale locale;
-    private String functionalWordTags;
+    private final Locale locale;
+    private final String functionalWordTags;
 
     public FunctionalWordAnalysis() throws AnalysisException {
         this(Locale.getDefault());
