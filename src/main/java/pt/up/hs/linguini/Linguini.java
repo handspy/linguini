@@ -168,14 +168,51 @@ public class Linguini {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
-        List<AnnotatedToken<String>> nonLemmatizedText = new PunctuationTokenFilter<AnnotatedToken<String>>()
+        List<AnnotatedToken<String>> nonLemmatizedWords = new PunctuationTokenFilter<AnnotatedToken<String>>()
                 .pipe(new BatchStep<>(new LowercaseTokenTransformer<>()))
                 .execute(posTaggedTokens);
+        List<AnnotatedToken<String>> nonLemmatizedContentWords = new ContentWordAnalysis(locale)
+                .execute(nonLemmatizedWords);
+        List<AnnotatedToken<String>> nonLemmatizedFunctionalWords = new FunctionalWordAnalysis(locale)
+                .execute(nonLemmatizedWords);
 
         // structure
         report.setCharacterCount(text.length());
         report.setNonBlankCharacterCount(text.replaceAll("\\s+", "").length());
-        report.setWordCount(nonLemmatizedText.size());
+
+        report.setWordCount(nonLemmatizedWords.size());
+        report.setDistinctWordCount((int) nonLemmatizedWords.parallelStream()
+                .map(AnnotatedToken::word)
+                .distinct()
+                .count());
+        report.setContentWordCount(nonLemmatizedContentWords.size());
+        report.setDistinctContentWordCount((int) nonLemmatizedContentWords.parallelStream()
+                .map(AnnotatedToken::word)
+                .distinct()
+                .count());
+        report.setFunctionalWordCount(nonLemmatizedFunctionalWords.size());
+        report.setDistinctFunctionalWordCount((int) nonLemmatizedFunctionalWords.parallelStream()
+                .map(AnnotatedToken::word)
+                .distinct()
+                .count());
+        report.setDistinctLemmaCount((int) lemmatizedText.parallelStream()
+                .map(AnnotatedToken::word)
+                .distinct()
+                .count());
+
+        report.setWordAvgLength(nonLemmatizedWords.parallelStream()
+                .mapToInt(a -> a.word().length())
+                .average()
+                .orElse(-1));
+        report.setFunctionalWordAvgLength(nonLemmatizedFunctionalWords.parallelStream()
+                .mapToInt(a -> a.word().length())
+                .average()
+                .orElse(-1));
+        report.setContentWordAvgLength(nonLemmatizedContentWords.parallelStream()
+                .mapToInt(a -> a.word().length())
+                .average()
+                .orElse(-1));
+
         report.setSentenceCount(lemmatizedSentencesLowercaseNoPunctuation.size());
 
         // grammatical class
@@ -186,7 +223,7 @@ public class Linguini {
                 .getGrammaticalConversions();
         report.setWordsByCategory(
                 new TagGroupingAnalysis()
-                        .execute(nonLemmatizedText)
+                        .execute(nonLemmatizedWords)
                         .entrySet()
                         .stream()
                         .collect(Collectors.toMap(
@@ -196,14 +233,12 @@ public class Linguini {
 
         // frequencies
         report.setContentWordFrequency(
-                new ContentWordAnalysis(locale)
-                        .pipe(new WordFrequencyAnalysis<>())
-                        .execute(nonLemmatizedText)
+                new WordFrequencyAnalysis<AnnotatedToken<String>>()
+                        .execute(nonLemmatizedContentWords)
         );
         report.setFunctionalWordFrequency(
-                new FunctionalWordAnalysis(locale)
-                        .pipe(new WordFrequencyAnalysis<>())
-                        .execute(nonLemmatizedText)
+                new WordFrequencyAnalysis<AnnotatedToken<String>>()
+                        .execute(nonLemmatizedFunctionalWords)
         );
         report.setLemmaFrequency(
                 new WordFrequencyAnalysis<AnnotatedToken<String>>()

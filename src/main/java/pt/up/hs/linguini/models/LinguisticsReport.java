@@ -11,7 +11,19 @@ public class LinguisticsReport {
     // structural composition
     private int characterCount;
     private int nonBlankCharacterCount;
+
     private int wordCount;
+    private int distinctWordCount;
+    private int functionalWordCount;
+    private int distinctFunctionalWordCount;
+    private int contentWordCount;
+    private int distinctContentWordCount;
+    private int distinctLemmaCount;
+
+    private double wordAvgLength;
+    private double functionalWordAvgLength;
+    private double contentWordAvgLength;
+
     private int sentenceCount;
 
     // morphological composition
@@ -61,6 +73,78 @@ public class LinguisticsReport {
 
     public void setWordCount(int wordCount) {
         this.wordCount = wordCount;
+    }
+
+    public int getDistinctWordCount() {
+        return distinctWordCount;
+    }
+
+    public void setDistinctWordCount(int distinctWordCount) {
+        this.distinctWordCount = distinctWordCount;
+    }
+
+    public int getFunctionalWordCount() {
+        return functionalWordCount;
+    }
+
+    public void setFunctionalWordCount(int functionalWordCount) {
+        this.functionalWordCount = functionalWordCount;
+    }
+
+    public int getDistinctFunctionalWordCount() {
+        return distinctFunctionalWordCount;
+    }
+
+    public void setDistinctFunctionalWordCount(int distinctFunctionalWordCount) {
+        this.distinctFunctionalWordCount = distinctFunctionalWordCount;
+    }
+
+    public int getContentWordCount() {
+        return contentWordCount;
+    }
+
+    public void setContentWordCount(int contentWordCount) {
+        this.contentWordCount = contentWordCount;
+    }
+
+    public int getDistinctContentWordCount() {
+        return distinctContentWordCount;
+    }
+
+    public void setDistinctContentWordCount(int distinctContentWordCount) {
+        this.distinctContentWordCount = distinctContentWordCount;
+    }
+
+    public int getDistinctLemmaCount() {
+        return distinctLemmaCount;
+    }
+
+    public void setDistinctLemmaCount(int distinctLemmaCount) {
+        this.distinctLemmaCount = distinctLemmaCount;
+    }
+
+    public double getWordAvgLength() {
+        return wordAvgLength;
+    }
+
+    public void setWordAvgLength(double wordAvgLength) {
+        this.wordAvgLength = wordAvgLength;
+    }
+
+    public double getFunctionalWordAvgLength() {
+        return functionalWordAvgLength;
+    }
+
+    public void setFunctionalWordAvgLength(double functionalWordAvgLength) {
+        this.functionalWordAvgLength = functionalWordAvgLength;
+    }
+
+    public double getContentWordAvgLength() {
+        return contentWordAvgLength;
+    }
+
+    public void setContentWordAvgLength(double contentWordAvgLength) {
+        this.contentWordAvgLength = contentWordAvgLength;
     }
 
     public int getSentenceCount() {

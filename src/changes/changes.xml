@@ -107,5 +107,10 @@
                 voc-D, base TTR, and HD-D fix.
             </action>
         </release>
+        <release version="2.0.0" date="2020-01-31" description="Performance optimizations, full report.">
+            <action dev="jcpaiva" type="update">
+                Performance optimizations, full report.
+            </action>
+        </release>
     </body>
 </document>
