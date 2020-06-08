@@ -1,16 +1,10 @@
 package pt.up.hs.linguini.emotaix;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import pt.up.hs.linguini.dictionaries.exceptions.DictionaryException;
-import pt.up.hs.linguini.exceptions.ConfigException;
 import pt.up.hs.linguini.models.Emotion;
 import pt.up.hs.linguini.resources.ResourceLoader;
 import pt.up.hs.linguini.resources.exceptions.ResourceLoadingException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -19,9 +13,9 @@ public class Emotaix {
     private static final String FILE_PATH_FORMAT =
             "/%s/emotions/emotaix.json";
 
-    private Map<String, List<Emotion>> dictionary = null;
+    private Map<String, List<Emotion>> dictionary;
 
-    private Locale locale;
+    private final Locale locale;
 
     public Emotaix(Locale locale) throws DictionaryException {
         this.locale = locale;

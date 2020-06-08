@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class BatchStep<I, O> implements Step<List<I>, List<O>> {
 
-    private Step<I, O> step;
+    private final Step<I, O> step;
 
     public BatchStep(Step<I, O> step) {
         this.step = step;

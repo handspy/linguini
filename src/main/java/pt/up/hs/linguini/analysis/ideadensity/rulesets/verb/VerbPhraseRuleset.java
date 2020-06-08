@@ -115,7 +115,7 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
                 .getChildrenWithDep("nsubj", relations, index);
         Subject subj = null;
         if (subjIndices.length == 0) {
-            if (info.containsKey("subj")) {
+            if (info.containsKey("subj") && info.get("subj") != null) {
                 Subject oldSubject = (Subject) info.get("subj");
 
                 subj = new Subject(

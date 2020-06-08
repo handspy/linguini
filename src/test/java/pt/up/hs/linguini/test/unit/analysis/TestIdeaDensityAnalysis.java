@@ -157,7 +157,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.426",
+        Assertions.assertEquals("0.419",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -172,7 +172,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.412",
+        Assertions.assertEquals("0.279",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -188,7 +188,7 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.319",
+        Assertions.assertEquals("0.347",
                 String.format(Locale.US, "%.3f", idd));
     }
 
@@ -199,12 +199,11 @@ public class TestIdeaDensityAnalysis {
         try {
             idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_2);
         } catch (LinguiniException e) {
-            e.printStackTrace();
             Assertions.fail("Error thrown during test", e);
             return;
         }
 
-        Assertions.assertEquals("0.496",
+        Assertions.assertEquals("0.548",
                 String.format(Locale.US, "%.3f", idd));
     }
 }

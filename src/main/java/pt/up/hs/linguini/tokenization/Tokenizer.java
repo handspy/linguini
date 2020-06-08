@@ -12,10 +12,7 @@ import pt.up.hs.linguini.tokenization.exceptions.TokenizationException;
 import pt.up.hs.linguini.utils.StringUtils;
 
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -35,6 +32,7 @@ public class Tokenizer implements Step<String, List<Token>> {
 
     private final boolean expandTokens;
 
+    private LinkedHashSet<String> abbreviationTargets;
     private Pattern abbreviationTarget;
     private Pattern[] contractionTargets;
     private Pattern[] cliticTargets;
@@ -85,10 +83,11 @@ public class Tokenizer implements Step<String, List<Token>> {
         Arrays.sort(clitics);
         Arrays.sort(abbreviations);
 
-        String abbreviationTargetsStr = Arrays.stream(abbreviations)
+        abbreviationTargets = Arrays.stream(abbreviations)
                 .map(Replacement::getTarget)
-                .collect(Collectors.joining("|"));
-        abbreviationTarget = Pattern.compile(abbreviationTargetsStr);
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+        abbreviationTarget = Pattern.compile(abbreviationTargets.parallelStream()
+                .collect(Collectors.joining("|")));
         contractionTargets = new Pattern[contractions.length];
         for (int i = 0; i < contractions.length; i++) {
             contractionTargets[i] = Pattern.compile(
@@ -112,6 +111,35 @@ public class Tokenizer implements Step<String, List<Token>> {
                 .parallelStream()
                 .map(word -> new Token(word.beginPosition(), word.word()))
                 .collect(Collectors.toList());
+
+        /*boolean repeat = true;
+        while (repeat) {
+            repeat = false;
+
+            List<Token> joinedAbbrevTokens = new ArrayList<>();
+            for (int i = 0; i < tokens.size(); i++) {
+                Token current = tokens.get(i);
+                if (i + 1 < tokens.size()) {
+                    Token lookahead = tokens.get(i + 1);
+                    if (abbreviationTargets.contains(
+                            current.word().toLowerCase() + " " + lookahead.word().toLowerCase())) {
+                        joinedAbbrevTokens.add(join(current, lookahead, true));
+                        repeat = true;
+                        i++;
+                    } else if (abbreviationTargets.contains(
+                            current.word().toLowerCase() + lookahead.word().toLowerCase())) {
+                        joinedAbbrevTokens.add(join(current, lookahead, false));
+                        repeat = true;
+                        i++;
+                    } else {
+                        joinedAbbrevTokens.add(current);
+                    }
+                } else {
+                    joinedAbbrevTokens.add(current);
+                }
+            }
+            tokens = joinedAbbrevTokens;
+        }*/
 
         for (int i = 0; i < tokens.size(); i++) {
             Token token = tokens.get(i);
@@ -245,5 +273,11 @@ public class Tokenizer implements Step<String, List<Token>> {
 
     private String capitalize(String word) {
         return this.capitalize(word, false);
+    }
+
+    private Token join(Token first, Token second, boolean space) {
+        return new Token(
+                first.getStart(),
+                first.getOriginal() + (space ? " " : "") + second.getOriginal());
     }
 }

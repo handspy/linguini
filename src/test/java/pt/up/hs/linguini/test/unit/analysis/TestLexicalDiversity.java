@@ -111,7 +111,7 @@ public class TestLexicalDiversity {
 
         // System.out.println("MTLD + lemma (paragraph): " + result);
 
-        Assertions.assertEquals("117.623",
+        Assertions.assertEquals("108.575",
                 String.format(Locale.US, "%.3f", result));
     }
 
@@ -155,7 +155,7 @@ public class TestLexicalDiversity {
 
         // System.out.println("HDD + lemma (paragraph): " + result);
 
-        Assertions.assertEquals("0.880",
+        Assertions.assertEquals("0.872",
                 String.format(Locale.US, "%.3f", result));
     }
 
@@ -203,8 +203,8 @@ public class TestLexicalDiversity {
         // System.out.println("VOCD + lemma (paragraph): " + result);
 
         Assertions.assertTrue(
-                Double.compare(135.000D, result) < 0 &&
-                        Double.compare(137.500D, result) > 0,
+                Double.compare(124.000D, result) < 0 &&
+                        Double.compare(126.500D, result) > 0,
                 "Expected 135.000 < D < 137.000, but voc-D was " + result
         );
     }
@@ -301,8 +301,8 @@ public class TestLexicalDiversity {
         // System.out.println("HDD + lemma (text): " + result);
 
         Assertions.assertTrue(
-                Double.compare(0.910D - EPSILON, result) < 0 &&
-                        Double.compare(0.910D + EPSILON, result) > 0
+                Double.compare(0.905D - EPSILON, result) < 0 &&
+                        Double.compare(0.905D + EPSILON, result) > 0
         );
     }
 
@@ -322,11 +322,11 @@ public class TestLexicalDiversity {
             return;
         }
 
-        // System.out.println("MTLD + lemma (text): " + result);
+        /// System.out.println("MTLD + lemma (text): " + result);
 
         Assertions.assertTrue(
-                Double.compare(195.826D - EPSILON, result) < 0 &&
-                        Double.compare(195.826D + EPSILON, result) > 0
+                Double.compare(157.333D - EPSILON, result) < 0 &&
+                        Double.compare(157.333D + EPSILON, result) > 0
         );
     }
 
@@ -349,9 +349,9 @@ public class TestLexicalDiversity {
         // System.out.println("VOCD + lemma (text): " + result);
 
         Assertions.assertTrue(
-                Double.compare(193.000D, result) < 0 &&
-                        Double.compare(197.500D, result) > 0,
-                "Expected 191.000 < D < 195.500, but voc-D was " + result
+                Double.compare(179.000D, result) < 0 &&
+                        Double.compare(183.500D, result) > 0,
+                "Expected 179.000 < D < 183.500, but voc-D was " + result
         );
     }
 }

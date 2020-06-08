@@ -27,6 +27,8 @@ import pt.up.hs.linguini.nndep.NNDepParser;
 import pt.up.hs.linguini.pipeline.BatchStep;
 import pt.up.hs.linguini.pos.PoSTagger;
 import pt.up.hs.linguini.tokenization.AnnotatedSentenceSplitter;
+import pt.up.hs.linguini.tokenization.SentenceSplitter;
+import pt.up.hs.linguini.tokenization.TokenizedSentenceSplitter;
 import pt.up.hs.linguini.tokenization.Tokenizer;
 import pt.up.hs.linguini.transformation.LowercaseTokenTransformer;
 
@@ -95,18 +97,22 @@ public class Linguini {
                 .pipe(new WhitespaceTokenFilter<>())
                 .execute(text);
 
-        // 3. PoS Tagging
-        List<AnnotatedToken<String>> posTaggedTokens = new PoSTagger(locale)
+        // 3. sentence splitting
+        List<List<Token>> sentences = new TokenizedSentenceSplitter<Token>()
                 .execute(tokens);
 
-        // 4. sentence splitting
-        List<List<AnnotatedToken<String>>> sentences = new AnnotatedSentenceSplitter(locale)
-                .execute(posTaggedTokens);
+        // 3. PoS Tagging
+        List<List<AnnotatedToken<String>>> posTaggedSentenceTokens = new BatchStep<>(new PoSTagger(locale))
+                .execute(sentences);
+
+        List<AnnotatedToken<String>> posTaggedTokens = posTaggedSentenceTokens.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
 
         // 5. lemmatize
         List<List<AnnotatedToken<String>>> lemmatizedSentences =
                 new BatchStep<>(new BatchStep<>(new Lemmatizer(locale)))
-                        .execute(sentences);
+                        .execute(posTaggedSentenceTokens);
 
         // 6. drop punctuation
         List<List<AnnotatedToken<String>>> lemmatizedSentencesNoPunctuation =

@@ -21,7 +21,7 @@ public class LinguiniTest {
 
     private static final String TEXT = "Ao acordar tenho sempre" +
             " muito sono pelo que XXXX sempre o primeiro alarme do telemóvel" +
-            " programando-o para daqui a 5 m ou 6. Ao ouvir o segundo alarme" +
+            " programando-o para daqui a 5m ou 6. Ao ouvir o segundo alarme" +
             " abro a preciana e caso já saiba o que vestir, tento levantar-me" +
             " logo e vestir-me; caso não saiba, irei ficar na cama com as por" +
             "tas do armário abertas a olhar para a roupa a pensar na previsão" +
@@ -29,7 +29,7 @@ public class LinguiniTest {
             "-disposta e vou mais básica. Como me atraso sempre nesta parte a" +
             "penas corro para a casa de banho e lavo a cara, ponho o creme na" +
             " cara já no quarto, desodorizante e perfume. Desço a correr para" +
-            " a cozinha, pego na garrafa de 1,5 l de água, no pão sem glúten " +
+            " a cozinha, pego na garrafa de 1,5l de água, no pão sem glúten " +
             "e no leite achocolatado, por vezes se tenho tempo levo 1 peça de" +
             " fruta, a minha mãe já a chegar ao portão espera uns segundos po" +
             "r mim; entro no carro e vamos à pressa para o apeadeiro. Costumo" +
@@ -62,15 +62,16 @@ public class LinguiniTest {
         );
         try {
             LinguisticsReport report = linguini.analyze(TEXT);
-            Assertions.assertEquals(2132, report.getCharacterCount());
+            Assertions.assertEquals(2130, report.getCharacterCount());
             Assertions.assertEquals(1727, report.getNonBlankCharacterCount());
-            Assertions.assertEquals(458, report.getWordCount());
+            Assertions.assertEquals(457, report.getWordCount());
             Assertions.assertEquals(17, report.getSentenceCount());
 
             Assertions.assertEquals(
                     new HashSet<>(Arrays.asList(
                             new UnorderedPair<>("ter", "aula"),
                             new UnorderedPair<>("ir", "casa"),
+                            new UnorderedPair<>("chegar", "casa"),
                             new UnorderedPair<>("casa", "banho")
                     )),
                     report.getCoOccurrences().parallelStream()
@@ -80,7 +81,7 @@ public class LinguiniTest {
                             .collect(Collectors.toSet())
             );
 
-            Assertions.assertEquals("0.337",
+            Assertions.assertEquals("0.319",
                     String.format(Locale.US, "%.3f", report.getIdeaDensity()));
         } catch (LinguiniException e) {
             Assertions.fail(e);

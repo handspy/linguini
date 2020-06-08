@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
  */
 public class MostFrequentStrategy implements TokenSelectionStrategy {
 
-    private Locale locale;
-    private WordRanking wordRanking;
+    private final Locale locale;
+    private final WordRanking wordRanking;
 
     public MostFrequentStrategy(Locale locale) throws SelectionException {
         this.locale = locale;

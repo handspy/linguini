@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class InMemoryCache<K, T> {
 
-    private long timeToLive;
+    private final long timeToLive;
     private final LRUMap<K, CacheObject> cacheMap;
 
     private Thread cleanupThread;

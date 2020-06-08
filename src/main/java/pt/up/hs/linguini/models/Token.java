@@ -1,5 +1,7 @@
 package pt.up.hs.linguini.models;
 
+import edu.stanford.nlp.ling.CoreLabel;
+
 import java.util.Objects;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Objects;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class Token implements HasWord {
+public class Token extends CoreLabel implements HasWord {
     private final int start;
     private final String original;
 
@@ -24,6 +26,11 @@ public class Token implements HasWord {
     }
 
     public String getOriginal() {
+        return original;
+    }
+
+    @Override
+    public String originalText() {
         return original;
     }
 
