@@ -20,7 +20,7 @@
 
     <groupId>pt.up.hs</groupId>
     <artifactId>linguini</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1-M4</version>
     <packaging>jar</packaging>
 
     <name>Linguini</name>
@@ -298,19 +298,6 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- <dependency>
-            JUnit Jupiter Platform
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <scope>test</scope>
-        </dependency> -->
-        <!-- <dependency>
-            Mockito
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency> -->
     </dependencies>
 
     <!-- ********************************************** -->
@@ -428,19 +415,21 @@
                     <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
                 </configuration>
             </plugin>
-            <plugin>
-                <!-- Javadoc -->
-                <!-- Generates the javadocs -->
-                <groupId>org.apache.maven.plugins</groupId>
+            <!-- <plugin> -->
+            <!-- Javadoc -->
+            <!-- Generates the javadocs -->
+            <!--    <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
-                    <sourceFileExcludes>
+                    <source>${java.release}</source>
+                    <detectJavaApiLink>false</detectJavaApiLink>
+                    <sourceFileExcludes> -->
                         <!-- Excludes generated code -->
-                        <exclude>**/generated/**/*</exclude>
+                        <!-- <exclude>**/generated/**/*</exclude>
                     </sourceFileExcludes>
                 </configuration>
-            </plugin>
+            </plugin> -->
             <plugin>
                 <!-- PMD -->
                 <!-- Checks that the code complies with a series of code quality rules -->

@@ -69,10 +69,28 @@ public class LinguiniTest {
 
             Assertions.assertEquals(
                     new HashSet<>(Arrays.asList(
-                            new UnorderedPair<>("ter", "aula"),
-                            new UnorderedPair<>("ir", "casa"),
+                            new UnorderedPair<>("casa", "banho"),
                             new UnorderedPair<>("chegar", "casa"),
-                            new UnorderedPair<>("casa", "banho")
+                            new UnorderedPair<>("estar", "tentar"),
+                            new UnorderedPair<>("ter", "aula"),
+                            new UnorderedPair<>("vestir", "levantar"),
+                            new UnorderedPair<>("cara", "pôr"),
+                            new UnorderedPair<>("vestir", "tentar"),
+                            new UnorderedPair<>("ter", "ir"),
+                            new UnorderedPair<>("seguida", "metro"),
+                            new UnorderedPair<>("cara", "creme"),
+                            new UnorderedPair<>("comboio", "08:12"),
+                            new UnorderedPair<>("saber", "vestir"),
+                            new UnorderedPair<>("ir", "casa"),
+                            new UnorderedPair<>("comboio", "esperar")/*,
+                            new UnorderedPair<>("apanhar", "comboio"),
+                            new UnorderedPair<>("querer", "ir"),
+                            new UnorderedPair<>("ir", "básico"),
+                            new UnorderedPair<>("ir", "básico"),
+                            new UnorderedPair<>("vestir", "saber"),
+                            new UnorderedPair<>("lavo", "cara"),
+                            new UnorderedPair<>("cara", "quarto"),
+                            new UnorderedPair<>("comboio", "entrar")*/
                     )),
                     report.getCoOccurrences().parallelStream()
                             .map(coOccurrence -> new UnorderedPair<>(
@@ -80,6 +98,9 @@ public class LinguiniTest {
                                     coOccurrence.getSecondWord()))
                             .collect(Collectors.toSet())
             );
+
+            Assertions.assertEquals("0.492",
+                    String.format(Locale.US, "%.3f", report.getLexicalDensity()));
 
             Assertions.assertEquals("0.319",
                     String.format(Locale.US, "%.3f", report.getIdeaDensity()));

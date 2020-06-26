@@ -55,7 +55,7 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
             returnDict = handleActionVerb(
                     relations, index, context, engine, info);
         } else if (relations.get(index).tag().toUpperCase()
-                .matches("NOUN|NUM|PRON")) { // NN|NNS|NNP|NNPS|CD|WP|PRP
+                .matches("NOUN|NUM|PRON|PROPN")) { // NN|NNS|NNP|NNPS|CD|WP|PRP
             returnDict = handleCopWithNp(
                     relations, index, context, engine, info);
         } else if (relations.get(index).tag().toUpperCase()

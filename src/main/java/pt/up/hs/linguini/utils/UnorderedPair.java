@@ -26,7 +26,7 @@ public class UnorderedPair<T extends Comparable<T>> implements Comparable<Unorde
 
     @Override
     public int hashCode() {
-        return Objects.hash(a, b);
+        return Objects.hash(a) + Objects.hash(b);
     }
 
     @Override

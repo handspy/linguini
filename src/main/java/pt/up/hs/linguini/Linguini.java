@@ -32,10 +32,7 @@ import pt.up.hs.linguini.tokenization.TokenizedSentenceSplitter;
 import pt.up.hs.linguini.tokenization.Tokenizer;
 import pt.up.hs.linguini.transformation.LowercaseTokenTransformer;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Linguini {
@@ -215,12 +212,18 @@ public class Linguini {
 
         report.setSentenceCount(lemmatizedSentencesLowercaseNoPunctuation.size());
 
-        // grammatical class
-        report.setMorphologicalAnnotations(lemmatizedText);
+        report.setLexicalDensity((double) nonLemmatizedContentWords.size() / nonLemmatizedWords.size());
 
-        // group words by category
+        // grammatical class
         Map<String, String> grammaticalConversions = Config.getInstance(locale)
                 .getGrammaticalConversions();
+
+        report.setMorphologicalAnnotations(lemmatizedText.parallelStream()
+                .map(annotToken -> {
+                    String grammarClass = grammaticalConversions.get(annotToken.getInfo());
+                    return new AnnotatedToken<>(annotToken.getToken(), grammarClass);
+                })
+                .collect(Collectors.toList()));
         report.setWordsByCategory(
                 new TagGroupingAnalysis()
                         .execute(nonLemmatizedWords)
@@ -229,7 +232,8 @@ public class Linguini {
                         .collect(Collectors.toMap(
                                 e -> grammaticalConversions.get(e.getKey()),
                                 Map.Entry::getValue
-                        )));
+                        ))
+        );
 
         // frequencies
         report.setContentWordFrequency(

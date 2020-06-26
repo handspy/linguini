@@ -115,6 +115,22 @@ public class TestIdeaDensityAnalysis {
             "ste do curso em que estou, porque adoro, mas sinto que há qualqu" +
             "er coisa que me diz que pode";
 
+    private static final String TEXT_3 = "\uFEFFRe: Preciso conversar com alg" +
+            "uém \n\nEu não sei por onde começar, minha vida ta uma bagunça, " +
+            "me sinto só sem rumo. Meu pai usa drogas, minha mãe é uma egoíst" +
+            "a, disse que vai embora, que vai ser melhor assim, quer q eu mor" +
+            "e de favor na casa dos outros e quer seguir a vida dela, e eu? E" +
+            "u fico pra trás, eu fico por minha total e própria conta, acabei" +
+            " de me formar no ensino médio, ainda não achei emprego, e to com" +
+            " medo, tinha tantos planos para o futuro, eu queria ser tanta co" +
+            "isa, mas não tenho apoio de ninguém, ninguém pra me ajudar, eu s" +
+            "ei que eu já deveria saber me virar, sei que ela não tem obrigaç" +
+            "ão de me da um teto e tudo mais...mas me sinto sendo jogada pra " +
+            "fora...além disso não só tem eu, tenho mais duas irmãs mais nova" +
+            " e ela quer fazer o mesmo com as outras duas, desde pequena  cui" +
+            "do da minhas irmãs, e agora me sinto impotente não tenho um teto" +
+            " pra dar a elas, me sinto um fracasso.";
+
     private static final Locale LOCALE = new Locale("pt", "PT");
 
     @Test
@@ -203,7 +219,22 @@ public class TestIdeaDensityAnalysis {
             return;
         }
 
-        Assertions.assertEquals("0.548",
+        Assertions.assertEquals("0.565",
+                String.format(Locale.US, "%.3f", idd));
+    }
+
+    @Test
+    public final void testExecuteText3() throws LinguiniException {
+
+        double idd;
+        try {
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_3);
+        } catch (LinguiniException e) {
+            Assertions.fail("Error thrown during test", e);
+            return;
+        }
+
+        Assertions.assertEquals("0.482",
                 String.format(Locale.US, "%.3f", idd));
     }
 }

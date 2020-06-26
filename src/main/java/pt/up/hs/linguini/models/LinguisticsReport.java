@@ -33,6 +33,9 @@ public class LinguisticsReport {
     private Map<String, Integer> functionalWordFrequency;
     private Map<String, Integer> lemmaFrequency;
 
+    // lexical density
+    private double lexicalDensity;
+
     // lexical diversity analysis
     private double baseTTR;
     private double hdd;
@@ -153,6 +156,14 @@ public class LinguisticsReport {
 
     public void setSentenceCount(int sentenceCount) {
         this.sentenceCount = sentenceCount;
+    }
+
+    public double getLexicalDensity() {
+        return lexicalDensity;
+    }
+
+    public void setLexicalDensity(double lexicalDensity) {
+        this.lexicalDensity = lexicalDensity;
     }
 
     public List<AnnotatedToken<String>> getMorphologicalAnnotations() {

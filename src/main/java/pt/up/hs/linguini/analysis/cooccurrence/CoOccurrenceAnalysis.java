@@ -5,10 +5,7 @@ import pt.up.hs.linguini.models.HasWord;
 import pt.up.hs.linguini.pipeline.Step;
 import pt.up.hs.linguini.utils.UnorderedPair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Analysis to find word co-occurrences' value.
@@ -17,7 +14,7 @@ import java.util.Map;
  */
 public class CoOccurrenceAnalysis<T extends HasWord>
         implements Step<List<List<T>>, List<CoOccurrence>> {
-    private static final double DEFAULT_COOCCURRENCE_THRESHOLD = 2.0;
+    private static final double DEFAULT_COOCCURRENCE_THRESHOLD = 1.5;
 
     private final double threshold;
 
@@ -51,7 +48,7 @@ public class CoOccurrenceAnalysis<T extends HasWord>
             }
         }
 
-        List<CoOccurrence> coocurrences = new ArrayList<>();
+        Set<CoOccurrence> coocurrences = new HashSet<>();
         for (Map.Entry<UnorderedPair<String>, Double> entry :
                 cooccurrenceValues.entrySet()) {
 
@@ -65,6 +62,6 @@ public class CoOccurrenceAnalysis<T extends HasWord>
             coocurrences.add(c);
         }
 
-        return coocurrences;
+        return new ArrayList<>(coocurrences);
     }
 }

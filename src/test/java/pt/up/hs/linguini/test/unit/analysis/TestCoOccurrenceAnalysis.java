@@ -67,6 +67,7 @@ public class TestCoOccurrenceAnalysis {
                         new UnorderedPair<>("reter", "lisboa"),
                         new UnorderedPair<>("agência", "tap"),
                         new UnorderedPair<>("mala", "reter"),
+                        new UnorderedPair<>("mala", "ficar"),
                         new UnorderedPair<>("olívio", "barreto"),
                         new UnorderedPair<>("porta-voz", "passageiro"))),
                 coOccurrences.parallelStream()

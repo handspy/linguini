@@ -13,14 +13,14 @@ import java.util.*;
  *
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
-public class AdverbialPhraseRuleset extends Ruleset<String[]> {
+public class AdverbialPhraseRuleset extends Ruleset<String> {
 
     public AdverbialPhraseRuleset(String rel) {
         super(rel);
     }
 
     @Override
-    public String[] extract(
+    public String extract(
             List<Relation> relations, int index, int[] context,
             Engine engine, Map<String, Object> info) {
 
@@ -30,7 +30,7 @@ public class AdverbialPhraseRuleset extends Ruleset<String[]> {
                     new Tuple(info.get("num"), relations.get(index).word()),
                     "M"
             );
-            return new String[] { relations.get(index).word() };
+            return relations.get(index).word();
         }
 
         AdverbialPhraseRuleset
@@ -46,7 +46,7 @@ public class AdverbialPhraseRuleset extends Ruleset<String[]> {
             engine.emit(new Tuple(relations.get(index).word()), "M");
         }
 
-        return new String[] { relations.get(index).word() };
+        return relations.get(index).word();
     }
 
     /**
@@ -73,8 +73,7 @@ public class AdverbialPhraseRuleset extends Ruleset<String[]> {
         newInfo.put("no_emit", true);
 
         for (int i: advmodIndices) {
-            String advmod = engine.analyze(
-                        relations, i, newContext, newInfo);
+            String advmod = engine.analyze(relations, i, newContext, newInfo);
             engine.emit(new Tuple(relations.get(index).word(), advmod), "M");
         }
     }

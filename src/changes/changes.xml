@@ -107,9 +107,29 @@
                 voc-D, base TTR, and HD-D fix.
             </action>
         </release>
-        <release version="2.0.0" date="2020-01-31" description="Performance optimizations, full report.">
+        <release version="2.0.0" date="2020-06-08" description="Performance optimizations, full report.">
             <action dev="jcpaiva" type="update">
                 Performance optimizations, full report.
+            </action>
+        </release>
+        <release version="2.0.1" date="2020-06-09" description="Added lexical density to report.">
+            <action dev="jcpaiva" type="update">
+                Added lexical density to report.
+            </action>
+        </release>
+        <release version="2.0.1-M2" date="2020-06-09" description="Fix grammatical class name.">
+            <action dev="jcpaiva" type="update">
+                Fix grammatical class name.
+            </action>
+        </release>
+        <release version="2.0.1-M3" date="2020-06-19" description="Fix Idea Density advmod.">
+            <action dev="jcpaiva" type="update">
+                Fix Idea Density advmod.
+            </action>
+        </release>
+        <release version="2.0.1-M4" date="2020-06-26" description="Fix Idea Density propn+vp.">
+            <action dev="jcpaiva" type="update">
+                Fix Idea Density propn+vp.
             </action>
         </release>
     </body>
