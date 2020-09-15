@@ -2,7 +2,7 @@ package pt.up.hs.linguini.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pt.up.hs.linguini.caching.InMemoryCache;
-import pt.up.hs.linguini.dictionaries.DictionaryEntry;
+import pt.up.hs.linguini.data.DELAFEntry;
 import pt.up.hs.linguini.models.Emotion;
 import pt.up.hs.linguini.models.Replacement;
 import pt.up.hs.linguini.models.Replacements;
@@ -24,15 +24,15 @@ import java.util.stream.Collectors;
  */
 public class ResourceLoader {
     private final static InMemoryCache<String, List<String>> stopwordsCache =
-            new InMemoryCache<>(86400, 3600, 20);
-    private final static InMemoryCache<String, Replacement[]> replacementsCache =
-            new InMemoryCache<>(86400, 3600, 100);
-    private final static InMemoryCache<String, Map<String, WordRankingEntry>> wordRankingCache =
-            new InMemoryCache<>(86400, 3600, 20);
-    private final static InMemoryCache<String, Map<String, HashSet<DictionaryEntry>>> dictionaryCache =
-            new InMemoryCache<>(86400, 3600, 20);
+            new InMemoryCache<>(0, 3600, 20);
+    /*private final static InMemoryCache<String, Replacement[]> replacementsCache =
+            new InMemoryCache<>(0, 3600, 100);*/
+    /*private final static InMemoryCache<String, Map<String, WordRankingEntry>> wordRankingCache =
+            new InMemoryCache<>(0, 3600, 20);*/
+    private final static InMemoryCache<String, Map<String, HashSet<DELAFEntry>>> dictionaryCache =
+            new InMemoryCache<>(0, 3600, 20);
     private static final InMemoryCache<String, Map<String, List<Emotion>>> emotaixCache =
-            new InMemoryCache<>(86400, 3600, 20);
+            new InMemoryCache<>(0, 3600, 20);
 
     /**
      * Read stopwords from a {@link String} path.
@@ -90,15 +90,16 @@ public class ResourceLoader {
      */
     public static Replacement[] readReplacements(String p)
             throws ResourceLoadingException {
-        Replacement[] replacements;
+        /*Replacement[] replacements;
         synchronized (replacementsCache) {
             if ((replacements = replacementsCache.get(p)) == null) {
                 replacements = readReplacements(
                         ResourceLoader.class.getResourceAsStream(p));
-                replacementsCache.put(p, replacements);
+                // replacementsCache.put(p, replacements);
             }
-        }
-        return replacements;
+        }*/
+        return readReplacements(
+                ResourceLoader.class.getResourceAsStream(p));
     }
 
     /**
@@ -134,16 +135,16 @@ public class ResourceLoader {
     public static Map<String, WordRankingEntry> readWordRankingEntries(
             String p) throws ResourceLoadingException {
 
-        Map<String, WordRankingEntry> wordRankingEntries;
+        /*Map<String, WordRankingEntry> wordRankingEntries;
         synchronized (wordRankingCache) {
             if ((wordRankingEntries = wordRankingCache.get(p)) == null) {
                 wordRankingEntries = readWordRankingEntries(
                         ResourceLoader.class.getResourceAsStream(p));
                 wordRankingCache.put(p, wordRankingEntries);
             }
-        }
+        }*/
 
-        return wordRankingEntries;
+        return new HashMap<>();
     }
 
     /**
@@ -159,7 +160,7 @@ public class ResourceLoader {
 
         Map<String, WordRankingEntry> entries = new HashMap<>();
 
-        try (
+        /*try (
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(is))
         ) {
@@ -189,7 +190,7 @@ public class ResourceLoader {
             is.close();
         } catch (IOException e) {
             throw new ResourceLoadingException(e);
-        }
+        }*/
 
         return entries;
     }
@@ -202,9 +203,9 @@ public class ResourceLoader {
      * @throws ResourceLoadingException if an exception occurs while
      *      reading dictionary entries
      */
-    public static Map<String, HashSet<DictionaryEntry>> readDictionaryEntries(
+    public static Map<String, HashSet<DELAFEntry>> readDictionaryEntries(
             String p) throws ResourceLoadingException {
-        Map<String, HashSet<DictionaryEntry>> dictionaryEntries;
+        Map<String, HashSet<DELAFEntry>> dictionaryEntries;
         synchronized (dictionaryCache) {
             if ((dictionaryEntries = dictionaryCache.get(p)) == null) {
                 dictionaryEntries = readDictionaryEntries(
@@ -223,12 +224,12 @@ public class ResourceLoader {
      * @throws ResourceLoadingException if an exception occurs while
      *      reading dictionary entries
      */
-    private static Map<String, HashSet<DictionaryEntry>> readDictionaryEntries(
+    private static Map<String, HashSet<DELAFEntry>> readDictionaryEntries(
             InputStream is) throws ResourceLoadingException {
 
-        Map<String, HashSet<DictionaryEntry>> dictionary = new HashMap<>();
+        Map<String, HashSet<DELAFEntry>> dictionary = new HashMap<>();
 
-        /**/try (
+        try (
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(is))
         ) {
@@ -248,18 +249,18 @@ public class ResourceLoader {
                         && (((line.charAt(line.indexOf(".") + 1)) != ':')
                         || (line.charAt(line.indexOf(".") + 1)) != '+')) {
 
-                    String inflectedForm = line.substring(0, line.indexOf(","));
+                    String word = line.substring(0, line.indexOf(","));
                     String lemma = line.substring(line.indexOf(",") + 1, line.indexOf("."));
 
-                    String partOfSpeech;
+                    String pos;
                     if (line.contains("+")) {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1,
+                        pos = line.substring(line.indexOf(".") + 1,
                                 line.indexOf("+"));
                     } else if (line.contains(":")) {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1,
+                        pos = line.substring(line.indexOf(".") + 1,
                                 line.indexOf(":"));
                     } else {
-                        partOfSpeech = line.substring(line.indexOf(".") + 1);
+                        pos = line.substring(line.indexOf(".") + 1);
                     }
 
                     String subcategory = null;
@@ -277,20 +278,17 @@ public class ResourceLoader {
                         morphAttributes = line.substring(line.indexOf(":") + 1);
                     }
 
-                    HashSet<DictionaryEntry> entrySet =
-                            dictionary.get(inflectedForm);
+                    HashSet<DELAFEntry> entrySet =
+                            dictionary.get(word);
                     if (entrySet == null) {
                         entrySet = new HashSet<>();
                     }
-                    entrySet.add(new DictionaryEntry(inflectedForm, lemma,
-                            partOfSpeech, subcategory, morphAttributes));
-                    dictionary.put(inflectedForm, entrySet);
+                    entrySet.add(new DELAFEntry(word, lemma, pos, subcategory, morphAttributes));
+                    dictionary.put(word, entrySet);
                 } else {
                     throw new ResourceFormatException(lineNumber);
                 }
             }
-
-            is.close();
         } catch (IOException e) {
             throw new ResourceLoadingException(e);
         }

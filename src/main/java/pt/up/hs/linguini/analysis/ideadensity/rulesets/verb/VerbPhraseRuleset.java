@@ -1144,7 +1144,14 @@ public class VerbPhraseRuleset extends Ruleset<Map<String, Object>> {
         String[] auxs = processAuxs(
                 relations, index, context, engine, info);
 
-        String verb = String.join(" ", ArrayUtils.add(auxs, cop));
+        String verb;
+        if (auxs == null) {
+            verb = cop;
+        } else if (cop == null) {
+            verb = String.join(" ", auxs);
+        } else {
+            verb = String.join(" ", ArrayUtils.add(auxs, cop));
+        }
 
         processIgnorables(relations, index, context, engine, info);
 

@@ -8,9 +8,9 @@ import java.util.Objects;
  * @author José Carlos Paiva <code>josepaiva94@gmail.com</code>
  */
 public class WordRankingEntry implements Comparable<WordRankingEntry> {
-    private String word;
-    private int frequency;
-    private int rank;
+    private final String word;
+    private final int frequency;
+    private final int rank;
 
     public WordRankingEntry(String word, int frequency, int rank) {
         this.word = word;

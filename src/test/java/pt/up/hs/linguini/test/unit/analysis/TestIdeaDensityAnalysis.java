@@ -131,6 +131,136 @@ public class TestIdeaDensityAnalysis {
             "do da minhas irmãs, e agora me sinto impotente não tenho um teto" +
             " pra dar a elas, me sinto um fracasso.";
 
+    private static final String TEXT_4 = "Não sei bem como começar a explicar" +
+            " ou como começar esse email, mas vou resumir um pouco a minha vi" +
+            "da ultimamente.. Meu avo morreu e eu tive uma depressão bem prof" +
+            "unda, ja me recuperei um pouco mas ainda doi.. Fazem 7 anos já, " +
+            "e depois que eu superei entrei num estado que dá pra descrever c" +
+            "omo se eu estivesse vivendo minha vida por fora do meu corpo. Re" +
+            "centemente comecei a ter problemas com os meus pais, principalme" +
+            "nte por dinheiro, e agora os dois desabafam comigo o tempo todo " +
+            "e eu não aguento mais isso. Já orei, comecei a passar mais tempo" +
+            " fora de casa p me distrair mas parece que nada funciona. Nao te" +
+            "m mais sentido..";
+
+    private static final String TEXT_5 = "Boa noite\n" +
+            "\n" +
+            "Não tenho mais ninguém em quem confie tanto, ou sinta tanta à von" +
+            "tade para expressar o que sinto. Nunca gostei de falar do que sen" +
+            "tia.\nNão é só por causa dela que sofro, isto já vem bem antes de" +
+            " sentir isto por ela. Mas nem eu sei bem porque estou assim, só s" +
+            "into um enorme vazio e sem vontade de viver... \n";
+
+    private static final String TEXT_6 = "Ainda fiquei sozinha com a minha mãe" +
+            " que embora seja a minha mãe e nao a queira mal mas é manipulador" +
+            "a e por nada trata mal as pessoas que mais próximas dela estão ne" +
+            "ste caso só sou eu antigamente era o meu pai e o meu irmão ";
+
+    private static final String TEXT_7 = "O problema é que eu nunca saia se ca" +
+            "sa para fazer nada, sempre gostei de ficar em casa, minha namorad" +
+            "a eu conheci na escola eu estava no 1 ano do segundo grau e ela 3" +
+            " ano do segundo grau, isto foi no ano passado, ela se formou e ag" +
+            "ora está fazendo direito, eu consegui pular o ensino médio e fui " +
+            "fazer Física, e eu volto somente fim de semana e as vezes eu comb" +
+            "ino de buscar minha namorada na faculdade dela quando ela tem aul" +
+            "a sábado, combino de ir tomar um açai, porquê ela gosta disto, ma" +
+            "s isto sempre de manhã, eu não faço nada a noite, não combino de " +
+            "sair a noite para eles não reclamarem, nunca tive amigos, nunca g" +
+            "ostei de ter, nunca fui em casa de colegas nem nada disto, sabe e" +
+            "u trato meus pais muito bem, nunca maltratei eles, trato todos mu" +
+            "ito bem, sabe? Eu gosto de ajudar os outros, participo de ONGs, i" +
+            "nclusive estou fazendo Física pois eu tenho um projeto de Exo esq" +
+            "ueleto, para ajudar pessoas que tem dificuldade de movimentos, eu" +
+            " gosto de ajudar, para mim ajudar está até mesmo em pequenas cois" +
+            "as, inclusive tratar bem as pessoas, entende?\nSempre trabalhei d" +
+            "es de novo para não precisar depender de meus pais, vendia picolé" +
+            " na rua, já trabalhei como menor aprendiz depois que fui demitido" +
+            " voltei a trabalhar vendendo picolé na rua, agora estou procurand" +
+            "o emprego pois estou em outra cidade lá é frio e não dá para vend" +
+            "er picolé. Eu peço para eles explicarem por que eles não me deixa" +
+            "m ver minha namorada direito e eles não conseguem explicar, ficam" +
+            " falando que são meus pais e este é o motivo, minha namorada é um" +
+            "a pessoa muito boa, por isso gosto dela, ela me ajuda na ONG, me " +
+            "ajuda em meus projetos, me dá Amor e Carinho, é uma pessoa maravi" +
+            "lhosa para mim, eu não entendo por que eles são assim comigo.\n\n" +
+            "\nEu não fiz nada de errado desta vez, minha namorada acha que eu" +
+            " fiz, então ela terminou comigo mesmo sem ter motivo desta vez, e" +
+            "la acredita em uma mentira pois não fiz, estou começando a ter es" +
+            "quizofrenia e ficar gago quando falo com ela.\n\n\nInfelizmente n" +
+            "ão gosto de tomar remédios, não tomo nem para dor, nem para febre" +
+            " nem nada, eu fui em um médico recentemente e ele me passou um re" +
+            "médio para tomar mas eu acabo não tomando, acho que ele pode me d" +
+            "eixar dependente e futuramente quero ter uma vida saudável sem re" +
+            "médios.\n\n\nDesisti da faculdade, estou agora passando mal com f" +
+            "ebre, dor de cabeça, fraco, queria fazer meus projetos.\n\n\nNão " +
+            "gosto de psicólogos, já tentei ir mas não me senti confortável.\n" +
+            "\n\nDa vontade de fugir de casa e ir viver minha vida, minha famí" +
+            "lia é muito ruim, eu consegui passar na faculdade particular maio" +
+            "r conceituada na minha cidade natal e ainda ganhei bolsa integra" +
+            "l e eles não estão nem aí, nem um parabéns ele deram, nem um apo" +
+            "io eles me dão, eu estou fazendo um projeto de carro, montando c" +
+            "hassi, motor, rodas, tudo, estou montando um projeto bem legal e" +
+            " eles ficam falando para desistir, que não vai dar certo, tudo qu" +
+            "e eu faço eles me colocam para pior.\n\n\nEla não quer conversar," +
+            " já liguei várias vezes já tentei ir na casa dela.\n\n\nDa vontad" +
+            "e de não fazer mais nada.\n\n\nEu comecei a faculdade faz uns qua" +
+            "tro meses e estou fazendo em outra cidade, longe de todos morando" +
+            " sozinho, estou dedicando aos estudos lá a semana toda e no fim d" +
+            "e semana eu volto para minha cidade, quando volto tudo que quero " +
+            "é descansar mas minha família fica dizendo que eu não faço as coi" +
+            "sas direito, fica vigiando olhando minhas coisas da faculdade, el" +
+            "es não confiam em mim e a única coisa que me deixa feliz agora é " +
+            "minha namorada que mora na cidade que nasci, perto de onde minha " +
+            "família mora e eles ficam me proibindo de ver minha namorada, fic" +
+            "am brigando comigo, eu sou responsável, estou tirando boas notas," +
+            " sempre respeitei eles, sou melhor possível com eles, mas eles pa" +
+            "recem que gostam de complicar as coisas. Eu quero viver minha vid" +
+            "a, fazer minhas coisas sozinho eu e minha namorada.\n\n\nNão gost" +
+            "o.\n\n\n\n\nMinha namorada que era a única pessoa que me mantinha" +
+            " feliz me deixou, agora a única coisa que vejo como saída é tenta" +
+            "r o que título já diz, agradeço sua ajuda de tentar me fazer melh" +
+            "orar, desculpa por lhe decepcionar também, mas parece que eu não " +
+            "sou uma pessoa boa.\n\n\nSerá que conseguirei algo?\n\n\nTenho si" +
+            "m, mais recente idéia minha é me internar para não suicidar e pen" +
+            "sar na minha vida, penso em tomar muitos remédios ou também uma f" +
+            "aca.\n\n\nJá pensei, mas eu penso que o suicídio seria uma forma " +
+            "feia seria uma forma egoísta, mas as vezes eu penso sim, penso as" +
+            " vezes em fugir de casa e não ver mais aquelas pessoas, mas fugin" +
+            "do eu não teria minha namorada, não posso pedir para ela abandona" +
+            "r a faculdade dela, o que penso em fazer para resolver tudo é arr" +
+            "umar algum emprego com carteira assinada e eu pedir emancipação p" +
+            "ara o Juiz, assim eu poderia alugar um lugar para mim e viver soz" +
+            "inho, sem que os outros me tragam problemas desnecessários, mas a" +
+            "s vezes isto parece muito longe de acontecer, ando dias e dias pr" +
+            "ocurando emprego bato de porta em porta das empresas e ninguém me" +
+            " da emprego.\n\n\nPor favor pode me ajudar, preciso muito de ajud" +
+            "a neste momento, por favor me responde.\n";
+
+    private static final String TEXT_8 = "Aquilo que queria falar, ou melhor " +
+            "escrever, é sobre o meu percurso praxístico ate agora. No ano pa" +
+            "ssado, tive um momento em que pensei desistir! Quando pensei sob" +
+            "re o porquê não tinha bem a noção, mas não tinha paciência para " +
+            "tudo aquilo que estavam a exigir de mim: todas as semanas tinha " +
+            "que acordar às seis da manhã para aparecer e depois não achava e" +
+            "ngraçadas algumas coisas que aconteciam e diziam. Percebi que ti" +
+            "nha optado por ficar por causa dos meus colegas e porque queria " +
+            "fazer parte deste mundo, apesar de tudo.\nO momento mais traumát" +
+            "ico deste ano foi, sem dúvida, quando o meu avô foi para o hospi" +
+            "tal devido a um AVC hemorrágico, na sexta-feira santa, mesmo ant" +
+            "es da Páscoa. Estava em casa, tinha acordado cedo porque ia ter " +
+            "com uma amiga, quando soube. A minha mãe saltou da cama,  (no me" +
+            "u quarto consegui ouvir) e agarrada ao telemóvel desatou a corre" +
+            "r ate ao meu quarto. Já não é a primeira vez que um telefonema d" +
+            "estes acontece, mas fiquei alarmada de qualquer forma. Suspirei " +
+            "logo quando a minha mãe me disse que o meu avô tinha ido para o " +
+            "hospital, não pensei na altura que fosse grave. Pensei que o que" +
+            " lhe estava a acontecer, fosse o que fosse, voltaria para casa n" +
+            "esse dia ou no seguinte.\nMas isso não aconteceu. Continuou em c" +
+            "oma durante quinze dias.\nEntretanto, quando voltei das férias d" +
+            "a Páscoa, tive que avisar os meus colegas do porquê que não tinh" +
+            "a cabeça para ir, nessa semana, à praxe. Se não andasse, de cert" +
+            "o não contaria a ninguém, porque eu sou mui";
+
     private static final Locale LOCALE = new Locale("pt", "PT");
 
     @Test
@@ -193,48 +323,44 @@ public class TestIdeaDensityAnalysis {
     }
 
     @Test
-    public final void testExecuteText1() throws LinguiniException {
+    public final void testExecuteTexts() throws LinguiniException {
 
         double idd;
         try {
             idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_1);
+            Assertions.assertEquals("0.347",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_2);
+            Assertions.assertEquals("0.565",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_3);
+            Assertions.assertEquals("0.482",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_4);
+            Assertions.assertEquals("0.580",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_5);
+            Assertions.assertEquals("0.470",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_6);
+            Assertions.assertEquals("0.837",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_7);
+            Assertions.assertEquals("0.689",
+                    String.format(Locale.US, "%.3f", idd));
+
+            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_8);
+            Assertions.assertEquals("0.446",
+                    String.format(Locale.US, "%.3f", idd));
         } catch (LinguiniException e) {
             e.printStackTrace();
             Assertions.fail("Error thrown during test", e);
-            return;
         }
-
-        Assertions.assertEquals("0.347",
-                String.format(Locale.US, "%.3f", idd));
-    }
-
-    @Test
-    public final void testExecuteText2() throws LinguiniException {
-
-        double idd;
-        try {
-            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_2);
-        } catch (LinguiniException e) {
-            Assertions.fail("Error thrown during test", e);
-            return;
-        }
-
-        Assertions.assertEquals("0.565",
-                String.format(Locale.US, "%.3f", idd));
-    }
-
-    @Test
-    public final void testExecuteText3() throws LinguiniException {
-
-        double idd;
-        try {
-            idd = TextAnalyzer.analyzeIdeaDensity(LOCALE, TEXT_3);
-        } catch (LinguiniException e) {
-            Assertions.fail("Error thrown during test", e);
-            return;
-        }
-
-        Assertions.assertEquals("0.482",
-                String.format(Locale.US, "%.3f", idd));
     }
 }

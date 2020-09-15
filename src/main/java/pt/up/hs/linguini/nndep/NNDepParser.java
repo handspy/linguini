@@ -25,8 +25,6 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
     private static final String FILE_PATH_FORMAT =
             "%s/models/%s.depparser.txt.gz";
 
-    /*private static Map<Locale, NNDepParser> nnDepParsers = new HashMap<>();*/
-
     private final Locale locale;
 
     private final DependencyParser depParser;
@@ -47,17 +45,11 @@ public class NNDepParser implements Step<List<AnnotatedToken<String>>, List<Rela
     }
 
     public static NNDepParser getInstance(Locale locale) {
-        /*if (nnDepParsers.containsKey(locale)) {
-            return nnDepParsers.get(locale);
-        }*/
-        NNDepParser nnDepParser = new NNDepParser(locale);
-        /*nnDepParsers.put(locale, nnDepParser);*/
-        return nnDepParser;
+        return new NNDepParser(locale);
     }
 
     @Override
-    public List<Relation> execute(List<AnnotatedToken<String>> sentence)
-            throws LinguiniException {
+    public List<Relation> execute(List<AnnotatedToken<String>> sentence) {
 
         GrammaticalStructure gs = depParser
                 .predict(sentence.parallelStream()

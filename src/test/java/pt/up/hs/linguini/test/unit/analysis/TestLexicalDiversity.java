@@ -349,9 +349,9 @@ public class TestLexicalDiversity {
         // System.out.println("VOCD + lemma (text): " + result);
 
         Assertions.assertTrue(
-                Double.compare(179.000D, result) < 0 &&
+                Double.compare(178.500D, result) < 0 &&
                         Double.compare(183.500D, result) > 0,
-                "Expected 179.000 < D < 183.500, but voc-D was " + result
+                "Expected 178.500 < D < 183.500, but voc-D was " + result
         );
     }
 }

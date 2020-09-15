@@ -1,5 +1,7 @@
 package pt.up.hs.linguini.dictionaries;
 
+import pt.up.hs.linguini.data.DELAFEntry;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -18,11 +20,11 @@ public class Lexicon {
     private Lexicon() {
     }
 
-    public static Lexicon fromDictionaryMap(Map<String, HashSet<DictionaryEntry>> dict) {
+    public static Lexicon fromDictionaryMap(Map<String, HashSet<DELAFEntry>> dict) {
         Lexicon lexicon = new Lexicon();
         for (String form : dict.keySet()) {
-            for (DictionaryEntry entry : dict.get(form)) {
-                lexicon.add(entry.getLemma(), entry.getPartOfSpeech());
+            for (DELAFEntry entry : dict.get(form)) {
+                lexicon.add(entry.getLemma(), entry.getPos());
             }
         }
         return lexicon;

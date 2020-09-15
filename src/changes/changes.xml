@@ -132,5 +132,15 @@
                 Fix Idea Density propn+vp.
             </action>
         </release>
+        <release version="2.0.1-M5" date="2020-07-02" description="Decrease memory usage.">
+            <action dev="jcpaiva" type="update">
+                Decrease memory usage.
+            </action>
+        </release>
+        <release version="2.0.1-M6" date="2020-09-15" description="Fix Idea Density.">
+            <action dev="jcpaiva" type="update">
+                Fix Idea Density.
+            </action>
+        </release>
     </body>
 </document>

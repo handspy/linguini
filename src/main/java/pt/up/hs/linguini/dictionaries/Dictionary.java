@@ -1,6 +1,7 @@
 package pt.up.hs.linguini.dictionaries;
 
 import pt.up.hs.linguini.Config;
+import pt.up.hs.linguini.data.DELAFEntry;
 import pt.up.hs.linguini.dictionaries.exceptions.DictionaryException;
 import pt.up.hs.linguini.exceptions.ConfigException;
 import pt.up.hs.linguini.resources.ResourceLoader;
@@ -17,7 +18,7 @@ public class Dictionary {
     private static final String FILE_PATH_FORMAT =
             "/%s/dictionaries/dictionary.dic";
 
-    private Map<String, HashSet<DictionaryEntry>> dictionary;
+    private Map<String, HashSet<DELAFEntry>> dictionary;
 
     private final Locale locale;
 
@@ -34,7 +35,7 @@ public class Dictionary {
             String[] customDicts = Config.getInstance(locale)
                     .getCustomDictionaries();
             for (String customDictPath: customDicts) {
-                Map<String, HashSet<DictionaryEntry>> customEntries = ResourceLoader
+                Map<String, HashSet<DELAFEntry>> customEntries = ResourceLoader
                         .readDictionaryEntries(customDictPath);
                 for (String key: customEntries.keySet()) {
                     if (dictionary.containsKey(key)) {
@@ -56,10 +57,10 @@ public class Dictionary {
      *                                     remove.
      * @return {@link DictionaryEntry[]} removed entries.
      */
-    public DictionaryEntry[] remove(String inflectedForm) {
-        HashSet<DictionaryEntry> removedEntries = dictionary.remove(inflectedForm);
+    public DELAFEntry[] remove(String inflectedForm) {
+        HashSet<DELAFEntry> removedEntries = dictionary.remove(inflectedForm);
         if (removedEntries != null) {
-            return removedEntries.toArray(new DictionaryEntry[0]);
+            return removedEntries.toArray(new DELAFEntry[0]);
         }
         return null;
     }
@@ -71,16 +72,16 @@ public class Dictionary {
      * @param inflectedForm {@link String} inflected form of the entries to
      *                                     remove.
      * @param posTag {@link String} Part of speech tag.
-     * @return {@link DictionaryEntry[]} removed entries.
+     * @return {@link DELAFEntry[]} removed entries.
      */
-    public DictionaryEntry[] remove(String inflectedForm, String posTag) {
-        HashSet<DictionaryEntry> entrySet = dictionary.remove(inflectedForm);
-        HashSet<DictionaryEntry> remainingEntries = new HashSet<>();
-        HashSet<DictionaryEntry> removedEntries = new HashSet<>();
+    public DELAFEntry[] remove(String inflectedForm, String posTag) {
+        HashSet<DELAFEntry> entrySet = dictionary.remove(inflectedForm);
+        HashSet<DELAFEntry> remainingEntries = new HashSet<>();
+        HashSet<DELAFEntry> removedEntries = new HashSet<>();
 
-        for (DictionaryEntry entry : entrySet) {
-            if (entry.getInflectedForm().equals(inflectedForm)
-                    && entry.getPartOfSpeech().equals(posTag)) {
+        for (DELAFEntry entry : entrySet) {
+            if (entry.getWord().equals(inflectedForm)
+                    && entry.getPos().equals(posTag)) {
                 removedEntries.add(entry);
             } else {
                 remainingEntries.add(entry);
@@ -92,7 +93,7 @@ public class Dictionary {
         }
 
         if (removedEntries.size() > 0) {
-            return removedEntries.toArray(new DictionaryEntry[0]);
+            return removedEntries.toArray(new DELAFEntry[0]);
         }
 
         return null;
@@ -101,18 +102,17 @@ public class Dictionary {
     /**
      * Remove entry from the dictionary.
      *
-     * @param entry {@link DictionaryEntry} entry to remove.
-     * @return {@link DictionaryEntry} removed entry
+     * @param entry {@link DELAFEntry} entry to remove.
+     * @return {@link DELAFEntry} removed entry
      */
-    public DictionaryEntry remove(DictionaryEntry entry) {
-        HashSet<DictionaryEntry> entrySet =
-                dictionary.get(entry.getInflectedForm());
+    public DELAFEntry remove(DELAFEntry entry) {
+        HashSet<DELAFEntry> entrySet = dictionary.get(entry.getWord());
         if (entrySet != null) {
             entrySet.remove(entry);
             if (entrySet.size() > 0) {
-                dictionary.put(entry.getInflectedForm(), entrySet);
+                dictionary.put(entry.getWord(), entrySet);
             } else {
-                dictionary.remove(entry.getInflectedForm());
+                dictionary.remove(entry.getWord());
             }
             return entry;
         }
@@ -143,9 +143,9 @@ public class Dictionary {
      */
     public boolean contains(String inflectedForm, String posTag) {
         if (contains(inflectedForm)) {
-            HashSet<DictionaryEntry> entrySet = dictionary.get(inflectedForm);
-            for (DictionaryEntry entry : entrySet) {
-                if (entry.getPartOfSpeech().equals(posTag)) {
+            HashSet<DELAFEntry> entrySet = dictionary.get(inflectedForm);
+            for (DELAFEntry entry : entrySet) {
+                if (entry.getPos().equals(posTag)) {
                     return true;
                 }
             }
@@ -156,14 +156,13 @@ public class Dictionary {
     /**
      * Check if the dictionary contains the specified entry.
      *
-     * @param entry {@link DictionaryEntry} entry to remove.
+     * @param entry {@link DELAFEntry} entry to remove.
      * @return {@code boolean} true if it contains some matching entry, false
      *                         otherwise
      */
-    public boolean contains(DictionaryEntry entry) {
-        if (contains(entry.getInflectedForm())) {
-            HashSet<DictionaryEntry> entrySet =
-                    dictionary.get(entry.getInflectedForm());
+    public boolean contains(DELAFEntry entry) {
+        if (contains(entry.getWord())) {
+            HashSet<DELAFEntry> entrySet = dictionary.get(entry.getWord());
             return entrySet.contains(entry);
         }
         return false;
@@ -179,10 +178,10 @@ public class Dictionary {
      * @return {@code String[]} lemmas to retrieve.
      */
     public String[] retrieveLemmas(String inflectedForm, String posTag) {
-        HashSet<DictionaryEntry> entrySet = dictionary.get(inflectedForm);
+        HashSet<DELAFEntry> entrySet = dictionary.get(inflectedForm);
         HashSet<String> lemmas = new HashSet<>();
-        for (DictionaryEntry entry : entrySet) {
-            if (entry.getPartOfSpeech().equals(posTag)) {
+        for (DELAFEntry entry : entrySet) {
+            if (entry.getPos().equals(posTag)) {
                 lemmas.add(entry.getLemma());
             }
         }
@@ -194,14 +193,14 @@ public class Dictionary {
      *
      * @param inflectedForm {@link String} inflected form of the entries to
      *                                     retrieve.
-     * @return {@code DictionaryEntry[]} matching entries.
+     * @return {@code DELAFEntry[]} matching entries.
      */
-    public DictionaryEntry[] retrieveEntries(String inflectedForm) {
-        HashSet<DictionaryEntry> entries = new HashSet<>();
+    public DELAFEntry[] retrieveEntries(String inflectedForm) {
+        HashSet<DELAFEntry> entries = new HashSet<>();
         if (dictionary.containsKey(inflectedForm)) {
             entries = dictionary.get(inflectedForm);
         }
-        return entries.toArray(new DictionaryEntry[0]);
+        return entries.toArray(new DELAFEntry[0]);
     }
 
     /**
@@ -209,13 +208,13 @@ public class Dictionary {
      *
      * @return {@code DictionaryEntry[]} dictionary entries.
      */
-    public DictionaryEntry[] retrieveAllEntries() {
-        HashSet<DictionaryEntry> entries = new HashSet<>();
-        Collection<HashSet<DictionaryEntry>> entryCollection = dictionary.values();
-        for (HashSet<DictionaryEntry> entrySet : entryCollection) {
+    public DELAFEntry[] retrieveAllEntries() {
+        HashSet<DELAFEntry> entries = new HashSet<>();
+        Collection<HashSet<DELAFEntry>> entryCollection = dictionary.values();
+        for (HashSet<DELAFEntry> entrySet : entryCollection) {
             entries.addAll(entrySet);
         }
-        return entries.toArray(new DictionaryEntry[0]);
+        return entries.toArray(new DELAFEntry[0]);
     }
 
     /**
