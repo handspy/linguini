@@ -3,6 +3,7 @@ package pt.up.hs.linguini;
 import pt.up.hs.linguini.analysis.cooccurrence.CoOccurrence;
 import pt.up.hs.linguini.analysis.cooccurrence.CoOccurrenceAnalysis;
 import pt.up.hs.linguini.analysis.emotional.EmotaixAnalysis;
+import pt.up.hs.linguini.analysis.exceptions.AnalysisException;
 import pt.up.hs.linguini.analysis.ideadensity.IdeaDensityAnalysis;
 import pt.up.hs.linguini.analysis.ideadensity.Proposition;
 import pt.up.hs.linguini.analysis.lexicaldiversity.BaseTtrAnalysis;
@@ -26,16 +27,20 @@ import pt.up.hs.linguini.models.Token;
 import pt.up.hs.linguini.nndep.NNDepParser;
 import pt.up.hs.linguini.pipeline.BatchStep;
 import pt.up.hs.linguini.pos.PoSTagger;
-import pt.up.hs.linguini.tokenization.AnnotatedSentenceSplitter;
-import pt.up.hs.linguini.tokenization.SentenceSplitter;
 import pt.up.hs.linguini.tokenization.TokenizedSentenceSplitter;
 import pt.up.hs.linguini.tokenization.Tokenizer;
 import pt.up.hs.linguini.transformation.LowercaseTokenTransformer;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Linguini {
+
+    private static final Logger LOG = Logger.getLogger(Linguini.class.getCanonicalName());
 
     private final Locale locale;
 
@@ -55,34 +60,6 @@ public class Linguini {
         this.coOccurrenceWindowSize = coOccurrenceWindowSize;
         this.coOccurrenceThreshold = coOccurrenceThreshold;
     }
-
-    /*public List<Token> tokenize(String text) throws LinguiniException {
-        return new Tokenizer(locale, true).execute(text);
-    }
-
-    public <T extends HasWord> List<T> removeWhitespaces(List<T> ts) {
-        return new WhitespaceTokenFilter<T>().execute(ts);
-    }
-
-    public  List<T> annotatePoS(List<T> ts) {
-        return new PoSTagger(locale).execute(ts);
-    }
-
-    public void splitSentences() {
-
-    }
-
-    public void lemmatize() {
-
-    }
-
-    public void removePunctuation() {
-
-    }
-
-    public void removeStopwords() {
-
-    }*/
 
     public LinguisticsReport analyze(String text) throws LinguiniException {
 
@@ -231,7 +208,8 @@ public class Linguini {
                         .stream()
                         .collect(Collectors.toMap(
                                 e -> grammaticalConversions.get(e.getKey()),
-                                Map.Entry::getValue
+                                Map.Entry::getValue,
+                                (cat1, cat2) -> cat1
                         ))
         );
 
@@ -276,16 +254,30 @@ public class Linguini {
     private void analyzeLexicalDiversity(
             LinguisticsReport report,
             List<AnnotatedToken<String>> cleanedAndAnnotatedTokens
-    ) throws LinguiniException {
+    ) {
 
         report.setBaseTTR(new BaseTtrAnalysis<AnnotatedToken<String>>()
                 .execute(cleanedAndAnnotatedTokens));
-        report.setMtld(new MtldAnalysis<AnnotatedToken<String>>()
+        try {
+            report.setMtld(new MtldAnalysis<AnnotatedToken<String>>()
+                    .execute(cleanedAndAnnotatedTokens));
+        } catch (AnalysisException ae) {
+            LOG.severe("Cannot calculate MTL-D in texts with less than 50 words.");
+        }
+
+        try {
+            report.setHdd(new HddAnalysis<AnnotatedToken<String>>()
+                    .execute(cleanedAndAnnotatedTokens));
+        } catch (AnalysisException ae) {
+            LOG.severe("Cannot calculate HD-D in texts with less than 50 words.");
+        }
+
+        try {
+            report.setVocd(new VocdAnalysis<AnnotatedToken<String>>()
                 .execute(cleanedAndAnnotatedTokens));
-        report.setHdd(new HddAnalysis<AnnotatedToken<String>>()
-                .execute(cleanedAndAnnotatedTokens));
-        report.setVocd(new VocdAnalysis<AnnotatedToken<String>>()
-                .execute(cleanedAndAnnotatedTokens));
+        } catch (AnalysisException ae) {
+            LOG.severe("Cannot calculate voc-D in texts with less than 50 words.");
+        }
     }
 
     private void analyzeEmotions(

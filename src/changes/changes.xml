@@ -142,5 +142,10 @@
                 Fix Idea Density.
             </action>
         </release>
+        <release version="2.0.1-M7" date="2020-09-16" description="Fix dup keys (morphological classes).">
+            <action dev="jcpaiva" type="update">
+                Fix dup keys (morphological classes).
+            </action>
+        </release>
     </body>
 </document>
